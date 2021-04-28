@@ -45,16 +45,37 @@ session_start();
                     <br>
                     <h2 class="text-light mb-4">Welcome!</h2>
                   </div>
-                  <form class="user" method="post" action="login.php">
-                  <button type=submit class="btn btn-primary btn-user btn-block">
-                      ADMINISTRATOR
-                    </button>
-                    </form> 
-                    <br>
-                    <form class="user" method="post" action="stud_login.php">
-                    <button type=submit class="btn btn-primary btn-user btn-block">
-                      STUDENT
-                    </button>
+                  <form class="user" method="post" action="login_proc.php">
+                    <div class="form-group">
+                      <input type="text" name=username class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username" required autocomplete=off>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" name=password class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" required autocomplete=off>
+                      <br>
+                      <?php
+                        $min_number = 1;
+                        $max_number = 10;
+                        $random_number1 = mt_rand($min_number , $max_number);  
+                        $random_number2 = mt_rand($min_number , $max_number);    
+                      ?>
+
+                      <div class="center">
+
+                      <span class="text-light"> Please solve this problem to prove that you are not a bot <br> </span>
+
+                        <?php
+                          echo $random_number1 . ' + ' . $random_number2 . ' = ';
+                        ?>
+
+                        <input name="captchaResult" type="text" size="4" required/>
+                        <input name="firstnumber" type="hidden" value= "<?php echo $random_number1; ?>"/>
+                        <input name="secondnumber" type="hidden" value= "<?php echo $random_number2; ?>"/>
+                      </div>
+
+                      
+                    </div>
+
+                    <div class="form-group">
                       
                       <!-- <div class="custom-control custom-checkbox small">
                         <input type="checkbox" class="custom-control-input" id="customCheck">
@@ -63,9 +84,32 @@ session_start();
                     </div> -->
                     
                     <hr>
-                   
+                    <?php
+                    if (isset($_SESSION['login'])){
+                      unset($_SESSION['login']);?>
+                      
+                      <span style="color: red; font-weight: bold;">&nbsp;&nbsp;Wrong username or password</span>
+                      <br>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if (isset($_SESSION['captcha'])){
+                      unset($_SESSION['captcha']);?>
+                      
+                      <span style="color: red; font-weight: bold;">&nbsp;&nbsp;Incorrect captcha</span>
+                      <br>
+                    <?php
+                    }
+                    ?>
                     <br>
-                  
+                    <button type=submit class="btn btn-primary btn-user btn-block">
+                      Login
+                    </button>
+                  </form>
+                  <br>
+                  <form class="user" method="post" action="index.php">
+                    
                     
                     <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Login with Google
