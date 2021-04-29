@@ -2,7 +2,11 @@
 session_start();
 
 include "perfect_function.php";
+$captchaResult = $_POST['captchaResult'];
+$firstnumber = $_POST['firstnumber'];
+$secondnumber = $_POST['secondnumber'];
 
+$checkTotal = $firstnumber + $secondnumber;
 $table_name="accounts";
 $username=$_POST['username'];
 $password=$_POST['password'];
@@ -17,20 +21,20 @@ $user_data = get_where_custom($table_name, "username", $username);
         
     }
 
-if ($password1==$password){
+if (($password1==$password) and ($captchaResult==$checkTotal)){
     
     // echo $password." == ".$password1."<br>";
     $_SESSION['username']=$username;
     // $_SESSION['firstlast']=$firstname." ".$lastname;
     $_SESSION['fullname']=$fullname;
     // echo $_SESSION['firstlast'];
-    header("Location: captcha.php");
-} else {
+    header("Location: home.php");
+} if ($password1!=$password) {
     $_SESSION['login']=1;
-    header("Location: login.php");
+    header("Location: index.php");
+} if ($captchaResult!=$checkTotal){
+    $_SESSION['captcha']=1;
+    header("Location: index.php");
 }
-
-
-
 
 ?>
