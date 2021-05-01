@@ -3,10 +3,20 @@ session_start();
 
 include "perfect_function.php";
 $captchaResult = $_POST['captchaResult'];
-$firstnumber = $_POST['firstnumber'];
-$secondnumber = $_POST['secondnumber'];
+$firstNumber = $_POST['firstNumber'];
+$secondNumber = $_POST['secondNumber'];
+$randomSymbol = $_POST['randomSymbol'];
+if ($randomSymbol == "+") {
+    $checkTotal = $firstNumber + $secondNumber;
+    echo $firstNumber . $randomSymbol . $secondNumber . "=" . $checkTotal . "<br> userAnswer=" . $captchaResult;
+  } if ($randomSymbol == "-") {
+    $checkTotal = $firstNumber - $secondNumber;
+    echo $firstNumber . $randomSymbol . $secondNumber . " = " . $checkTotal . "<br> userAnswer=" . $captchaResult;
+  } if ($randomSymbol == "*") {
+    $checkTotal = $firstNumber * $secondNumber;
+    echo $firstNumber . $randomSymbol . $secondNumber . " = " . $checkTotal . "<br> userAnswer=" . $captchaResult;
+  }
 
-$checkTotal = $firstnumber + $secondnumber;
 $table_name="accounts";
 $username=$_POST['username'];
 $password=$_POST['password'];
@@ -17,7 +27,7 @@ $user_data = get_where_custom($table_name, "username", $username);
         $password1 = $row['password1'];
         
 
-        $fullname=$row['firstname'];
+        $fullname=$row['username'];
         
     }
 
