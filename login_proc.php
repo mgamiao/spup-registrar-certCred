@@ -36,7 +36,7 @@ if (($password1==$password) and ($captchaResult==$checkTotal)){
     
     // echo $password." == ".$password1."<br>";
     $_SESSION['username']=$username;
-    $_SESSION['acct_type']=$acctType;
+    $_SESSION['access']=$acctType;
     // $_SESSION['firstlast']=$firstname." ".$lastname;
     $_SESSION['fullname']=$fullname;
     // echo $_SESSION['firstlast'];

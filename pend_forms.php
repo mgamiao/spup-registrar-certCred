@@ -2,6 +2,7 @@
 session_start();
 
 include "perfect_function.php";
+include "header.php";
 
 ?>
 <!DOCTYPE html>
@@ -145,7 +146,7 @@ include "perfect_function.php";
         <td><?= $form_type ?></td>
         
 
-        <?php if($_SESSION['access']=="2"){ ?>
+        <?php if($_SESSION['access']=="1"){ ?>
             
         <td>
         <!-- <a href="stud_deact.php?id=<?= $id?>" class="btn btn-secondary btn-icon-split" style="margin-left: 1%;">

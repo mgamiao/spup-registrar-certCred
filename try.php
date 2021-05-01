@@ -1,8 +1,10 @@
-<html>
-    
-    <form action="captcha.php" method="POST">
-    <h2> Wrong answer please try again </h2>
-    <input  type="submit" value= "Back"/>
-</form>
+<?php
+include "perfect_function.php";
 
-</html>
+$password = "12";
+
+$hashed_password = _hash_string($password);
+
+echo $hashed_password;
+
+?>
