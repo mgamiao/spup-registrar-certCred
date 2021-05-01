@@ -37,7 +37,7 @@ session_start();
             <!-- Nested Row within Card Body -->
             <div class="row">
               <div class="col-lg-6 d-none d-lg-block text-light" style="margin: auto;">
-              <div style="text-align: center;"><h1><b>Smart Application for<br>School Credentials and<br>Certification</b> </h1></div>
+              <div style="text-align: center;"><h1><b>Web Application for<br>School Credentials and<br>Certification</b> </h1></div>
             </div>
               <div class="col-lg-6">
                 <div class="p-5">
@@ -55,6 +55,15 @@ session_start();
                       <?php
                         $min_number = 1;
                         $max_number = 10;
+                        $symbol = array("+", "-", "*");
+                        $random_symbol = array_rand($symbol, 1);
+                        if ($random_symbol == "0") {
+                          $random_symbol = "+";
+                        } if ($random_symbol == "1") {
+                          $random_symbol = "-";
+                        } if ($random_symbol == "2") {
+                          $random_symbol = "*";
+                        }
                         $random_number1 = mt_rand($min_number , $max_number);  
                         $random_number2 = mt_rand($min_number , $max_number);    
                       ?>
@@ -64,12 +73,14 @@ session_start();
                       <span class="text-light"> Please solve this problem to prove that you are not a bot <br> </span>
 
                         <?php
-                          echo $random_number1 . ' + ' . $random_number2 . ' = ';
+                          echo "<span class='text-light'>" . $random_number1 . " " . $random_symbol . " " . $random_number2 . ' = ' . "</span>";
                         ?>
 
                         <input name="captchaResult" type="text" size="4" required/>
-                        <input name="firstnumber" type="hidden" value= "<?php echo $random_number1; ?>"/>
-                        <input name="secondnumber" type="hidden" value= "<?php echo $random_number2; ?>"/>
+                        <input name="firstNumber" type="hidden" value= "<?php echo $random_number1; ?>"/>
+                        <input name="randomSymbol" type="hidden" value="<?php echo $random_symbol; ?>"/>
+                        <input name="secondNumber" type="hidden" value= "<?php echo $random_number2; ?>"/>
+                        
                       </div>
 
                       
