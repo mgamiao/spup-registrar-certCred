@@ -54,6 +54,14 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
+        <a class="nav-link collapsed" href="pend_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+          
+          <span>Pending Forms</span>
+        </a>
+      
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link collapsed" href="req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
           
           <span>Requested Forms</span>
