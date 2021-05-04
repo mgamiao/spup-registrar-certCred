@@ -37,7 +37,7 @@ include "header.php";
             echo "
                 <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
                     <div class='card-body'>
-                    RECORD SUCCESSFULLY ADDED
+                    RECORD SUCCESSFULLY APPROVED
                     </div>
                 </div>";
                 unset($_SESSION['alert_msg']);
@@ -132,6 +132,7 @@ include "header.php";
 
         foreach ($get_userData as $key => $row) {
             
+            $id = $row['id'];
             $fullname = $row['fullname'] ;
             $dept = $row['dept'];
             $form_type = $row['form_type'];
@@ -159,7 +160,7 @@ include "header.php";
                 </span>
         </a> -->
         &nbsp;&nbsp;
-            <a href="stud_edit.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="req_view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
             </span>
@@ -168,7 +169,7 @@ include "header.php";
                 </span>
             </a>
         &nbsp;&nbsp;&nbsp;
-        <a href="stud_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+        <a href="form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>
