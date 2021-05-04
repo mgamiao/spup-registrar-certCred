@@ -28,7 +28,7 @@ $user_data = get_where_custom($table_name, "username", $username);
         
 
         $fullname=$row['username'];
-
+        $acctType=$row['acct_type'];
         
     }
 
