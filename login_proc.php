@@ -19,7 +19,7 @@ if ($randomSymbol == "+") {
 
 $table_name="accounts";
 $username=$_POST['username'];
-$password=$_POST['password'];
+$password=_hash_string($_POST['password']);
 // echo $username."<br>";
 
 $user_data = get_where_custom($table_name, "username", $username);
@@ -28,6 +28,7 @@ $user_data = get_where_custom($table_name, "username", $username);
         
 
         $fullname=$row['username'];
+
         
     }
 
@@ -35,6 +36,7 @@ if (($password1==$password) and ($captchaResult==$checkTotal)){
     
     // echo $password." == ".$password1."<br>";
     $_SESSION['username']=$username;
+    $_SESSION['access']=$acctType;
     // $_SESSION['firstlast']=$firstname." ".$lastname;
     $_SESSION['fullname']=$fullname;
     // echo $_SESSION['firstlast'];
