@@ -144,17 +144,7 @@ include "header.php";
                 </span>
             </a>
         
-        &nbsp;&nbsp;
-        <?php if($_SESSION['access']=="1"){ ?>
-            <a href="req_accept_proc.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
-            <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
-            </span>
-            <span class="text">
-                    Decline
-                </span>
-            </a>
-            <?php } ?>
+       
         &nbsp;&nbsp;
         
         <a href="req_forms.php" class="btn btn-danger btn-icon-split btn-md">
