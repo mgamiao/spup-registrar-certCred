@@ -1,9 +1,5 @@
 <?php
-session_start();
-
-include "perfect_function.php";
 include "header.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

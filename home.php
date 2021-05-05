@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 include "header.php" ?>;
 <div class="container-fluid">
 
@@ -75,7 +75,7 @@ include "header.php" ?>;
   </div>
 </div> -->
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="template/https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="template/https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
 <script src="js/demo/chart-area-demo.js"></script>
