@@ -34,7 +34,7 @@ var myLineChart = new Chart(ctx, {
   data: {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     datasets: [{
-      label: "Requested Forms",
+      label: "Earnings",
       lineTension: 0.3,
       backgroundColor: "rgba(78, 115, 223, 0.05)",
       borderColor: "rgba(78, 115, 223, 1)",
@@ -46,7 +46,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [0, 2, 0, 5, 3, 0, 20, 3, 7, 0, 13, 20],
+      data: [0, 1, 3, 0, 5, 9, 13, 28, 35, 96, 15, 0],
     }],
   },
   options: {
@@ -74,7 +74,7 @@ var myLineChart = new Chart(ctx, {
       }],
       yAxes: [{
         ticks: {
-          maxTicksLimit: 5,
+          maxTicksLimit: 6,
           padding: 10,
           // Include a dollar sign in the ticks
           callback: function(value, index, values) {

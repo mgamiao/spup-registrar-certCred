@@ -8,23 +8,37 @@ include "header.php" ?>;
   <h1 class="h3 mb-0 text-gray-800">HOMEPAGE</h1>
   
 </div>
-
-<!-- Area Chart -->
-<div class="card shadow mb-4">
-  <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Forms Requester per Month</h6>
-  </div>
-  <div class="card-body">
-      <div class="chart-area">
-          <canvas id="myAreaChart"></canvas>
+<div class="row">
+  <div class="col-lg-6" >
+    <!-- Area Chart -->
+    <div class="card shadow mb-4">
+      <div class="card-header py-3" >
+          <h6 class="m-0 font-weight-bold text-primary">Forms Requested per Month</h6>
       </div>
+      <div class="card-body">
+          <div class="chart-area">
+              <canvas id="myAreaChart"></canvas>
+          </div>
+      </div>
+    </div>
+  </div>
+  <!-- Pie Chart -->
+  <div class="col-lg-6">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <i class="fas fa-chart-pie mr-1"></i>
+            <span class="font-weight-bold text-primary">Forms Requested per School</span>
+        </div>
+        <div class="card-body"><canvas id="myPieChart" width="100%" height="41"></canvas></div>
+
+    </div>
   </div>
 </div>
 
 <!-- Content Row -->
-<div class="row">
+<!--<div class="row">
 
-  <!-- Earnings (Monthly) Card Example -->
+   Earnings (Monthly) Card Example -->
   <!-- <div class="col-xl-3 col-md-6 mb-4">
     <div class="card border-left-primary shadow h-100 py-2">
       <div class="card-body">
@@ -61,5 +75,7 @@ include "header.php" ?>;
   </div>
 </div> -->
 
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
 <script src="js/demo/chart-area-demo.js"></script>
