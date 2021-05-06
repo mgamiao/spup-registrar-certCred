@@ -11,7 +11,7 @@ $_SESSION['alert_msg']=3;
 
 
 
- 
-header("Location: req_forms.php");
+
+header("Location: pend_forms.php");
 
 ?>

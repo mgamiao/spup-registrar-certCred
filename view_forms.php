@@ -79,12 +79,48 @@ include "header.php";
 
 
 
-        <tbody style="text-align: center; color: white;">
+<div class="card w-100 bg-gradient-dark" style="border:none;">
+                <div class="card-header py-3 bg-secondary" style="border:none;">
+                <h1 class="m-0 font-weight-bold text-light">View Forms</h1>
+                </div>
+                <div class="card-body">
+                <form method="post" action="stud_search.php">
+                    <div class="input-group mb-3 w-25 " style="float: left;">
+                        <input type="text" class="form-control" placeholder="" name="search" autocomplete="off" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary text-light" type="submit" id="button-addon2">Search</button>
+                        </div>
+                        </div>
+                </form>
 
-    
-        <div class="card-header py-3 bg-secondary" style="border:none;">
-                <h1 class="m-0 font-weight-bold text-light">The Form will display here</h1>
-        </div>
+               
+
+                <div class="table-responsive" >
+                    <table class="table" id="dataTable" width="100%" cellspacing="0" >
+        
+        <thead class="bg-secondary" style="text-align: center; color: white;">
+        <tr>
+            <td>Full Name</td>
+            <td>Department</td>
+            <td>Type of Form</td>
+            <td>Option</td>
+            
+        </tr>
+        </thead>
+
+        <tfoot class="bg-secondary" style="text-align: center; color: white;">
+        <tr>
+
+            <td>Full Name</td>
+            <td>Department</td>
+            <td>Type of Form</td>
+            <td>Option</td>
+            
+
+        </tr>
+        </tfoot>
+
+        <tbody style="text-align: center; color: white;">
         
     <br>
     <?php
@@ -101,14 +137,13 @@ include "header.php";
            $formType = $row['form_type'];
            $status = $row['status'];
            
-       }
-       echo $id. "<br>".
-            $fullname. "<br>". 
-            $dept. "<br>". 
-            $formType; 
-
+        ?>
+       <tr>
+       <td><?= $fullname?></td>
+       <td><?= $dept ?></td>
+       <td><?= $formType ?></td>
             
-?>   
+   
 <br>
         <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
             
@@ -133,7 +168,7 @@ include "header.php";
             </a>
         
         &nbsp;&nbsp;
-            <a href="accept_proc.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="form_decline.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
             </span>
@@ -156,6 +191,7 @@ include "header.php";
         <?php } ?>
         </td>
     </tr>
+    <?php } ?>
    
 
         

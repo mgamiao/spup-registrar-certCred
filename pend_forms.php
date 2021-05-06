@@ -69,7 +69,7 @@ include "header.php";
             echo "
                 <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
                     <div class='card-body'>
-                    STUDENT SUCCESSFULLY DEACTIVATED
+                    RECORD DECLINED
                     </div>
                 </div>";
                 unset($_SESSION['alert_msg']);

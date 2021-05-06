@@ -9,11 +9,11 @@ include "header.php";
 
 <div class="card shadow w-50 bg-gradient-dark" style="border:none;">
                 <div class="card-header py-3 bg-secondary" style="border:none;">
-                  <h1 class="m-0 font-weight-bold text-light">DELETE STUDENT</h1>
+                  <h1 class="m-0 font-weight-bold text-light">DELETE FORM</h1>
                 </div>
                 
                 <div class="card-body">
-                  <h5 class="text-light">Are you sure you want to delete this student record?</h5>
+                  <h5 class="text-light">Are you sure you want to delete this requested form?</h5>
            <br>
                 <i><a href="form_delete_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
                 <span class="icon text-white-50">

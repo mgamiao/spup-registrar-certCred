@@ -1,7 +1,7 @@
 <?php
 include "perfect_function.php";
 
-$password = "13";
+$password = "123";
 
 $hashed_password = _hash_string($password);
 
