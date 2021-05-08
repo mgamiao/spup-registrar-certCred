@@ -1,22 +1,14 @@
 <?php
     session_start();
-	include "perfect_function.php";
-    
+    include "perfect_function.php";
 
-	$table_name ='forms';
+$table_name = "forms";
 
-	//get user ID from URL
-	$id = $_GET['id'];
-    $status = $_GET['status'];
+//get user ID from URL
+$id = $_GET['id'];
+delete($id, $table_name);
 
-	$user_editedvalues = array (
-		//columname from table => value from post
-			"status" => 2
-			
-	);
-	
-	update($user_editedvalues, $id, $table_name);
-    $_SESSION['alert_msg']=1;
+
 
 // ito nalang yung kulang?
 _fire_email($target_email, $subject, $msg);
@@ -32,8 +24,6 @@ _fire_email($target_email, $subject, $msg);
 
 
 $_SESSION['alert_msg']=5; 
-	header("Location: archived_forms.php");
-
+header("Location: pend_forms.php");
 
 ?>
-

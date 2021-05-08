@@ -15,7 +15,7 @@ include "header.php";
                 <div class="card-body">
                   <h5 class="text-light">Are you sure you want to delete this requested form?</h5>
            <br>
-                <i><a href="form_delete_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
+                <i><a href="req_form_delete_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
                 <span class="icon text-white-50">
                 <i class="fas fa-check"></i>
             </span>

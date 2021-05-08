@@ -1,4 +1,10 @@
-
+<?php
+	session_start();
+	if ($_SESSION['username']=="") {
+		header("Location: logout.php");
+	}
+?>
+<?php include "perfect_function.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,10 +76,17 @@
         </a>
       
       </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="archived_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+          
+          <span>Archived Forms</span>
+        </a>
+      
+      </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="notif.php"  aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href=""  aria-expanded="true" aria-controls="collapseUtilities">
           
           <span>Notifications</span>
         </a>
@@ -185,7 +198,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="index.php">Logout</a>
+          <a class="btn btn-primary" href="logout.php">Logout</a>
         </div>
       </div>
     </div>
