@@ -33,7 +33,7 @@ include "header.php";
             echo "
                 <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
                     <div class='card-body'>
-                    RECORD SUCCESSFULLY ADDED
+                    RECORD SUCCESSFULLY APPROVED
                     </div>
                 </div>";
                 unset($_SESSION['alert_msg']);
@@ -69,17 +69,17 @@ include "header.php";
             echo "
                 <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
                     <div class='card-body'>
-                    RECORD DECLINED
+                    STUDENT SUCCESSFULLY DEACTIVATED
                     </div>
                 </div>";
                 unset($_SESSION['alert_msg']);
         }
     }
     ?>
-        
+
     <div class="card w-100 bg-gradient-dark" style="border:none;">
                 <div class="card-header py-3 bg-secondary" style="border:none;">
-                <h1 class="m-0 font-weight-bold text-light">Pending Forms</h1>
+                <h1 class="m-0 font-weight-bold text-light">Archived Forms</h1>
                 </div>
                 <div class="card-body">
                 <form method="post" action="stud_search.php">
@@ -115,6 +115,7 @@ include "header.php";
             <td>E-mail</td>
             <td>Option</td>
             
+            
         </tr>
         </thead>
 
@@ -146,7 +147,7 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 0;
+        $condition = 2;
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -172,8 +173,7 @@ include "header.php";
 
     ?>
     
-    
-
+<?php if($status=="2"){ ?>
     <tr>
         <td><?= $lastName?></td>
         <td><?= $firstName?></td>
@@ -191,9 +191,8 @@ include "header.php";
         <td><?= $mobileNum?></td>
         <td><?= $email?></td>
         
-        
 
-        <?php if($_SESSION['access']=="1"){ ?>
+        
             
         <td>
         <!-- <a href="stud_deact.php?id=<?= $id?>" class="btn btn-secondary btn-icon-split" style="margin-left: 1%;">
@@ -204,10 +203,8 @@ include "header.php";
                     DEACTIVATE
                 </span>
         </a> -->
-
-       
         &nbsp;&nbsp;
-            <a href="view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="archived_view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
             </span>
@@ -215,8 +212,8 @@ include "header.php";
                     View
                 </span>
             </a>
-        &nbsp;&nbsp;
-        <a href="form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+        &nbsp;&nbsp;&nbsp;
+        <a href="req_form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>

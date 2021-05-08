@@ -98,20 +98,44 @@ include "header.php";
         
         <thead class="bg-secondary" style="text-align: center; color: white;">
         <tr>
-            <td>Full Name</td>
-            <td>Department</td>
+            <td>Last Name</td>
+            <td>First Name</td>
+            <td>Middle Name</td>
+            <td>School</td>
             <td>Type of Form</td>
+            <td>No. of Copies</td>
+            <td>No. of Request</td>
+            <td>Reason</td>
+            <td>Mode of Claiming</td>
+            <td>Address</td>
+            <td>Course Completed</td>
+            <td>Date Graduated</td>
+            <td>Undergraduate</td>
+            <td>Mobile Number</td>
+            <td>E-mail</td>
             <td>Option</td>
+            
             
         </tr>
         </thead>
 
         <tfoot class="bg-secondary" style="text-align: center; color: white;">
         <tr>
-
-            <td>Full Name</td>
-            <td>Department</td>
+            <td>Last Name</td>
+            <td>First Name</td>
+            <td>Middle Name</td>
+            <td>School</td>
             <td>Type of Form</td>
+            <td>No. of Copies</td>
+            <td>No. of Request</td>
+            <td>Reason</td>
+            <td>Mode of Claiming</td>
+            <td>Address</td>
+            <td>Course Completed</td>
+            <td>Date Graduated</td>
+            <td>Undergraduate</td>
+            <td>Mobile Number</td>
+            <td>E-mail</td>
             <td>Option</td>
             
 
@@ -129,9 +153,21 @@ include "header.php";
         foreach ($get_userData as $key => $row) {
             
             $id = $row['id'];
-            $fullname = $row['fullname'] ;
-            $dept = $row['dept'];
-            $form_type = $row['form_type'];
+            $lastName = $row['lastname'] ;
+            $firstName = $row['firstname'] ;
+            $middleName = $row['middlename'] ;
+            $school = $row['school'];
+            $formType = $row['form_type'];
+            $numofCopies = $row['numofcopies'];
+            $numofRequest = $row['numofrequest'];
+            $reason = $row['reason'];
+            $modeofClaim = $row['modeofclaiming'];
+            $address = $row['address'];
+            $courseCompleted = $row['coursecompleted'];
+            $dateGrad = $row['dategraduated'];
+            $underGrad = $row['undergraduate'];
+            $mobileNum = $row['mobilenum'];
+            $email = $row['email'];
             $status = $row['status'];
             
 
@@ -139,9 +175,21 @@ include "header.php";
     
 <?php if($status=="1"){ ?>
     <tr>
-        <td><?= $fullname?></td>
-        <td><?= $dept ?></td>
-        <td><?= $form_type ?></td>
+        <td><?= $lastName?></td>
+        <td><?= $firstName?></td>
+        <td><?= $middleName?></td>
+        <td><?= $school?></td>
+        <td><?= $formType?></td>
+        <td><?= $numofCopies?></td>
+        <td><?= $numofRequest?></td>
+        <td><?= $reason?></td>
+        <td><?= $modeofClaim?></td>
+        <td><?= $address?></td>
+        <td><?= $courseCompleted?></td>
+        <td><?= $dateGrad?></td>
+        <td><?= $underGrad?></td>
+        <td><?= $mobileNum?></td>
+        <td><?= $email?></td>
         
 
         

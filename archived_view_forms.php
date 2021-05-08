@@ -69,17 +69,19 @@ include "header.php";
             echo "
                 <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
                     <div class='card-body'>
-                    RECORD DECLINED
+                    STUDENT SUCCESSFULLY DEACTIVATED
                     </div>
                 </div>";
                 unset($_SESSION['alert_msg']);
         }
     }
     ?>
-        
-    <div class="card w-100 bg-gradient-dark" style="border:none;">
+
+
+
+<div class="card w-100 bg-gradient-dark" style="border:none;">
                 <div class="card-header py-3 bg-secondary" style="border:none;">
-                <h1 class="m-0 font-weight-bold text-light">Pending Forms</h1>
+                <h1 class="m-0 font-weight-bold text-light">View Forms</h1>
                 </div>
                 <div class="card-body">
                 <form method="post" action="stud_search.php">
@@ -120,7 +122,7 @@ include "header.php";
 
         <tfoot class="bg-secondary" style="text-align: center; color: white;">
         <tr>
-            <td>Last Name</td>
+        <td>Last Name</td>
             <td>First Name</td>
             <td>Middle Name</td>
             <td>School</td>
@@ -142,39 +144,36 @@ include "header.php";
         </tfoot>
 
         <tbody style="text-align: center; color: white;">
-
+        
+    <br>
     <?php
-        $table_name = "forms";
-        $column = "status";
-        $condition = 0;
-        $get_userData = get_where_custom($table_name, $column, $condition);
-
-        foreach ($get_userData as $key => $row) {
-            
-            $id = $row['id'];
-            $lastName = $row['lastname'] ;
-            $firstName = $row['firstname'] ;
-            $middleName = $row['middlename'] ;
-            $school = $row['school'];
-            $formType = $row['form_type'];
-            $numofCopies = $row['numofcopies'];
-            $numofRequest = $row['numofrequest'];
-            $reason = $row['reason'];
-            $modeofClaim = $row['modeofclaiming'];
-            $address = $row['address'];
-            $courseCompleted = $row['coursecompleted'];
-            $dateGrad = $row['dategraduated'];
-            $underGrad = $row['undergraduate'];
-            $mobileNum = $row['mobilenum'];
-            $email = $row['email'];
-            $status = $row['status'];
-            
-
-    ?>
-    
-    
-
-    <tr>
+       $id = $_GET['id'];
+      
+   
+       $table_name = "forms";
+       $get_userData = get_where($table_name, $id);
+       //fetch result and pass it  to an array
+       foreach ($get_userData as $key => $row) {
+        $id = $row['id'];
+        $lastName = $row['lastname'] ;
+        $firstName = $row['firstname'] ;
+        $middleName = $row['middlename'] ;
+        $school = $row['school'];
+        $formType = $row['form_type'];
+        $numofCopies = $row['numofcopies'];
+        $numofRequest = $row['numofrequest'];
+        $reason = $row['reason'];
+        $modeofClaim = $row['modeofclaiming'];
+        $address = $row['address'];
+        $courseCompleted = $row['coursecompleted'];
+        $dateGrad = $row['dategraduated'];
+        $underGrad = $row['undergraduate'];
+        $mobileNum = $row['mobilenum'];
+        $email = $row['email'];
+        $status = $row['status'];
+           
+        ?>
+       <tr>
         <td><?= $lastName?></td>
         <td><?= $firstName?></td>
         <td><?= $middleName?></td>
@@ -190,38 +189,20 @@ include "header.php";
         <td><?= $underGrad?></td>
         <td><?= $mobileNum?></td>
         <td><?= $email?></td>
-        
-        
-
-        <?php if($_SESSION['access']=="1"){ ?>
+            
+   
+        <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
             
         <td>
-        <!-- <a href="stud_deact.php?id=<?= $id?>" class="btn btn-secondary btn-icon-split" style="margin-left: 1%;">
-                    <span class="icon text-red-50">
-                    <i class="fas fa-user-slash"></i>
-                </span>
-                <span class="text">
-                    DEACTIVATE
-                </span>
-        </a> -->
 
-       
         &nbsp;&nbsp;
-            <a href="view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
-            <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
-            </span>
-            <span class="text">
-                    View
-                </span>
-            </a>
-        &nbsp;&nbsp;
-        <a href="form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+        
+        <a href="archived_forms.php" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>
         <span class="text">
-            Delete
+            Back
         </span>
             </a>
             </a>
@@ -229,9 +210,9 @@ include "header.php";
 
         <?php } ?>
     </tr>
+   <?php } ?>
 
-
-        <?php   }   ?>
+        
     </tbody>
 </table>
 </div>

@@ -9,8 +9,8 @@ $id = $_GET['id'];
 delete($id, $table_name);
 
 
-;
 
+// ito nalang yung kulang?
 _fire_email($target_email, $subject, $msg);
 {
     $to = "captainsteven01@gmail.com";

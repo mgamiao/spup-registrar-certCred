@@ -100,9 +100,21 @@ include "header.php";
         
         <thead class="bg-secondary" style="text-align: center; color: white;">
         <tr>
-            <td>Full Name</td>
-            <td>Department</td>
+            <td>Last Name</td>
+            <td>First Name</td>
+            <td>Middle Name</td>
+            <td>School</td>
             <td>Type of Form</td>
+            <td>No. of Copies</td>
+            <td>No. of Request</td>
+            <td>Reason</td>
+            <td>Mode of Claiming</td>
+            <td>Address</td>
+            <td>Course Completed</td>
+            <td>Date Graduated</td>
+            <td>Undergraduate</td>
+            <td>Mobile Number</td>
+            <td>E-mail</td>
             <td>Option</td>
             
         </tr>
@@ -110,13 +122,22 @@ include "header.php";
 
         <tfoot class="bg-secondary" style="text-align: center; color: white;">
         <tr>
-
-            <td>Full Name</td>
-            <td>Department</td>
+            <td>Last Name</td>
+            <td>First Name</td>
+            <td>Middle Name</td>
+            <td>School</td>
             <td>Type of Form</td>
+            <td>No. of Copies</td>
+            <td>No. of Request</td>
+            <td>Reason</td>
+            <td>Mode of Claiming</td>
+            <td>Address</td>
+            <td>Course Completed</td>
+            <td>Date Graduated</td>
+            <td>Undergraduate</td>
+            <td>Mobile Number</td>
+            <td>E-mail</td>
             <td>Option</td>
-            
-
         </tr>
         </tfoot>
 
@@ -131,17 +152,41 @@ include "header.php";
        $get_userData = get_where($table_name, $id);
        //fetch result and pass it  to an array
        foreach ($get_userData as $key => $row) {
-           $id = $row['id'];
-           $fullname = $row['fullname'];
-           $dept = $row['dept'];
-           $formType = $row['form_type'];
-           $status = $row['status'];
+            $id = $row['id'];
+            $lastName = $row['lastname'] ;
+            $firstName = $row['firstname'] ;
+            $middleName = $row['middlename'] ;
+            $school = $row['school'];
+            $formType = $row['form_type'];
+            $numofCopies = $row['numofcopies'];
+            $numofRequest = $row['numofrequest'];
+            $reason = $row['reason'];
+            $modeofClaim = $row['modeofclaiming'];
+            $address = $row['address'];
+            $courseCompleted = $row['coursecompleted'];
+            $dateGrad = $row['dategraduated'];
+            $underGrad = $row['undergraduate'];
+            $mobileNum = $row['mobilenum'];
+            $email = $row['email'];
+            $status = $row['status'];
            
         ?>
        <tr>
-       <td><?= $fullname?></td>
-       <td><?= $dept ?></td>
-       <td><?= $formType ?></td>
+        <td><?= $lastName?></td>
+        <td><?= $firstName?></td>
+        <td><?= $middleName?></td>
+        <td><?= $school?></td>
+        <td><?= $formType?></td>
+        <td><?= $numofCopies?></td>
+        <td><?= $numofRequest?></td>
+        <td><?= $reason?></td>
+        <td><?= $modeofClaim?></td>
+        <td><?= $address?></td>
+        <td><?= $courseCompleted?></td>
+        <td><?= $dateGrad?></td>
+        <td><?= $underGrad?></td>
+        <td><?= $mobileNum?></td>
+        <td><?= $email?></td>
             
    
         <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>

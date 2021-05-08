@@ -76,10 +76,17 @@
         </a>
       
       </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="archived_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+          
+          <span>Archived Forms</span>
+        </a>
+      
+      </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="notif.php"  aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href=""  aria-expanded="true" aria-controls="collapseUtilities">
           
           <span>Notifications</span>
         </a>
