@@ -8,13 +8,13 @@ $secondNumber = $_POST['secondNumber'];
 $randomSymbol = $_POST['randomSymbol'];
 if ($randomSymbol == "+") {
     $checkTotal = $firstNumber + $secondNumber;
-    echo $firstNumber . $randomSymbol . $secondNumber . "=" . $checkTotal . "<br> userAnswer=" . $captchaResult;
+    //echo $firstNumber . $randomSymbol . $secondNumber . "=" . $checkTotal . "<br> userAnswer=" . $captchaResult;
   } if ($randomSymbol == "-") {
     $checkTotal = $firstNumber - $secondNumber;
-    echo $firstNumber . $randomSymbol . $secondNumber . " = " . $checkTotal . "<br> userAnswer=" . $captchaResult;
+    //echo $firstNumber . $randomSymbol . $secondNumber . " = " . $checkTotal . "<br> userAnswer=" . $captchaResult;
   } if ($randomSymbol == "*") {
     $checkTotal = $firstNumber * $secondNumber;
-    echo $firstNumber . $randomSymbol . $secondNumber . " = " . $checkTotal . "<br> userAnswer=" . $captchaResult;
+    //echo $firstNumber . $randomSymbol . $secondNumber . " = " . $checkTotal . "<br> userAnswer=" . $captchaResult;
   }
 
 $table_name="accounts";

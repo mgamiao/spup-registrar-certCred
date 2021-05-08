@@ -99,20 +99,31 @@ session_start();
                     if (isset($_SESSION['login'])){
                       unset($_SESSION['login']);?>
                       
-                      <span style="color: red; font-weight: bold;">&nbsp;&nbsp;Wrong username or password</span>
+                      <span style="color: red; font-weight: bold;">Wrong username or password</span>
                       <br>
                     <?php
                     }
                     ?>
+
                     <?php
                     if (isset($_SESSION['captcha'])){
                       unset($_SESSION['captcha']);?>
                       
-                      <span style="color: red; font-weight: bold;">&nbsp;&nbsp;Incorrect captcha</span>
+                      <span style="color: red; font-weight: bold;">Incorrect captcha</span>
                       <br>
                     <?php
                     }
                     ?>
+                    
+                    <?php
+                    if (isset($_SESSION['timeout'])){
+                      unset($_SESSION['timeout']);?>
+                      <script>window.alert('You were inactive for 5 minutes. Please log in again')</script>
+                      <br>
+                    <?php
+                    }
+                    ?>
+
                     <br>
                     <button type=submit class="btn btn-primary btn-user btn-block">
                       Login

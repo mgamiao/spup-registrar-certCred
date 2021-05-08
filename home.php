@@ -1,6 +1,11 @@
 <?php 
 
-include "header.php" ?>;
+include "header.php";
+
+?>;
+
+
+
 <div class="container-fluid">
 
 <!-- Page Heading -->
@@ -79,3 +84,28 @@ include "header.php" ?>;
 <script src="template/https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
 <script src="js/demo/chart-area-demo.js"></script>
+
+
+<script>
+  function idleLogout() {
+      var t;
+      window.onload = resetTimer;
+      window.onmousemove = resetTimer;
+      window.onmousedown = resetTimer;  // catches touchscreen presses as well      
+      window.ontouchstart = resetTimer; // catches touchscreen swipes as well 
+      window.onclick = resetTimer;      // catches touchpad clicks as well
+      window.onkeydown = resetTimer;   
+      window.addEventListener('scroll', resetTimer, true); // improved; see comments
+
+      function yourFunction() {
+        window.alert('You were inactive for 5 minutes. Please log in again')
+        window.location.href = 'logout.php';
+      }
+
+      function resetTimer() {
+          clearTimeout(t);
+          t = setTimeout(yourFunction, 5000);  // time is in milliseconds
+      }
+  }
+  idleLogout();
+</script>
