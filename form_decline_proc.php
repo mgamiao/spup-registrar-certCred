@@ -2,25 +2,51 @@
     session_start();
     include "perfect_function.php";
 
+    $id = $_GET['id'];
+	$table_name = "forms";
+	$get_userData = get_where($table_name, $id);
+	//fetch result and pass it  to an array
+	foreach ($get_userData as $key => $row) {
+		 $id = $row['id'];
+		 $email = $row['email'];
+		
+	}
+    require 'phpmailer/includes/PHPMailer.php';
+	require 'phpmailer/includes/SMTP.php';
+	require 'phpmailer/includes/Exception.php';
+
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\SMTP;
+	use PHPMailer\PHPMailer\Exception;
+
+	$mail = new PHPMailer();
+
+	$mail->isSMTP();
+	$mail->Host = "smtp.gmail.com";
+	$mail->SMTPAuth = "true";
+	$mail->SMTPSecure = "tls";
+	$mail->Port = "587";
+	$mail->Username = "larajerick169@gmail.com";
+	$mail->Password = "jericklara18";
+	$mail->Subject = "Hello ";
+	$mail->setFrom("larajerick169@gmail.com");
+	$mail->Body = "Form declined";
+	$mail->addAddress($email);
+	
+	if ($mail->Send() ) {
+		header("Location: archived_forms.php");
+	}else{
+		echo "Error";
+	}
+
+	$mail->smtpClose();
+
+
 $table_name = "forms";
 
 //get user ID from URL
 $id = $_GET['id'];
 delete($id, $table_name);
-
-
-
-// ito nalang yung kulang?
-_fire_email($target_email, $subject, $msg);
-{
-    $to = "captainsteven01@gmail.com";
-    $subject = "hello";
-    $message = "Your form was decline.";
-    $headers = "From: captainsteven01@gmail.com\r\n";
-    $headers .= "Content-type: text/html; charset=\"UTF-8\"; format=flowed \r\n";
-    mail($to, $subject, $message, $headers);
-}
-
 
 
 $_SESSION['alert_msg']=5; 

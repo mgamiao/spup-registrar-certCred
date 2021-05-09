@@ -26,8 +26,8 @@ $user_data = get_where_custom($table_name, "username", $username);
 	foreach ($user_data as $key => $row) {
         $password1 = $row['password1'];
         
-        $firstname=$row['firstname'];
-        $lastname=$row['lastname'];
+        $fullname=$row['fullname'];
+        
         $acctType=$row['acct_type'];
         
     }
@@ -37,8 +37,7 @@ if (($password1==$password) and ($captchaResult==$checkTotal)){
     
     $_SESSION['username']=$username;
     $_SESSION['access']=$acctType;
-    $_SESSION['lastname']=$lastname;
-    $_SESSION['firstname']=$firstname;
+    $_SESSION['fullname']=$fullname;
 
     header("Location: home.php");
 } if ($password1!=$password) {

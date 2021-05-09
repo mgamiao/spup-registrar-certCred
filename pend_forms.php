@@ -82,16 +82,6 @@ include "header.php";
                 <h1 class="m-0 font-weight-bold text-light">Pending Forms</h1>
                 </div>
                 <div class="card-body">
-                <form method="post" action="stud_search.php">
-                    <div class="input-group mb-3 w-25 " style="float: left;">
-                        <input type="text" class="form-control" placeholder="" name="search" autocomplete="off" required>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary text-light" type="submit" id="button-addon2">Search</button>
-                        </div>
-                        </div>
-                </form>
-
-               
 
                 <div class="table-responsive" >
                     <table class="table" id="dataTable" width="100%" cellspacing="0" >
@@ -103,15 +93,7 @@ include "header.php";
             <td>Middle Name</td>
             <td>School</td>
             <td>Type of Form</td>
-            <td>No. of Copies</td>
-            <td>No. of Request</td>
             <td>Reason</td>
-            <td>Mode of Claiming</td>
-            <td>Address</td>
-            <td>Course Completed</td>
-            <td>Date Graduated</td>
-            <td>Undergraduate</td>
-            <td>Mobile Number</td>
             <td>E-mail</td>
             <td>Option</td>
             
@@ -125,15 +107,7 @@ include "header.php";
             <td>Middle Name</td>
             <td>School</td>
             <td>Type of Form</td>
-            <td>No. of Copies</td>
-            <td>No. of Request</td>
             <td>Reason</td>
-            <td>Mode of Claiming</td>
-            <td>Address</td>
-            <td>Course Completed</td>
-            <td>Date Graduated</td>
-            <td>Undergraduate</td>
-            <td>Mobile Number</td>
             <td>E-mail</td>
             <td>Option</td>
             
@@ -157,15 +131,7 @@ include "header.php";
             $middleName = $row['middlename'] ;
             $school = $row['school'];
             $formType = $row['form_type'];
-            $numofCopies = $row['numofcopies'];
-            $numofRequest = $row['numofrequest'];
             $reason = $row['reason'];
-            $modeofClaim = $row['modeofclaiming'];
-            $address = $row['address'];
-            $courseCompleted = $row['coursecompleted'];
-            $dateGrad = $row['dategraduated'];
-            $underGrad = $row['undergraduate'];
-            $mobileNum = $row['mobilenum'];
             $email = $row['email'];
             $status = $row['status'];
             
@@ -180,15 +146,7 @@ include "header.php";
         <td><?= $middleName?></td>
         <td><?= $school?></td>
         <td><?= $formType?></td>
-        <td><?= $numofCopies?></td>
-        <td><?= $numofRequest?></td>
         <td><?= $reason?></td>
-        <td><?= $modeofClaim?></td>
-        <td><?= $address?></td>
-        <td><?= $courseCompleted?></td>
-        <td><?= $dateGrad?></td>
-        <td><?= $underGrad?></td>
-        <td><?= $mobileNum?></td>
         <td><?= $email?></td>
         
         
@@ -196,16 +154,6 @@ include "header.php";
         <?php if($_SESSION['access']=="1"){ ?>
             
         <td>
-        <!-- <a href="stud_deact.php?id=<?= $id?>" class="btn btn-secondary btn-icon-split" style="margin-left: 1%;">
-                    <span class="icon text-red-50">
-                    <i class="fas fa-user-slash"></i>
-                </span>
-                <span class="text">
-                    DEACTIVATE
-                </span>
-        </a> -->
-
-       
         &nbsp;&nbsp;
             <a href="view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
             <span class="icon text-red-50">
@@ -232,13 +180,35 @@ include "header.php";
 
 
         <?php   }   ?>
-    </tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 
+        
+    </tbody>
+    
+</table>
+
+    
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ <script src="template/vendor/jquery/jquery.min.js"></script> 
+    <!-- <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>   pag meron to ayaw gumana ng logout--> 
+
+    <!-- Core plugin JavaScript-->
+    <script src="template/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="template/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="template/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="template/js/demo/datatables-demo.js"></script>
+    
 
