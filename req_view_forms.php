@@ -81,7 +81,7 @@ include "header.php";
 
 <div class="card w-100 bg-gradient-dark" style="border:none;">
                 <div class="card-header py-3 bg-secondary" style="border:none;">
-                <h1 class="m-0 font-weight-bold text-light">View Forms</h1>
+                <h1 class="m-0 font-weight-bold text-light">View Form</h1>
                 </div>
                 <div class="card-body">
                 <form method="post" action="stud_search.php">
@@ -192,7 +192,7 @@ include "header.php";
         <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
             
         <td>
-        &nbsp;&nbsp;
+        
             <a href="req_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
@@ -202,7 +202,8 @@ include "header.php";
                 </span>
             </a>
         
-        &nbsp;&nbsp;
+            <br>
+            <br>
             <a href="print.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
@@ -213,7 +214,7 @@ include "header.php";
             </a>
         
        
-        &nbsp;&nbsp;
+            <br><br>
         
         <a href="req_forms.php" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">

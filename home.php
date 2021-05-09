@@ -27,7 +27,7 @@
   $inProcessForms = count_inProcess_forms();
   $archivedForms = count_archived_forms();
 
-?>;
+?>
 
 
 

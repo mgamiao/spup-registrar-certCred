@@ -81,7 +81,7 @@ include "header.php";
 
 <div class="card w-100 bg-gradient-dark" style="border:none;">
                 <div class="card-header py-3 bg-secondary" style="border:none;">
-                <h1 class="m-0 font-weight-bold text-light">View Forms</h1>
+                <h1 class="m-0 font-weight-bold text-light">View Form</h1>
                 </div>
                 <div class="card-body">
                 <form method="post" action="stud_search.php">
@@ -122,7 +122,7 @@ include "header.php";
 
         <tfoot class="bg-secondary" style="text-align: center; color: white;">
         <tr>
-        <td>Last Name</td>
+            <td>Last Name</td>
             <td>First Name</td>
             <td>Middle Name</td>
             <td>School</td>
