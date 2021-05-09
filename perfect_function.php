@@ -214,6 +214,186 @@ function count_rows($table_name)
 	return $rowcount;
 }
 
+function count_saste_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'saste'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_saste_pending_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'saste' AND `status` = '0'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_saste_inProcess_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'saste' AND `status` = '1'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_saste_archived_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'saste' AND `status` = '2'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_snahs_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'snahs'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_snahs_pending_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'snahs' AND `status` = '0'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_snahs_inProcess_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'snahs' AND `status` = '1'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_snahs_archived_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'snahs' AND `status` = '2'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_site_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'site'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_site_pending_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'site' AND `status` = '0'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_site_inProcess_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'site' AND `status` = '1'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_site_archived_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'site' AND `status` = '2'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_sbahm_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'sbahm'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_sbahm_pending_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'sbahm' AND `status` = '0'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_sbahm_inProcess_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'sbahm' AND `status` = '1'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_sbahm_archived_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `school` = 'sbahm' AND `status` = '2'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_total_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms`";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_pending_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '0'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_inProcess_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '1'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_archived_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '2'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
 function _fire_email($target_email, $subject, $msg)
 {
     $to = $target_email;
