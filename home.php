@@ -1,6 +1,31 @@
 <?php 
 
-include "header.php";
+  include "header.php";
+
+  $sasteForms = count_school_forms('forms', 'saste');
+  $sastePendingForms = count_school_specific_forms('forms', 'saste', '0');
+  $sasteInProcessForms = count_school_specific_forms('forms', 'saste', '1');
+  $sasteArchivedForms = count_school_specific_forms('forms', 'saste', '2');
+
+  $snahsForms = count_school_forms('forms', 'snahs');
+  $snahsPendingForms = count_school_specific_forms('forms', 'snahs', '0');
+  $snahsInProcessForms = count_school_specific_forms('forms', 'snahs', '1');
+  $snahsArchivedForms = count_school_specific_forms('forms', 'snahs', '2');
+
+  $siteForms = count_school_forms('forms', 'site');
+  $sitePendingForms = count_school_specific_forms('forms', 'site', '0');
+  $siteInProcessForms = count_school_specific_forms('forms', 'site', '1');
+  $siteArchivedForms = count_school_specific_forms('forms', 'site', '2');
+
+  $sbahmForms = count_school_forms('forms', 'sbahm');
+  $sbahmPendingForms = count_school_specific_forms('forms', 'sbahm', '0');
+  $sbahmInProcessForms = count_school_specific_forms('forms', 'sbahm', '1');
+  $sbahmArchivedForms = count_school_specific_forms('forms', 'sbahm', '2');
+
+  $totalForms = count_total_forms();
+  $pendingForms = count_pending_forms();
+  $inProcessForms = count_inProcess_forms();
+  $archivedForms = count_archived_forms();
 
 ?>;
 
@@ -8,84 +33,329 @@ include "header.php";
 
 <div class="container-fluid">
 
-<!-- Page Heading -->
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">HOMEPAGE</h1>
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">HOMEPAGE</h1>
+  </div>
+
+  <div class="row mb-3">
+
+    <!-- Pie Chart -->
+    <div class="col-6 mr-4">
+        <div class="card shadow mb-2">
+            <div class="card-header py-3">
+                <i class="fas fa-chart-pie mr-1"></i>
+                <span class="font-weight-bold text-primary">Forms Requested per School</span>
+            </div>
+            <div class="card-body"><canvas id="myPieChart" width="100%" height="41"></canvas></div>
+
+        </div>
+    </div>
+    <!-- end pie chart -->
+
+    <!-- start all departments stats -->
+    <div class="row col-6">
+        <div class="col-6 ">
+            <div class="card shadow pb-5">
+                <div class="card-header">
+                    <h6 class="m-0 font-weight-bold text-primary">Total Requested Forms</h6>
+                </div>
+                <div class="card-body pt-5">
+                    <?php echo "<h4 style='text-align:center;'>".$totalForms."</h4>" ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="card shadow pb-5">
+                <div class="card-header">
+                    <h6 class="m-0 font-weight-bold text-primary">Total Pending Forms</h6>
+                </div>
+                <div class="card-body pt-5">
+                    <?php echo "<h4 style='text-align:center;'>".$pendingForms."</h4>" ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6" >
+        <div class="card shadow pb-5">
+          <div class="card-header">
+              <h6 class="m-0 font-weight-bold text-primary">Total In Process Forms</h6>
+          </div>
+          <div class="card-body pt-5">
+              <?php echo "<h4 style='text-align:center;'>".$inProcessForms."</h4>" ?>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-6" >
+        <div class="card shadow pb-5">
+          <div class="card-header">
+              <h6 class="m-0 font-weight-bold text-primary">Total Processed Forms</h6>
+          </div>
+          <div class="card-body pt-5">
+              <?php echo "<h4 style='text-align:center;'>".$archivedForms."</h4>" ?>
+              </div>
+          </div>
+        </div>
+    </div>
+    </div>
+    <!-- end all departments stats -->
+
+  </div>
+
+<!-- start per department stats -->
+<div class="container-fluid">
+  <button type="button" class="fullStats">SASTE</button>
+  <!-- start saste stats -->
+  <div class="content w-100">
+
+    <div class="col-3 mt-3">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Requested Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$sasteForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-3 mt-3">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Pending Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$sastePendingForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-3 mt-3">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">In Process Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$sasteInProcessForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-3 mt-3">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Completed Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$sasteArchivedForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  <!-- end saste stats-->
+
+  <button type="button" class="fullStats">SNAHS</button>
+  <!-- start snahs stats -->
+  <div class="content w-100">
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Requested Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$snahsForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Pending Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$snahsPendingForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">In Process Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$snahsInProcessForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Completed Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$snahsArchivedForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  <!-- end snahs stats-->
+
+  <button type="button" class="fullStats">SITE</button>
+  <!-- start site stats -->
+  <div class="content w-100">
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Requested Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$siteForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Pending Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$sitePendingForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">In Process Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$siteInProcessForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Completed Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$siteArchivedForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  <!-- end site stats-->
+
+  <button type="button" class="fullStats">SBAHM</button>
+  <!-- start sbahm stats -->
+  <div class="content w-100">
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Requested Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$sbahmForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Pending Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$sbahmPendingForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">In Process Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$sbahmInProcessForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Completed Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$sbahmArchivedForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  <!-- end sbahm stats-->
+  </div>
+
+</div>
+<!-- end per department stats -->
+
+<script>
+// Set new default font family and font color to mimic Bootstrap's default styling
+Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#292b2c';
   
-</div>
-<div class="row">
-  <div class="col-lg-6" >
-    <!-- Area Chart -->
-    <div class="card shadow mb-4">
-      <div class="card-header py-3" >
-          <h6 class="m-0 font-weight-bold text-primary">Forms Requested per Month</h6>
-      </div>
-      <div class="card-body">
-          <div class="chart-area">
-              <canvas id="myAreaChart"></canvas>
-          </div>
-      </div>
-    </div>
-  </div>
-  <!-- Pie Chart -->
-  <div class="col-lg-6">
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <i class="fas fa-chart-pie mr-1"></i>
-            <span class="font-weight-bold text-primary">Forms Requested per School</span>
-        </div>
-        <div class="card-body"><canvas id="myPieChart" width="100%" height="41"></canvas></div>
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart");
+var myPieChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ["SASTE", "SNAHS", "SITE", "SBAHM"],
+    datasets: [{
+      data: [<?php echo $sasteForms ?>, <?php echo $snahsForms ?>, <?php echo $siteForms ?>, <?php echo $sbahmForms ?>],
+      backgroundColor: ['#007bff', '#dc3545', '#FF69B4', '#28a745'],
+    }],
+  },
+});
+</script>
 
-    </div>
-  </div>
-</div>
+<script>
+var coll = document.getElementsByClassName("fullStats");
+var i;
 
-<!-- Content Row -->
-<!--<div class="row">
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("fullStatsActive");
+    var content = this.nextElementSibling;
+    if (content.style.display === "inline-flex") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "inline-flex";
+    }
+  });
+}
+</script>
 
-   Earnings (Monthly) Card Example -->
-  <!-- <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-primary shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Students</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
- 
-
-  <!-- Pending Requests Card Example -->
-  <!-- <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-warning shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-comments fa-2x text-gray-300"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 <script src="template/https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="template/https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
 <script src="js/demo/chart-area-demo.js"></script>
 
-
+<!-- idle timeout -->
 <script>
   function idleLogout() {
       var t;
@@ -95,7 +365,7 @@ include "header.php";
       window.ontouchstart = resetTimer; // catches touchscreen swipes as well 
       window.onclick = resetTimer;      // catches touchpad clicks as well
       window.onkeydown = resetTimer;   
-      window.addEventListener('scroll', resetTimer, true); // improved; see comments
+      window.addEventListener('scroll', resetTimer, true); 
 
       function yourFunction() {
         window.alert('You were inactive for 5 minutes. Please log in again')
@@ -104,7 +374,7 @@ include "header.php";
 
       function resetTimer() {
           clearTimeout(t);
-          t = setTimeout(yourFunction, 5000);  // time is in milliseconds
+          t = setTimeout(yourFunction, 300000);  // time is in milliseconds
       }
   }
   idleLogout();

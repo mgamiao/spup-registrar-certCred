@@ -214,6 +214,60 @@ function count_rows($table_name)
 	return $rowcount;
 }
 
+function count_school_forms($table_name, $school)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name WHERE `school` = '$school'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_school_specific_forms($table_name, $school, $status)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name WHERE `school` = '$school' AND `status` = '$status'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_total_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms`";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_pending_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '0'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_inProcess_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '1'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_archived_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '2'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
 function _fire_email($target_email, $subject, $msg)
 {
     $to = $target_email;
