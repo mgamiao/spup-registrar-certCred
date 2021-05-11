@@ -4,7 +4,12 @@
 		header("Location: logout.php");
 	}
 ?>
-<?php include "perfect_function.php"; ?>
+<?php 
+include "perfect_function.php"; 
+$pendnotif = count_pending_forms();
+$reqnotif = count_inProcess_forms();
+$compnotif = count_archived_forms();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,8 +67,14 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="pend_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-          
-          <span>Pending Forms</span>
+          <?php 
+          if ($pendnotif == "0"){
+            echo "<span>Pending Forms</span>";
+          }else{
+           echo "<span>Pending Forms</span>";
+          echo  "<span class='badge badge-danger badge-counter'> $pendnotif";
+          }
+        ?>
         </a>
       
       </li>
@@ -71,24 +82,34 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-          
-          <span>Requested Forms</span>
+        <?php 
+          if ($reqnotif == "0"){
+            echo "<span>Requested Forms</span>";
+          }else{
+           echo "<span>Requested Forms</span>";
+          echo  "<span class='badge badge-danger badge-counter'> $reqnotif";
+          }
+        ?>
         </a>
       
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="archived_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-          
-          <span>Archived Forms</span>
+        <?php 
+          if ($compnotif == "0"){
+            echo "<span>Completed Forms</span>";
+          }else{
+           echo "<span>Completed Forms</span>";
+          echo  "<span class='badge badge-danger badge-counter'> $compnotif";
+          }
+        ?>
         </a>
       
       </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href=""  aria-expanded="true" aria-controls="collapseUtilities">
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="logs.php"  aria-expanded="true" aria-controls="collapseUtilities">
           
-          <span>Notifications</span>
+          <span>Logs</span>
         </a>
       
 </li>
@@ -111,40 +132,21 @@
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+          
+          <?php
+          date_default_timezone_set('Asia/Singapore'); 
+          $xdate=date('Y-m-d');
+          $xtime=date('h:i:sa'); 
+          echo "<h6 class='m-0 font-weight-bold text-primary'>Date: $xdate   &nbsp </h6>  "; 
+          
+          echo "<h6 class='m-0 font-weight-bold text-primary'>Time:  $xtime</h6>";
+          ?>
+          
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
 
            
             <?php
@@ -153,11 +155,12 @@
 				    foreach ($get_firstname as $key => $row) {
 					  $fullname = $row['fullname'];
 				  }
-				  ?>	
+				  ?>
+          	
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-900 medium "><?= $fullname ?> | Logout</span>
+                <span class="mr-4 d-none d-lg-inline text-gray-900 medium "><?= $fullname ?> |  <span class="fas fa-sign-out-alt fa-sm fa-fw mr-4 text-gray-900 medium"> Logout</span></span>
             <!-- Nav Item - User Information -->
                
               </a>
