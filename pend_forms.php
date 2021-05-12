@@ -93,9 +93,9 @@ include "header.php";
             <td>Middle Name</td>
             <td>School</td>
             <td>Type of Form</td>
-            <td>Reason</td>
+            <td>Reason/Purpose</td>
             <td>E-mail</td>
-            <!-- <td>Date</td>  dagdag sana natin para meron naring date sa form-->
+            <td>Date Requested</td> 
             <td>Option</td>
             
         </tr>
@@ -108,9 +108,9 @@ include "header.php";
             <td>Middle Name</td>
             <td>School</td>
             <td>Type of Form</td>
-            <td>Reason</td>
+            <td>Reason/Purpose</td>
             <td>E-mail</td>
-            <!-- <td>Date</td> -->
+             <td>Date Requested</td> 
             <td>Option</td>
             
 
@@ -136,7 +136,7 @@ include "header.php";
             $reason = $row['reason'];
             $email = $row['email'];
             $status = $row['status'];
-            // $date = $row['date'];
+             $date = $row['date'];
             
 
     ?>
@@ -151,7 +151,7 @@ include "header.php";
         <td><?= $formType?></td>
         <td><?= $reason?></td>
         <td><?= $email?></td>
-        <!-- <td><//$date</td> -->
+         <td><?= $date ?></td> 
         
         
 

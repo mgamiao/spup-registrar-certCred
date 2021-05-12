@@ -28,6 +28,7 @@
 	foreach ($get_userData as $key => $row) {
 		 $id = $row['id'];
 		 $email = $row['email'];
+		 $lastname = $row['lastname'];
 		
 	}
     require 'phpmailer/includes/PHPMailer.php';
@@ -47,9 +48,9 @@
 	$mail->Port = "587";
 	$mail->Username = "larajerick169@gmail.com";
 	$mail->Password = "jericklara18";
-	$mail->Subject = "Hello ";
+	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
-	$mail->Body = "Form approve";
+	$mail->Body = "Hello " . $lastname;
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
