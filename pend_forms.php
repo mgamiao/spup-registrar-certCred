@@ -110,7 +110,7 @@ include "header.php";
             <td>Type of Form</td>
             <td>Reason/Purpose</td>
             <td>E-mail</td>
-             <td>Date Requested</td> 
+            <td>Date Requested</td> 
             <td>Option</td>
             
 
