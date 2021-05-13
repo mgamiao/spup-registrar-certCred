@@ -95,8 +95,9 @@ include "header.php";
             <td>Middle Name</td>
             <td>School</td>
             <td>Type of Form</td>
-            <td>Reason</td>
+            <td>Reason/Purpose</td>
             <td>E-mail</td>
+            <td>Date Requested</td>
             <td>Option</td>
             
             
@@ -110,8 +111,9 @@ include "header.php";
             <td>Middle Name</td>
             <td>School</td>
             <td>Type of Form</td>
-            <td>Reason</td>
+            <td>Reason/Purpose</td>
             <td>E-mail</td>
+            <td>Date Requested</td>
             <td>Option</td>
             
 
@@ -136,6 +138,7 @@ include "header.php";
             $formType = $row['form_type'];
             $reason = $row['reason'];
             $email = $row['email'];
+            $date = $row['date'];
             $status = $row['status'];
             
 
@@ -150,6 +153,7 @@ include "header.php";
         <td><?= $formType?></td>
         <td><?= $reason?></td>
         <td><?= $email?></td>
+        <td><?= $date?></td>
         
 
         

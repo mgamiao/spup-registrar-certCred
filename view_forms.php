@@ -84,14 +84,7 @@ include "header.php";
                 <h1 class="m-0 font-weight-bold text-light">View Form</h1>
                 </div>
                 <div class="card-body">
-                <form method="post" action="stud_search.php">
-                    <div class="input-group mb-3 w-25 " style="float: left;">
-                        <input type="text" class="form-control" placeholder="" name="search" autocomplete="off" required>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary text-light" type="submit" id="button-addon2">Search</button>
-                        </div>
-                        </div>
-                </form>
+                
 
                
 
@@ -107,7 +100,7 @@ include "header.php";
             <td>Type of Form</td>
             <td>No. of Copies</td>
             <td>No. of Request</td>
-            <td>Reason</td>
+            <td>Reason/Purpose</td>
             <td>Mode of Claiming</td>
             <td>Address</td>
             <td>Course Completed</td>
@@ -129,7 +122,7 @@ include "header.php";
             <td>Type of Form</td>
             <td>No. of Copies</td>
             <td>No. of Request</td>
-            <td>Reason</td>
+            <td>Reason/Purpose</td>
             <td>Mode of Claiming</td>
             <td>Address</td>
             <td>Course Completed</td>
@@ -216,7 +209,7 @@ include "header.php";
         <br>
         <br>
         
-            <a href="form_decline.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="form_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
             </span>
