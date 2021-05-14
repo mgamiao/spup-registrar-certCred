@@ -50,7 +50,8 @@
 	$mail->Password = "jericklara18";
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
-	$mail->Body = "Hello " . $lastname;
+	$mail->isHTML(true);
+	$mail->Body = "<h1>Hello " . $lastname . "</h1><br><h3>Your requested form was approve!";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
