@@ -25,8 +25,7 @@ $password=_hash_string($_POST['password']);
 $user_data = get_where_custom($table_name, "username", $username);
 	foreach ($user_data as $key => $row) {
         $password1 = $row['password1'];
-        
-        $fullname=$row['fullname'];
+        $firstname=$row['firstname'];
         
         $acctType=$row['acct_type'];
         
@@ -37,7 +36,7 @@ if (($password1==$password) and ($captchaResult==$checkTotal)){
     
     $_SESSION['username']=$username;
     $_SESSION['access']=$acctType;
-    $_SESSION['fullname']=$fullname;
+    $_SESSION['firstname']=$firstname;
 
     header("Location: home.php");
 } if ($password1!=$password) {
