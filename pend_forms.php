@@ -55,7 +55,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==3){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-danger bg-gradient-dark text-light'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY DELETED
                     </div>
@@ -67,7 +67,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==5){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-danger bg-gradient-dark text-light'>
                     <div class='card-body'>
                     RECORD DECLINED
                     </div>

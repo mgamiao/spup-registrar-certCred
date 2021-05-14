@@ -14,6 +14,7 @@ include "header.php";
         
         <thead class="bg-secondary" style="text-align: center; color: white;">
         <tr>
+            <td>Log Id </td>
             <td>Action </td>
             <td>Date</td>
             <td>Time</td>
@@ -26,6 +27,7 @@ include "header.php";
 
         <tfoot class="bg-secondary" style="text-align: center; color: white;">
         <tr>
+            <td>Log Id</td>
             <td>Action </td>
             <td>Date</td>
             <td>Time</td>
@@ -51,6 +53,7 @@ include "header.php";
 
     ?>
     <tr>
+        <td><?= $log_id?></td>
         <td><?= $action?></td>
         <td><?= $xdate?></td>
         <td><?= $xtime?></td>
