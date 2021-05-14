@@ -155,12 +155,16 @@ $compnotif = count_archived_forms();
 				    foreach ($get_firstname as $key => $row) {
 					  $firstname = $row['firstname'];
 				  }
+          $get_lastname = get_where_custom("accounts", "lastname", $_SESSION['lastname']);
+          foreach ($get_lastname as $key => $row) {
+          $lastname = $row['lastname'];
+          }
 				  ?>
           	
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-4 d-none d-lg-inline text-gray-900 medium "><?= $firstname ?> |  <span class="fas fa-sign-out-alt fa-sm fa-fw mr-4 text-gray-900 medium"> Logout</span></span>
+                <span class="mr-4 d-none d-lg-inline text-gray-900 medium "><?= $firstname  . " " . $lastname;?> |  <span class="fas fa-sign-out-alt fa-sm fa-fw mr-4 text-gray-900 medium"> Logout</span></span>
             <!-- Nav Item - User Information -->
                
               </a>
