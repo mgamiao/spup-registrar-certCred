@@ -111,7 +111,13 @@ $compnotif = count_archived_forms();
           
           <span>Logs</span>
         </a>
-      
+
+        <hr class="sidebar-divider">
+        <li class="nav-item"> 
+        <a class="nav-link" href="account_manage.php">
+  
+          <span>Account Manager</span></a>
+      </li>
 </li>
 
       <!-- Divider -->
