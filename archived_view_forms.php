@@ -25,7 +25,7 @@ include "header.php";
   <link href="template/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
-<div align=center>
+
 
     <?php
     if (isset($_SESSION['alert_msg'])){
@@ -80,72 +80,12 @@ include "header.php";
 
 
 <div class="card w-100 bg-gradient-dark" style="border:none;">
+<div align="center">
                 <div class="card-header py-3 bg-secondary" style="border:none;">
                 <h1 class="m-0 font-weight-bold text-light">View Form</h1>
                 </div>
-                <div class="card-body">
-                <form method="post" action="stud_search.php">
-                    <div class="input-group mb-3 w-25 " style="float: left;">
-                        <input type="text" class="form-control" placeholder="" name="search" autocomplete="off" required>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary text-light" type="submit" id="button-addon2">Search</button>
-                        </div>
-                        </div>
-                </form>
-
-               
-
-                <div class="table-responsive" >
-                    <table class="table" id="dataTable" width="100%" cellspacing="0" >
-        
-        <thead class="bg-secondary" style="text-align: center; color: white;">
-        <tr>
-            <td>Last Name</td>
-            <td>First Name</td>
-            <td>Middle Name</td>
-            <td>School</td>
-            <td>Type of Form</td>
-            <td>No. of Copies</td>
-            <td>No. of Request</td>
-            <td>Reason</td>
-            <td>Mode of Claiming</td>
-            <td>Address</td>
-            <td>Course Completed</td>
-            <td>Date Graduated</td>
-            <td>Undergraduate</td>
-            <td>Mobile Number</td>
-            <td>E-mail</td>
-            <td>Option</td>
-            
-        </tr>
-        </thead>
-
-        <tfoot class="bg-secondary" style="text-align: center; color: white;">
-        <tr>
-            <td>Last Name</td>
-            <td>First Name</td>
-            <td>Middle Name</td>
-            <td>School</td>
-            <td>Type of Form</td>
-            <td>No. of Copies</td>
-            <td>No. of Request</td>
-            <td>Reason</td>
-            <td>Mode of Claiming</td>
-            <td>Address</td>
-            <td>Course Completed</td>
-            <td>Date Graduated</td>
-            <td>Undergraduate</td>
-            <td>Mobile Number</td>
-            <td>E-mail</td>
-            <td>Option</td>
-            
-
-        </tr>
-        </tfoot>
-
-        <tbody style="text-align: center; color: white;">
-        
-    <br>
+</div>
+<br>
     <?php
        $id = $_GET['id'];
       
@@ -154,49 +94,95 @@ include "header.php";
        $get_userData = get_where($table_name, $id);
        //fetch result and pass it  to an array
        foreach ($get_userData as $key => $row) {
-        $id = $row['id'];
-        $lastName = $row['lastname'] ;
-        $firstName = $row['firstname'] ;
-        $middleName = $row['middlename'] ;
-        $school = $row['school'];
-        $formType = $row['form_type'];
-        $numofCopies = $row['numofcopies'];
-        $numofRequest = $row['numofrequest'];
-        $reason = $row['reason'];
-        $modeofClaim = $row['modeofclaiming'];
-        $address = $row['address'];
-        $courseCompleted = $row['coursecompleted'];
-        $dateGrad = $row['dategraduated'];
-        $underGrad = $row['undergraduate'];
-        $mobileNum = $row['mobilenum'];
-        $email = $row['email'];
-        $status = $row['status'];
+            $id = $row['id'];
+            $lastName = $row['lastname'] ;
+            $firstName = $row['firstname'] ;
+            $middleName = $row['middlename'] ;
+            $school = $row['school'];
+            $formType = $row['form_type'];
+            $numofCopies = $row['numofcopies'];
+            $numofRequest = $row['numofrequest'];
+            $reason = $row['reason'];
+            $modeofClaim = $row['modeofclaiming'];
+            $address = $row['address'];
+            $courseCompleted = $row['coursecompleted'];
+            $dateGrad = $row['dategraduated'];
+            $underGrad = $row['undergraduate'];
+            $mobileNum = $row['mobilenum'];
+            $email = $row['email'];
+            $status = $row['status'];
            
-        ?>
-       <tr>
-        <td><?= $lastName?></td>
-        <td><?= $firstName?></td>
-        <td><?= $middleName?></td>
-        <td><?= $school?></td>
-        <td><?= $formType?></td>
-        <td><?= $numofCopies?></td>
-        <td><?= $numofRequest?></td>
-        <td><?= $reason?></td>
-        <td><?= $modeofClaim?></td>
-        <td><?= $address?></td>
-        <td><?= $courseCompleted?></td>
-        <td><?= $dateGrad?></td>
-        <td><?= $underGrad?></td>
-        <td><?= $mobileNum?></td>
-        <td><?= $email?></td>
-            
-   
-        <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
-            
-        <td>
+        ?>   
+<body>
+<div class="container" >
 
-        &nbsp;&nbsp;
-        
+  <form>
+    <div class="form-group">
+      <h6 style="color:white;">Last Name:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $lastName?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">First Name:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $firstName?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Middle Name:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $middleName?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">School:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $school?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Type of Form:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $formType?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Number of Copies:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $numofCopies?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Number of Request:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $numofRequest?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Reason/Purpose:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $reason?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Mode of Claiming:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $modeofClaim?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Address:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $address?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Course Completed:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $courseCompleted?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Date Graduated:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $dateGrad?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Undergraduate:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $underGrad?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Mobile Number:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $mobileNum?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Email:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $email?>" readonly>
+    </div>
+  </form>
+</div>
+<br>
+            
+<div align="center">
+        <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
         <a href="archived_forms.php" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
@@ -209,17 +195,9 @@ include "header.php";
         </td>
 
         <?php } ?>
-    </tr>
    <?php } ?>
 
         
-    </tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
+</body>
+</html>
 

@@ -90,12 +90,10 @@ include "header.php";
         
         <thead class="bg-secondary" style="text-align: center; color: white;">
         <tr>
-            <td>Last Name</td>
-            <td>First Name</td>
-            <td>Middle Name</td>
+            <td>Full Name</td>
             <td>School</td>
             <td>Type of Form</td>
-            <td>Reason</td>
+            <td>Reason/Purpose</td>
             <td>E-mail</td>
             <td>Option</td>
             
@@ -105,12 +103,10 @@ include "header.php";
 
         <tfoot class="bg-secondary" style="text-align: center; color: white;">
         <tr>
-            <td>Last Name</td>
-            <td>First Name</td>
-            <td>Middle Name</td>
+            <td>Full Name</td>
             <td>School</td>
             <td>Type of Form</td>
-            <td>Reason</td>
+            <td>Reason/Purpose</td>
             <td>E-mail</td>
             <td>Option</td>
             
@@ -123,7 +119,7 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 2;
+        $condition = 4;
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -141,11 +137,9 @@ include "header.php";
 
     ?>
     
-<?php if($status=="2"){ ?>
+<?php if($status=="4"){ ?>
     <tr>
-        <td><?= $lastName?></td>
-        <td><?= $firstName?></td>
-        <td><?= $middleName?></td>
+        <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
         <td><?= $formType?></td>
         <td><?= $reason?></td>

@@ -9,10 +9,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+ 
 </head>
 <body>
 
-<div class="container">
+<div class="container" >
   <h2>Request Form</h2>
   <h6 style="color:red"> * Required </h6><br>
   <form method ="post" action="user_req_proc.php">
@@ -36,14 +37,14 @@
     <h6>School: <span style="color:red">*</h6></span>
     <select name="school" class="custom-select" required autocomplete=off>
     <option selected>Select school:</option>
-    <option value="site">SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING</option>
-    <option value="sbahm">SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT</option>
-    <option value="snahs">SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES</option>
-    <option value="saste">SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION</option>
-    <option value="beu">BASIC EDUCATION UNIT</option>
-    <option value="SoM">SCHOOL OF MEDICINE</option>
-    <option value="gradschool">GRADUATE SCHOOL</option>
-    </select>
+    <option value="SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING">SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING</option>
+    <option value="SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT">SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT</option>
+    <option value="SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES">SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES</option>
+    <option value="SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION">SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION</option>
+    <option value="BASIC EDUCATION UNIT">BASIC EDUCATION UNIT</option>
+    <option value="SCHOOL OF MEDICINE">SCHOOL OF MEDICINE</option>
+    <option value="GRADUATE SCHOOL">GRADUATE SCHOOL</option>
+    </select>  
     <h6>Type of Form: <span style="color:red">*</h6></span>
     <select name="form_type" class="custom-select" required autocomplete=off>
     <option value="">Select type of form:</option>
@@ -63,7 +64,7 @@
     </select>
     <div class="form-group">
       <h6>Number of Copies: <span style="color:red">*</h6></span>
-      <input type="number" class="form-control"  placeholder="Enter Number of Copies" name="numofcopies" required autocomplete=off>
+      <input type="number" class="form-control"  placeholder="Enter Number of Copies" name="numofcopies" required autocomplete=off min=1 max=3>
     </div>
     <h6>Number of Request:</h6>
     <select name="numofrequest" class="custom-select"  autocomplete=off>
@@ -73,14 +74,18 @@
     <option value="3">Third Request</option>
     </select>
     <h6>Reason/Purpose: <span style="color:red">*</h6></span>
-    <select name="reason" class="custom-select" required autocomplete=off>
+    <select name="reason" class="custom-select"  required autocomplete=off>
     <option value="">Select reason/purpose:</option>
     <option value="transfer to another school">Transfer to another school</option>
     <option value="Board Examination">Board Examination</option>
     <option value="For Reference">For Reference(Employment/Promotion)</option>
     <option value="Scholarship">Scholarship</option>
     </select>
-    <h6>Mode of Claiming <span style="color:red">*</h6></span>
+    <!-- <div class="form-group">
+      <h6>Others: <span style="color:blue">(Please specify)</h6></span>
+      <input type="text" name="reason" id="reason" class="form-control"style='display:none;'  autocomplete=off/>
+    </div> -->
+    <h6>Mode of Claiming: <span style="color:red">*</h6></span>
     <select name="modeofclaiming" class="custom-select" required autocomplete=off>
     <option value="">Select mode of claiming:</option>
     <option value="Personal Pick-up">Personal Pick-up</option>

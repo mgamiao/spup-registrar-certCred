@@ -182,23 +182,15 @@ include "header.php";
 </div>
 <br>
 <div align="center">
-            <a href="req_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
+            <a href="dean_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
             </span>
             <span class="text">
-                    Finalize Request
+                    Approve
                 </span>
             </a>
-            <a href="print.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
-            <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
-            </span>
-            <span class="text">
-                    Print
-                </span>
-            </a>
-        <a href="req_forms.php" class="btn btn-danger btn-icon-split btn-md">
+        <a href="dean_req_forms.php" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>
