@@ -8,6 +8,7 @@
 include "perfect_function.php"; 
 $pendnotif = count_pending_forms();
 $reqnotif = count_inProcess_forms();
+$reqnotif1 = count_inProcess_forms1();
 $compnotif = count_archived_forms();
 ?>
 <!DOCTYPE html>
@@ -51,21 +52,22 @@ $compnotif = count_archived_forms();
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
+      <!-- Nav Item - Dashboard -->  
+      <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
       <li class="nav-item active">
         <a class="nav-link" href="home.php">
           
           <span>HOME</span></a>
       </li>
-
+      <?php } ?>
       <!-- Divider -->
       <hr class="sidebar-divider">
 
       <!-- Heading -->
      
-      <?php if($_SESSION['access']=="1"){ ?>    
+      <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?> 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="pend_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
           <?php 
           if ($pendnotif == "0"){
@@ -79,22 +81,39 @@ $compnotif = count_archived_forms();
       
       </li>
       <?php } ?> 
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+      <?php if($_SESSION['access']=="3"){ ?>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="dean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
         <?php 
           if ($reqnotif == "0"){
-            echo "<span>Requested Forms</span>";
+            echo "<span> (dean)Requested Forms</span>";
           }else{
-           echo "<span>Requested Forms</span>";
+           echo "<span>(dean)Requested Forms</span>";
           echo  "<span class='badge badge-danger badge-counter'> $reqnotif";
           }
         ?>
         </a>
       
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="archived_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+      <?php } ?>
+      <?php if($_SESSION['access']=="4"){ ?>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="bao_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <?php 
+          if ($reqnotif1 == "0"){
+            echo "<span> (bao)Requested Forms</span>";
+          }else{
+           echo "<span>(bao)Requested Forms</span>";
+          echo  "<span class='badge badge-danger badge-counter'> $reqnotif1";
+          }
+        ?>
+        </a>
+      
+      </li>
+      <?php } ?>
+      <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="completed_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
         <?php 
           if ($compnotif == "0"){
             echo "<span>Completed Forms</span>";
@@ -106,19 +125,28 @@ $compnotif = count_archived_forms();
         </a>
       
       </li>
-        <li class="nav-item">
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="archived_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <span>Archived Forms</span>
+        </a>
+      
+      </li>
+        <li class="nav-item active">
         <a class="nav-link collapsed" href="logs.php"  aria-expanded="true" aria-controls="collapseUtilities">
           
           <span>Logs</span>
         </a>
-
-        <hr class="sidebar-divider">
-        <li class="nav-item"> 
+          </li>
+          <?php } ?>
+          <?php if($_SESSION['access']=="1"){ ?>
+          <hr class="sidebar-divider">
+        <li class="nav-item active"> 
         <a class="nav-link" href="account_manage.php">
   
           <span>Account Manager</span></a>
       </li>
-</li>
+      <?php } ?>
+
 
       <!-- Divider -->
       <hr class="sidebar-divider">

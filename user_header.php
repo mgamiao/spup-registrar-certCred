@@ -56,7 +56,7 @@
      
          
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="user_request.php"   aria-expanded="true" aria-controls="collapseTwo">
           
           <span>Request a Form</span>
@@ -66,7 +66,7 @@
        
 
       <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item active">
         <a class="nav-link collapsed" href="contact.php"  aria-expanded="true" aria-controls="collapseUtilities">
           
           <span>Contact us</span>

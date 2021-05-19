@@ -2,25 +2,25 @@
 
   include "header.php";
 
-  $sasteForms = count_school_forms('forms', 'saste');
-  $sastePendingForms = count_school_specific_forms('forms', 'saste', '0');
-  $sasteInProcessForms = count_school_specific_forms('forms', 'saste', '1');
-  $sasteArchivedForms = count_school_specific_forms('forms', 'saste', '2');
+  $sasteForms = count_school_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION');
+  $sastePendingForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '0');
+  $sasteInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '1');
+  $sasteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '2');
 
-  $snahsForms = count_school_forms('forms', 'snahs');
-  $snahsPendingForms = count_school_specific_forms('forms', 'snahs', '0');
-  $snahsInProcessForms = count_school_specific_forms('forms', 'snahs', '1');
-  $snahsArchivedForms = count_school_specific_forms('forms', 'snahs', '2');
+  $snahsForms = count_school_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES');
+  $snahsPendingForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '0');
+  $snahsInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '1');
+  $snahsArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '2');
 
-  $siteForms = count_school_forms('forms', 'site');
-  $sitePendingForms = count_school_specific_forms('forms', 'site', '0');
-  $siteInProcessForms = count_school_specific_forms('forms', 'site', '1');
-  $siteArchivedForms = count_school_specific_forms('forms', 'site', '2');
+  $siteForms = count_school_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING');
+  $sitePendingForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '0');
+  $siteInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '1');
+  $siteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '2');
 
-  $sbahmForms = count_school_forms('forms', 'sbahm');
-  $sbahmPendingForms = count_school_specific_forms('forms', 'sbahm', '0');
-  $sbahmInProcessForms = count_school_specific_forms('forms', 'sbahm', '1');
-  $sbahmArchivedForms = count_school_specific_forms('forms', 'sbahm', '2');
+  $sbahmForms = count_school_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT');
+  $sbahmPendingForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '0');
+  $sbahmInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1');
+  $sbahmArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '2');
 
   $totalForms = count_total_forms();
   $pendingForms = count_pending_forms();

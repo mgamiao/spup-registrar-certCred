@@ -76,16 +76,15 @@ include "header.php";
         }
     }
     ?>
+
+
+
 <div class="card w-100 bg-gradient-dark" style="border:none;">
 <div align="center">
                 <div class="card-header py-3 bg-secondary" style="border:none;">
                 <h1 class="m-0 font-weight-bold text-light">View Form</h1>
                 </div>
-                </div>
-
-
-               
-
+</div>
 <br>
     <?php
        $id = $_GET['id'];
@@ -181,8 +180,10 @@ include "header.php";
   </form>
 </div>
 <br>
+            
 <div align="center">
-            <a href="req_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
+        <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
+          <a href="req_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
             </span>
@@ -198,7 +199,8 @@ include "header.php";
                     Print
                 </span>
             </a>
-        <a href="req_forms.php" class="btn btn-danger btn-icon-split btn-md">
+        &nbsp;&nbsp;
+        <a href="completed_forms.php" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>
@@ -207,15 +209,12 @@ include "header.php";
         </span>
             </a>
             </a>
-        
+        </td>
 
         <?php } ?>
-   
-   
-   <div>
+   <?php } ?>
 
         
 </body>
 </html>
-
 

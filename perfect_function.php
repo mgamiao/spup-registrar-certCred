@@ -258,11 +258,18 @@ function count_inProcess_forms()
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
-
-function count_archived_forms()
+function count_inProcess_forms1()
 {
 	$conn = getConnection();
 	$sql = "SELECT * FROM `forms` WHERE `status` = '2'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+function count_archived_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '3'";
 	$result = $conn->query($sql);
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;

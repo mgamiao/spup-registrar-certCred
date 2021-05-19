@@ -13,7 +13,8 @@ date_default_timezone_set('Asia/Singapore');
 
     $table_name="logs";
     $username= $_SESSION['username'];
-    $fullname=$_SESSION['fullname'];
+    $firstname=$_SESSION['firstname'];
+    $lastname=$_SESSION['lastname'];
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
@@ -21,7 +22,8 @@ date_default_timezone_set('Asia/Singapore');
     
     $user_data=array(
         "username" => $username ,
-        "fullname" => $fullname ,
+        "firstname" => $firstname ,
+        "lastname" => $lastname ,
         "acct_type" => $acct_type ,
         "xdate" => $xdate ,
         "xtime" => $xtime ,

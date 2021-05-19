@@ -11,17 +11,14 @@
 
 	$user_editedvalues = array (
 		//columname from table => value from post
-			"status" => 2
+			"status" => 4
 			
 	);
 	
 	update($user_editedvalues, $id, $table_name);
     $_SESSION['alert_msg']=1;
 
-
-
-	
-	$id = $_GET['id'];
+    $id = $_GET['id'];
 	$table_name = "forms";
 	$get_userData = get_where($table_name, $id);
 	//fetch result and pass it  to an array
@@ -51,22 +48,28 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname . "</h1><br><h3>Your requested form was approve!";
+	$mail->Body = "<h1>Hello " . $lastname . 
+    "</h1><br><h3>Your form was approved by the registrar office and now under review by your designated dean</h3><br>
+    <h3>Your form was approved by your school dean and now under review by Business Affair Office</h3><br>
+    <h3>Your form was approved by the Business Affair Office.Please wait for the finalization of you requested form</h3><br>
+	<h3>Your form was finalized. Ready to claim.</h3>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
-		header("Location: archived_forms.php");
+		header("Location: completed_forms.php");
 	}else{
 		echo "Error";
 	}
 
 	$mail->smtpClose();
 
+
 	date_default_timezone_set('Asia/Singapore');
 
     $table_name="logs";
     $username= $_SESSION['username'];
-    $fullname=$_SESSION['fullname'];
+    $firstname=$_SESSION['firstname'];
+    $lastname=$_SESSION['lastname'];
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
@@ -74,7 +77,8 @@
     
     $user_data=array(
         "username" => $username ,
-        "fullname" => $fullname ,
+        "firstname" => $firstname ,
+        "lastname" => $lastname ,
         "acct_type" => $acct_type ,
         "xdate" => $xdate ,
         "xtime" => $xtime ,

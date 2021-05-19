@@ -33,7 +33,7 @@ include "header.php";
             echo "
                 <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
                     <div class='card-body'>
-                    RECORD SUCCESSFULLY ADDED
+                    RECORD SUCCESSFULLY APPROVED
                     </div>
                 </div>";
                 unset($_SESSION['alert_msg']);
@@ -55,7 +55,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==3){
             echo "
-                <div class='card mb-4 py-3 border-bottom-danger bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY DELETED
                     </div>
@@ -67,21 +67,23 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==5){
             echo "
-                <div class='card mb-4 py-3 border-bottom-danger bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
                     <div class='card-body'>
-                    RECORD DECLINED
+                    STUDENT SUCCESSFULLY DEACTIVATED
                     </div>
                 </div>";
                 unset($_SESSION['alert_msg']);
         }
     }
     ?>
-        
-    <div class="card w-100 bg-gradient-dark" style="border:none;">
+
+<div class="card w-100 bg-gradient-dark" style="border:none;">
                 <div class="card-header py-3 bg-secondary" style="border:none;">
-                <h1 class="m-0 font-weight-bold text-light">Pending Forms</h1>
+                <h1 class="m-0 font-weight-bold text-light">Requested Forms</h1>
                 </div>
                 <div class="card-body">
+
+               
 
                 <div class="table-responsive" >
                     <table class="table" id="dataTable" width="100%" cellspacing="0" >
@@ -92,8 +94,9 @@ include "header.php";
             <td>School</td>
             <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>Date Requested</td> 
+            <td>Date Requested</td>
             <td>Option</td>
+            
             
         </tr>
         </thead>
@@ -104,7 +107,7 @@ include "header.php";
             <td>School</td>
             <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>Date Requested</td> 
+            <td>Date Requested</td>
             <td>Option</td>
             
 
@@ -116,7 +119,7 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 0;
+        $condition = 1;
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -129,28 +132,26 @@ include "header.php";
             $formType = $row['form_type'];
             $reason = $row['reason'];
             $email = $row['email'];
+            $date = $row['date'];
             $status = $row['status'];
-             $date = $row['date'];
             
 
     ?>
     
-    
-
+<?php if($status=="1"){ ?>
     <tr>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
         <td><?= $formType?></td>
         <td><?= $reason?></td>
-         <td><?= $date ?></td> 
-        
+        <td><?= $date?></td>
         
 
-        <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2"){ ?>
+        
             
         <td>
         &nbsp;&nbsp;
-            <a href="view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="dean_req_view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
             </span>
@@ -158,40 +159,16 @@ include "header.php";
                     View
                 </span>
             </a>
-        &nbsp;&nbsp;
-        <a href="form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
-        <span class="icon text-red-50">
-        <i class="far fa-trash-alt"></i>
-        </span>
-        <span class="text">
-            Delete
-        </span>
-            </a>
-            </a>
-        </td>
 
         <?php } ?>
     </tr>
 
 
         <?php   }   ?>
-
-        
     </tbody>
-    
 </table>
-
-    
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
- <script src="template/vendor/jquery/jquery.min.js"></script> 
-    <!-- <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>   pag meron to ayaw gumana ng logout--> 
+<script src="template/vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>   pag meron to ayaw gumana ng logout-->
 
     <!-- Core plugin JavaScript-->
     <script src="template/vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -205,5 +182,12 @@ include "header.php";
 
     <!-- Page level custom scripts -->
     <script src="template/js/demo/datatables-demo.js"></script>
-    
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 

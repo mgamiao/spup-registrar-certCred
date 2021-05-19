@@ -7,7 +7,7 @@
 
     // $acc_id=$_POST['acc_id'];
     $username=$_POST['username'];
-    $password=$_POST['password'];
+    $password=_hash_string($_POST['password']);
     $firstname=$_POST['firstname'];
     $middlename=$_POST['middlename'];
     $lastname=$_POST['lastname'];

@@ -12,31 +12,96 @@
 
 </head>
 <body>
-<b>
-<h1 style="text-align:center;">WELCOME TO THE WEB APPLICATION FOR SCHOOL CREDENTIALS AND CERTIFICATION!</h1>
-<h3 style="text-align:center;">This link outlines SPUP’s Web Application Services for School Credentials namely:</h3>
-<li style="text-align:justify;">
-<ul>Diploma</ul>
-<ul>Form 137</ul>
-<ul>Transcript of Records</ul>
-<ul>Certificate of Enrollment</ul>
-<ul>Certificate of Grades</ul>
-<ul>Certificate of General Weighted Average</ul>
-<ul>Certificate of Graduation</ul>
-<ul>Certificate of English as Medium of Instruction</ul>
-<ul>Certificate of Units Earned</ul>
-<ul>Certified True Copy of Documents (TOR/Diploma)</ul>
-<ul>Course Description</ul>
-<ul>Certification, Authentication and Verification (Red Ribbon)</ul>
-<ul>Transfer Credentials</ul>
-</li>
-<p>Please follow the steps below:<br>
-The applicant fill-up the request form. <a href="user_request.php">Request Form</a><br>
-The applicant will be informed on the total fees to be paid through e-mail.<p><br>
-Mode of claiming the requested Credentials:<br>
-Personal pick-up. .<br>
-Through a representative.<br> 
-Through Courier. <br>
+<div class="jumbotron text-center">
+  <img src="img/spup.png" style="margin-top:-50px;">
+  <h1>WELCOME TO THE WEB APPLICATION FOR SCHOOL CREDENTIALS AND CERTIFICATION!</h1>
+  <h3 style="text-align:center;">This web application outlines SPUP’s Web Application Services for School Credentials</h3>
+</div>
+
+<div class="container">
+  <h4>Type of Forms(Certificate/Credentials)</h4>            
+  <table class="table table-dark table-striped">
+    <tbody>
+      <tr>
+        <td align="center"><a href="user_request.php">Diploma</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Form 137</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Transcript of Records</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Certificate of Enrollment</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Certificate of Grades</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Certificate of General Weighted Average</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Certificate of English as Medium of Instruction</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Certificate of Units Earned</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Certified True Copy of Documents (TOR/Diploma)</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Course Description</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Certificate of Grades</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Certification, Authentication and Verification (Red Ribbon)</a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="user_request.php">Transfer Credentials</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <h4>Procedure:</h4>            
+  <table class="table table-dark table-striped">
+    <thead>
+
+    </thead>
+    <tbody>
+      <tr>
+        <td align="center">The applicant fill-up the request form. <a href="user_request.php">Request Form</a></td>
+      </tr>
+      <tr>
+        <td align="center">The applicant will be informed about the requested form through  an e-mail notification.</td>
+      </tr>
+      <tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <h4>Mode of Claiming</h4>            
+  <table class="table table-dark table-striped">
+    <thead>
+
+    </thead>
+    <tbody>
+      <tr>
+        <td align="center">Personal pick-up.</td>
+      </tr>
+      <tr>
+        <td align="center">Through a Representative.</td>
+      </tr>
+      <tr>
+      <td align="center"> Through Courier.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <a href="user_request.php" class="btn btn-primary btn-icon-split btn-md" style="margin-left:45%;">
         <span class="text">
             Request a Form
