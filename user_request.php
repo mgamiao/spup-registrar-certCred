@@ -9,7 +9,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
- 
 </head>
 <body>
 
@@ -74,17 +73,14 @@
     <option value="3">Third Request</option>
     </select>
     <h6>Reason/Purpose: <span style="color:red">*</h6></span>
-    <select name="reason" class="custom-select"  required autocomplete=off>
+    <select name="reason" class="custom-select" required autocomplete=off>
     <option value="">Select reason/purpose:</option>
     <option value="transfer to another school">Transfer to another school</option>
     <option value="Board Examination">Board Examination</option>
     <option value="For Reference">For Reference(Employment/Promotion)</option>
     <option value="Scholarship">Scholarship</option>
     </select>
-    <!-- <div class="form-group">
-      <h6>Others: <span style="color:blue">(Please specify)</h6></span>
-      <input type="text" name="reason" id="reason" class="form-control"style='display:none;'  autocomplete=off/>
-    </div> -->
+    
     <h6>Mode of Claiming: <span style="color:red">*</h6></span>
     <select name="modeofclaiming" class="custom-select" required autocomplete=off>
     <option value="">Select mode of claiming:</option>
@@ -110,7 +106,7 @@
     </div>
     <div class="form-group">
       <h6>Email: <span style="color:red">*</h6></span>
-      <input type="email" class="form-control"  placeholder="Enter Email Address" name="email" required autocomplete=off>
+      <input type="email" class="form-control"  placeholder="Enter Email Address"  value="<?= $_SESSION['email']; ?>" name="email" required autocomplete=off >
     </div>
     <div class="form-group">
       <h6>Mobile Number: <span style="color:red">*</h6></span>
