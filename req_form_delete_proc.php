@@ -34,6 +34,6 @@ date_default_timezone_set('Asia/Singapore');
     echo insert($user_data, $table_name);
 
 
-header("Location: req_forms.php");
+
 
 ?>

@@ -5,7 +5,7 @@
 	}
 ?>
 <?php 
-include "perfect_function.php"; 
+include "perfect_function.php";
 $pendnotif = count_pending_forms();
 $reqnotif = count_inProcess_forms();
 $reqnotif1 = count_inProcess_forms1();

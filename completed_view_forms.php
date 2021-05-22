@@ -110,6 +110,7 @@ include "header.php";
             $underGrad = $row['undergraduate'];
             $mobileNum = $row['mobilenum'];
             $email = $row['email'];
+            $fees = $row['fees'];
             $status = $row['status'];
            
         ?>   
@@ -176,6 +177,10 @@ include "header.php";
     <div class="form-group">
       <h6 style="color:white;">Email:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $email?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:white;">Total Fee:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $fees?>" readonly>
     </div>
   </form>
 </div>
