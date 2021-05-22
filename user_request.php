@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" >
   <h2>Request Form</h2>
   <h6 style="color:red"> * Required </h6><br>
   <form method ="post" action="user_req_proc.php">
@@ -36,14 +36,14 @@
     <h6>School: <span style="color:red">*</h6></span>
     <select name="school" class="custom-select" required autocomplete=off>
     <option selected>Select school:</option>
-    <option value="site">SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING</option>
-    <option value="sbahm">SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT</option>
-    <option value="snahs">SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES</option>
-    <option value="saste">SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION</option>
-    <option value="beu">BASIC EDUCATION UNIT</option>
-    <option value="SoM">SCHOOL OF MEDICINE</option>
-    <option value="gradschool">GRADUATE SCHOOL</option>
-    </select>
+    <option value="SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING">SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING</option>
+    <option value="SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT">SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT</option>
+    <option value="SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES">SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES</option>
+    <option value="SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION">SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION</option>
+    <option value="BASIC EDUCATION UNIT">BASIC EDUCATION UNIT</option>
+    <option value="SCHOOL OF MEDICINE">SCHOOL OF MEDICINE</option>
+    <option value="GRADUATE SCHOOL">GRADUATE SCHOOL</option>
+    </select>  
     <h6>Type of Form: <span style="color:red">*</h6></span>
     <select name="form_type" class="custom-select" required autocomplete=off>
     <option value="">Select type of form:</option>
@@ -63,7 +63,7 @@
     </select>
     <div class="form-group">
       <h6>Number of Copies: <span style="color:red">*</h6></span>
-      <input type="number" class="form-control"  placeholder="Enter Number of Copies" name="numofcopies" required autocomplete=off>
+      <input type="number" class="form-control"  placeholder="Enter Number of Copies" name="numofcopies" required autocomplete=off min=1 max=3>
     </div>
     <h6>Number of Request:</h6>
     <select name="numofrequest" class="custom-select"  autocomplete=off>
@@ -80,7 +80,8 @@
     <option value="For Reference">For Reference(Employment/Promotion)</option>
     <option value="Scholarship">Scholarship</option>
     </select>
-    <h6>Mode of Claiming <span style="color:red">*</h6></span>
+    
+    <h6>Mode of Claiming: <span style="color:red">*</h6></span>
     <select name="modeofclaiming" class="custom-select" required autocomplete=off>
     <option value="">Select mode of claiming:</option>
     <option value="Personal Pick-up">Personal Pick-up</option>
@@ -105,7 +106,7 @@
     </div>
     <div class="form-group">
       <h6>Email: <span style="color:red">*</h6></span>
-      <input type="email" class="form-control"  placeholder="Enter Email Address" name="email" required autocomplete=off>
+      <input type="email" class="form-control"  placeholder="Enter Email Address"  value="<?= $_SESSION['email']; ?>" name="email" required autocomplete=off >
     </div>
     <div class="form-group">
       <h6>Mobile Number: <span style="color:red">*</h6></span>

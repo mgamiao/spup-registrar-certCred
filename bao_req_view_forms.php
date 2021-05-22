@@ -89,7 +89,7 @@ include "header.php";
 <br>
     <?php
        $id = $_GET['id'];
-      
+       $form_location = "bao_accept_proc.php?id=".$id;
    
        $table_name = "forms";
        $get_userData = get_where($table_name, $id);
@@ -117,7 +117,7 @@ include "header.php";
 <body>
 <div class="container" >
 
-  <form>
+  <form method="post" action="<?= $form_location ?>">
     <div class="form-group">
       <h6 style="color:white;">Last Name:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $lastName?>" readonly>
@@ -143,32 +143,12 @@ include "header.php";
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $numofCopies?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Number of Request:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $numofRequest?>" readonly>
-    </div>
-    <div class="form-group">
       <h6 style="color:white;">Reason/Purpose:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $reason?>" readonly>
     </div>
     <div class="form-group">
       <h6 style="color:white;">Mode of Claiming:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $modeofClaim?>" readonly>
-    </div>
-    <div class="form-group">
-      <h6 style="color:white;">Address:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $address?>" readonly>
-    </div>
-    <div class="form-group">
-      <h6 style="color:white;">Course Completed:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $courseCompleted?>" readonly>
-    </div>
-    <div class="form-group">
-      <h6 style="color:white;">Date Graduated:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $dateGrad?>" readonly>
-    </div>
-    <div class="form-group">
-      <h6 style="color:white;">Undergraduate:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $underGrad?>" readonly>
     </div>
     <div class="form-group">
       <h6 style="color:white;">Mobile Number:</h6>
@@ -178,41 +158,35 @@ include "header.php";
       <h6 style="color:white;">Email:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $email?>" readonly>
     </div>
-  </form>
-</div>
-<br>
-<div align="center">
-            <a href="req_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
-            <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
-            </span>
-            <span class="text">
-                    Finalize Request
-                </span>
-            </a>
-            <a href="print.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
-            <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
-            </span>
-            <span class="text">
-                    Print
-                </span>
-            </a>
-        <a href="req_forms.php" class="btn btn-danger btn-icon-split btn-md">
-        <span class="icon text-red-50">
-        <i class="far fa-trash-alt"></i>
-        </span>
-        <span class="text">
-            Back
-        </span>
-            </a>
-            </a>
-        
+    </div>
+    <br>
+    <div class="container">
+    <div class="card w-100 bg-gradient-dark" style="border:none;">
+    <div align="center">
+                <div class="card-header py-3 bg-secondary" style="border:none;">
+                <h1 class="m-0 font-weight-bold text-light">Process Payment</h1>
+                </div>
+                </div>
+                <br>
+    <h6 style="color:white;">Total Payment:</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;" name="fees" placeholder="Enter total amount of payment" required autocomplete="off">
+    <div align="center">
+    <br>
+    <button type="submit" class="btn btn-success btn-icon-split btn-md" style="width:120px;" >
+	<span class="icon text-white-50">
+	<i class="fas fa-check"></i>
+		</span>
+		<span class="text">
+			Continue
+		</span>
+	</button>
 
+  </form>
+            
         <?php } ?>
    
+</div>   
    
-   <div>
 
         
 </body>

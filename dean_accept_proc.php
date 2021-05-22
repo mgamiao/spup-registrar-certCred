@@ -11,13 +11,14 @@
 
 	$user_editedvalues = array (
 		//columname from table => value from post
-			"status" => 4
+			"status" => 2
 			
 	);
 	
 	update($user_editedvalues, $id, $table_name);
     $_SESSION['alert_msg']=1;
 
+    
     $id = $_GET['id'];
 	$table_name = "forms";
 	$get_userData = get_where($table_name, $id);
@@ -52,17 +53,16 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname .  "</h1><br> $xdate . $xtime <h3>Your form was finalized. Ready to claim.</h3>";
+	$mail->Body = "<h1>Hello " . $lastname .  "</h1><br>$xdate . $xtime <h3>Your form was approved by your school dean and now under review by Business Affair Office</h3><br>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
-		header("Location: completed_forms.php");
+		header("Location: dean_req_forms.php");
 	}else{
 		echo "Error";
 	}
 
 	$mail->smtpClose();
-
 
 	date_default_timezone_set('Asia/Singapore');
 
@@ -73,7 +73,7 @@
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
-    $action="Finalized requested form(".$id.")";
+    $action="Approved pending form(".$id.")";
     
     $user_data=array(
         "username" => $username ,
@@ -88,18 +88,5 @@
 
     echo insert($user_data, $table_name);
 
+	header("Location: dean_req_forms.php");
 ?>
-
-
-
-
-
-
-
-
-
-	
-
-
-
-

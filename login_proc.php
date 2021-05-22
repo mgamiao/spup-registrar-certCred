@@ -38,8 +38,13 @@ if (($password1==$password) and ($captchaResult==$checkTotal)){
     $_SESSION['access']=$acctType;
     $_SESSION['firstname']=$firstname;
     $_SESSION['lastname']=$lastname;
-
+   if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ 
     header("Location: home.php");
+   }elseif ($_SESSION['access'] == "3"){
+     header("Location: dean_req_forms.php");
+   }elseif ($_SESSION['access'] == "4"){
+    header("Location: bao_req_forms.php");
+  }
 } if ($password1!=$password) {
     $_SESSION['login']=1;
     header("Location: index.php");

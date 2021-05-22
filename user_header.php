@@ -1,5 +1,10 @@
 <?php
 	session_start();
+	if ($_SESSION['email']=="") {
+		header("Location: user_logout.php");
+	}
+?>
+<?php
  include "perfect_function.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +61,7 @@
      
          
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="user_request.php"   aria-expanded="true" aria-controls="collapseTwo">
           
           <span>Request a Form</span>
@@ -66,7 +71,7 @@
        
 
       <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item active">
         <a class="nav-link collapsed" href="contact.php"  aria-expanded="true" aria-controls="collapseUtilities">
           
           <span>Contact us</span>
@@ -142,10 +147,10 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Thank you for using Web Application for School Certification and Credentials. <br>Do you want to request a form again?</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="user_logout.php">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Yes</button>
+          <a class="btn btn-primary" href="user_logout.php">No, Logout</a>
         </div>
       </div>
     </div>

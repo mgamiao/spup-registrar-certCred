@@ -90,13 +90,10 @@ include "header.php";
         
         <thead class="bg-secondary" style="text-align: center; color: white;">
         <tr>
-            <td>Last Name</td>
-            <td>First Name</td>
-            <td>Middle Name</td>
+            <td>Full Name</td>
             <td>School</td>
             <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>E-mail</td>
             <td>Date Requested</td>
             <td>Option</td>
             
@@ -106,13 +103,10 @@ include "header.php";
 
         <tfoot class="bg-secondary" style="text-align: center; color: white;">
         <tr>
-            <td>Last Name</td>
-            <td>First Name</td>
-            <td>Middle Name</td>
+            <td>Full Name</td>
             <td>School</td>
             <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>E-mail</td>
             <td>Date Requested</td>
             <td>Option</td>
             
@@ -146,13 +140,10 @@ include "header.php";
     
 <?php if($status=="1"){ ?>
     <tr>
-        <td><?= $lastName?></td>
-        <td><?= $firstName?></td>
-        <td><?= $middleName?></td>
+        <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
         <td><?= $formType?></td>
         <td><?= $reason?></td>
-        <td><?= $email?></td>
         <td><?= $date?></td>
         
 

@@ -45,7 +45,8 @@ include "header.php";
         foreach ($user_data as $key => $row) {
             $log_id=$row['log_id'];
             $username=$row['username'];
-            $fullname=$row['fullname'];
+            $firstname=$row['firstname'];
+            $lastname=$row['lastname'];
             $acct_type=$row['acct_type'];
             $action=$row['action'];
             $xdate=$row['xdate'];
@@ -58,7 +59,7 @@ include "header.php";
         <td><?= $xdate?></td>
         <td><?= $xtime?></td>
         <td><?= $username?></td>
-        <td><?= $fullname?></td>
+        <td><?= $firstname . " " . $lastname?></td>
         <?php
         if($acct_type == "1"){
                     echo "<td>Admin</td>";

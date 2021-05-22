@@ -29,7 +29,7 @@
 	$mail->Port = "587";
 	$mail->Username = "larajerick169@gmail.com";
 	$mail->Password = "jericklara18";
-	$mail->Subject = "Hello ";
+	$mail->Subject = "Registrar's Office - Form Request";
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
 	$mail->Body = "<h1>Hello " . $lastname . "</h1><br><h3>Your requested form was declined, Please request again";
@@ -55,7 +55,8 @@ date_default_timezone_set('Asia/Singapore');
 
     $table_name="logs";
     $username= $_SESSION['username'];
-    $fullname=$_SESSION['fullname'];
+    $firstname=$_SESSION['firstname'];
+    $lastname=$_SESSION['lastname'];
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
@@ -63,7 +64,8 @@ date_default_timezone_set('Asia/Singapore');
     
     $user_data=array(
         "username" => $username ,
-        "fullname" => $fullname ,
+        "firstname" => $firstname ,
+        "lastname" => $lastname ,
         "acct_type" => $acct_type ,
         "xdate" => $xdate ,
         "xtime" => $xtime ,
