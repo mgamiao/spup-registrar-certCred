@@ -94,7 +94,8 @@ include "header.php";
             <td>School</td>
             <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>E-mail</td>
+            <td>Fee</td>
+            <td>Date Requested</td>
             <td>Option</td>
             
             
@@ -107,7 +108,8 @@ include "header.php";
             <td>School</td>
             <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>E-mail</td>
+            <td>Fee</td>
+            <td>Date Requested</td>
             <td>Option</td>
             
 
@@ -132,6 +134,8 @@ include "header.php";
             $formType = $row['form_type'];
             $reason = $row['reason'];
             $email = $row['email'];
+            $fees = $row['fees'];
+            $date = $row['date'];
             $status = $row['status'];
             
 
@@ -143,7 +147,8 @@ include "header.php";
         <td><?= $school?></td>
         <td><?= $formType?></td>
         <td><?= $reason?></td>
-        <td><?= $email?></td>
+        <td><?= $fees?></td>
+        <td><?= $date?></td>
         
 
         
@@ -166,7 +171,7 @@ include "header.php";
                     View
                 </span>
             </a>
-        &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;<br><br>
         <a href="req_form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>

@@ -250,6 +250,14 @@ function count_pending_forms()
 	return $rowcount;
 }
 
+function count_deaninProcess_forms($table_name, $school, $status)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name WHERE `school` = '$school' AND `status` = '$status'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
 function count_inProcess_forms()
 {
 	$conn = getConnection();
