@@ -63,9 +63,26 @@ include "header.php";
         <?php
         if($acct_type == "1"){
                     echo "<td>Admin</td>";
-                }else{
+                }if($acct_type == "2"){
                     echo "<td>Employee</td>";
-                }?></td>
+                }if($acct_type == "3"){
+                    echo "<td>SITE Dean</td>";
+                }if($acct_type == "4"){
+                    echo "<td> SBAHM Dean</td>";
+                }if($acct_type == "5"){
+                    echo "<td>SNAHS Dean</td>";
+                }if($acct_type == "6"){
+                    echo "<td>SASTE Dean</td>";
+                }if($acct_type == "7"){
+                    echo "<td>BEU Dean</td>";
+                }if($acct_type == "8"){
+                    echo "<td>SoM Dean</td>";
+                }if($acct_type == "9"){
+                    echo "<td>GRADSCHOOL Dean</td>";
+                }if($acct_type == "10"){
+                    echo "<td>BAO</td>";
+                }
+                ?></td>
        
         
 

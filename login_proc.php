@@ -41,9 +41,21 @@ if (($password1==$password) and ($captchaResult==$checkTotal)){
    if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ 
     header("Location: home.php");
    }elseif ($_SESSION['access'] == "3"){
-     header("Location: dean_req_forms.php");
-   }elseif ($_SESSION['access'] == "4"){
+     header("Location: sitedean_req_forms.php");
+   }elseif ($_SESSION['access'] == "10"){
     header("Location: bao_req_forms.php");
+  }elseif ($_SESSION['access'] == "4"){
+    header("Location: sbahmdean_req_forms.php");
+  }elseif ($_SESSION['access'] == "5"){
+    header("Location: snahsdean_req_forms.php");
+  }elseif ($_SESSION['access'] == "6"){
+    header("Location: sastedean_req_forms.php");
+  }elseif ($_SESSION['access'] == "7"){
+    header("Location: beudean_req_forms.php");
+  }elseif ($_SESSION['access'] == "8"){
+    header("Location: somdean_req_forms.php");
+  }elseif ($_SESSION['access'] == "9"){
+    header("Location: graddean_req_forms.php");
   }
 } if ($password1!=$password) {
     $_SESSION['login']=1;
