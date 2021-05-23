@@ -36,19 +36,19 @@
     <h6>School: <span style="color:red">*</h6></span>
     <select name="school" class="custom-select" required autocomplete=off>
     <option selected>Select school:</option>
-    <option value="SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING">SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING</option>
-    <option value="SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT">SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT</option>
-    <option value="SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES">SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES</option>
-    <option value="SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION">SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION</option>
-    <option value="BASIC EDUCATION UNIT">BASIC EDUCATION UNIT</option>
-    <option value="SCHOOL OF MEDICINE">SCHOOL OF MEDICINE</option>
+    <option value="SITE">SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING</option>
+    <option value="SBAHM">SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT</option>
+    <option value="SNAHS">SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES</option>
+    <option value="SASTE">SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION</option>
+    <option value="BEU">BASIC EDUCATION UNIT</option>
+    <option value="SOM">SCHOOL OF MEDICINE</option>
     <option value="GRADUATE SCHOOL">GRADUATE SCHOOL</option>
     </select>  
     <h6>Type of Form: <span style="color:red">*</h6></span>
     <select name="form_type" class="custom-select" required autocomplete=off>
     <option value="">Select type of form:</option>
     <option value="Diploma">Diploma</option>
-    <option value="Form137A">Form 137A</option>
+    <option value="Form 137A">Form 137A</option>
     <option value="Transcript of records">Transcript of Records</option>
     <option value="Certificate of Enrolment">Certificate of Enrollment</option>
     <option value="Certificate of Grades">Certificate of Grades</option>
