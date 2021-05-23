@@ -21,8 +21,14 @@
     $email=$_POST['email'];
     $mobileNum=$_POST['mobilenum'];
     $date=$_POST['date'];
+    //reference number generator
+    $today = date("Ymd");
+    $rand = strtoupper(substr(uniqid(sha1(time())),0,5));
+    echo $unique = $today. "-" . $rand;
+
 
     $user_data=array(
+        "refno" => $unique,
         "firstname" => $firstname,
         "middlename" => $middlename,
         "lastname" => $lastname,
