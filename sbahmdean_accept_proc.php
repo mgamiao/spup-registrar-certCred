@@ -8,18 +8,17 @@
 	//get user ID from URL
 	$id = $_GET['id'];
     $status = $_GET['status'];
-	$fees = $_POST['fees'];
 
 	$user_editedvalues = array (
 		//columname from table => value from post
-			"status" => 3,
-			"fees" => $fees
-
+			"status" => 2
+			
 	);
 	
 	update($user_editedvalues, $id, $table_name);
     $_SESSION['alert_msg']=1;
 
+    
     $id = $_GET['id'];
 	$table_name = "forms";
 	$get_userData = get_where($table_name, $id);
@@ -28,7 +27,6 @@
 		 $id = $row['id'];
 		 $email = $row['email'];
 		 $lastname = $row['lastname'];
-		 $fees = $row['fees'];
 		
 	}
 	date_default_timezone_set('Asia/Singapore');
@@ -55,12 +53,11 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname . "</h1><br>$xdate . $xtime <h3>Your form was approved by the Business Affair Office.Please wait for the finalization of you requested form</h3><br>
-	<h3>Your total fee is: P$fees.00. Please send the receipt of your payment before claiming your requested form. Thank you </h3>";
+	$mail->Body = "<h1>Hello " . $lastname .  "</h1><br>$xdate . $xtime <h3>Your form was approved by your school dean and now under review by Business Affair Office</h3><br>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
-		header("Location: bao_req_forms.php");
+		header("Location: sbahmdean_req_forms.php");
 	}else{
 		echo "Error";
 	}
@@ -91,5 +88,5 @@
 
     echo insert($user_data, $table_name);
 
-	header("Location: bao_req_forms.php");
+	header("Location: sbahmdean_req_forms.php");
 ?>

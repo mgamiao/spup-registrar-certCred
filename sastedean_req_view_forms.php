@@ -182,7 +182,7 @@ include "header.php";
 </div>
 <br>
 <div align="center">
-            <a href="dean_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
+            <a href="sastedean_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
             </span>
@@ -190,7 +190,7 @@ include "header.php";
                     Approve
                 </span>
             </a>
-        <a href="dean_req_forms.php" class="btn btn-danger btn-icon-split btn-md">
+        <a href="sastedean_req_forms.php" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>

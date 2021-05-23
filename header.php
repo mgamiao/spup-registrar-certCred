@@ -7,7 +7,34 @@
 <?php 
 include "perfect_function.php";
 $pendnotif = count_pending_forms();
-$reqnotif = count_inProcess_forms();
+$table_name="forms";
+$status=1;
+$school = "SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING";
+$sitereqnotif = count_deaninProcess_forms($table_name, $school, $status);
+$table_name="forms";
+$status=1;
+$school = "SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT";
+$sbahmreqnotif = count_deaninProcess_forms($table_name, $school, $status);
+$table_name="forms";
+$status=1;
+$school = "SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES";
+$snahsreqnotif = count_deaninProcess_forms($table_name, $school, $status);
+$table_name="forms";
+$status=1;
+$school = "SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION";
+$sastereqnotif = count_deaninProcess_forms($table_name, $school, $status);
+$table_name="forms";
+$status=1;
+$school = "BASIC EDUCATION UNIT";
+$beureqnotif = count_deaninProcess_forms($table_name, $school, $status);
+$table_name="forms";
+$status=1;
+$school = "SCHOOL OF MEDICINE";
+$somreqnotif = count_deaninProcess_forms($table_name, $school, $status);
+$table_name="forms";
+$status=1;
+$school = "GRADUATE SCHOOL";
+$gradreqnotif = count_deaninProcess_forms($table_name, $school, $status);
 $reqnotif1 = count_inProcess_forms1();
 $compnotif = count_archived_forms();
 ?>
@@ -83,20 +110,20 @@ $compnotif = count_archived_forms();
       <?php } ?> 
       <?php if($_SESSION['access']=="3"){ ?>
       <li class="nav-item active">
-        <a class="nav-link collapsed" href="dean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="sitedean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
         <?php 
-          if ($reqnotif == "0"){
-            echo "<span> (dean)Requested Forms</span>";
+          if ($sitereqnotif == "0"){
+            echo "<span> (sitedean)Requested Forms</span>";
           }else{
-           echo "<span>(dean)Requested Forms</span>";
-          echo  "<span class='badge badge-danger badge-counter'> $reqnotif";
+           echo "<span>(sitedean)Requested Forms</span>";
+          echo  "<span class='badge badge-danger badge-counter'> $sitereqnotif";
           }
         ?>
         </a>
       
       </li>
       <?php } ?>
-      <?php if($_SESSION['access']=="4"){ ?>
+      <?php if($_SESSION['access']=="10"){ ?>
       <li class="nav-item active">
         <a class="nav-link collapsed" href="bao_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
         <?php 
@@ -105,6 +132,96 @@ $compnotif = count_archived_forms();
           }else{
            echo "<span>(bao)Requested Forms</span>";
           echo  "<span class='badge badge-danger badge-counter'> $reqnotif1";
+          }
+        ?>
+        </a>
+      
+      </li>
+      <?php } ?>
+      <?php if($_SESSION['access']=="4"){ ?>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="sbahmdean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <?php 
+          if ($sbahmreqnotif == "0"){
+            echo "<span> (sbahmdean)Requested Forms</span>";
+          }else{
+           echo "<span>(sbahmdean)Requested Forms</span>";
+          echo  "<span class='badge badge-danger badge-counter'> $sbahmreqnotif";
+          }
+        ?>
+        </a>
+      
+      </li>
+      <?php } ?>
+      <?php if($_SESSION['access']=="5"){ ?>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="snahsdean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <?php 
+          if ($snahsreqnotif == "0"){
+            echo "<span> (snahsdean)Requested Forms</span>";
+          }else{
+           echo "<span>(snahsdean)Requested Forms</span>";
+          echo  "<span class='badge badge-danger badge-counter'> $snahsreqnotif";
+          }
+        ?>
+        </a>
+      
+      </li>
+      <?php } ?>
+      <?php if($_SESSION['access']=="6"){ ?>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="sastedean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <?php 
+          if ($sastereqnotif == "0"){
+            echo "<span> (sastedean)Requested Forms</span>";
+          }else{
+           echo "<span>(sastedean)Requested Forms</span>";
+          echo  "<span class='badge badge-danger badge-counter'> $sastereqnotif";
+          }
+        ?>
+        </a>
+      
+      </li>
+      <?php } ?>
+      <?php if($_SESSION['access']=="7"){ ?>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="beudean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <?php 
+          if ($beureqnotif == "0"){
+            echo "<span> (beudean)Requested Forms</span>";
+          }else{
+           echo "<span>(beudean)Requested Forms</span>";
+          echo  "<span class='badge badge-danger badge-counter'> $beureqnotif";
+          }
+        ?>
+        </a>
+      
+      </li>
+      <?php } ?>
+      <?php if($_SESSION['access']=="8"){ ?>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="somdean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <?php 
+          if ($somreqnotif == "0"){
+            echo "<span> (somdean)Requested Forms</span>";
+          }else{
+           echo "<span>(somdean)Requested Forms</span>";
+          echo  "<span class='badge badge-danger badge-counter'> $somreqnotif";
+          }
+        ?>
+        </a>
+      
+      </li>
+      <?php } ?>
+      <?php if($_SESSION['access']=="9"){ ?>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="graddean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <?php 
+          if ($gradreqnotif == "0"){
+            echo "<span> (graddean)Requested Forms</span>";
+          }else{
+           echo "<span>(graddean)Requested Forms</span>";
+          echo  "<span class='badge badge-danger badge-counter'> $gradreqnotif";
           }
         ?>
         </a>

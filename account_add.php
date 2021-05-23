@@ -34,6 +34,14 @@ include "header.php";
         <option value="">Type:</option>
         <option value="1">ADMIN</option>
         <option value="2">EMPLOYEE</option>
+        <option value="3">SITE DEAN</option>
+        <option value="4">SBAHM DEAN</option>
+        <option value="5">SNAHS DEAN</option>
+        <option value="6">SASTE DEAN</option>
+        <option value="7">BEU DEAN</option>
+        <option value="8">SOM DEAN</option>
+        <option value="9">GRADSCHOOL DEAN</option>
+        <option value="10">BAO</option>
       </select>
 
   </div>

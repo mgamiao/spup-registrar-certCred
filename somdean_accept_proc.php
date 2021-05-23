@@ -57,7 +57,7 @@
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
-		header("Location: dean_req_forms.php");
+		header("Location: somdean_req_forms.php");
 	}else{
 		echo "Error";
 	}
@@ -73,7 +73,7 @@
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
-    $action="Approved pending form(".$id.")";
+    $action="Approved requested form(".$id.")";
     
     $user_data=array(
         "username" => $username ,
@@ -88,5 +88,5 @@
 
     echo insert($user_data, $table_name);
 
-	header("Location: dean_req_forms.php");
+	header("Location: somdean_req_forms.php");
 ?>

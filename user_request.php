@@ -25,8 +25,8 @@
       <input type="text" class="form-control" placeholder="Enter Last name" name="lastname" required autocomplete=off>
     </div>
     <div class="form-group">
-      <h6>Middle Name: <span style="color:red">*</h6></span>
-      <input type="text" class="form-control"  placeholder="Enter Middle name" name="middlename" required autocomplete=off>
+      <h6>Middle Name:</h6>
+      <input type="text" class="form-control"  placeholder="Enter Middle name" name="middlename"  autocomplete=off>
     </div>
     <div class="form-group">
       <h6>First Name:<span style="color:red">*</h6></span>

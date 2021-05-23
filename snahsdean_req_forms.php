@@ -121,6 +121,10 @@ include "header.php";
         $column = "status";
         $condition = 1;
         $get_userData = get_where_custom($table_name, $column, $condition);
+        $table_name = "forms";
+        $column = "school";
+        $condition = "SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES";
+        $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
             
@@ -138,7 +142,7 @@ include "header.php";
 
     ?>
     
-<?php if($status=="1"){ ?>
+<?php if($status=="1" && $school=="SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES"){ ?>
     <tr>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
@@ -151,7 +155,7 @@ include "header.php";
             
         <td>
         &nbsp;&nbsp;
-            <a href="dean_req_view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="snahsdean_req_view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
             </span>
