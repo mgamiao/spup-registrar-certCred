@@ -1,47 +1,53 @@
 <?php 
 
-  include "header.php";
+    include "header.php";
 
-  $sasteForms = count_school_forms('forms', 'SASTE');
-  $sastePendingForms = count_school_specific_forms('forms', 'SASTE', '0');
-  $sasteInProcessForms = count_school_specific_forms('forms', 'SASTE', '1');
-  $sasteArchivedForms = count_school_specific_forms('forms', 'SASTE', '2');
+    $sasteForms = count_school_forms('forms', 'SASTE');
+    $sastePendingForms = count_school_specific_forms('forms', 'SASTE', '0');
+    $sasteInProcessForms = count_school_specific_forms('forms', 'SASTE', '1');
+    $sasteArchivedForms = count_school_specific_forms('forms', 'SASTE', '2');
 
-  $snahsForms = count_school_forms('forms', 'SNAHS');
-  $snahsPendingForms = count_school_specific_forms('forms', 'SNAHS', '0');
-  $snahsInProcessForms = count_school_specific_forms('forms', 'SNAHS', '1');
-  $snahsArchivedForms = count_school_specific_forms('forms', 'SNAHS', '2');
+    $snahsForms = count_school_forms('forms', 'SNAHS');
+    $snahsPendingForms = count_school_specific_forms('forms', 'SNAHS', '0');
+    $snahsInProcessForms = count_school_specific_forms('forms', 'SNAHS', '1');
+    $snahsArchivedForms = count_school_specific_forms('forms', 'SNAHS', '2');
 
-  $siteForms = count_school_forms('forms', 'SITE');
-  $sitePendingForms = count_school_specific_forms('forms', 'SITE', '0');
-  $siteInProcessForms = count_school_specific_forms('forms', 'SITE', '1');
-  $siteArchivedForms = count_school_specific_forms('forms', 'SITE', '2');
+    $siteForms = count_school_forms('forms', 'SITE');
+    $sitePendingForms = count_school_specific_forms('forms', 'SITE', '0');
+    $siteInProcessForms = count_school_specific_forms('forms', 'SITE', '1');
+    $siteArchivedForms = count_school_specific_forms('forms', 'SITE', '2');
 
-  $sbahmForms = count_school_forms('forms', 'SBAHM');
-  $sbahmPendingForms = count_school_specific_forms('forms', 'SBAHM', '0');
-  $sbahmInProcessForms = count_school_specific_forms('forms', 'SBAHM', '1');
-  $sbahmArchivedForms = count_school_specific_forms('forms', 'SBAHM', '2');
+    $sbahmForms = count_school_forms('forms', 'SBAHM');
+    $sbahmPendingForms = count_school_specific_forms('forms', 'SBAHM', '0');
+    $sbahmInProcessForms = count_school_specific_forms('forms', 'SBAHM', '1');
+    $sbahmArchivedForms = count_school_specific_forms('forms', 'SBAHM', '2');
 
-  $totalForms = count_total_forms();
-  $pendingForms = count_pending_forms();
-  $inProcessForms = count_inProcess_forms();
-  $archivedForms = count_archived_forms();
+    $totalForms = count_total_forms();
+    $pendingForms = count_pending_forms();
+    $inProcessForms = count_inProcess_forms();
+    $archivedForms = count_archived_forms();
 
-  $jan = 1;
-  $feb = 3;
-  $mar = 5;
-  $apr = 2;
-  $may = 7;
-  $jun = 9;
-  $jul = 4;
-  $aug = 11;
-  $sep = 6; 
-  $oct = 13;
-  $nov = 8;
-  $dec = 10;
+
+    //data for forms rquested per month
+    $jan = 1;
+    $feb = 3;
+    $mar = 5;
+    $apr = 2;
+    $may = 7;
+    $jun = 9;
+    $jul = 4;
+    $aug = 11;
+    $sep = 6; 
+    $oct = 13;
+    $nov = 8;
+    $dec = 10;
+
+    //reference number generator
+    $today = date("Ymd");
+    $rand = strtoupper(substr(uniqid(sha1(time())),0,10));
+    $unique = $today. "-" . $rand;
 
 ?>
-
 
 
 <div class="container-fluid">
@@ -55,8 +61,9 @@
     <div class="row mb-3">
         <div class="col-12" >
             <div class="card shadow mb-2">
-                <div class="card-header py-3" >
-                    <h6 class="m-0 font-weight-bold text-primary">Forms Requested per Month</h6>
+                <div class="card-header py-6 col-12" >
+                    <h6 class="col-6 m-0 font-weight-bold text-primary">Forms Requested per Month</h6>
+                    <h6 class="col-12 text-right" style="margin-top:-20px;">Year: <b id="yearNow"></b></h6>
                 </div>
                 <div class="card-body">
                     <div class="chart-area">
@@ -537,4 +544,35 @@
       }
   }
   idleLogout();
+
+
+
+// extra reference number generator
+    // function uuidv4() {
+    //   return 'xxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    //     var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    //     return v.toString(16);
+    //   });
+    // }
+    // var yearNow = '<?php //echo $today."-"; ?>';
+    // console.log(yearNow.concat(uuidv4()));
+</script>
+
+
+<script>
+// get date today + show year in form requested per month
+
+var refNumber = '<?php echo $unique; ?>';
+console.log(refNumber);
+
+const dateToday = new Date()
+dateToday.setFullYear(dateToday.getFullYear())
+console.log(dateToday);
+
+var dataYear = 0;
+var getYear = new Date();
+var yearNow = getYear.getFullYear();
+console.log(yearNow);
+document.getElementById("yearNow").innerHTML = yearNow;
+
 </script>

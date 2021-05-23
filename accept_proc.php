@@ -27,6 +27,7 @@
 		 $id = $row['id'];
 		 $email = $row['email'];
 		 $lastname = $row['lastname'];
+		 $unique = $row['refno'];
 		
 	}
 	date_default_timezone_set('Asia/Singapore');
@@ -53,7 +54,7 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname . "</h1><br> $xdate . $xtime <h3> Your form was approved by the registrar office and now under review by your designated dean</h3>";
+	$mail->Body = "<h1>Hello " . $lastname . "</h1><br> $xdate . $xtime <h3> Your form was approved by the registrar office and now under review by your designated dean</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {

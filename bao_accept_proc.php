@@ -29,6 +29,7 @@
 		 $email = $row['email'];
 		 $lastname = $row['lastname'];
 		 $fees = $row['fees'];
+		 $unique = $row['refno'];
 		
 	}
 	date_default_timezone_set('Asia/Singapore');
@@ -56,7 +57,7 @@
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
 	$mail->Body = "<h1>Hello " . $lastname . "</h1><br>$xdate . $xtime <h3>Your form was approved by the Business Affair Office.Please wait for the finalization of you requested form</h3><br>
-	<h3>Your total fee is: P$fees.00. Please send the receipt of your payment before claiming your requested form. Thank you </h3>";
+	<h3>Your total fee is: P$fees.00. Please send the receipt of your payment before claiming your requested form. Thank you </h3><br><br><br>Your reference number is: <b>". $unique."</b>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
