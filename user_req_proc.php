@@ -23,7 +23,7 @@
     $date=$_POST['date'];
     //reference number generator
     $today = date("Ymd");
-    $rand = strtoupper(substr(uniqid(sha1(time())),0,5));
+    $rand = strtoupper(substr(uniqid(sha1(time())),0,10));
     echo $unique = $today. "-" . $rand;
 
 
