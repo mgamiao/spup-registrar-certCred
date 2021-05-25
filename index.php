@@ -76,7 +76,7 @@ session_start();
                           echo "<span class='text-light'>" . $random_number1 . " " . $random_symbol . " " . $random_number2 . ' = ' . "</span>";
                         ?>
 
-                        <input name="captchaResult" type="text" size="4" required/>
+                        <input name="captchaResult" type="text" size="4" required autocomplete="off"/>
                         <input name="firstNumber" type="hidden" value= "<?php echo $random_number1; ?>"/>
                         <input name="randomSymbol" type="hidden" value="<?php echo $random_symbol; ?>"/>
                         <input name="secondNumber" type="hidden" value= "<?php echo $random_number2; ?>"/>

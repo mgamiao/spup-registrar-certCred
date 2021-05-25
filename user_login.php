@@ -122,6 +122,7 @@ session_start();
                     ?>
 
                     <br>
+                    <span class="text-light"> Note: Please make sure that the e-mail inputted above is correct. <br><br> </span>
                     <button type=submit class="btn btn-primary btn-user btn-block">
                       Login
                     </button>

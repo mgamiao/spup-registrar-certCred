@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -72,12 +72,14 @@
     </thead>
     <tbody>
       <tr>
-        <td align="center">The applicant fill-up the request form. <a href="user_request.php">Request Form</a></td>
+        <td align="center">The applicant fill-up the <a href="user_request.php"> request form.</a></td>
       </tr>
       <tr>
-        <td align="center">The applicant will be informed about the requested form through  an e-mail notification.</td>
+        <td align="center">The applicant will be informed about the status of the requested form through  an e-mail notification.</td>
       </tr>
-      <tr>
+      <tr> 
+        <td align="center">The applicant must pay the corresponding fee before claiming the requested form.</td>
+      </tr>
 
     </tbody>
   </table>
@@ -97,6 +99,22 @@
       </tr>
       <tr>
       <td align="center"> Through Courier.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <h4>Friendly Reminders:</h4>            
+  <table class="table table-dark table-striped">
+    <thead>
+
+    </thead>
+    <tbody>
+      <tr>
+        <td align="center">A.) Official documents will be processed/released to the student only upon settlement of all financial, academic, and documentary liabilities with the school and upon full payment of documents requested.</td>
+      </tr>
+      <tr>
+        <td align="center">B.)Documents applied not claimed after three (3) months from the date of release will be automatically shredded..</td>
       </tr>
     </tbody>
   </table>
