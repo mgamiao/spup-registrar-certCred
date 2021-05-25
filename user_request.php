@@ -11,7 +11,19 @@
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 </head>
 <body>
-
+<?php
+if (isset($_SESSION['alert_msg'])){
+        if ($_SESSION['alert_msg']==1){
+            echo "
+                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                    <div class='card-body'>
+                    REQUESTED FORM SUCCESSFULLY SUBMITTED
+                    </div>
+                </div>";
+                unset($_SESSION['alert_msg']);
+        }
+    }
+    ?>
 <div class="container" >
   <h2>Request Form</h2>
   <h6 style="color:red"> * Required </h6><br>
@@ -62,7 +74,7 @@
     <option value="Transfer credentials">Transfer Credentials</option>
     </select>
     <div class="form-group">
-      <h6>Number of Copies: <span style="color:red">*</h6></span>
+      <h6>Number of Copies<span style="color:blue">(maximum of 3): </span><span style="color:red">*</h6></span>
       <input type="number" class="form-control"  placeholder="Enter Number of Copies" name="numofcopies" required autocomplete=off min=1 max=3>
     </div>
     <h6>Number of Request:</h6>
@@ -113,10 +125,24 @@
       <input type="number" class="form-control"  placeholder="Enter Mobile number" name="mobilenum" required autocomplete=off maxlength="11">
     </div>
     <br>
-    <h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6> </i>   
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <!-- <h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6> </i>    -->
+    <input type="checkbox" id="myCheck" onclick="myFunction()">
+    <label for="myCheck"><h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6> </i></label> 
+    
+
+    <p id="text" style="display:none"><button type="submit" class="btn btn-primary">Submit</button></p>
   </form>
 </div>
-
+<script>
+function myFunction() {
+  var checkBox = document.getElementById("myCheck");
+  var text = document.getElementById("text");
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+     text.style.display = "none";
+  }
+}
+</script>
 </body>
 </html>

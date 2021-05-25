@@ -282,6 +282,14 @@ function count_archived_forms()
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
+function search_form($table_name, $search)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where
+	 (refno LIKE '%$search%')";
+	$result = $conn->query($sql);
+	return $result;
+}
 
 function _fire_email($target_email, $subject, $msg)
 {

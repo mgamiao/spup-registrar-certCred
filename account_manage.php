@@ -115,6 +115,22 @@ include "header.php";
                 $user_type = "ADMIN";
             } if ($user_type == "2") {
                 $user_type = "EMPLOYEE";
+            } if ($user_type == "3") {
+                $user_type = "SITE DEAN";
+            } if ($user_type == "4") {
+                $user_type = "SBAHM DEAN";
+            } if ($user_type == "5") {
+                $user_type = "SNAHS DEAN";
+            } if ($user_type == "6") {
+                $user_type = "SASTE DEAN";
+            } if ($user_type == "7") {
+                $user_type = "BEU DEAN";
+            } if ($user_type == "8") {
+                $user_type = "SOM DEAN";
+            } if ($user_type == "9") {
+                $user_type = "GRADSCHOOL DEAN";
+            } if ($user_type == "10") {
+                $user_type = "BAO";
             }
 
     ?>

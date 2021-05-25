@@ -57,7 +57,35 @@
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
 	$mail->Body = "<h1>Hello " . $lastname . "</h1><br>$xdate . $xtime <h3>Your form was approved by the Business Affair Office.Please wait for the finalization of you requested form</h3><br>
-	<h3>Your total fee is: P$fees.00. Please send the receipt of your payment before claiming your requested form. Thank you </h3><br><br><br>Your reference number is: <b>". $unique."</b>";
+	<h3>Your total fee is: P$fees.00. Please send the receipt of your payment before claiming your requested form. Thank you </h3><br><br><br>Your reference number is: <b>". $unique."</b><br>
+	<h3><b>Details for Online Payment:<b></h3>
+	<table>
+	<tr>
+    <td>Bank</td>
+	<td> : </td>
+    <td>Bank of the Philippine Islands</td>
+  	</tr>
+  	<tr>
+    <td>Branch</td>
+	<td> : </td>
+    <td>Tuguegarao City Branch</td>
+  	</tr>
+  	<tr>
+    <td>Account Name</td>
+	<td> : </td>
+    <td>ST. PAUL UNIVERSITY PHILIPPINES</td>
+  	</tr>
+  	<tr>
+    <td>Account Type</td>
+	<td> : </td>
+    <td>Saving Account</td>
+  	</tr>
+  	<tr>
+    <td>Account Number</td>
+	<td> : </td>
+    <td>8693 – 0892 – 13</td>
+  	</tr>
+	</table>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
