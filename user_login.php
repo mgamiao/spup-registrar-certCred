@@ -23,7 +23,7 @@ session_start();
 
 </head>
 
-<body class="bg-dark" style="background-color: #a9a9a9;">
+<body class="bg-dark" style="background-color: #a9a9a9;" onload="checkStatus()">
 
   <div class="container">
 
@@ -120,33 +120,11 @@ session_start();
                     <?php
                     }
                     ?>
-
-                    <br>
-                    <span class="text-light"> Note: Please make sure that the e-mail inputted above is correct. <br><br> </span>
-                    <button type=submit class="btn btn-primary btn-user btn-block">
-                      Login
-                    </button>
+                    <input type="checkbox" id="agree_again" name="agree" value="ON">
+                    <label><h6 style="color:red; "><i> Note: Please make sure that the email inputted above is correct.</h6></i></label> 
+                      <p id="text" ><button type="submit" class="btn btn-primary custombutton">Submit</button></p>
                   </form>
-                  <br>
-                  <form class="user" method="post" action="index.php">
-                    
-                    
-                    <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
-                      <i class="fab fa-google fa-fw"></i> Login with Google
-                    </a>
-                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                    </a> -->
-                  </form>
-                  <!-- <hr>
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
                   </div>
-                  <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a> -->
-                    <br>
-                    <br>
-                    <br>
                   </div>
                 </div>
               </div>
@@ -159,7 +137,7 @@ session_start();
     </div>
 
   </div>
-
+  
   <!-- Bootstrap core JavaScript-->
   <script src="template/vendor/jquery/jquery.min.js"></script>
   <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -169,7 +147,19 @@ session_start();
 
   <!-- Custom scripts for all pages-->
   <script src="template/js/sb-admin-2.min.js"></script>
-
+  <script>
+  function checkStatus() {
+      console.log('reached');
+      if ($('#agree_again').is(":checked")) {
+          $(".custombutton").attr('disabled', false);
+      } else {
+          $(".custombutton").attr('disabled', true);
+      }
+  }
+  $("#agree_again").change(function () {
+      checkStatus();
+  })
+  </script>
 </body>
 
 </html>

@@ -222,6 +222,14 @@ function count_school_forms($table_name, $school)
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
+function count_refno($table_name, $search)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name WHERE `refno` = '$search'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
 
 function count_school_specific_forms($table_name, $school, $status)
 {
@@ -286,7 +294,7 @@ function search_form($table_name, $search)
 {
 	$conn = getConnection();
 	$sql = "SELECT * FROM $table_name where
-	 (refno LIKE '%$search%')";
+	 (refno =='$search%')";
 	$result = $conn->query($sql);
 	return $result;
 }

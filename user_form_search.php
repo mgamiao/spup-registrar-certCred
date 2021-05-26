@@ -20,18 +20,19 @@
 </div>
 <?php      
         $table_name="forms";
+        $column="refno";
         $search=$_POST['search'];
         echo "<div class='text-dark' style='float:left;'><i>Results of <b>"
                 ."'".$_POST['search']."'"
                 ."</b>.</i><br><br></div>";
-        $user_data=search_form($table_name, $search);
-
-        foreach ($user_data as $key => $row) {
-            $refno=$row['refno'];
-            $status=$row['status'];
-        }
+        $user_data=count_refno($table_name, $search);
+      if ($user_data == "1"){
+          $user_data2=get_where_custom($table_name, $column, $search);
+          foreach ($user_data2 as $key => $row) {
+              $refno=$row['refno'];
+              $status=$row['status'];
         
-        if ($status == "0"){
+        if ($status == "0" && $refno == $search){
             echo "<br>
             <table class='table' width='100%' cellspacing='0'>
         <tr>
@@ -47,56 +48,56 @@
           <td>Pending</td>
         </tr>
         </table>";
-          }if ($status == "1"){
+        }elseif ($status == "1" && $refno == $search){
           echo "<br>
           <table class='table' width='100%' cellspacing='0'>
-        <tr>
-            <th>Registrar's Office</th>
-            <th>School Dean</th>
-            <th>Business Affair Office</th>
-            <th>Ready to Claim</th>
-        </tr>
-        <tr>
-            <td>Approved requested form</td>
-            <td>Under Review</td>
-            <td>Pending</td>
-            <td>Pending</td>
-        </tr>
+            <tr>
+                <th>Registrar's Office</th>
+                <th>School Dean</th>
+                <th>Business Affair Office</th>
+                <th>Ready to Claim</th>
+            </tr>
+            <tr>
+                <td>Approved requested form</td>
+                <td>Under Review</td>
+                <td>Pending</td>
+                <td>Pending</td>
+            </tr>
         </table>";
-        }if ($status == "2"){
-            echo "<br>
+        }elseif ($status == "2" && $refno == $search){
+          echo "<br>
             <table class='table' width='100%' cellspacing='0'>
-          <tr>
-              <th>Registrar's Office</th>
-              <th>School Dean</th>
-              <th>Business Affair Office</th>
-              <th>Ready to Claim</th>
-          </tr>
-          <tr>
-              <td>Approved requested form</td>
-              <td>Approved requested form</td>
-              <td>Under Review</td>
-              <td>Pending</td>
-          </tr>
+              <tr>
+                  <th>Registrar's Office</th>
+                  <th>School Dean</th>
+                  <th>Business Affair Office</th>
+                  <th>Ready to Claim</th>
+              </tr>
+              <tr>
+                  <td>Approved requested form</td>
+                  <td>Approved requested form</td>
+                  <td>Under Review</td>
+                  <td>Pending</td>
+              </tr>
           </table>";
-        }if ($status == "3"){
-            echo "<br>
+        }elseif ($status == "3" && $refno == $search){
+          echo "<br>
             <table class='table' width='100%' cellspacing='0'>
-          <tr>
-              <th>Registrar's Office</th>
-              <th>School Dean</th>
-              <th>Business Affair Office</th>
-              <th>Ready to Claim</th>
-          </tr>
-          <tr>
-              <td>Approved requested form</td>
-              <td>Approved requested form</td>
-              <td>Approved requested form</td>
-              <td>Ready when paid</td>
-          </tr>
+              <tr>
+                  <th>Registrar's Office</th>
+                  <th>School Dean</th>
+                  <th>Business Affair Office</th>
+                  <th>Ready to Claim</th>
+              </tr>
+              <tr>
+                  <td>Approved requested form</td>
+                  <td>Approved requested form</td>
+                  <td>Approved requested form</td>
+                  <td>Ready when paid</td>
+              </tr>
           </table>";
-        }if ($status == "4"){
-            echo "<br>
+        }elseif ($status == "4" && $refno == $search){
+          echo "<br>
             <table class='table' width='100%' cellspacing='0'>
           <tr>
               <th>Registrar's Office</th>
@@ -112,4 +113,9 @@
           </tr>
           </table>";
         }
+      }
+        }else{
+          echo "<br><h4> Invalid Reference Number.Please try valid reference number</h4> ";
+        }
+       
     ?>

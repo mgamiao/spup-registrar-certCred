@@ -39,9 +39,9 @@ include "header.php";
         <option value="5">SNAHS DEAN</option>
         <option value="6">SASTE DEAN</option>
         <option value="7">BEU DEAN</option>
-        <option value="8">SoM DEAN</option>
+        <option value="8">SOM DEAN</option>
         <option value="9">GRADSCHOOL DEAN</option>
-        <option value="10">BAO DEAN</option>
+        <option value="10">BAO </option>
       </select>
 
   </div>
