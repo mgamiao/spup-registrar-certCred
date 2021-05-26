@@ -58,6 +58,7 @@ $compnotif = count_archived_forms();
   <!-- Custom styles for this template-->
   <link href="template/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="css/collapsible.css" rel="stylesheet" type="text/css">
+  
 </head>
 
 <body id="page-top">
@@ -290,9 +291,14 @@ $compnotif = count_archived_forms();
           $xtime=date('h:i:sa'); 
           echo "<h6 class='m-0 font-weight-bold text-primary'>Date: $xdate   &nbsp </h6>  "; 
           
-          echo "<h6 class='m-0 font-weight-bold text-primary'>Time:  $xtime</h6>";
+          // echo "<h6 class='m-0 font-weight-bold text-primary'>Time:  $xtime</h6>";
+
+          echo "<span class='m-0 font-weight-bold text-primary'>Time:&nbsp</span>
+          <span id='hrs' class='m-0 font-weight-bold text-primary'> 0</span><span class='m-0 font-weight-bold text-primary'>:</span>
+          <span id='mins' class='m-0 font-weight-bold text-primary'>0</span><span class='m-0 font-weight-bold text-primary'>:</span>
+          <span id='secs' class='m-0 font-weight-bold text-primary'>0</span>";
+
           ?>
-          
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -358,6 +364,11 @@ $compnotif = count_archived_forms();
     </div>
   </div>
 
+</body>
+
+</html>
+
+
   <!-- Bootstrap core JavaScript-->
   <script src="template/vendor/jquery/jquery.min.js"></script>
   <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -375,6 +386,22 @@ $compnotif = count_archived_forms();
   <script src="template/js/demo/chart-area-demo.js"></script>
   <script src="template/js/demo/chart-pie-demo.js"></script>
 
-</body>
 
-</html>
+<script src='http://code.jquery.com/jquery.js'></script>
+        <script>
+         $(document).ready(function(){
+             setInterval(_initTimer, 1000);
+         });
+         function _initTimer(){
+             $.ajax({
+                 url: 'timer.php',
+                 success: function(data) {
+                    // console.log(data);
+                     data = data.split(':');
+                     $('#hrs').html(data[0]);
+                     $('#mins').html(data[1]);
+                     $('#secs').html(data[2]);
+                 }
+             });
+         }
+        </script>
