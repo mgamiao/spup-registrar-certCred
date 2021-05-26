@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 </head>
-<body>
+<body onload="checkStatus()">
 <?php
 if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==1){
@@ -118,7 +118,7 @@ if (isset($_SESSION['alert_msg'])){
     </div>
     <div class="form-group">
       <h6>Email: <span style="color:red">*</h6></span>
-      <input type="email" class="form-control"  placeholder="Enter Email Address"  value="<?= $_SESSION['email']; ?>" name="email" required autocomplete=off >
+      <input type="email" class="form-control"  placeholder="Enter Email Address"  value="<?= $_SESSION['email']; ?>" name="email" required autocomplete=off readonly>
     </div>
     <div class="form-group">
       <h6>Mobile Number: <span style="color:red">*</h6></span>
@@ -126,23 +126,25 @@ if (isset($_SESSION['alert_msg'])){
     </div>
     <br>
     <!-- <h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6> </i>    -->
-    <input type="checkbox" id="myCheck" onclick="myFunction()">
-    <label for="myCheck"><h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6> </i></label> 
+    <input type="checkbox" id="agree_again" name="agree" value="ON">
+    <label><h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6></i></label> 
     
 
-    <p id="text" style="display:none"><button type="submit" class="btn btn-primary">Submit</button></p>
+    <p id="text" ><button type="submit" class="btn btn-primary custombutton">Submit</button></p>
   </form>
 </div>
 <script>
-function myFunction() {
-  var checkBox = document.getElementById("myCheck");
-  var text = document.getElementById("text");
-  if (checkBox.checked == true){
-    text.style.display = "block";
-  } else {
-     text.style.display = "none";
-  }
-}
+function checkStatus() {
+        console.log('reached');
+        if ($('#agree_again').is(":checked")) {
+            $(".custombutton").attr('disabled', false);
+        } else {
+            $(".custombutton").attr('disabled', true);
+        }
+    }
+    $("#agree_again").change(function () {
+        checkStatus();
+    })
 </script>
 </body>
 </html>
