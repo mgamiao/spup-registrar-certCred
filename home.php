@@ -22,6 +22,22 @@
     $sbahmInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1');
     $sbahmArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '2');
 
+    $somForms = count_school_forms('forms', 'SCHOOL OF MEDICINE');
+    $somPendingForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '0');
+    $somInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '1');
+    $somArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '2');
+
+    $beuForms = count_school_forms('forms', 'BASIC EDUCATION UNIT');
+    $beuPendingForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '0');
+    $beuInProcessForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '1');
+    $beuArchivedForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '2');
+
+    $gradSchoolForms = count_school_forms('forms', 'GRADUATE SCHOOL');
+    $gradSchoolPendingForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '0');
+    $gradSchoolInProcessForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '1');
+    $gradSchoolArchivedForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '2');
+    
+    
     $totalForms = count_total_forms();
     $pendingForms = count_pending_forms();
     $inProcessForms = count_inProcess_forms();
@@ -345,6 +361,165 @@
 
   </div>
   <!-- end sbahm stats-->
+
+    <!-- start som stats -->
+    <button type="button" class="fullStats">SOM</button>
+  <div class="content w-100">
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Requested Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$somForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Pending Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$somPendingForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">In Process Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$somInProcessForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Completed Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$somArchivedForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  <!-- end som stats-->
+
+      <!-- start beu stats -->
+  <button type="button" class="fullStats">BEU</button>
+  <div class="content w-100">
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Requested Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$beuForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Pending Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$beuPendingForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">In Process Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$beuInProcessForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Completed Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$beuArchivedForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  <!-- end beu stats-->
+
+   <!-- start graduate school stats -->
+   <button type="button" class="fullStats">GRADUATE SCHOOL</button>
+  <div class="content w-100">
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Requested Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$gradSchoolForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Pending Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$gradSchoolPendingForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">In Process Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$gradSchoolInProcessForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mt-3" >
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" >
+                <h6 class="m-0 font-weight-bold text-primary">Completed Forms</h6>
+            </div>
+            <div class="card-body">
+                <?php echo "<h4 style='text-align:center;'>".$gradSchoolArchivedForms."</h4>" ?>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  <!-- end grad school stats-->
+
+
+
+  </div>
+
+
   </div>
 
 </div>
@@ -489,10 +664,11 @@
     var myPieChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ["SASTE", "SNAHS", "SITE", "SBAHM"],
+        labels: ["SASTE", "SNAHS", "SITE", "SBAHM", "SOM", "BEU", "GRAD SCHOOL"],
         datasets: [{
-        data: [<?php echo $sasteForms ?>, <?php echo $snahsForms ?>, <?php echo $siteForms ?>, <?php echo $sbahmForms ?>],
-        backgroundColor: ['#007bff', '#dc3545', '#FF69B4', '#28a745'],
+        data: [<?php echo $sasteForms ?>, <?php echo $snahsForms ?>, <?php echo $siteForms ?>, <?php echo $sbahmForms ?>, 
+        <?php echo $somForms ?>, <?php echo $beuForms ?>, <?php echo $gradSchoolForms ?>],
+        backgroundColor: ['#007bff', '#dc3545', '#FF69B4', '#FFFF00', '#006400', '#CFB53B', '000'],
         }],
     },
     });
@@ -523,27 +699,27 @@
 
 <!-- idle timeout -->
 <script>
-  function idleLogout() {
-      var t;
-      window.onload = resetTimer;
-      window.onmousemove = resetTimer;
-      window.onmousedown = resetTimer;  // catches touchscreen presses as well      
-      window.ontouchstart = resetTimer; // catches touchscreen swipes as well 
-      window.onclick = resetTimer;      // catches touchpad clicks as well
-      window.onkeydown = resetTimer;   
-      window.addEventListener('scroll', resetTimer, true); 
+//   function idleLogout() {
+//       var t;
+//       window.onload = resetTimer;
+//       window.onmousemove = resetTimer;
+//       window.onmousedown = resetTimer;  // catches touchscreen presses as well      
+//       window.ontouchstart = resetTimer; // catches touchscreen swipes as well 
+//       window.onclick = resetTimer;      // catches touchpad clicks as well
+//       window.onkeydown = resetTimer;   
+//       window.addEventListener('scroll', resetTimer, true); 
 
-      function yourFunction() {
-        window.alert('You were inactive for 5 minutes. Please log in again')
-        window.location.href = 'logout.php';
-      }
+//       function yourFunction() {
+//         window.alert('You were inactive for 5 minutes. Please log in again')
+//         window.location.href = 'logout.php';
+//       }
 
-      function resetTimer() {
-          clearTimeout(t);
-          t = setTimeout(yourFunction, 300000);  // time is in milliseconds
-      }
-  }
-  idleLogout();
+//       function resetTimer() {
+//           clearTimeout(t);
+//           t = setTimeout(yourFunction, 300000);  // time is in milliseconds
+//       }
+//   }
+//   idleLogout();
 
 
 

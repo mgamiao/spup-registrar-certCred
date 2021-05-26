@@ -497,7 +497,7 @@ function get_last($table_name, $column)
 function get_desc($table_name, $column)
 {
 	$conn = getConnection();
-	$sql = "SELECT * FROM logs ORDER BY log_id DESC";
+	$sql = "SELECT * FROM `$table_name` ORDER BY `$column` DESC";
 	$result = $conn->query($sql);
 	return $result;
 }
