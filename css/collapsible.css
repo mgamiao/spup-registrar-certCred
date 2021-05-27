@@ -1,24 +1,67 @@
 .fullStats {
-    background-color: #777;
-    color: white;
+    background-color:  #f3f1f1;
+    color: black;
     cursor: pointer;
     padding: 18px;
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
+    font-size: 18px;
+    font-family: 'helvetica';
+    margin-top: 20px;
   }
   
   .fullStatsActive, .fullStats:hover {
-    background-color: #555;
+    background-color: #fed002;
+  
   }
   
   .content {
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #f2f2f2;
 
   }
   
+
+  .bordercolor {
+    background-color:  #f3f1f1;
+
+  }
+  
+  .headerblacked {
+    color: #5a5c69;
+    font-family: 'Bebas';
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+  }
+
+  .bodyblacked {
+    color: black;
+    text-align: center;
+
+
+  }
+
+  .viewform {
+    color: black;
+  }
+
+.tableblacked {
+  color: white;
+  background-color: #5a5c69;
+  text-align: center;
+
+}
+
+
+.pg-img {
+  height: auto;
+  background-image: url('img/spup4.jpg'); 
+  background-repeat: no-repeat; 
+  background-size: 100%;
+}
+
