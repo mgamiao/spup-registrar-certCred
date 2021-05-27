@@ -93,6 +93,7 @@ include "header.php";
 </div>
 </div>
 </div>
+<?php include "footer.php" ?>
 </div>
 </div>
  <script src="template/vendor/jquery/jquery.min.js"></script> 
