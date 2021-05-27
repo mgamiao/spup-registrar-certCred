@@ -121,6 +121,9 @@ $compnotif = count_archived_forms();
           }
         ?>
         </a>
+        <a class="nav-link collapsed" href="sitecompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <span>SITE Completed Forms</span>
+        </a>
       
       </li>
       <?php } ?>
@@ -135,6 +138,9 @@ $compnotif = count_archived_forms();
           echo  "<span class='badge badge-danger badge-counter'> $reqnotif1";
           }
         ?>
+        </a>
+        <a class="nav-link collapsed" href="baocompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <span>BAO Completed Forms</span>
         </a>
       
       </li>
@@ -151,7 +157,9 @@ $compnotif = count_archived_forms();
           }
         ?>
         </a>
-      
+        <a class="nav-link collapsed" href="sbahmcompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <span>SBAHM Completed Forms</span>
+        </a>
       </li>
       <?php } ?>
       <?php if($_SESSION['access']=="5"){ ?>
@@ -165,6 +173,9 @@ $compnotif = count_archived_forms();
           echo  "<span class='badge badge-danger badge-counter'> $snahsreqnotif";
           }
         ?>
+        </a>
+        <a class="nav-link collapsed" href="snahscompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <span>SNAHS Completed Forms</span>
         </a>
       
       </li>
@@ -181,6 +192,9 @@ $compnotif = count_archived_forms();
           }
         ?>
         </a>
+        <a class="nav-link collapsed" href="sastecompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <span>SASTE Completed Forms</span>
+        </a>
       
       </li>
       <?php } ?>
@@ -195,6 +209,9 @@ $compnotif = count_archived_forms();
           echo  "<span class='badge badge-danger badge-counter'> $beureqnotif";
           }
         ?>
+        </a>
+        <a class="nav-link collapsed" href="beucompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <span>BEU Completed Forms</span>
         </a>
       
       </li>
@@ -211,6 +228,9 @@ $compnotif = count_archived_forms();
           }
         ?>
         </a>
+        <a class="nav-link collapsed" href="somcompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <span>SOM Completed Forms</span>
+        </a>
       
       </li>
       <?php } ?>
@@ -225,6 +245,9 @@ $compnotif = count_archived_forms();
           echo  "<span class='badge badge-danger badge-counter'> $gradreqnotif";
           }
         ?>
+        </a>
+        <a class="nav-link collapsed" href="gradcompleted_forms.php"  aria-expanded="true" aria-controls="collapseTwo">
+        <span>GRADUATE SCHOOL Completed Forms</span>
         </a>
       
       </li>
