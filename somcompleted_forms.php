@@ -79,7 +79,7 @@ include "header.php";
 
 <div class="card w-100 bg-gradient-dark" style="border:none;">
                 <div class="card-header py-3 bg-secondary" style="border:none;">
-                <h1 class="m-0 font-weight-bold text-light">Requested Forms</h1>
+                <h1 class="m-0 font-weight-bold text-light">Completed Forms</h1>
                 </div>
                 <div class="card-body">
 
@@ -94,7 +94,7 @@ include "header.php";
             <td>School</td>
             <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>Date Requested</td>
+            <td>E-mail</td>
             <td>Option</td>
             
             
@@ -107,7 +107,7 @@ include "header.php";
             <td>School</td>
             <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>Date Requested</td>
+            <td>E-mail</td>
             <td>Option</td>
             
 
@@ -119,11 +119,11 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 1;
+        $condition = 2;
         $get_userData = get_where_custom($table_name, $column, $condition);
         $table_name = "forms";
         $column = "school";
-        $condition = "SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING";
+        $condition = "SCHOOL OF MEDICINE";
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -136,26 +136,33 @@ include "header.php";
             $formType = $row['form_type'];
             $reason = $row['reason'];
             $email = $row['email'];
-            $date = $row['date'];
             $status = $row['status'];
             
 
     ?>
     
-<?php if($status=="1" && $school=="SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING"){ ?>
+<?php if($status=="2" || $status=="3" || $status=="4" && $school == "SCHOOL OF MEDICINE"){ ?>
     <tr>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
         <td><?= $formType?></td>
         <td><?= $reason?></td>
-        <td><?= $date?></td>
+        <td><?= $email?></td>
         
 
         
             
         <td>
+        <!-- <a href="stud_deact.php?id=<?= $id?>" class="btn btn-secondary btn-icon-split" style="margin-left: 1%;">
+                    <span class="icon text-red-50">
+                    <i class="fas fa-user-slash"></i>
+                </span>
+                <span class="text">
+                    DEACTIVATE
+                </span>
+        </a> -->
         &nbsp;&nbsp;
-            <a href="sitedean_req_view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="somcompleted_view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
             </span>
@@ -163,6 +170,7 @@ include "header.php";
                     View
                 </span>
             </a>
+        </td>
 
         <?php } ?>
     </tr>
@@ -192,7 +200,6 @@ include "header.php";
 </div>
 </div>
 </div>
-<?php include "footer.php" ?>
 </div>
 
 

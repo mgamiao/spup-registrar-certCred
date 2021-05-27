@@ -30,4 +30,6 @@ include "user_header.php";
                         </div>
                         </div>
                 </form>
-               
+</div>
+</div>
+<?php include "footer.php" ?>

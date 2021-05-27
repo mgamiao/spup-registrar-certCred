@@ -192,4 +192,5 @@ include "header.php";
 </div>
 </div>
 </div>
+<?php include "footer.php" ?>
 </div>

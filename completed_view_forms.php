@@ -186,7 +186,7 @@ include "header.php";
 </div>
 <br>
             
-<div align="center">
+<div align="center" class="mb-5">
         <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
           <a href="req_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
@@ -222,4 +222,6 @@ include "header.php";
         
 </body>
 </html>
-
+</div>
+</div>
+<?php include "footer.php" ?>

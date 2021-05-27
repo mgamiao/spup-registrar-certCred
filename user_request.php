@@ -148,3 +148,4 @@ function checkStatus() {
 </script>
 </body>
 </html>
+<?php include "footer.php" ?>

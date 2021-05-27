@@ -186,7 +186,7 @@ include "header.php";
 </div>
 <br>
             
-<div align="center">
+<div align="center" class="mb-5">
         <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
         <a href="archived_forms.php" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
@@ -205,4 +205,7 @@ include "header.php";
         
 </body>
 </html>
+</div>
+</div>
+<?php include "footer.php" ?>
 

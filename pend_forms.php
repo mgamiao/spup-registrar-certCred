@@ -189,6 +189,7 @@ include "header.php";
 </div>
 </div>
 </div>
+<?php include "footer.php" ?>
 </div>
  <script src="template/vendor/jquery/jquery.min.js"></script> 
     <!-- <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>   pag meron to ayaw gumana ng logout--> 

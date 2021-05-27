@@ -181,7 +181,7 @@ include "header.php";
   </form>
 </div>
 <br>
-<div align="center">
+<div align="center" class="mb-5">
             <a href="sastedean_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
@@ -209,5 +209,9 @@ include "header.php";
         
 </body>
 </html>
+</div>
+</div>
+</div>
+<?php include "footer.php" ?>
 
 

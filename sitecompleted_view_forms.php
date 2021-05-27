@@ -76,16 +76,15 @@ include "header.php";
         }
     }
     ?>
+
+
+
 <div class="card w-100 bg-gradient-dark" style="border:none;">
 <div align="center">
                 <div class="card-header py-3 bg-secondary" style="border:none;">
                 <h1 class="m-0 font-weight-bold text-light">View Form</h1>
                 </div>
-                </div>
-
-
-               
-
+</div>
 <br>
     <?php
        $id = $_GET['id'];
@@ -181,16 +180,9 @@ include "header.php";
   </form>
 </div>
 <br>
+            
 <div align="center" class="mb-5">
-            <a href="graddean_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
-            <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
-            </span>
-            <span class="text">
-                    Approve
-                </span>
-            </a>
-        <a href="graddean_req_forms.php" class="btn btn-danger btn-icon-split btn-md">
+        <a href="sitecompleted_forms.php" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>
@@ -199,12 +191,8 @@ include "header.php";
         </span>
             </a>
             </a>
-        
-
-        <?php } ?>
-   
-   
-   <div>
+        </td>
+   <?php } ?>
 
         
 </body>
@@ -213,3 +201,4 @@ include "header.php";
 </div>
 </div>
 <?php include "footer.php" ?>
+
