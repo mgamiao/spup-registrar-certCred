@@ -2,10 +2,11 @@
 include "header.php";
 ?>
 <div align=center>
-<div class="card mb-4 w-90 bg-gradient-dark" style="border:none;">
-<div class="card-header bg-secondary text-light" style="border:none;">
-    <h1>ADD NEW USER</h1>
+<div class="card-header bordercolor ">
+    <h1 class="headerblacked">ADD NEW USER</h1>
 </div>
+<div class="card mb-4 w-100 bodyblacked" style="border:none;">
+
 
 <form method="post" action="account_add_proc.php">
 
@@ -39,9 +40,9 @@ include "header.php";
         <option value="5">SNAHS DEAN</option>
         <option value="6">SASTE DEAN</option>
         <option value="7">BEU DEAN</option>
-        <option value="8">SOM DEAN</option>
+        <option value="8">SoM DEAN</option>
         <option value="9">GRADSCHOOL DEAN</option>
-        <option value="10">BAO </option>
+        <option value="10">BAO DEAN</option>
       </select>
 
   </div>
@@ -72,5 +73,4 @@ include "header.php";
 </div>
 </div>
 </div>
-<?php include "footer.php" ?>
 </div>
