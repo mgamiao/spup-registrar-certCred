@@ -3,16 +3,15 @@
 include "header.php";
 ?>
 
-<div class="card w-100 bg-gradient-dark" style="border:none;">
-                <div class="card-header py-3 bg-secondary" style="border:none;">
-                <h1 class="m-0 font-weight-bold text-light">LOGS</h1>
+    <div class="card w-100" style="border:none;">
+                <div class="py-3 bordercolor" style="border:none;">
+                <h1 class="m-0 headerblacked">LOGS</h1>
                 </div>
-                <div class="card-body">
-
+                <div class="card-body bodyblacked">
                 <div class="table-responsive" >
-                    <table class="table" id="dataTable" width="100%" cellspacing="0" >
+                    <table class="table table-striped" id="dataTable" width="100%" cellspacing="0" >
         
-        <thead class="bg-secondary" style="text-align: center; color: white;">
+        <thead class="tableblacked">
         <tr>
             <td>Log Id </td>
             <td>Action </td>
@@ -25,7 +24,7 @@ include "header.php";
         </tr>
         </thead>
 
-        <tfoot class="bg-secondary" style="text-align: center; color: white;">
+        <tfoot class="tableblacked">
         <tr>
             <td>Log Id</td>
             <td>Action </td>
@@ -36,7 +35,7 @@ include "header.php";
             <td>Account Type</td>
         </tr>
         </tfoot>
-<tbody style="text-align: center; color: white;">
+    <tbody class="bodyblacked">
     <?php
         $table_name="logs";
         $column="log_id";
@@ -94,23 +93,21 @@ include "header.php";
 </div>
 </div>
 </div>
-<?php include "footer.php" ?>
 </div>
 </div>
+ <script src="template/vendor/jquery/jquery.min.js"></script> 
+    <!-- <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>   pag meron to ayaw gumana ng logout--> 
 
+    <!-- Core plugin JavaScript-->
+    <script src="template/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<script src="template/vendor/jquery/jquery.min.js"></script> 
-<!-- <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>   pag meron to ayaw gumana ng logout--> 
+    <!-- Custom scripts for all pages-->
+    <script src="template/js/sb-admin-2.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="template/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="template/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-<!-- Custom scripts for all pages-->
-<script src="template/js/sb-admin-2.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="template/js/demo/datatables-demo.js"></script>
 
-<!-- Page level plugins -->
-<script src="template/vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="template/js/demo/datatables-demo.js"></script>

@@ -22,10 +22,10 @@ foreach ($get_userData as $key => $row) {
 }
 ?>
 <div align=center>
-<div class="card mb-4 w-75 bg-gradient-dark"  style="width:50%; border:none;">
-<div class="card-header bg-secondary text-light" style="border:none;">
-    <h1>EDIT ACCOUNT</h1>
+<div class="card-header bordercolor">
+    <h1 class="headerblacked">EDIT ACCOUNT</h1>
 </div>
+<div class="card mb-4 w-100 bodyblacked">
 
 <form method="post" action="<?=$form_location;?>">
 

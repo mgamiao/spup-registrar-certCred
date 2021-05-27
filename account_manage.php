@@ -41,16 +41,16 @@ include "header.php";
     }
 ?>
 
-<div class="card w-100 bg-gradient-dark" style="border:none;">
-            <div class="card-header py-3 bg-secondary" style="border:none;">
-              <h1 class="m-0 font-weight-bold text-light">ACCOUNTS</h1>
+<div class="card w-100 " style="border:none;">
+            <div class="py-3 bordercolor" style="border:none;">
+              <h1 class="m-0 headerblacked">ACCOUNTS</h1>
             </div>
-            <div class="card-body">
+            <div class="card-body bodyblacked">
             <form method="post" action="account_search.php">
                     <div class="input-group mb-3 w-25" style="float: left;">
                         <input type="text" class="form-control" placeholder="" name="search" autocomplete="off" required>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary text-light" type="submit" id="button-addon2">Search</button>
+                            <button class="btn btn-outline-secondary text-dark" type="submit" id="button-addon2">Search</button>
                         </div>
                         </div>
                 </form>
@@ -65,7 +65,7 @@ include "header.php";
               <div class="table-responsive">
                 <table class="table" id="dataTable" width="100%" cellspacing="0">
     
-    <thead class="bg-secondary text-light" style="text-align:center;">
+    <thead class="tableblacked text-light" style="text-align:center;">
     <tr>
         <td>Username</td>
         <td>Full Name</td>
@@ -77,7 +77,7 @@ include "header.php";
     </tr>
     </thead>
 
-    <tfoot class="bg-secondary text-light" style="text-align:center;">
+    <tfoot class="tableblacked text-light" style="text-align:center;">
     <tr>
         <td>Username</td>
         <td>Full Name</td>
@@ -89,7 +89,7 @@ include "header.php";
     </tr>
     </tfoot>
 
-    <tbody class="text-light" style="text-align:center;">
+    <tbody class="bodyblacked" style="text-align:center;">
 
     <?php
         $table_name="accounts";
@@ -174,5 +174,4 @@ include "header.php";
 </div>
 </div>
 </div>
-<?php include "footer.php" ?>
 </div>
