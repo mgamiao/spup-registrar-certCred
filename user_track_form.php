@@ -15,11 +15,22 @@ include "user_header.php";
 
 </head>
 <body>
+
 <div class="jumbotron text-center">
   <img src="img/spup.png" style="margin-top:-50px;">
   <h1>WELCOME TO THE WEB APPLICATION FOR SCHOOL CREDENTIALS AND CERTIFICATION!</h1>
   <h3 style="text-align:center;">This web application outlines SPUP’s Web Application Services for School Credentials</h3>
 </div>
+<?php
+			if (isset($_SESSION['pic_errormsg'])) {
+			?>
+			<div class="alert alert-warning">
+				<?= $_SESSION['pic_errormsg'] ?>
+			</div>
+			<?php
+			}
+			unset($_SESSION['pic_errormsg']);
+			?>
 <div align="center">
 <form method="post" action="user_form_search.php">
                     <h5> Enter your reference number here:</h5>

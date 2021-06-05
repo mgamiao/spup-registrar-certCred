@@ -1,8 +1,5 @@
 <?php
 	session_start();
-	if ($_SESSION['email']=="") {
-		header("Location: user_logout.php");
-	}
 ?>
 <?php
  include "perfect_function.php"; ?>
@@ -37,7 +34,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="user_home.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
           
         </div>
@@ -49,7 +46,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="user_home.php">
+        <a class="nav-link" href="index.php">
           
           <span>HOME</span></a>
       </li>
@@ -62,7 +59,7 @@
          
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
-        <a class="nav-link collapsed" href="user_request.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="user_terms.php"  aria-expanded="true" aria-controls="collapseTwo">
           
           <span>Request a Form</span>
         </a>
@@ -75,9 +72,7 @@
           
           <span>Track requested form</span>
         </a>
-          </li>
-       
-
+          </li>  
       <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item active">
         <a class="nav-link collapsed" href="contact.php"  aria-expanded="true" aria-controls="collapseUtilities">
@@ -115,29 +110,7 @@
           echo "<h6 class='m-0 font-weight-bold text-primary'>Time:  $xtime</h6>";
           ?>
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-
-
-           
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="mr-4 d-none d-lg-inline text-gray-900 medium ">USER |  <span class="fas fa-sign-out-alt fa-sm fa-fw mr-4 text-gray-900 medium"> Logout</span></span>
-               
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
-
-          </ul>
+          
         </nav>
         <!-- End of Topbar -->
 
@@ -146,23 +119,7 @@
          
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Thank you for using Web Application for School Certification and Credentials. <br>Do you want to request a form again?</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Yes</button>
-          <a class="btn btn-primary" href="user_logout.php">No, Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  
   
   
 

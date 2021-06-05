@@ -39,6 +39,13 @@ function get_where_custom($table_name, $column, $value)
 	$result = $conn->query($sql);
 	return $result;
 }
+function get_where_custom_inprocess($table_name, $column)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where ".$column."";
+	$result = $conn->query($sql);
+	return $result;
+}
 
 function insert($data, $table_name) 
 {
@@ -148,7 +155,7 @@ function custom_query($mysql_query)
 
 function base_url()
 {
-	$project_name = "project_zero";
+	$project_name = "spup-registrar-certCred";
 	return "http://" . $_SERVER['SERVER_NAME'].'/'.$project_name.'/'; 
 }
 
