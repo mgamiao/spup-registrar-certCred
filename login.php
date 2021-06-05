@@ -16,6 +16,7 @@ session_start();
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
@@ -23,31 +24,42 @@ session_start();
 
 </head>
 
-<body class="bg-dark" style="background-color: #a9a9a9;" onload="checkStatus()">
-
+<body style="height: auto;
+  background-image: url('img/spuptry.jpg'); 
+  background-repeat: no-repeat; 
+  background-size: 100%; ">
+<br>
+<br>
+<br>
+<br>
+<div>
+</div>
   <div class="container">
 
     <!-- Outer Row -->
-    <div class="row justify-content-center ">
+    <div class="row justify-content-center " >
 
       <div class="col-xl-10 col-lg-12 col-md-9 ">
 
         <div class="card o-hidden border-0 shadow-lg my-5 bg-gradient-dark">
-          <div class="card-body p-0">
+          <div class="card-body p-0 " >
             <!-- Nested Row within Card Body -->
-            <div class="row">
-              <div class="col-lg-6 d-none d-lg-block text-light" style="margin: auto;">
-              <div style="text-align: center;"><h1><b>Web Application for<br>School Credentials and<br>Certification</b> </h1></div>
+            <div class="row" style="background-image: url('img/color1.png');">
+              <div class="col-lg-6 d-none d-lg-block text-light" style="margin: auto;" > 
+              <div style="text-align: center;"><img src="img/spup3.png" style="width: 40%; margin-top: -200px"><h1><b>Web Application for<br>School Credentials and<br>Certification</b> </h1></div>
             </div>
-              <div class="col-lg-6">
+              <div class="col-lg-6"style="background-color: #f3f3f3;">
                 <div class="p-5">
-                  <div class="text-center">
+                  <div class="text-center" >
                     <br>
-                    <h2 class="text-light mb-4">Welcome!</h2>
+                    <h2 class="text-dark mb-4">Welcome!</h2>
                   </div>
-                  <form class="user" method="post" action="user_login_proc.php">
+                  <form class="user" method="post" action="login_proc.php">
                     <div class="form-group">
-                      <input type="email" name=email class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email" required autocomplete=off>
+                      <input type="text" name=username class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username" required autocomplete=off>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" name=password class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" required autocomplete=off>
                       <br>
                       <?php
                         $min_number = 1;
@@ -67,13 +79,13 @@ session_start();
 
                       <div class="center">
 
-                      <span class="text-light"> Please solve this problem to prove that you are not a bot <br> </span>
+                      <span class="text-dark"> Please solve this problem to prove that you are not a bot <br> </span>
 
                         <?php
-                          echo "<span class='text-light'>" . $random_number1 . " " . $random_symbol . " " . $random_number2 . ' = ' . "</span>";
+                          echo "<span class='text-dark'>" . $random_number1 . " " . $random_symbol . " " . $random_number2 . ' = ' . "</span>";
                         ?>
 
-                        <input name="captchaResult" type="text" size="4" required/>
+                        <input name="captchaResult" type="text" size="4" required autocomplete="off"/>
                         <input name="firstNumber" type="hidden" value= "<?php echo $random_number1; ?>"/>
                         <input name="randomSymbol" type="hidden" value="<?php echo $random_symbol; ?>"/>
                         <input name="secondNumber" type="hidden" value= "<?php echo $random_number2; ?>"/>
@@ -120,11 +132,32 @@ session_start();
                     <?php
                     }
                     ?>
-                    <input type="checkbox" id="agree_again" name="agree" value="ON">
-                    <label><h6 style="color:red; "><i> Note: Please make sure that the email inputted above is correct.</h6></i></label> 
-                      <p id="text" ><button type="submit" class="btn btn-primary custombutton">Submit</button></p>
+
+                    <br>
+                    <button type=submit class="btn btn-success btn-user btn-block">
+                      Login
+                    </button>
                   </form>
+                  <br>
+                  <form class="user" method="post" action="index.php">
+                    
+                    
+                    <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
+                      <i class="fab fa-google fa-fw"></i> Login with Google
+                    </a>
+                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                    </a> -->
+                  </form>
+                  <!-- <hr>
+                  <div class="text-center">
+                    <a class="small" href="forgot-password.html">Forgot Password?</a>
                   </div>
+                  <div class="text-center">
+                    <a class="small" href="register.html">Create an Account!</a> -->
+                    <br>
+                    <br>
+                    <br>
                   </div>
                 </div>
               </div>
@@ -137,7 +170,7 @@ session_start();
     </div>
 
   </div>
-  
+
   <!-- Bootstrap core JavaScript-->
   <script src="template/vendor/jquery/jquery.min.js"></script>
   <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -147,19 +180,7 @@ session_start();
 
   <!-- Custom scripts for all pages-->
   <script src="template/js/sb-admin-2.min.js"></script>
-  <script>
-  function checkStatus() {
-      console.log('reached');
-      if ($('#agree_again').is(":checked")) {
-          $(".custombutton").attr('disabled', false);
-      } else {
-          $(".custombutton").attr('disabled', true);
-      }
-  }
-  $("#agree_again").change(function () {
-      checkStatus();
-  })
-  </script>
+
 </body>
 
 </html>

@@ -108,6 +108,12 @@ $compnotif = count_archived_forms();
         </a>
       
       </li>
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="inprocess_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+        <span>In ProcessForms</span>
+        </a>
+      
+      </li>
       <?php } ?> 
       <?php if($_SESSION['access']=="3"){ ?>
       <li class="nav-item active">

@@ -59,10 +59,10 @@ if (($password1==$password) and ($captchaResult==$checkTotal)){
   }
 } if ($password1!=$password) {
     $_SESSION['login']=1;
-    header("Location: index.php");
+    header("Location: login.php");
 } if ($captchaResult!=$checkTotal){
     $_SESSION['captcha']=1;
-    header("Location: index.php");
+    header("Location: login.php");
 }
 
 ?>

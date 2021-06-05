@@ -5,6 +5,7 @@
 
     $table_name="forms";
 
+    $studentnumber=$_POST['studnum'];
     $firstname=$_POST['firstname'];
     $middlename=$_POST['middlename'];
     $lastname=$_POST['lastname'];
@@ -29,6 +30,7 @@
 
     $user_data=array(
         "refno" => $unique,
+        "studentnumber" => $studentnumber,
         "firstname" => $firstname,
         "middlename" => $middlename,
         "lastname" => $lastname,

@@ -1,4 +1,7 @@
-<?php include "user_header.php" ?>
+<?php include "user_header.php"; 
+ if ($_SESSION['captchaResult']=="") {
+  header("Location: user_terms.php");
+}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +27,15 @@ if (isset($_SESSION['alert_msg'])){
         }
     }
     ?>
+      <?php
+        if (isset($_SESSION['captcha'])){
+        unset($_SESSION['captcha']);?>
+
+        <span style="color: red; font-weight: bold;">Incorrect captcha</span>
+        <br>
+        <?php
+        }
+      ?>
 <div class="container" >
   <h2>Request Form</h2>
   <h6 style="color:red"> * Required </h6><br>
@@ -31,6 +43,10 @@ if (isset($_SESSION['alert_msg'])){
     <div class="form-group">
       <h6>Enter Date Today:  <span style="color:red">*</h6></span>
       <input type="date" class="form-control" placeholder="" name="date" required autocomplete=off>
+    </div>
+    <div class="form-group">
+      <h6>Student Number:</h6>
+      <input type="text" class="form-control" placeholder="Enter Last name" name="studnum"  autocomplete=off>
     </div>
     <div class="form-group">
       <h6>Last Name: <span style="color:red">*</h6></span>
@@ -118,7 +134,7 @@ if (isset($_SESSION['alert_msg'])){
     </div>
     <div class="form-group">
       <h6>Email: <span style="color:red">*</h6></span>
-      <input type="email" class="form-control"  placeholder="Enter Email Address"  value="<?= $_SESSION['email']; ?>" name="email" required autocomplete=off readonly>
+      <input type="email" class="form-control"  placeholder="Enter Email Address" name="email" required autocomplete=off>
     </div>
     <div class="form-group">
       <h6>Mobile Number: <span style="color:red">*</h6></span>

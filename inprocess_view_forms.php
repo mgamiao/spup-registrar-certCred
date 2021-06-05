@@ -23,95 +23,6 @@ include "header.php";
 
   <!-- Custom styles for this page -->
   <link href="template/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-  <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#myImg:hover {opacity: 0.7;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-/* Caption of Modal Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-</style>
 
 </head>
 
@@ -171,7 +82,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <div class="card w-100 " style="border:none;">
 <div align="center">
                 <div class="py-3 bordercolor" style="border:none;">
-                <h1 class="m-0 headerblacked">View Form</h1>
+                <h1 class="m-0 headerblacked">VIEW FORM</h1>
                 </div>
 </div>
 <br>
@@ -199,10 +110,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             $underGrad = $row['undergraduate'];
             $mobileNum = $row['mobilenum'];
             $email = $row['email'];
-            $fees = $row['fees'];
-            $paymentphoto = $row['paymentphoto'];
             $status = $row['status'];
-            $photo_url = base_url().'user_payment/'.$paymentphoto;
            
         ?>   
 <body>
@@ -269,47 +177,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
       <h6 style="color:black;">Email:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $email?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Total Fee:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $fees?>" readonly>
-    </div>
-    <div class="form-group">
-      <h6 style="color:black;">Proof of Payment:</h6>
-            <?php
-							if ($paymentphoto == "") {
-							echo "<i>No photo available.</i>";
-							}
-							else {
-							?>
-							<img id="myImg" src="<?= $photo_url ?>" style="height: 100;width: 100;" class="img-responsive">
-							<?php
-							}
-						?>
-    </div>
   </form>
 </div>
 <br>
             
 <div align="center" class="mb-5">
-        <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
-          <a href="req_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
-            <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
-            </span>
-            <span class="text">
-                    Finalize Request
-                </span>
-            </a>
-            <a href="print.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
-            <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
-            </span>
-            <span class="text">
-                    Print
-                </span>
-            </a>
-        &nbsp;&nbsp;
-        <a href="completed_forms.php" class="btn btn-danger btn-icon-split btn-md">
+        <a href="inprocess_forms.php" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>
@@ -320,39 +193,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
             </a>
         </td>
 
-        <?php } ?>
    <?php } ?>
 
-<div id="myModal" class="modal">
-<span class="close">&times;</span>
-<img class="modal-content" id="img01">
-<div id="caption"></div>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[1];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-</script>
-
-
+        
 </body>
 </html>
 </div>
