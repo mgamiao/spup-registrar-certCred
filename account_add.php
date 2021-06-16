@@ -18,7 +18,7 @@ include "header.php";
 
   </div>
 
-  <div class="input-group" style="width:75%; margin-left:0%; margin-top: 9%;">
+  <div class="input-group" style="width:75%; margin-left:13%; margin-top: 9%;">
       <input type="text" name="firstname" class="form-control form-control-user" autocomplete=off placeholder="First Name" class="form-control">
       <input type="text" name="middlename" class="form-control form-control-user" autocomplete=off placeholder="Middle Name" class="form-control">
       <input type="text" name="lastname" class="form-control form-control-user" autocomplete=off placeholder="Last Name" class="form-control">

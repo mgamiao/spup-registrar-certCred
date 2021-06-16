@@ -49,6 +49,7 @@ $compnotif = count_archived_forms();
   <meta name="description" content="">
   <meta name="author" content="">
 
+
   <title>SPUP Registrar</title>
 
   <!-- Custom fonts for this template-->
@@ -61,244 +62,260 @@ $compnotif = count_archived_forms();
   
 </head>
 
-<body id="page-top">
+<div class="hether2">
+  <p>S.Paul University Philippines</p>
+</div>
+<div class="hether1">
+</div>
+<div class="hether3">
+<div class="hether4">
+</div>
 
-  <!-- Page Wrapper -->
-  <div id="wrapper">
+<!-- Sidebar -->
+<ul>
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
-        <div class="sidebar-brand-icon rotate-n-15">
-          
-        </div>
-        <div class="sidebar-brand-text mx-3">SPUP Registrar </div>
-      </a>
+<!-- Nav Item - Dashboard -->  
+<?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
+<li>
+  <a style="text-decoration:none" href="home.php">
+    
+    <span>HOME</span></a>
+</li>
+<?php } ?>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->  
-      <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
-      <li class="nav-item active">
-        <a class="nav-link" href="home.php">
-          
-          <span>HOME</span></a>
-      </li>
-      <?php } ?>
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+<!-- Heading -->
 
-      <!-- Heading -->
-     
-      <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?> 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="pend_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-          <?php 
-          if ($pendnotif == "0"){
-            echo "<span>Pending Forms</span>";
-          }else{
-           echo "<span>Pending Forms</span>";
-          echo  "<span class='badge badge-danger badge-counter'> $pendnotif";
-          }
-        ?>
-        </a>
-      
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="inprocess_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <span>In ProcessForms</span>
-        </a>
-      
-      </li>
-      <?php } ?> 
-      <?php if($_SESSION['access']=="3"){ ?>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="sitedean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <?php 
-          if ($sitereqnotif == "0"){
-            echo "<span> (sitedean)Requested Forms</span>";
-          }else{
-           echo "<span>(sitedean)Requested Forms</span>";
-          echo  "<span class='badge badge-danger badge-counter'> $sitereqnotif";
-          }
-        ?>
-        </a>
-        <a class="nav-link collapsed" href="sitecompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <span>SITE Completed Forms</span>
-        </a>
-      
-      </li>
-      <?php } ?>
-      <?php if($_SESSION['access']=="10"){ ?>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="bao_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <?php 
-          if ($reqnotif1 == "0"){
-            echo "<span> (bao)Requested Forms</span>";
-          }else{
-           echo "<span>(bao)Requested Forms</span>";
-          echo  "<span class='badge badge-danger badge-counter'> $reqnotif1";
-          }
-        ?>
-        </a>
-        <a class="nav-link collapsed" href="baocompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <span>BAO Completed Forms</span>
-        </a>
-      
-      </li>
-      <?php } ?>
-      <?php if($_SESSION['access']=="4"){ ?>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="sbahmdean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <?php 
-          if ($sbahmreqnotif == "0"){
-            echo "<span> (sbahmdean)Requested Forms</span>";
-          }else{
-           echo "<span>(sbahmdean)Requested Forms</span>";
-          echo  "<span class='badge badge-danger badge-counter'> $sbahmreqnotif";
-          }
-        ?>
-        </a>
-        <a class="nav-link collapsed" href="sbahmcompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <span>SBAHM Completed Forms</span>
-        </a>
-      </li>
-      <?php } ?>
-      <?php if($_SESSION['access']=="5"){ ?>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="snahsdean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <?php 
-          if ($snahsreqnotif == "0"){
-            echo "<span> (snahsdean)Requested Forms</span>";
-          }else{
-           echo "<span>(snahsdean)Requested Forms</span>";
-          echo  "<span class='badge badge-danger badge-counter'> $snahsreqnotif";
-          }
-        ?>
-        </a>
-        <a class="nav-link collapsed" href="snahscompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <span>SNAHS Completed Forms</span>
-        </a>
-      
-      </li>
-      <?php } ?>
-      <?php if($_SESSION['access']=="6"){ ?>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="sastedean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <?php 
-          if ($sastereqnotif == "0"){
-            echo "<span> (sastedean)Requested Forms</span>";
-          }else{
-           echo "<span>(sastedean)Requested Forms</span>";
-          echo  "<span class='badge badge-danger badge-counter'> $sastereqnotif";
-          }
-        ?>
-        </a>
-        <a class="nav-link collapsed" href="sastecompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <span>SASTE Completed Forms</span>
-        </a>
-      
-      </li>
-      <?php } ?>
-      <?php if($_SESSION['access']=="7"){ ?>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="beudean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <?php 
-          if ($beureqnotif == "0"){
-            echo "<span> (beudean)Requested Forms</span>";
-          }else{
-           echo "<span>(beudean)Requested Forms</span>";
-          echo  "<span class='badge badge-danger badge-counter'> $beureqnotif";
-          }
-        ?>
-        </a>
-        <a class="nav-link collapsed" href="beucompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <span>BEU Completed Forms</span>
-        </a>
-      
-      </li>
-      <?php } ?>
-      <?php if($_SESSION['access']=="8"){ ?>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="somdean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <?php 
-          if ($somreqnotif == "0"){
-            echo "<span> (somdean)Requested Forms</span>";
-          }else{
-           echo "<span>(somdean)Requested Forms</span>";
-          echo  "<span class='badge badge-danger badge-counter'> $somreqnotif";
-          }
-        ?>
-        </a>
-        <a class="nav-link collapsed" href="somcompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <span>SOM Completed Forms</span>
-        </a>
-      
-      </li>
-      <?php } ?>
-      <?php if($_SESSION['access']=="9"){ ?>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="graddean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <?php 
-          if ($gradreqnotif == "0"){
-            echo "<span> (graddean)Requested Forms</span>";
-          }else{
-           echo "<span>(graddean)Requested Forms</span>";
-          echo  "<span class='badge badge-danger badge-counter'> $gradreqnotif";
-          }
-        ?>
-        </a>
-        <a class="nav-link collapsed" href="gradcompleted_forms.php"  aria-expanded="true" aria-controls="collapseTwo">
-        <span>GRADUATE SCHOOL Completed Forms</span>
-        </a>
-      
-      </li>
-      <?php } ?>
-      <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="completed_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <?php 
-          if ($compnotif == "0"){
-            echo "<span>Completed Forms</span>";
-          }else{
-           echo "<span>Completed Forms</span>";
-          echo  "<span class='badge badge-danger badge-counter'> $compnotif";
-          }
-        ?>
-        </a>
-      
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="archived_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-        <span>Archived Forms</span>
-        </a>
-      
-      </li>
-        <li class="nav-item active">
-        <a class="nav-link collapsed" href="logs.php"  aria-expanded="true" aria-controls="collapseUtilities">
-          
-          <span>Logs</span>
-        </a>
-          </li>
-          <?php } ?>
-          <?php if($_SESSION['access']=="1"){ ?>
-          <hr class="sidebar-divider">
-        <li class="nav-item active"> 
-        <a class="nav-link" href="account_manage.php">
+<?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?> 
+<!-- Nav Item - Pages Collapse Menu -->
+<li >
+  <a style="text-decoration:none" href="pend_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+    <?php 
+    if ($pendnotif == "0"){
+      echo "<span>PENDING FORMS</span>";
+    }else{
+     echo "<span>PENDING FORMS</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $pendnotif";
+    }
+  ?>
+  </a>
+
+</li>
+<li>
+  <a style="text-decoration:none" href="inprocess_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <span>IN PROCESS FORMS</span>
+  </a>
+
+</li>
+<?php } ?> 
+<?php if($_SESSION['access']=="3"){ ?>
+<li>
+  <a style="text-decoration:none" href="sitedean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <?php 
+    if ($sitereqnotif == "0"){
+      echo "<span>SITE REQUESTED FORMS</span>";
+    }else{
+     echo "<span>SITE REQUESTED FORMS</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $sitereqnotif";
+    }
+  ?>
+  </a>
+  </li>
+
+
+  <li>
+  <a style="text-decoration:none" href="sitecompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <span>SITE COMPLETED FORMS</span>
+  </a>
+
+</li>
+<?php } ?>
+<?php if($_SESSION['access']=="10"){ ?>
+<li>
+  <a style="text-decoration:none" href="bao_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <?php 
+    if ($reqnotif1 == "0"){
+      echo "<span> REQUESTED FORM</span>";
+    }else{
+     echo "<span>REQUESTED FORM</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $reqnotif1";
+    }
+  ?>
+  </a>
+  </li>
+
+  <li>
+  <a style="text-decoration:none" href="baocompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <span>BAO Completed Forms</span>
+  </a>
+
+</li>
+<?php } ?>
+<?php if($_SESSION['access']=="4"){ ?>
+<li>
+  <a style="text-decoration:none" href="sbahmdean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <?php 
+    if ($sbahmreqnotif == "0"){
+      echo "<span>SBAHM REQUESTED FORMS</span>";
+    }else{
+     echo "<span>SBAHM REQUESTED FORMS</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $sbahmreqnotif";
+    }
+  ?>
+  </a>
+  </li>
+
+  <li>
+  <a style="text-decoration:none" href="sbahmcompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <span>SBAHM COMPLETED FORMS</span>
+  </a>
+</li>
+
+<?php } ?>
+<?php if($_SESSION['access']=="5"){ ?>
+<li>
+  <a style="text-decoration:none" href="snahsdean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <?php 
+    if ($snahsreqnotif == "0"){
+      echo "<span>SNAHS REQUESTED FORMS</span>";
+    }else{
+     echo "<span>SNAHS REQUESTED FORMS</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $snahsreqnotif";
+    }
+  ?>
+  </a>
+  </li>
+
+  <li>
+  <a style="text-decoration:none" href="snahscompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <span>SNAHS COMPLETED FORMS</span>
+  </a>
+
+</li>
+<?php } ?>
+<?php if($_SESSION['access']=="6"){ ?>
+<li>
+  <a style="text-decoration:none" href="sastedean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <?php 
+    if ($sastereqnotif == "0"){
+      echo "<span>SASTE REQUESTED FORMS</span>";
+    }else{
+     echo "<span>SASTE REQUESTED FORMS</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $sastereqnotif";
+    }
+  ?>
+  </a>
+  </li>
+
+  <li>
+  <a style="text-decoration:none" href="sastecompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <span>SASTE COMPLETED FORMS</span>
+  </a>
+
+</li>
+<?php } ?>
+<?php if($_SESSION['access']=="7"){ ?>
+<li>
+  <a style="text-decoration:none" href="beudean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <?php 
+    if ($beureqnotif == "0"){
+      echo "<span>BEU REQUESTED FORMS</span>";
+    }else{
+     echo "<span>BEU REQUESTED FORMS</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $beureqnotif";
+    }
+  ?>
+  </a>
+  </li>
+
+  <li>
+  <a style="text-decoration:none" href="beucompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <span>BEU COMPLETED FORMS</span>
+  </a>
+
+</li>
+<?php } ?>
+<?php if($_SESSION['access']=="8"){ ?>
+<li >
+  <a style="text-decoration:none" href="somdean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <?php 
+    if ($somreqnotif == "0"){
+      echo "<span>SOM REQUESTED FORMS</span>";
+    }else{
+     echo "<span>SOM REQUESTED FORMS</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $somreqnotif";
+    }
+  ?>
+  </a>
+  </li>
+  <li>
+  <a style="text-decoration:none" href="somcompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <span>SOM COMPLETED FORMS</span>
+  </a>
+
+</li>
+<?php } ?>
+<?php if($_SESSION['access']=="9"){ ?>
+<li>
+  <a style="text-decoration:none" href="graddean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <?php 
+    if ($gradreqnotif == "0"){
+      echo "<span>GRAD SCHOOL REQUESTED FORMS</span>";
+    }else{
+     echo "<span>GRAD SCHOOL REQUESTED FORMS</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $gradreqnotif";
+    }
+  ?>
+  </a>
+  </li>
   
-          <span>Account Manager</span></a>
-      </li>
-      <?php } ?>
+  <li>
+  <a style="text-decoration:none" href="gradcompleted_forms.php"  aria-expanded="true" aria-controls="collapseTwo">
+  <span>GRADUATE SCHOOL COMPLETED FORMS</span>
+  </a>
+  
+  
+</li>
+<?php } ?>
+<?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
+<li>
+  <a style="text-decoration:none" href="completed_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <?php 
+    if ($compnotif == "0"){
+      echo "<span>COMPLETED FORMS</span>";
+    }else{
+     echo "<span>COMPLETED FORMS</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $compnotif";
+    }
+  ?>
+  </a>
 
+</li>
+<li>
+  <a style="text-decoration:none" href="archived_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  ARCHIVED FORMS
+  </a>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+</li>
+  <li>
+  <a style="text-decoration:none" href="logs.php"  aria-expanded="true" aria-controls="collapseUtilities">
+    
+    <span>LOGS</span>
+  </a>
+    </li>
+    <?php } ?>
+    <?php if($_SESSION['access']=="1"){ ?>
+
+  <li> 
+  <a style="text-decoration:none" href="account_manage.php">
+    <span>ACCOUNT MANAGER</span></a>
+</li>
+<?php } ?>
 
 </ul>
+</div>
+</div>
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -318,35 +335,35 @@ $compnotif = count_archived_forms();
           date_default_timezone_set('Asia/Singapore'); 
           $xdate=date('Y-m-d');
           $xtime=date('h:i:sa'); 
-          echo "<h6 class='m-0 font-weight-bold text-primary'>Date: $xdate   &nbsp </h6>  "; 
+          echo "<h6 class='m-0 font-weight-bold text-dark'>Date: $xdate   &nbsp </h6>  "; 
           
-          // echo "<h6 class='m-0 font-weight-bold text-primary'>Time:  $xtime</h6>";
+          // echo "<h6 class='m-0 font-weight-bold text-dark'>Time:  $xtime</h6>";
 
-          echo "<span class='m-0 font-weight-bold text-primary'>Time:&nbsp</span>
-          <span id='hrs' class='m-0 font-weight-bold text-primary'> 0</span><span class='m-0 font-weight-bold text-primary'>:</span>
-          <span id='mins' class='m-0 font-weight-bold text-primary'>0</span><span class='m-0 font-weight-bold text-primary'>:</span>
-          <span id='secs' class='m-0 font-weight-bold text-primary'>0</span>";
+          echo "<span class='m-0 font-weight-bold text-dark'>Time:&nbsp</span>
+          <span id='hrs' class='m-0 font-weight-bold text-dark'> 0</span><span class='m-0 font-weight-bold text-primary'>:</span>
+          <span id='mins' class='m-0 font-weight-bold text-dark'>0</span><span class='m-0 font-weight-bold text-primary'>:</span>
+          <span id='secs' class='m-0 font-weight-bold text-dark'>0</span>";
 
           ?>
 
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
+          <ol class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
 
            
             <?php
-				  //get first name
-			  	$get_firstname = get_where_custom("accounts", "firstname", $_SESSION['firstname']);
-				    foreach ($get_firstname as $key => $row) {
-					  $firstname = $row['firstname'];
-				  }
+                  //get first name
+                  $get_firstname = get_where_custom("accounts", "firstname", $_SESSION['firstname']);
+                    foreach ($get_firstname as $key => $row) {
+                      $firstname = $row['firstname'];
+                  }
           $get_lastname = get_where_custom("accounts", "lastname", $_SESSION['lastname']);
           foreach ($get_lastname as $key => $row) {
           $lastname = $row['lastname'];
           }
-				  ?>
-          	
+                  ?>
+              
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -364,8 +381,7 @@ $compnotif = count_archived_forms();
                 </a>
               </div>
             </li>
-
-          </ul>
+          </ol>
 
         </nav>
         <!-- End of Topbar -->

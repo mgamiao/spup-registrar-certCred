@@ -76,10 +76,10 @@ include "header.php";
         }
     }
     ?>
-<div class="card w-100 bg-gradient-dark" style="border:none;">
+<div class="card w-100 " style="border:none;">
 <div align="center">
-                <div class="card-header py-3 bg-secondary" style="border:none;">
-                <h1 class="m-0 font-weight-bold text-light">View Form</h1>
+                <div class=" py-3 bordercolor" style="border:none;">
+                <h1 class="m-0 headerblacked">View Form</h1>
                 </div>
                 </div>
 
@@ -119,61 +119,61 @@ include "header.php";
 
   <form method="post" action="<?= $form_location ?>">
     <div class="form-group">
-      <h6 style="color:white;">Last Name:</h6>
+      <h6 style="color:black;">Last Name:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $lastName?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">First Name:</h6>
+      <h6 style="color:black;">First Name:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $firstName?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Middle Name:</h6>
+      <h6 style="color:black;">Middle Name:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $middleName?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">School:</h6>
+      <h6 style="color:black;">School:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $school?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Type of Form:</h6>
+      <h6 style="color:black;">Type of Form:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $formType?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Number of Copies:</h6>
+      <h6 style="color:black;">Number of Copies:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $numofCopies?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Reason/Purpose:</h6>
+      <h6 style="color:black;">Reason/Purpose:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $reason?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Mode of Claiming:</h6>
+      <h6 style="color:black;">Mode of Claiming:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $modeofClaim?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Mobile Number:</h6>
+      <h6 style="color:black;">Mobile Number:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $mobileNum?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Email:</h6>
+      <h6 style="color:black;">Email:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $email?>" readonly>
     </div>
     </div>
     <br>
     <div class="container">
-    <div class="card w-100 bg-gradient-dark" style="border:none;">
+    <div class="card w-100 " style="border:none;">
     <div align="center">
-                <div class="card-header py-3 bg-secondary" style="border:none;">
-                <h1 class="m-0 font-weight-bold text-light">Process Payment</h1>
+                <div class="py-3 bordercolor " style="border:none;">
+                <h1 class="m-0 headerblacked">Process Payment</h1>
                 </div>
                 </div>
                 <br>
-    <h6 style="color:white;">Total Payment:</h6>
+    <h6 style="color:black;">Total Payment:</h6>
     <input type="number" class="form-control"  style="color:black; font-weight:bold;" name="fees" placeholder="Enter total amount of payment" required autocomplete="off">
     <div align="center">
     <br>
     <button type="submit" class="btn btn-success btn-icon-split btn-md" style="width:120px;" >
-	<span class="icon text-white-50">
+	<span class="icon text-black-50">
 	<i class="fas fa-check"></i>
 		</span>
 		<span class="text">

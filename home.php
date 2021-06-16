@@ -698,7 +698,7 @@
 
 <!-- idle timeout -->
 <script>
-  function idleLogout() {
+  //function idleLogout() {
       var t;
       window.onload = resetTimer;
       window.onmousemove = resetTimer;

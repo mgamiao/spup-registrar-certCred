@@ -79,10 +79,10 @@ include "header.php";
 
 
 
-<div class="card w-100 bg-gradient-dark" style="border:none;">
+<div class="card w-100 " style="border:none;">
 <div align="center">
-                <div class="card-header py-3 bg-secondary" style="border:none;">
-                <h1 class="m-0 font-weight-bold text-light">View Form</h1>
+                <div class="card-header bordercolor" style="border:none;">
+                <h1 class="m-0 headerblacked">View Form</h1>
                 </div>
 </div>
 <br>
@@ -119,67 +119,67 @@ include "header.php";
 
   <form>
     <div class="form-group">
-      <h6 style="color:white;">Last Name:</h6>
+      <h6 style="color:black;">Last Name:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $lastName?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">First Name:</h6>
+      <h6 style="color:black;">First Name:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $firstName?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Middle Name:</h6>
+      <h6 style="color:black;">Middle Name:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $middleName?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">School:</h6>
+      <h6 style="color:black;">School:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $school?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Type of Form:</h6>
+      <h6 style="color:black;">Type of Form:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $formType?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Number of Copies:</h6>
+      <h6 style="color:black;">Number of Copies:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $numofCopies?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Number of Request:</h6>
+      <h6 style="color:black;">Number of Request:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $numofRequest?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Reason/Purpose:</h6>
+      <h6 style="color:black;">Reason/Purpose:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $reason?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Mode of Claiming:</h6>
+      <h6 style="color:black;">Mode of Claiming:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $modeofClaim?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Address:</h6>
+      <h6 style="color:black;">Address:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $address?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Course Completed:</h6>
+      <h6 style="color:black;">Course Completed:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $courseCompleted?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Date Graduated:</h6>
+      <h6 style="color:black;">Date Graduated:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $dateGrad?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Undergraduate:</h6>
+      <h6 style="color:black;">Undergraduate:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $underGrad?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Mobile Number:</h6>
+      <h6 style="color:black;">Mobile Number:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $mobileNum?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Email:</h6>
+      <h6 style="color:black;">Email:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $email?>" readonly>
     </div>
     <div class="form-group">
-      <h6 style="color:white;">Total Fee:</h6>
+      <h6 style="color:black;">Total Fee:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $fees?>" readonly>
     </div>
   </form>
