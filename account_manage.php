@@ -46,14 +46,6 @@ include "header.php";
               <h1 class="m-0 headerblacked">ACCOUNTS</h1>
             </div>
             <div class="card-body bodyblacked">
-            <form method="post" action="account_search.php">
-                    <div class="input-group mb-3 w-25" style="float: left;">
-                        <input type="text" class="form-control" placeholder="" name="search" autocomplete="off" required>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary text-dark" type="submit" id="button-addon2">Search</button>
-                        </div>
-                        </div>
-                </form>
                 <a href="account_add.php" class="btn btn-success btn-icon-split" style="float:right;">
     <span class="icon text-white-50">
         <i class="fas fa-plus"></i>
@@ -61,7 +53,7 @@ include "header.php";
 <span class="text">
     New Account
 </span>
-</a>
+</a> 
               <div class="table-responsive">
                 <table class="table" id="dataTable" width="100%" cellspacing="0">
     

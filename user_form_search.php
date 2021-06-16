@@ -50,25 +50,7 @@
           <td>Pending</td>
         </tr>
         </table>
-        <BR>
-    <h1> ATTACH PROOF OF PAYMENT</H1>
-   <form method='post' action='user_paymentupload_proc.php?id=<?= $id ?>' enctype='multipart/form-data'>
-			<p style='margin-top:24px;'>
-				Please choose a file from your computer and then press 'Upload'.
-			</p>
-			  <fieldset>
-				<div class='control-group' style='height:200px;'>
-				  <label class='control-label' for='fileInput'>File input</label>
-				  <div class='controls'>
-					<input class='input-file uniform_on' id='fileInput' name='fileToUpload' type='file' required>
-				  </div>
-				</div>       
-				<div class='form-actions'>
-				  <button type='submit' class='btn btn-primary'>Upload</button>
-				  <a href='' value='Cancel' class='btn'>Cancel</a>
-				</div>
-			  </fieldset>
-			</form>   ";
+        ";
         }elseif ($status == "1" && $refno == $search){
           echo "<br>
           <table class='table' width='100%' cellspacing='0'>
@@ -84,26 +66,7 @@
                 <td>Pending</td>
                 <td>Pending</td>
             </tr>
-        </table>
-        <BR>
-    <h1> ATTACH PROOF OF PAYMENT</H1>
-   <form method='post' action='user_paymentupload_proc.php?id=<?= $id ?>' enctype='multipart/form-data'>
-			<p style='margin-top:24px;'>
-				Please choose a file from your computer and then press 'Upload'.
-			</p>
-			  <fieldset>
-				<div class='control-group' style='height:200px;'>
-				  <label class='control-label' for='fileInput'>File input</label>
-				  <div class='controls'>
-					<input class='input-file uniform_on' id='fileInput' name='fileToUpload' type='file' required>
-				  </div>
-				</div>       
-				<div class='form-actions'>
-				  <button type='submit' class='btn btn-primary'>Upload</button>
-				  <a href='user_track_form.php' value='Cancel' class='btn'>Cancel</a>
-				</div>
-			  </fieldset>
-			</form>   ";
+        </table>";
         }elseif ($status == "2" && $refno == $search){
           echo "<br>
             <table class='table' width='100%' cellspacing='0'>
@@ -119,26 +82,7 @@
                   <td>Under Review</td>
                   <td>Pending</td>
               </tr>
-          </table>
-          <BR>
-    <h1> ATTACH PROOF OF PAYMENT</H1>
-   <form method='post' action='user_paymentupload_proc.php?id=<?= $id ?>' enctype='multipart/form-data'>
-			<p style='margin-top:24px;'>
-				Please choose a file from your computer and then press 'Upload'.
-			</p>
-			  <fieldset>
-				<div class='control-group' style='height:200px;'>
-				  <label class='control-label' for='fileInput'>File input</label>
-				  <div class='controls'>
-					<input class='input-file uniform_on' id='fileInput' name='fileToUpload' type='file' required>
-				  </div>
-				</div>       
-				<div class='form-actions'>
-				  <button type='submit' class='btn btn-primary'>Upload</button>
-				  <a href='user_track_form.php' value='Cancel' class='btn'>Cancel</a>
-				</div>
-			  </fieldset>
-			</form>   ";
+          </table>";
         }elseif ($status == "3" && $refno == $search){
           echo "<br>
             <table class='table' width='100%' cellspacing='0'>
@@ -189,26 +133,7 @@
               <td>Approved requested form</td>
               <td>Claimed</td>
           </tr>
-          </table>
-          <BR>
-    <h1> ATTACH PROOF OF PAYMENT</H1>
-   <form method='post' action='user_paymentupload_proc.php?id=<?= $id ?>' enctype='multipart/form-data'>
-			<p style='margin-top:24px;'>
-				Please choose a file from your computer and then press 'Upload'.
-			</p>
-			  <fieldset>
-				<div class='control-group' style='height:200px;'>
-				  <label class='control-label' for='fileInput'>File input</label>
-				  <div class='controls'>
-					<input class='input-file uniform_on' id='fileInput' name='fileToUpload' type='file' required>
-				  </div>
-				</div>       
-				<div class='form-actions'>
-				  <button type='submit' class='btn btn-primary'>Upload</button>
-				  <a href='user_track_form.php' value='Cancel' class='btn'>Cancel</a>
-				</div>
-			  </fieldset>
-			</form>   ";
+          </table>";
         }
       }
         }else{

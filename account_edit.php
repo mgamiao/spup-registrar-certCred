@@ -35,7 +35,7 @@ foreach ($get_userData as $key => $row) {
 
   </div>
 <br>
-  <div class="input-group" style="width:75%; margin-left:0%; margin-top: 9%;">
+  <div class="input-group" style="width:75%; margin-left:13%; margin-top: 9%;">
 
       <input type="text" name="firstname" class="form-control form-control-user" autocomplete=off value="<?= $firstname;?>" class="form-control">
       <input type="text" name="middlename" class="form-control form-control-user" autocomplete=off value="<?= $middlename;?>" class="form-control">

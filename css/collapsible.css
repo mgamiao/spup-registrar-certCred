@@ -13,9 +13,11 @@
   }
   
   .fullStatsActive, .fullStats:hover {
-    background-color: #fed002;
-  
+    background-color: #044a33;
+    color: white;
+
   }
+  
   
   .content {
     padding: 0 18px;
@@ -65,3 +67,67 @@
   background-size: 100%;
 }
 
+.hether1 {
+  padding: 1px;
+  background: #ffcc04;
+
+}
+
+.hether2 {
+  padding: 20px;
+  text-align: center;
+  background: #044a33;
+  color: white;
+  font-size: 20px;
+
+}
+.hether4 {
+  padding: 1px;
+  background: #ffcc04;
+
+}
+.hether3 {
+  padding: 10x;
+  background: #044a33;
+  color: white;
+  text-align: center;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ffcc04;
+  font-family: sans-serif;
+}
+
+.active {
+  background-color: #044a33;
+}
+
+
+.futer {
+  padding: 20px;
+  text-align: center;
+  background: #044a33;
+  color: white;
+  font-size: 13px;
+}

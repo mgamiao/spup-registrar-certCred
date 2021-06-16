@@ -154,7 +154,7 @@ include "header.php";
                 </span>
         </a> -->
         &nbsp;&nbsp;
-            <a href="archived_view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="archived_view_forms.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-edit"></i>
             </span>

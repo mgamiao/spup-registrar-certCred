@@ -83,6 +83,7 @@ include "header.php";
 <div align="center">
                 <div class="py-3 bordercolor" style="border:none;">
                 <h1 class="m-0 headerblacked">VIEW FORM</h1>
+                </div
                 </div>
 </div>
 <br>
