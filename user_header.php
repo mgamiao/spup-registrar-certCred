@@ -22,70 +22,57 @@
 
   <!-- Custom styles for this template-->
   <link href="template/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/collapsible.css" rel="stylesheet" type="text/css">
 
 </head>
+<div class="hether2">
+  <p>St.Paul University Philippines</p>
+</div>
+<div class="hether1">
+</div>
+<div class="hether3">
+<div class="hether4">
+</div>
 
 <body id="page-top">
 
-  <!-- Page Wrapper -->
-  <div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-        <div class="sidebar-brand-icon rotate-n-15">
-          
-        </div>
-        <div class="sidebar-brand-text mx-3">SPUP Registrar </div>
-      </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
+<ul>
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">
+      <li>
+        <a style="text-decoration:none" href="index.php">
           
-          <span>HOME</span></a>
+         HOME</a>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
 
-      <!-- Heading -->
-     
          
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="user_terms.php"  aria-expanded="true" aria-controls="collapseTwo">
+      <li>
+        <a style="text-decoration:none" href="user_terms.php"  aria-expanded="true" aria-controls="collapseTwo">
           
-          <span>Request a Form</span>
+          <span>REQUEST A FORM</span>
         </a>
       
       </li>
       
       </li>
-        <li class="nav-item active">
-        <a class="nav-link collapsed" href="user_track_form.php"  aria-expanded="true" aria-controls="collapseUtilities">
+        <li>
+        <a style="text-decoration:none" href="user_track_form.php"  aria-expanded="true" aria-controls="collapseUtilities">
           
-          <span>Track requested form</span>
+          <span>TRACK REQUESTED FORM</span>
         </a>
           </li>  
       <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item active">
-        <a class="nav-link collapsed" href="contact.php"  aria-expanded="true" aria-controls="collapseUtilities">
+    <li>
+        <a style="text-decoration:none" href="contact.php"  aria-expanded="true" aria-controls="collapseUtilities">
           
-          <span>Contact us</span>
+          <span>CONTACT US</span>
         </a>
-      
+    
 </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
 </ul>
+</div>
+
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -105,9 +92,9 @@
           date_default_timezone_set('Asia/Singapore'); 
           $xdate=date('Y-m-d');
           $xtime=date('h:i:sa'); 
-          echo "<h6 class='m-0 font-weight-bold text-primary'>Date: $xdate   &nbsp </h6>  "; 
+          echo "<h6 class='m-0 font-weight-bold text-dark'>Date: $xdate   &nbsp </h6>  "; 
           
-          echo "<h6 class='m-0 font-weight-bold text-primary'>Time:  $xtime</h6>";
+          echo "<h6 class='m-0 font-weight-bold text-dark'>Time:  $xtime</h6>";
           ?>
           <!-- Topbar Navbar -->
           
@@ -142,3 +129,5 @@
 </body>
 
 </html>
+
+

@@ -11,16 +11,20 @@
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  pag meron to ayaw gumana ng logout dropdown-->
 
 </head>
-<body>
-<div class="jumbotron text-center">
-  <img src="img/spup.png" style="margin-top:-50px;">
-  <h1>WELCOME TO THE WEB APPLICATION FOR SCHOOL CREDENTIALS AND CERTIFICATION!</h1>
-  <h3 style="text-align:center;">This web application outlines SPUP’s Web Application Services for School Credentials</h3>
-</div>
 
-<div class="container">
-  <h4>Type of Forms(Certificate/Credentials)</h4>            
-  <table class="table table-dark table-striped">
+
+<body>
+
+<div class="col-10" style="margin-left:16%;">
+        <div class="col-10 ">
+            <div class="card shadow pb-8">
+                <div class="card-header " style="background-color:#044a33;">
+                    <h5 class="m-0 font-weight-bold" style="color:white;">TYPE OF FORMS (CERTIFICATE/CREDENTIALS)</h5>
+                </div>
+                <div class="card-body pt-5" style="background-color:#F0F0F0;">
+
+<div class="container">          
+  <table class="table table-striped">
     <tbody>
       <tr>
         <td align="center">Diploma</a></td>
@@ -64,9 +68,22 @@
     </tbody>
   </table>
 </div>
-<div class="container">
-  <h4>Procedure:</h4>            
-  <table class="table table-dark table-striped">
+</div>
+</div>
+</div>
+</div>
+<br>
+<br>
+<div class="col-10" style="margin-left:16%;">
+        <div class="col-10 ">
+            <div class="card shadow pb-8">
+                <div class="card-header " style="background-color:#044a33;">
+                    <h5 class="m-0 font-weight-bold" style="color:white;">PROCEDURES</h5>
+                </div>
+                <div class="card-body pt-5" style="background-color:#F0F0F0;">
+
+<div class="container">          
+  <table class="table table-striped">
     <thead>
 
     </thead>
@@ -87,9 +104,24 @@
     </tbody>
   </table>
 </div>
+</div>
+</div>
+</div>
+</div>
+
+<br>
+<br>
+
+<div class="col-10" style="margin-left:16%;">
+        <div class="col-10 ">
+            <div class="card shadow pb-8">
+                <div class="card-header " style="background-color:#044a33;">
+                    <h5 class="m-0 font-weight-bold" style="color:white;">MODE OF CLAIMING THE REQUESTED CREDENTIALS</h5>
+                </div>
+                <div class="card-body pt-5" style="background-color:#F0F0F0;">
 <div class="container">
-  <h4>Mode of Claiming</h4>            
-  <table class="table table-dark table-striped">
+            
+  <table class="table table-striped">
     <thead>
 
     </thead>
@@ -106,9 +138,23 @@
     </tbody>
   </table>
 </div>
-<div class="container">
-  <h4>Details for Online Payment</h4>            
-  <table class="table table-dark table-striped">
+</div>
+</div>
+</div>
+</div>
+
+<br>
+<br>
+
+<div class="col-10" style="margin-left:16%;">
+        <div class="col-10 ">
+            <div class="card shadow pb-8">
+                <div class="card-header " style="background-color:#044a33;">
+                    <h5 class="m-0 font-weight-bold" style="color:white;">DETAILS FOR ONLINE PAYMENT</h5>
+                </div>
+                <div class="card-body pt-5" style="background-color:#F0F0F0;">
+<div class="container">           
+  <table class="table table-striped">
     <thead>
 
     </thead>
@@ -141,9 +187,24 @@
     </tbody>
   </table>
 </div>
+</div>
+</div>
+</div>
+</div>
+
+<br>
+<br>
+
+<div class="col-10" style="margin-left:16%;">
+        <div class="col-10 ">
+            <div class="card shadow pb-8">
+                <div class="card-header " style="background-color:#044a33;">
+                    <h5 class="m-0 font-weight-bold" style="color:white;">FRIENDLY REMINDERS:</h5>
+                </div>
+                <div class="card-body pt-5" style="background-color:#F0F0F0;">
+
 <div class="container">
-  <h4>Friendly Reminders:</h4>            
-  <table class="table table-dark table-striped">
+  <table class="table table-striped">
     <thead>
 
     </thead>
@@ -157,15 +218,24 @@
     </tbody>
   </table>
 </div>
+</div>
+</div>
+</div>
+</div>
 
-<a href="user_request.php" class="btn btn-primary btn-icon-split btn-md" style="margin-left:45%;">
+<br>
+
+<a href="user_terms.php" class="btn btn-primary btn-icon-split btn-md" style="margin-left:46.5%;">
         <span class="text">
             Request a Form
         </span>
             </a>
             </a>
-
+<br>
 </body>
 
 </html>
+
+<br>
+<br>
 <?php include "footer.php" ?>

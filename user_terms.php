@@ -1,4 +1,6 @@
-<?php include "user_header.php"; ?>
+<?php include "user_header.php"; 
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +13,11 @@
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 </head>
 <body onload="checkStatus()">
-<div class="col-12" style="margin-left:15%;">
-        <div class="col-8 ">
+<div class="col-10" style="margin-left:15%;">
+        <div class="col-10 ">
             <div class="card shadow pb-10">
-                <div class="card-header " style="background-color:green;">
-                    <h6 class="m-0 font-weight-bold" style="color:white;"  >Terms</h6>
+                <div class="card-header " style="background-color:#044a33;">
+                    <h5 class="m-0 font-weight-bold" style="color:white;">TERMS AND CONDITIONS</h5>
                 </div>
                 <div class="card-body pt-5" style="background-color:#F0F0F0;">
                    <h5 style="margin-top:-25px; color:black; font-weight:bold; font-family:times new roman;"> IMPORTANT - PLEASE READ CAREFULLY: </h5>
@@ -115,5 +117,7 @@
             checkStatus();
         })
         </script>
+        <br>
+        <br>
         <?php include "footer.php" ?>
         

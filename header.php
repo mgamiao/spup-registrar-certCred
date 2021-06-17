@@ -63,7 +63,7 @@ $compnotif = count_archived_forms();
 </head>
 
 <div class="hether2">
-  <p>S.Paul University Philippines</p>
+  <p>St.Paul University Philippines</p>
 </div>
 <div class="hether1">
 </div>

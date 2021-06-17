@@ -16,11 +16,6 @@ include "user_header.php";
 </head>
 <body>
 
-<div class="jumbotron text-center">
-  <img src="img/spup.png" style="margin-top:-50px;">
-  <h1>WELCOME TO THE WEB APPLICATION FOR SCHOOL CREDENTIALS AND CERTIFICATION!</h1>
-  <h3 style="text-align:center;">This web application outlines SPUP’s Web Application Services for School Credentials</h3>
-</div>
 <?php
 			if (isset($_SESSION['pic_errormsg'])) {
 			?>
@@ -31,16 +26,34 @@ include "user_header.php";
 			}
 			unset($_SESSION['pic_errormsg']);
 			?>
+
+<br>
+<br>
 <div align="center">
 <form method="post" action="user_form_search.php">
-                    <h5> Enter your reference number here:</h5>
+                    <h5> Start tracking your request by entering your reference number in the box below.</h5>
+                    <br>
                     <div class="input-group mb-3 w-25">
-                        <input type="text" class="form-control" placeholder="Enter your Reference number" name="search" autocomplete="off" required>
+                        <input type="text" class="form-control" placeholder="Enter Reference Number" name="search" autocomplete="off" required>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary text-dark" type="submit" id="button-addon2">Search</button>
+                            <button class="btn btn-outline-secondary text-dark" type="submit" id="button-addon2">Track</button>
                         </div>
                         </div>
+                        <p></p>
                 </form>
 </div>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 <?php include "footer.php" ?>

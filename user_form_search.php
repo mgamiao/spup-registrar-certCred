@@ -13,19 +13,11 @@
 
 </head>  
 <body>
-<div class="jumbotron text-center">
-  <img src="img/spup.png" style="margin-top:-50px;">
-  <h1>WELCOME TO THE WEB APPLICATION FOR SCHOOL CREDENTIALS AND CERTIFICATION!</h1>
-  <h3 style="text-align:center;">This web application outlines SPUP’s Web Application Services for School Credentials</h3>
-</div>
 <?php   
            
         $table_name="forms";
         $column="refno";
         $search=$_POST['search'];
-        echo "<div class='text-dark' style='float:left;'><i>Results of <b>"
-                ."'".$search."'"
-                ."</b>.</i><br><br></div>";
         $user_data=count_refno($table_name, $search);
       if ($user_data == "1"){
           $user_data2=get_where_custom($table_name, $column, $search);
@@ -36,6 +28,15 @@
         
         if ($status == "0" && $refno == $search){
             echo "<br>
+            <div class='col-10' style='margin-left:16%;'>
+            <div class='col-10 '>
+                <div class='card shadow pb-8'>
+                    <div class='card-header ' style='background-color:#044a33;'>
+                        <h5 class='m-0'>  '<div class='text-light' style='float:left;'>Results of
+                        '$search'
+                        </div></h5>
+                    </div>
+                    <div class='card-body pt-5' style='background-color:#F0F0F0;'>
             <table class='table' width='100%' cellspacing='0'>
         <tr>
           <th>Registrar's Office</th>
@@ -50,9 +51,22 @@
           <td>Pending</td>
         </tr>
         </table>
+        </div>
+        </div>
+        </div>
+        </div>
         ";
         }elseif ($status == "1" && $refno == $search){
           echo "<br>
+          <div class='col-10' style='margin-left:16%;'>
+          <div class='col-10 '>
+              <div class='card shadow pb-8'>
+                  <div class='card-header ' style='background-color:#044a33;'>
+                      <h5 class='m-0'>  '<div class='text-light' style='float:left;'>Results of
+                      '$search'
+                      </div></h5>
+                  </div>
+                  <div class='card-body pt-5' style='background-color:#F0F0F0;'>
           <table class='table' width='100%' cellspacing='0'>
             <tr>
                 <th>Registrar's Office</th>
@@ -66,9 +80,23 @@
                 <td>Pending</td>
                 <td>Pending</td>
             </tr>
-        </table>";
+        </table>
+        </div>
+        </div>
+        </div>
+        </div>
+        ";
         }elseif ($status == "2" && $refno == $search){
           echo "<br>
+          <div class='col-10' style='margin-left:16%;'>
+          <div class='col-10 '>
+              <div class='card shadow pb-8'>
+                  <div class='card-header ' style='background-color:#044a33;'>
+                      <h5 class='m-0'>  '<div class='text-light' style='float:left;'>Results of
+                      '$search'
+                      </div></h5>
+                  </div>
+                  <div class='card-body pt-5' style='background-color:#F0F0F0;'>
             <table class='table' width='100%' cellspacing='0'>
               <tr>
                   <th>Registrar's Office</th>
@@ -82,9 +110,23 @@
                   <td>Under Review</td>
                   <td>Pending</td>
               </tr>
-          </table>";
+          </table>
+          </div>
+          </div>
+          </div>
+          </div>
+          ";
         }elseif ($status == "3" && $refno == $search){
           echo "<br>
+          <div class='col-10' style='margin-left:16%;'>
+          <div class='col-10 '>
+              <div class='card shadow pb-8'>
+                  <div class='card-header ' style='background-color:#044a33;'>
+                      <h5 class='m-0'>  '<div class='text-light' style='float:left;'>Results of
+                      '$search'
+                      </div></h5>
+                  </div>
+                  <div class='card-body pt-5' style='background-color:#F0F0F0;'>
             <table class='table' width='100%' cellspacing='0'>
               <tr>
                   <th>Registrar's Office</th>
@@ -99,8 +141,23 @@
                   <td>Ready when paid</td>
               </tr>
           </table>
+          </div>
+          </div>
+          </div>
+          </div>
           <BR>
-    <h1> ATTACH PROOF OF PAYMENT</H1>
+          <BR>
+          <BR>
+          <BR>
+          <BR>
+          <div class='col-10' style='margin-left:16%;'>
+          <div class='col-10 '>
+              <div class='card shadow pb-8'>
+                  <div class='card-header ' style='background-color:#044a33;'>
+                      <h5 class='m-0 font-weight-bold' style='color:white;'>ATTACH PROOF OF PAYMENT</h5>
+                  </div>
+                  <div class='card-body pt-5' style='background-color:#F0F0F0;'>
+          
    <form method='post' action='user_paymentupload_proc.php?id=<?= $id ?>' enctype='multipart/form-data'>
 			<p style='margin-top:24px;'>
 				Please choose a file from your computer and then press 'Upload'.
@@ -120,6 +177,15 @@
 			</form>   ";
         }elseif ($status == "4" && $refno == $search){
           echo "<br>
+          <div class='col-10' style='margin-left:16%;'>
+            <div class='col-10 '>
+                <div class='card shadow pb-8'>
+                    <div class='card-header ' style='background-color:#044a33;'>
+                        <h5 class='m-0'>  '<div class='text-light' style='float:left;'>Results of
+                        '$search'
+                        </div></h5>
+                    </div>
+                    <div class='card-body pt-5' style='background-color:#F0F0F0;'>
             <table class='table' width='100%' cellspacing='0'>
           <tr>
               <th>Registrar's Office</th>
@@ -133,7 +199,12 @@
               <td>Approved requested form</td>
               <td>Claimed</td>
           </tr>
-          </table>";
+          </table>
+          </div>
+          </div>
+          </div>
+          </div>
+          ";
         }
       }
         }else{
@@ -141,4 +212,10 @@
         }
        
     ?>
-    
+    </div>
+    </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <?php include "footer.php";?>
