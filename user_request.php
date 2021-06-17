@@ -36,8 +36,14 @@ if (isset($_SESSION['alert_msg'])){
         <?php
         }
       ?>
-<div class="container" >
-  <h2>Request Form</h2>
+
+<div class="card w-100 " style="border:none;">
+                <div class="py-3 bordercolor" style="border:none;">
+                <h1 class="m-0 headerblacked"> REQUEST FORM</h1>
+                </div>
+                <div class="card-body">
+
+<div class="container" >    
   <h6 style="color:red"> * Required </h6><br>
   <form method ="post" action="user_req_proc.php">
     <div class="form-group">
@@ -148,6 +154,11 @@ if (isset($_SESSION['alert_msg'])){
 
     <p id="text" ><button type="submit" class="btn btn-primary custombutton">Submit</button></p>
   </form>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <script>
 function checkStatus() {
