@@ -140,7 +140,7 @@
     <td> $stickerfee </td>
   	</tr>
 	<tr>
-	<td>Total Fees</td>
+	<td>Total Fee</td>
 	<td> : </td>
 	<td>  $fees </td>
 	</tr>   
