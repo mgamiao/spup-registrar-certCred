@@ -142,7 +142,7 @@
 	<tr>
 	<td>Total Fees</td>
 	<td> : </td>
-	<td> $fees </td>
+	<td>  $fees </td>
 	</tr>   
 	</table>";
 	$mail->addAddress($email);
