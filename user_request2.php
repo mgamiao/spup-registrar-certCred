@@ -28,56 +28,32 @@ if (isset($_SESSION['alert_msg'])){
     }
     ?>
       <?php
-        if (isset($_SESSION['captcha'])){
-        unset($_SESSION['captcha']);?>
-
-        <span style="color: red; font-weight: bold;">Incorrect captcha</span>
-        <br>
-        <?php
-        }
+      date_default_timezone_set('Asia/Singapore'); 
+      $xdate=date('Y-m-d');
+      $xtime=date('h:i:sa'); 
       ?>
+      <?php
+      $_SESSION['date'] = $_POST['date'];
+      $_SESSION['studnum'] = $_POST['studnum']; 
+      $_SESSION['lastname'] = $_POST['lastname']; 
+      $_SESSION['middlename'] = $_POST['middlename'];
+      $_SESSION['firstname'] = $_POST['firstname']; 
+      $_SESSION['school'] = $_POST['school']; 
+      $_SESSION['email'] = $_POST['email']; 
+      $_SESSION['mobilenum'] = $_POST['mobilenum']; 
+        
+      ?>
+
 
 <div class="card w-100 " style="border:none;">
                 <div class="py-3 bordercolor" style="border:none;">
-                <h1 class="m-0 headerblacked"> REQUEST FORM</h1>
+                <h1 class="m-0 headerblacked"> REQUEST FORM - FORM INFORMATION</h1>
                 </div>
                 <div class="card-body">
 
 <div class="container" >    
   <h6 style="color:red"> * Required </h6><br>
   <form method ="post" action="user_req_proc.php">
-    <div class="form-group">
-      <h6>Enter Date Today:  <span style="color:red">*</h6></span>
-      <input type="date" class="form-control" placeholder="" name="date" required autocomplete=off>
-    </div>
-    <div class="form-group">
-      <h6>Student Number:</h6>
-      <input type="text" class="form-control" placeholder="Enter Last name" name="studnum"  autocomplete=off>
-    </div>
-    <div class="form-group">
-      <h6>Last Name: <span style="color:red">*</h6></span>
-      <input type="text" class="form-control" placeholder="Enter Last name" name="lastname" required autocomplete=off>
-    </div>
-    <div class="form-group">
-      <h6>Middle Name:</h6>
-      <input type="text" class="form-control"  placeholder="Enter Middle name" name="middlename"  autocomplete=off>
-    </div>
-    <div class="form-group">
-      <h6>First Name:<span style="color:red">*</h6></span>
-      <input type="text" class="form-control"  placeholder="Enter First name" name="firstname" required autocomplete=off>
-    </div>
-
-    <h6>School: <span style="color:red">*</h6></span>
-    <select name="school" class="custom-select" required autocomplete=off>
-    <option selected>Select school:</option>
-    <option value="SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING">SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING</option>
-    <option value="SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT">SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT</option>
-    <option value="SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES">SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES</option>
-    <option value="SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION">SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION</option>
-    <option value="BASIC EDUCATION UNIT">BASIC EDUCATION UNIT</option>
-    <option value="SCHOOL OF MEDICINE">SCHOOL OF MEDICINE</option>
-    <option value="GRADUATE SCHOOL">GRADUATE SCHOOL</option>
-    </select>  
     <h6>Type of Form: <span style="color:red">*</h6></span>
     <select name="form_type" class="custom-select" required autocomplete=off>
     <option value="">Select type of form:</option>
@@ -138,18 +114,10 @@ if (isset($_SESSION['alert_msg'])){
       <h6>Undergraduate(COURSE, SEMESTER AND LAST ACADEMIC YEAR ATTENDED AT ST. PAUL UNIVERSITY PHILIPPINES):</h6>
       <input type="text" class="form-control"  placeholder="Enter COURSE, SEMESTER AND LAST ACADEMIC YEAR ATTENDED AT ST. PAUL UNIVERSITY PHILIPPINES" name="undergraduate"  autocomplete=off>
     </div>
-    <div class="form-group">
-      <h6>Email: <span style="color:red">*</h6></span>
-      <input type="email" class="form-control"  placeholder="Enter Email Address" name="email" required autocomplete=off>
-    </div>
-    <div class="form-group">
-      <h6>Mobile Number: <span style="color:red">*</h6></span>
-      <input type="number" class="form-control"  placeholder="Enter Mobile number" name="mobilenum" required autocomplete=off maxlength="11">
-    </div>
     <br>
     <!-- <h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6> </i>    -->
     <input type="checkbox" id="agree_again" name="agree" value="ON">
-    <label><h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6></i></label> 
+    <label><h6 style="color:red; "><i> Note: Please make sure that all information given are correct before clicking submit </h6></i></label> 
     
 
     <p id="text" ><button type="submit" class="btn btn-primary custombutton">Submit</button></p>

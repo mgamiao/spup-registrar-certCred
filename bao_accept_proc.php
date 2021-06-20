@@ -8,7 +8,20 @@
 	//get user ID from URL
 	$id = $_GET['id'];
     $status = $_GET['status'];
-	$fees = $_POST['fees'];
+	$transfee = $_POST['transfee'];
+	$dipfee = $_POST['dipfee'];
+	$formfee = $_POST['formfee'];
+	$certfee = $_POST['certfee'];
+	$authfee = $_POST['authfee'];
+	$servfee = $_POST['servfee'];
+	$docstamp = $_POST['docstamp'];
+	$mailfee = $_POST['mailfee'];
+	$letterfee = $_POST['letterfee'];
+	$torenvfee = $_POST['torenvfee'];
+	$stickerfee = $_POST['stickerfee'];
+	$fees = $transfee + $dipfee + $formfee + $certfee + $authfee + $servfee + $docstamp + $mailfee + $letterfee + $torenvfee + $stickerfee;
+
+	
 
 	$user_editedvalues = array (
 		//columname from table => value from post
@@ -35,6 +48,17 @@
 	date_default_timezone_set('Asia/Singapore');
 	$xdate=date('Y-m-d');
 	$xtime=date('h:i:sa');
+	$transfee = $_POST['transfee'];
+	$dipfee = $_POST['dipfee'];
+	$formfee = $_POST['formfee'];
+	$certfee = $_POST['certfee'];
+	$authfee = $_POST['authfee'];
+	$servfee = $_POST['servfee'];
+	$docstamp = $_POST['docstamp'];
+	$mailfee = $_POST['mailfee'];
+	$letterfee = $_POST['letterfee'];
+	$torenvfee = $_POST['torenvfee'];
+	$stickerfee = $_POST['stickerfee'];
 
     require 'phpmailer/includes/PHPMailer.php';
 	require 'phpmailer/includes/SMTP.php';
@@ -58,33 +82,68 @@
 	$mail->isHTML(true);
 	$mail->Body = "<h1>Hello " . $lastname . "</h1><br>$xdate . $xtime <h3>Your form was approved by the Business Affair Office.Please wait for the finalization of you requested form</h3><br>
 	<h3>Your total fee is: P$fees.00. Please present the receipt of your payment before claiming your requested form. Thank you </h3><br><br><br>Your reference number is: <b>". $unique."</b><br>
-	<h3><b>Details for Online Payment:<b></h3>
+	<h3><b>Breakdown of Fees:<b></h3>
 	<table>
 	<tr>
-    <td>Bank</td>
+    <td>Transcript Fee</td>
 	<td> : </td>
-    <td>Bank of the Philippine Islands</td>
+    <td> $transfee</td>
   	</tr>
   	<tr>
-    <td>Branch</td>
+    <td>Diploma Fee</td>
 	<td> : </td>
-    <td>Tuguegarao City Branch</td>
+    <td> $dipfee </td>
   	</tr>
   	<tr>
-    <td>Account Name</td>
+    <td>Form 137A/138B</td>
 	<td> : </td>
-    <td>ST. PAUL UNIVERSITY PHILIPPINES</td>
+    <td> $formfee </td>
   	</tr>
   	<tr>
-    <td>Account Type</td>
+    <td>Certification Fee</td>
 	<td> : </td>
-    <td>Saving Account</td>
+    <td> $certfee </td>
   	</tr>
   	<tr>
-    <td>Account Number</td>
+    <td>Authentication Fee</td>
 	<td> : </td>
-    <td>8693 – 0892 – 13</td>
+    <td> $authfee </td>
   	</tr>
+	<tr>
+	<td>Service Fee(Online)</td>
+	<td> : </td>
+	<td> $servfee </td>
+	</tr>
+	<tr>
+	<td>Documentary Stamp</td>
+	<td> : </td>
+	<td> $docstamp </td>
+	</tr>
+	<tr>
+    <td>Mailing Fee</td>
+	<td> : </td>
+    <td> $mailfee </td>
+  	</tr>
+	<tr>
+    <td>Letter Envelope</td>
+	<td> : </td>
+    <td> $letterfee </td>
+  	</tr>
+	<tr>
+    <td>SPUP TOR Envelope</td>
+	<td> : </td>
+    <td> $torenvfee </td>
+  	</tr>
+	<tr>
+    <td>SPUP Sticker</td>
+	<td> : </td>
+    <td> $stickerfee </td>
+  	</tr>
+	<tr>
+	<td>Total Fees</td>
+	<td> : </td>
+	<td> $fees </td>
+	</tr>   
 	</table>";
 	$mail->addAddress($email);
 	

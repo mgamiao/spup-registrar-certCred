@@ -168,8 +168,28 @@ include "header.php";
                 </div>
                 </div>
                 <br>
-    <h6 style="color:black;">Total Payment:</h6>
-    <input type="number" class="form-control"  style="color:black; font-weight:bold;" name="fees" placeholder="Enter total amount of payment" required autocomplete="off">
+    <h6 style="color:black;">Transcript Fee:</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;"  value= "0" name="transfee" placeholder="Enter amount of payment"  autocomplete="off">
+    <h6 style="color:black;">Diploma Fee:</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;"  value= "0" name="dipfee" placeholder="Enter amount of payment"  autocomplete="off">
+    <h6 style="color:black;">Form 137A/138B:</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;" value= "0" name="formfee" placeholder="Enter amount of payment"  autocomplete="off">
+    <h6 style="color:black;">Certification Fee:</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;" value= "0" name="certfee" placeholder="Enter amount of payment"  autocomplete="off">
+    <h6 style="color:black;">Authentication Fee:</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;" value= "0" name="authfee" placeholder="Enter  amount of payment"  autocomplete="off">
+    <h6 style="color:black;">Service Fee(Online):</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;" value= "0" name="servfee" placeholder="Enter amount of payment"  autocomplete="off">
+    <h6 style="color:black;">Documentary Stamp:</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;" value= "0" name="docstamp" placeholder="Enter  amount of payment"  autocomplete="off">
+    <h6 style="color:black;">Mailing/Shipping Fee:</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;" value= "0" name="mailfee" placeholder="Enter  amount of payment"  autocomplete="off">
+    <h6 style="color:black;">Letter Envelope:</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;" value= "0" name="letterfee" placeholder="Enter  amount of payment"  autocomplete="off">
+    <h6 style="color:black;">SPUP TOR Envelope:</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;" value= "0" name="torenvfee" placeholder="Enter  amount of payment"  autocomplete="off">
+    <h6 style="color:black;">SPUP Sticker:</h6>
+    <input type="number" class="form-control"  style="color:black; font-weight:bold;" value= "0" name="stickerfee" placeholder="Enter  amount of payment"  autocomplete="off">
     <div align="center">
     <br>
     <button type="submit" class="btn btn-success btn-icon-split btn-md" style="width:120px;" >
@@ -181,8 +201,8 @@ include "header.php";
 		</span>
 	</button>
 
-  </form>
-            
+  </form>  
+
         <?php } ?>
    
 </div>   

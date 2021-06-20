@@ -5,11 +5,11 @@
 
     $table_name="forms";
 
-    $studentnumber=$_POST['studnum'];
-    $firstname=$_POST['firstname'];
-    $middlename=$_POST['middlename'];
-    $lastname=$_POST['lastname'];
-    $school =$_POST['school'];
+    $studentnumber=$_SESSION['studnum'];
+    $firstname=$_SESSION['firstname'];
+    $middlename=$_SESSION['middlename'];
+    $lastname=$_SESSION['lastname'];
+    $school =$_SESSION['school'];
     $formType =$_POST['form_type'];
     $numofCopies =$_POST['numofcopies'];
     $numofRequest =$_POST['numofrequest'];
@@ -19,9 +19,9 @@
     $courseCompleted =$_POST['coursecompleted'];
     $dategraduated =$_POST['dategraduated'];
     $undergraduate =$_POST['undergraduate'];
-    $email=$_POST['email'];
-    $mobileNum=$_POST['mobilenum'];
-    $date=$_POST['date'];
+    $email=$_SESSION['email'];
+    $mobileNum=$_SESSION['mobilenum'];
+    $date=$_SESSION['date'];
     //reference number generator
     $today = date("Ymd");
     $rand = strtoupper(substr(uniqid(sha1(time())),0,10));
@@ -95,7 +95,7 @@ $mail->Body = "<h1>Hello " . $lastname .  "</h1><br>$xdate . $xtime <h3>Your req
 $mail->addAddress($email);
 
 if ($mail->Send() ) {
-    header("Location: user_request.php");
+    header("Location: user_request1.php");
 }else{
     echo "Error";
 }

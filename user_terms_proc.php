@@ -20,7 +20,7 @@ if ($randomSymbol == "+") {
     $_SESSION['captchaResult']=$captchaResult;
 if  ($captchaResult==$checkTotal){
     $_SESSION['captchaResult.php'];
-    header("Location: user_request.php");
+    header("Location: user_request1.php");
 
   }
 

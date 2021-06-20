@@ -117,6 +117,7 @@
           </div>
           ";
         }elseif ($status == "3" && $refno == $search){
+          $form_location = "user_paymentupload_proc.php?id=".$id;
           echo "<br>
           <div class='col-10' style='margin-left:16%;'>
           <div class='col-10 '>
@@ -158,7 +159,7 @@
                   </div>
                   <div class='card-body pt-5' style='background-color:#F0F0F0;'>
           
-   <form method='post' action='user_paymentupload_proc.php?id=<?= $id ?>' enctype='multipart/form-data'>
+   <form method='post' action='$form_location' enctype='multipart/form-data'>
 			<p style='margin-top:24px;'>
 				Please choose a file from your computer and then press 'Upload'.
 			</p>
