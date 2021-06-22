@@ -79,11 +79,13 @@ if (isset($_SESSION['alert_msg'])){
     <div id="ifYes" style="display: none;">
     <br>
     <h6>Representative's Name: <span style="color:red">*</h6></span> <input type="text" class="form-control" name="representname" /><br />
-    <div class='control-group' style='height:100px;'>
+   
+    <!-- <div class='control-group' style='height:100px;'>
     <h6>Attach photo of Valid ID of the Representative: <span style="color:red">*</h6></span> 
     <div class='controls'>
     <input class='input-file uniform_on' id='fileInput' name='representid' type='file' required>
-    </div>
+    </div> -->
+
 	</div>
     </div>
     <div class="form-group">
@@ -91,6 +93,10 @@ if (isset($_SESSION['alert_msg'])){
       <input type="text" class="form-control"  placeholder="Enter Address" name="address"  autocomplete=off>
     </div>
     <br>
+    <h6 style="color:red; "><i> Note: Please make sure that all information given are correct before clicking submit.<br>
+     Don't forget to present your valid ID when claiming.</h6></i>
+    <input type="checkbox" id="agree_again" name="agree" value="ON">
+    <label><h6 style="color:gray;">Understood</h6></label>
     <!-- <h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6> </i>    -->
     <input type="checkbox" id="agree_again" name="agree" value="ON">
     <label><h6 style="color:red; "><i> Note: Please make sure that all information given are correct before clicking submit </h6></i></label> 

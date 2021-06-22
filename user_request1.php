@@ -59,19 +59,19 @@ if (isset($_SESSION['alert_msg'])){
     </div>
     <div class="form-group">
       <h6>Student Number:</h6>
-      <input type="text" class="form-control" placeholder="Enter Last name" name="studnum"  autocomplete=off>
+      <input type="number" class="form-control" placeholder="Enter Student Number" name="studnum"  autocomplete=off>
     </div>
     <div class="form-group">
       <h6>Last Name: <span style="color:red">*</h6></span>
-      <input type="text" class="form-control" placeholder="Enter Last name" name="lastname" required autocomplete=off>
+      <input type="text" class="form-control" placeholder="Enter Last name while in SPUP" name="lastname" required autocomplete=off>
     </div>
     <div class="form-group">
       <h6>Middle Name:</h6>
-      <input type="text" class="form-control"  placeholder="Enter Middle name" name="middlename"  autocomplete=off>
+      <input type="text" class="form-control"  placeholder="Enter Middle name while in SPUP" name="middlename"  autocomplete=off>
     </div>
     <div class="form-group">
       <h6>First Name:<span style="color:red">*</h6></span>
-      <input type="text" class="form-control"  placeholder="Enter First name" name="firstname" required autocomplete=off>
+      <input type="text" class="form-control"  placeholder="Enter First name while in SPUP" name="firstname" required autocomplete=off>
     </div>
 
     <h6>School: <span style="color:red">*</h6></span>
