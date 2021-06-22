@@ -13,10 +13,23 @@
 </head>
 
 <body>
+<div class="divbg">
+  <div class="piccontainer mb-5">
+    <img src="img/mirp.jpg" class="darkbg">
+    <div class="centered">OFFICE OF THE REGISTRAR</div>
+  </div>
+<div class="hether3">
+  <div class="futer2">
+  </div>
+  <div class="hether1 mb-5">
+  </div>
+</div>
+
+
 <div class="row" style="width: 80%; margin: auto;">
   <div class="col-sm-4 text-center">
     <div class="card">
-      <div class="card-body">
+      <div class="card-body colorcb">
         <img src="img/form.png" style= "width: 20%; align-items: center; ">
         <h5 class="card-title mt-3">REQUEST A FORM</h5>
         <p class="card-text mb-5">Online application of student records</p>
@@ -26,7 +39,7 @@
   </div>
   <div class="col-sm-4 text-center">
     <div class="card">
-      <div class="card-body">
+      <div class="card-body colorcb">
         <img src="img/archive.png" style= "width: 20%; align-items: center;">
         <h5 class="card-title mt-3">TRACK REQUESTED FORM</h5>
         <p class="card-text mb-5">Check status of online application of student records</p>
@@ -36,7 +49,7 @@
   </div>
   <div class="col-sm-4 text-center">
     <div class="card">
-      <div class="card-body">
+      <div class="card-body colorcb">
         <img src="img/faq.png" style= "width: 20%; align-items: center;">
         <h5 class="card-title mt-3">FREQUENTLY ASKED QUESTIONS</h5>
         <p class="card-text mb-5">Frequently asked questions to the Office of the Registrar.</p>

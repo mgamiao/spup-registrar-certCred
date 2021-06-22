@@ -83,14 +83,17 @@
   color: white;
 }
 
+.hether3 {
+  margin-top: -49px;
+}
+
 .futer1 {
   padding: 2px;
   background: #ffcc04;
-
 }
 
 .futer2 {
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   background: #044a33;
   color: white;
@@ -102,6 +105,8 @@
   overflow: hidden;
   background-color: #044a33;
   padding: 20px 10px;
+  justify-content: space-between;
+  display: flex;
 }
 
 
@@ -124,6 +129,7 @@
  font-size: 18px; 
  line-height: 25px;
  border-radius: 4px;
+
 }
 
 .userbtn {
@@ -132,7 +138,6 @@
   background: #e6bb11;
   padding: 9px 25px 9px 25px;
   border-radius: 5px;
-  
   
 }
 
@@ -149,11 +154,8 @@
     text-align: left;
   }
   
-  .header-right {
-    float: none;
-  }
-}
 
+}
 
 
 
@@ -204,7 +206,7 @@ li a:hover:not(.active) {
   background: #e6bb11;
   padding: 9px 25px 9px 25px;
   border-radius: 5px;
-  
+  display:inline-block;
   
 }
 
@@ -212,4 +214,46 @@ li a:hover:not(.active) {
   text-decoration: none;
   background: #ffcc04;
   color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+}
+
+
+.piccontainer {
+  position: relative;
+  color: white;
+  width: 100%;
+
+}
+
+
+/* .divbg {
+  background-color: #f1f1f1;
+  width: 100%;
+  margin: auto;
+} */
+
+.darkbg {
+  filter: brightness(50%);
+  width: 100%;
+  margin: auto;
+  height: 10%;
+}
+
+
+
+.hdrbtn {
+  margin-top: 38px;
+  margin-right: 200px;
+}
+
+
+.colorcb {
+  background-color: #fafafa;
 }

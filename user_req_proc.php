@@ -29,81 +29,80 @@
     $rand = strtoupper(substr(uniqid(sha1(time())),0,10));
     echo $unique = $today. "-" . $rand;
 
-    $target_dir = "representative_id/";
-    $target_file = $target_dir . basename($_FILES["representid"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    // Check if image file is a actual image or fake image
-    if(isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["representid"]["tmp_name"]);
-        if($check !== false) {
-            $uploadOk = 1;
-        } else {
-            $error_msg1 =  "File is not an image.";
-            $uploadOk = 0;
-        }
-    }
+    // $target_dir = "representative_id/";
+    // $target_file = $target_dir . basename($_FILES["representid"]["name"]);
+    // $uploadOk = 1;
+    // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    // // Check if image file is a actual image or fake image
+    // if(isset($_POST["submit"])) {
+    //     $check = getimagesize($_FILES["representid"]["tmp_name"]);
+    //     if($check !== false) {
+    //         $uploadOk = 1;
+    //     } else {
+    //         $error_msg1 =  "File is not an image.";
+    //         $uploadOk = 0;
+    //     }
+    // }
 
-    // Check if file already exists
-    if (file_exists($target_file)) {
-        $error_msg1 = "Sorry, file already exists.";
-        $uploadOk = 0;
-    }
+    // // Check if file already exists
+    // if (file_exists($target_file)) {
+    //     $error_msg1 = "Sorry, file already exists.";
+    //     $uploadOk = 0;
+    // }
 
-    // Check file size
-    if ($_FILES["representid"]["size"] > 5000000) {
-        $error_msg1 = "Sorry, your file is too large.";
-        $uploadOk = 0;
-    }
+    // // Check file size
+    // if ($_FILES["representid"]["size"] > 5000000) {
+    //     $error_msg1 = "Sorry, your file is too large.";
+    //     $uploadOk = 0;
+    // }
 
-    // Allow certain file formats
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif" ) {
-        $error_msg1 = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-        $uploadOk = 0;
-    }
+    // // Allow certain file formats
+    // if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+    // && $imageFileType != "gif" ) {
+    //     $error_msg1 = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    //     $uploadOk = 0;
+    // }
 
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        $_SESSION['pic_errormsg'] = $error_msg1. "Your file was not uploaded.";
-        header("Location: user_request1.php");
-    // if everything is ok, try to upload file
-    } else {
-        if (move_uploaded_file($_FILES["representid"]["tmp_name"], $target_file)) {
-            $user_data=array(
-                "refno" => $unique,
-                "studentnumber" => $studentnumber,
-                "firstname" => $firstname,
-                "middlename" => $middlename,
-                "lastname" => $lastname,
-                "school" => $school,
-                "form_type" => $formType,
-                "numofcopies" => $numofCopies,
-                "numofrequest" => $numofRequest,
-                "reason" => $reason,
-                "modeofclaiming" => $modeofclaiming,
-                "address" => $address,
-                "coursecompleted" => $courseCompleted,
-                "dategraduated" => $dategraduated,
-                "undergraduate" => $undergraduate,
-                "email" => $email,
-                "mobilenum" => $mobileNum,
-                "date" => $date,
-                "representname" => $representname,
-                "representid" => $representid,
-        
-            );
-        
-            echo insert($user_data, $table_name);
-            header("Location: user_request1.php");
-            $_SESSION['alert_msg']=1;
-        } else {
-            $_SESSION['pic_errormsg'] = "Sorry, there was an error uploading your file.";
-            header("Location: user_request1.php");
-        }
-    }
+    // // Check if $uploadOk is set to 0 by an error
+    // if ($uploadOk == 0) {
+    //     $_SESSION['pic_errormsg'] = $error_msg1. "Your file was not uploaded.";
+    //     header("Location: user_request1.php");
+    // // if everything is ok, try to upload file
+    // } else {
+    //     if (move_uploaded_file($_FILES["representid"]["tmp_name"], $target_file)) {
+    //     } else {
+    //         $_SESSION['pic_errormsg'] = "Sorry, there was an error uploading your file.";
+    //         header("Location: user_request1.php");
+    //     }
+    // }
 
-    
+    $user_data=array(
+        "refno" => $unique,
+        "studentnumber" => $studentnumber,
+        "firstname" => $firstname,
+        "middlename" => $middlename,
+        "lastname" => $lastname,
+        "school" => $school,
+        "form_type" => $formType,
+        "numofcopies" => $numofCopies,
+        "numofrequest" => $numofRequest,
+        "reason" => $reason,
+        "modeofclaiming" => $modeofclaiming,
+        "address" => $address,
+        "coursecompleted" => $courseCompleted,
+        "dategraduated" => $dategraduated,
+        "undergraduate" => $undergraduate,
+        "email" => $email,
+        "mobilenum" => $mobileNum,
+        "date" => $date,
+        "representname" => $representname,
+        "representid" => $representid,
+
+    );
+
+    echo insert($user_data, $table_name);
+    header("Location: user_request1.php");
+    $_SESSION['alert_msg']=1; 
     
 
 

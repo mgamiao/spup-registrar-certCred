@@ -36,12 +36,13 @@
           ?>
 
 <div class="header">
-<a href="#default" class="logo"><img src="img/spup.png"></a>
-  <div>
+<a href="#default" class="headerpic"><img src="img/spup.png"></a>
+  <div class="hdrbtn">
     <a class="header-right ui-btn-right" href="index1.php">Home</a>
     <a class="header-right ui-btn-right" href="#about">About</a>
     <a class="header-right ui-btn-right" href="contact.php">Contact</a>
   </div>
+  
 </div>
 
 
@@ -49,8 +50,6 @@
 <body id="page-top">
 
 <ul>
-<div class="hether1 mb-5">
-</div>
 </div>
 
     <!-- Content Wrapper -->
