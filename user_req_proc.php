@@ -24,6 +24,9 @@
     $date=$_SESSION['date'];
     $representname = $_POST['representname'];
     $representid = basename($_FILES["representid"]["name"]);
+    $regStatus = "Pending";
+    $deanStatus = "Pending";
+    $baoStatus = "Pending";
     //reference number generator
     $today = date("Ymd");
     $rand = strtoupper(substr(uniqid(sha1(time())),0,10));
@@ -91,6 +94,9 @@
                 "date" => $date,
                 "representname" => $representname,
                 "representid" => $representid,
+                "regStatus" => $regStatus,
+                "deanStatus" => $deanStatus,
+                "baoStatus" => $baoStatus,
         
             );
         

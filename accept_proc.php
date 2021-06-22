@@ -8,11 +8,16 @@
 	//get user ID from URL
 	$id = $_GET['id'];
     $status = $_GET['status'];
+	$regStatus = $_GET['regStatus'];
+	date_default_timezone_set('Asia/Singapore'); 
+    $xdate=date('Y-m-d');
 
 	$user_editedvalues = array (
 		//columname from table => value from post
-			"status" => 1
-			
+			"status" => 1,
+			"regStatus" => "Approved",
+			"regRemarks" => "",
+			"regDateApprove" => $xdate,
 	);
 	
 	update($user_editedvalues, $id, $table_name);

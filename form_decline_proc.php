@@ -5,6 +5,22 @@
 	$reason = $_POST['reason'];
     $id = $_GET['id'];
 	$table_name = "forms";
+	$status = $_GET['status'];
+	$regStatus = $_GET['regStatus'];
+	date_default_timezone_set('Asia/Singapore'); 
+	$xdate=date('Y-m-d');
+
+	$user_editedvalues = array (
+    	//columname from table => value from post
+		"status" => 4,
+        "regStatus" => "Disapproved",
+		"regRemarks" => $reason,
+        "regDateApprove" => $xdate,
+	);
+
+update($user_editedvalues, $id, $table_name);
+
+
 	$get_userData = get_where($table_name, $id);
 	//fetch result and pass it  to an array
 	foreach ($get_userData as $key => $row) {
@@ -49,7 +65,6 @@ $table_name = "forms";
 
 //get user ID from URL
 $id = $_GET['id'];
-delete($id, $table_name);
 $_SESSION['alert_msg']=5; 
 
 date_default_timezone_set('Asia/Singapore');

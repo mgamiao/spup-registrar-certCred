@@ -698,7 +698,7 @@
 
 <!-- idle timeout -->
 <script>
-  //function idleLogout() {
+  function idleLogout() {
       var t;
       window.onload = resetTimer;
       window.onmousemove = resetTimer;
@@ -735,19 +735,23 @@
 
 
 <script>
-// get date today + show year in form requested per month
 
-var refNumber = '<?php echo $unique; ?>';
-console.log(refNumber);
+//reference number
+// var refNumber = '<?php // echo $unique; ?>';
+// console.log(refNumber);
 
-const dateToday = new Date()
-dateToday.setFullYear(dateToday.getFullYear())
-console.log(dateToday);
 
-var dataYear = 0;
-var getYear = new Date();
-var yearNow = getYear.getFullYear();
-console.log(yearNow);
-document.getElementById("yearNow").innerHTML = yearNow;
+
+// get date today
+
+// const dateToday = new Date()
+// dateToday.setFullYear(dateToday.getFullYear())
+// console.log(dateToday);
+
+// var dataYear = 0;
+// var getYear = new Date();
+// var yearNow = getYear.getFullYear();
+// console.log(yearNow);
+// document.getElementById("yearNow").innerHTML = yearNow;
 
 </script>

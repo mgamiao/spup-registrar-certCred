@@ -190,7 +190,18 @@ include "header.php";
                     Approve
                 </span>
             </a>
-        <a href="sitedean_req_forms.php" class="btn btn-danger btn-icon-split btn-md">
+
+            <a href="sitedean_form_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+            <span class="icon text-red-50">
+            <i class="far fa-edit"></i>
+            </span>
+            <span class="text">
+                   Decline
+                </span>
+            </a>
+
+
+        <a href="sitedean_req_forms.php" class="btn btn-warning btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>
