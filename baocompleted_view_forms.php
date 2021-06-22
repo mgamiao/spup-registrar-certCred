@@ -111,6 +111,17 @@ include "header.php";
             $mobileNum = $row['mobilenum'];
             $email = $row['email'];
             $fees = $row['fees'];
+            $transfee = $row['transcriptfee'];
+            $dipfee = $row['diplomafee'];
+            $formfee = $row['formfee'];
+            $certfee = $row['certfee'];
+            $authfee = $row['authfee'];
+            $servfee = $row['servicefee'];
+            $docstamp = $row['docstamp'];
+            $mailfee = $row['mailingfee'];
+            $letterfee = $row['letterenvelope'];
+            $torenvfee = $row['torenvelope'];
+            $stickerfee = $row['stickerfee'];
             $status = $row['status'];
            
         ?>   
@@ -185,6 +196,71 @@ include "header.php";
   </form>
 </div>
 <br>
+<div align="center">
+<h3>Breakdown of Fees:</h3>
+	<table>
+	<tr>
+    <td>Transcript Fee</td>
+	  <td> : </td>
+    <td><?= $transfee ?></td>
+  	</tr>
+  	<tr>
+    <td>Diploma Fee</td>
+	<td> : </td>
+    <td> <?=$dipfee?> </td>
+  	</tr>
+  	<tr>
+    <td>Form 137A/138B</td>
+	<td> : </td>
+    <td> <?=$formfee?> </td>
+  	</tr>
+  	<tr>
+    <td>Certification Fee</td>
+	<td> : </td>
+    <td> <?=$certfee?> </td>
+  	</tr>
+  	<tr>
+    <td>Authentication Fee</td>
+	<td> : </td>
+    <td> <?=$authfee?> </td>
+  	</tr>
+	<tr>
+	<td>Service Fee(Online)</td>
+	<td> : </td>
+	<td> <?=$servfee?> </td>
+	</tr>
+	<tr>
+	<td>Documentary Stamp</td>
+	<td> : </td>
+	<td> <?=$docstamp?> </td>
+	</tr>
+	<tr>
+    <td>Mailing Fee</td>
+	<td> : </td>
+    <td> <?=$mailfee?> </td>
+  	</tr>
+	<tr>
+    <td>Letter Envelope</td>
+	<td> : </td>
+    <td> <?=$letterfee?> </td>
+  	</tr>
+	<tr>
+    <td>SPUP TOR Envelope</td>
+	<td> : </td>
+    <td> <?=$torenvfee?> </td>
+  	</tr>
+	<tr>
+    <td>SPUP Sticker</td>
+	<td> : </td>
+    <td> <?=$stickerfee?> </td>
+  	</tr>
+	<tr>
+	<td>Total Fee</td>
+	<td> : </td>
+	<td>  <?=$fees?> </td>
+	</tr>   
+	</table>
+  </div>
             
 <div align="center" class="mb-5">
         <a href="baocompleted_forms.php" class="btn btn-danger btn-icon-split btn-md">
