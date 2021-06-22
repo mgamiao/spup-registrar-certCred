@@ -26,44 +26,57 @@
               $refno=$row['refno'];
               $status=$row['status'];
               $date=$row['date'];
-        
+
+              $regStatus=$row['regStatus'];
+              $regRemarks=$row['regRemarks'];
+              $regDateApprove=$row['regDateApprove'];
+              
+              $deanStatus=$row['deanStatus'];
+              $deanRemarks=$row['deanRemarks'];
+              $deanDateApprove=$row['deanDateApprove'];
+              
+              $baoStatus=$row['baoStatus'];
+              $baoRemarks=$row['baoRemarks'];
+              $baoDateApprove=$row['baoDateApprove'];
+
         if ($status == "0" && $refno == $search){
             echo "<br>
             <div class='col-10' style='margin-left:16%;'>
             <div class='col-10 '>
                 <div class='card shadow pb-8'>
                     <div class='card-header ' style='background-color:#044a33;'>
-                        <h5 class='m-0'>  '<div class='text-light' style='float:left;'>Results of
-                        '$search'
-                        </div></h5>
+                        <h5 class='m-0'>  '<div class='text-light' style='float:left;'>Results of '$search'
+                        </h5></div>
                     </div>
                     <div class='card-body pt-5' style='background-color:#F0F0F0;'>
-            <table class='table' width='100%' cellspacing='0'>
-        <tr>
-          <th>Office</th>
-          <th>Status</th>
-          <th>Comments/Remarks</th>
-          <th>Date of Approval/Disapproval</th>
-        </tr>
-        <tr>
-          <td>Registrar's Office</td>
-          <td>add sa db formStatus</td>
-          <td>add sa db formRemarks</td>
-          <td>add sa db formApproveDecline</td>
-        </tr>
-        <tr>
-          <td>School Dean</td>
-          <td>add sa db formStatus</td>
-          <td>add sa db formRemarks</td>
-          <td>add sa db formApproveDecline</td>
-        </tr>
-        <tr>
-          <td>Business Affairs Office</td>
-          <td>add sa db formStatus</td>
-          <td>add sa db formRemarks</td>
-          <td>add sa db formApproveDecline</td>
-        </tr>
-        </table>
+                    <div class='table-responsive'>
+            <table id='dataTable' class='table' width='100%' cellspacing='0'>
+              <tr>
+                <th>Office</th>
+                <th>Status</th>
+                <th>Comments/Remarks</th>
+                <th>Date of Approval/Disapproval</th>
+              </tr>
+              <tr>
+                <td>Registrar's Office</td>
+                <td>$regStatus</td>
+                <td style='word-wrap:break-all;'>$regRemarks</td>
+                <td>$regDateApprove</td>
+              </tr>
+              <tr>
+                <td>School Dean</td>
+                <td>$deanStatus</td>
+                <td>$deanRemarks</td>
+                <td>$deanDateApprove</td>
+              </tr>
+              <tr>
+                <td>Business Affairs Office</td>
+                <td>$baoStatus</td>
+                <td>$baoRemarks</td>
+                <td>$baoDateApprove</td>
+              </tr>
+            </table>
+            </div>
         </div>
         </div>
         </div>
@@ -89,21 +102,21 @@
           </tr>
           <tr>
             <td>Registrar's Office</td>
-            <td>add sa db formStatus</td>
-            <td>add sa db formRemarks</td>
-            <td>add sa db formApproveDecline</td>
+            <td>$regStatus</td>
+            <td>$regRemarks</td>
+            <td>$regDateApprove</td>
           </tr>
           <tr>
             <td>School Dean</td>
-            <td>add sa db formStatus</td>
-            <td>add sa db formRemarks</td>
-            <td>add sa db formApproveDecline</td>
+            <td>$deanStatus</td>
+            <td>$deanRemarks</td>
+            <td>$deanDateApprove</td>
           </tr>
           <tr>
             <td>Business Affairs Office</td>
-            <td>add sa db formStatus</td>
-            <td>add sa db formRemarks</td>
-            <td>add sa db formApproveDecline</td>
+            <td>$baoStatus</td>
+            <td>$baoRemarks</td>
+            <td>$baoDateApprove</td>
           </tr>
         </table>
         </div>
@@ -131,21 +144,21 @@
             </tr>
             <tr>
               <td>Registrar's Office</td>
-              <td>add sa db formStatus</td>
-              <td>add sa db formRemarks</td>
-              <td>add sa db formApproveDecline</td>
+              <td>$regStatus</td>
+              <td>$regRemarks</td>
+              <td>$regDateApprove</td>
             </tr>
             <tr>
               <td>School Dean</td>
-              <td>add sa db formStatus</td>
-              <td>add sa db formRemarks</td>
-              <td>add sa db formApproveDecline</td>
+              <td>$deanStatus</td>
+              <td>$deanRemarks</td>
+              <td>$deanDateApprove</td>
             </tr>
             <tr>
               <td>Business Affairs Office</td>
-              <td>add sa db formStatus</td>
-              <td>add sa db formRemarks</td>
-              <td>add sa db formApproveDecline</td>
+              <td>$baoStatus</td>
+              <td>$baoRemarks</td>
+              <td>$baoDateApprove</td>
             </tr>
           </table>
           </div>
@@ -174,21 +187,21 @@
             </tr>
             <tr>
               <td>Registrar's Office</td>
-              <td>add sa db formStatus</td>
-              <td>add sa db formRemarks</td>
-              <td>add sa db formApproveDecline</td>
+              <td>$regStatus</td>
+              <td>$regRemarks</td>
+              <td>$regDateApprove</td>
             </tr>
             <tr>
               <td>School Dean</td>
-              <td>add sa db formStatus</td>
-              <td>add sa db formRemarks</td>
-              <td>add sa db formApproveDecline</td>
+              <td>$deanStatus</td>
+              <td>$deanRemarks</td>
+              <td>$deanDateApprove</td>
             </tr>
             <tr>
               <td>Business Affairs Office</td>
-              <td>add sa db formStatus</td>
-              <td>add sa db formRemarks</td>
-              <td>add sa db formApproveDecline</td>
+              <td>$baoStatus</td>
+              <td>$baoRemarks</td>
+              <td>$baoDateApprove</td>
             </tr>
           </table>
           </div>
@@ -245,21 +258,21 @@
             </tr>
             <tr>
               <td>Registrar's Office</td>
-              <td>add sa db formStatus</td>
-              <td>add sa db formRemarks</td>
-              <td>add sa db formApproveDecline</td>
+              <td>$regStatus</td>
+              <td>$regRemarks</td>
+              <td>$regDateApprove</td>
             </tr>
             <tr>
               <td>School Dean</td>
-              <td>add sa db formStatus</td>
-              <td>add sa db formRemarks</td>
-              <td>add sa db formApproveDecline</td>
+              <td>$deanStatus</td>
+              <td>$deanRemarks</td>
+              <td>$deanDateApprove</td>
             </tr>
             <tr>
               <td>Business Affairs Office</td>
-              <td>add sa db formStatus</td>
-              <td>add sa db formRemarks</td>
-              <td>add sa db formApproveDecline</td>
+              <td>$baoStatus</td>
+              <td>$baoRemarks</td>
+              <td>$baoDateApprove</td>
             </tr>
           </table>
           </div>

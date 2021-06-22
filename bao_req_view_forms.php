@@ -203,6 +203,23 @@ include "header.php";
 
   </form>  
 
+  <a href="bao_form_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+            <span class="icon text-red-50">
+            <i class="far fa-edit"></i>
+            </span>
+            <span class="text">
+                   Decline
+                </span>
+            </a>
+
+        <a href="bao_req_forms.php" class="btn btn-warning btn-icon-split btn-md">
+        <span class="icon text-red-50">
+        <i class="far fa-trash-alt"></i>
+        </span>
+        <span class="text">
+            Back
+        </span>
+
         <?php } ?>
    
 </div>   

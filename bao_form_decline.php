@@ -15,7 +15,7 @@ include "header.php";
                 <div class="card-body">
                   <h5 class="text-light">Are you sure you want to decline this requested form?</h5>
            <br>
-                <form method = "post" action = "form_decline_proc.php?id=<?= $id?>">
+                <form method = "post" action = "bao_form_decline_proc.php?id=<?= $id?>">
                 <h6 class="text-light">Input your reason of declining this form</h6>
                   <textarea name="reason" rows="4" cols="50" required></textarea>
                   <br>
@@ -28,7 +28,7 @@ include "header.php";
             </span>
             </button>
         &nbsp;&nbsp;&nbsp;
-        <a href="view_forms.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+        <a href="bao_req_view_forms.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-white-50">
                 <i class="fas fa-times"></i>
             </span>

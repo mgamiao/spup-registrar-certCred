@@ -8,6 +8,9 @@
 	//get user ID from URL
 	$id = $_GET['id'];
     $status = $_GET['status'];
+	$baoStatus = $_GET['baoStatus'];
+	date_default_timezone_set('Asia/Singapore'); 
+    $xdate=date('Y-m-d');
 	$transfee = $_POST['transfee'];
 	$dipfee = $_POST['dipfee'];
 	$formfee = $_POST['formfee'];
@@ -26,6 +29,9 @@
 	$user_editedvalues = array (
 		//columname from table => value from post
 			"status" => 3,
+			"baoStatus" => "Approved",
+			"baoRemarks" => "",
+			"baoDateApprove" => $xdate,
 			"fees" => $fees,
 			"transcriptfee" => $transfee,
 			"diplomafee" => $dipfee,
