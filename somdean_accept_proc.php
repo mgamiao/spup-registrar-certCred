@@ -8,10 +8,17 @@
 	//get user ID from URL
 	$id = $_GET['id'];
     $status = $_GET['status'];
+	$deanStatus = $_GET['deanStatus'];
+	date_default_timezone_set('Asia/Singapore'); 
+    $xdate=date('Y-m-d');
 
 	$user_editedvalues = array (
 		//columname from table => value from post
-			"status" => 2
+		"status" => 2,
+		"deanStatus" => "Approved",
+		"deanRemarks" => "",
+		"deanDateApprove" => $xdate,
+				
 			
 	);
 	
