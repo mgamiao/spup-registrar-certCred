@@ -58,8 +58,8 @@ $compnotif = count_archived_forms();
 
   <!-- Custom styles for this template-->
   <link href="template/css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="css/collapsible.css" rel="stylesheet" type="text/css">
-  
+
+
 </head>
 
 <div class="hether2">

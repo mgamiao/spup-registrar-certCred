@@ -24,53 +24,33 @@
   <link href="template/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="css/collapsible.css" rel="stylesheet" type="text/css">
 
+
+
 </head>
-<div class="hether2">
-  <p>St.Paul University Philippines</p>
+<?php
+          date_default_timezone_set('Asia/Singapore'); 
+          $xdate=date('Y-m-d');
+          $xtime=date('h:i:sa'); 
+          echo "<h6 class='m-0 font-weight-bold text-dark'>Date: $xdate   &nbsp </h6>  "; 
+          echo "<h6 class='m-0 font-weight-bold text-dark'>Time:  $xtime</h6>";
+          ?>
+
+<div class="header">
+<a href="#default" class="logo"><img src="img/spup.png"></a>
+  <div>
+    <a class="header-right ui-btn-right" href="index1.php">Home</a>
+    <a class="header-right ui-btn-right" href="#about">About</a>
+    <a class="header-right ui-btn-right" href="contact.php">Contact</a>
+  </div>
 </div>
-<div class="hether1">
-</div>
-<div class="hether3">
-<div class="hether4">
-</div>
+
+
 
 <body id="page-top">
 
 <ul>
-      <!-- Nav Item - Dashboard -->
-      <li>
-        <a style="text-decoration:none" href="index.php">
-          
-         HOME</a>
-      </li>
-
-
-         
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li>
-        <a style="text-decoration:none" href="user_terms.php"  aria-expanded="true" aria-controls="collapseTwo">
-          
-          <span>REQUEST A FORM</span>
-        </a>
-      
-      </li>
-      
-      </li>
-        <li>
-        <a style="text-decoration:none" href="user_track_form.php"  aria-expanded="true" aria-controls="collapseUtilities">
-          
-          <span>TRACK REQUESTED FORM</span>
-        </a>
-          </li>  
-      <!-- Nav Item - Utilities Collapse Menu -->
-    <li>
-        <a style="text-decoration:none" href="contact.php"  aria-expanded="true" aria-controls="collapseUtilities">
-          
-          <span>CONTACT US</span>
-        </a>
-    
-</li>
-</ul>
+<div class="hether1 mb-5">
+</div>
 </div>
 
     <!-- Content Wrapper -->
@@ -79,26 +59,7 @@
       <!-- Main Content -->
       <div id="content">
 
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
-
-          <?php
-          date_default_timezone_set('Asia/Singapore'); 
-          $xdate=date('Y-m-d');
-          $xtime=date('h:i:sa'); 
-          echo "<h6 class='m-0 font-weight-bold text-dark'>Date: $xdate   &nbsp </h6>  "; 
-          
-          echo "<h6 class='m-0 font-weight-bold text-dark'>Time:  $xtime</h6>";
-          ?>
-          <!-- Topbar Navbar -->
-          
-        </nav>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
