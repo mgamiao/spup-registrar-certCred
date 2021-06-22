@@ -27,6 +27,16 @@ if (isset($_SESSION['alert_msg'])){
         }
     }
     ?>
+    <?php
+			if (isset($_SESSION['pic_errormsg'])) {
+			?>
+			<div class="alert alert-warning">
+				<?= $_SESSION['pic_errormsg'] ?>
+			</div>
+			<?php
+			}
+			unset($_SESSION['pic_errormsg']);
+			?>
       <?php
       date_default_timezone_set('Asia/Singapore'); 
       $xdate=date('Y-m-d');
@@ -44,8 +54,8 @@ if (isset($_SESSION['alert_msg'])){
   <h6 style="color:red"> * Required </h6><br>
   <form method ="post" action="user_request2.php">
     <div class="form-group">
-      <h6>Date Today:  <span style="color:red">*</h6></span>
-      <input type="" class="form-control" placeholder=""  value = <?= $xdate?> name="date" required autocomplete=off>
+      <h6>Date Today:  </h6>
+      <input type="" class="form-control" placeholder=""  value = <?= $xdate?> name="date" required autocomplete=off readonly>
     </div>
     <div class="form-group">
       <h6>Student Number:</h6>
