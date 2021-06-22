@@ -2,6 +2,7 @@
     session_start();
     include "perfect_function.php";
 
+	$reason = $_POST['reason'];
     $id = $_GET['id'];
 	$table_name = "forms";
 	$get_userData = get_where($table_name, $id);
@@ -32,11 +33,11 @@
 	$mail->Subject = "Registrar's Office - Form Request";
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname . "</h1><br><h3>Your requested form was declined, Please request again";
+	$mail->Body = "<h1>Hello " . $lastname . "</h1><br><h3>Your requested form was declined for the reason  " . " <b><u>$reason</b></u>. Please request again";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
-		header("Location: archived_forms.php");
+		header("Location: pend_forms.php");
 	}else{
 		echo "Error";
 	}

@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 </head>
-<body onload="checkStatus()">
+<body>
 <?php
 if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==1){
@@ -28,56 +28,32 @@ if (isset($_SESSION['alert_msg'])){
     }
     ?>
       <?php
-        if (isset($_SESSION['captcha'])){
-        unset($_SESSION['captcha']);?>
-
-        <span style="color: red; font-weight: bold;">Incorrect captcha</span>
-        <br>
-        <?php
-        }
+      date_default_timezone_set('Asia/Singapore'); 
+      $xdate=date('Y-m-d');
+      $xtime=date('h:i:sa'); 
       ?>
+      <?php
+      $_SESSION['date'] = $_POST['date'];
+      $_SESSION['studnum'] = $_POST['studnum']; 
+      $_SESSION['lastname'] = $_POST['lastname']; 
+      $_SESSION['middlename'] = $_POST['middlename'];
+      $_SESSION['firstname'] = $_POST['firstname']; 
+      $_SESSION['school'] = $_POST['school']; 
+      $_SESSION['email'] = $_POST['email']; 
+      $_SESSION['mobilenum'] = $_POST['mobilenum']; 
+        
+      ?>
+
 
 <div class="card w-100 " style="border:none;">
                 <div class="py-3 bordercolor" style="border:none;">
-                <h1 class="m-0 headerblacked"> REQUEST FORM</h1>
+                <h1 class="m-0 headerblacked"> REQUEST FORM - ACADEMIC INFORMATION</h1>
                 </div>
                 <div class="card-body">
 
 <div class="container" >    
   <h6 style="color:red"> * Required </h6><br>
-  <form method ="post" action="user_req_proc.php">
-    <div class="form-group">
-      <h6>Enter Date Today:  <span style="color:red">*</h6></span>
-      <input type="date" class="form-control" placeholder="" name="date" required autocomplete=off>
-    </div>
-    <div class="form-group">
-      <h6>Student Number:</h6>
-      <input type="text" class="form-control" placeholder="Enter Last name" name="studnum"  autocomplete=off>
-    </div>
-    <div class="form-group">
-      <h6>Last Name: <span style="color:red">*</h6></span>
-      <input type="text" class="form-control" placeholder="Enter Last name" name="lastname" required autocomplete=off>
-    </div>
-    <div class="form-group">
-      <h6>Middle Name:</h6>
-      <input type="text" class="form-control"  placeholder="Enter Middle name" name="middlename"  autocomplete=off>
-    </div>
-    <div class="form-group">
-      <h6>First Name:<span style="color:red">*</h6></span>
-      <input type="text" class="form-control"  placeholder="Enter First name" name="firstname" required autocomplete=off>
-    </div>
-
-    <h6>School: <span style="color:red">*</h6></span>
-    <select name="school" class="custom-select" required autocomplete=off>
-    <option selected>Select school:</option>
-    <option value="SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING">SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING</option>
-    <option value="SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT">SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT</option>
-    <option value="SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES">SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES</option>
-    <option value="SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION">SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION</option>
-    <option value="BASIC EDUCATION UNIT">BASIC EDUCATION UNIT</option>
-    <option value="SCHOOL OF MEDICINE">SCHOOL OF MEDICINE</option>
-    <option value="GRADUATE SCHOOL">GRADUATE SCHOOL</option>
-    </select>  
+  <form method ="post" action="user_request3.php">
     <h6>Type of Form: <span style="color:red">*</h6></span>
     <select name="form_type" class="custom-select" required autocomplete=off>
     <option value="">Select type of form:</option>
@@ -114,18 +90,6 @@ if (isset($_SESSION['alert_msg'])){
     <option value="For Reference">For Reference(Employment/Promotion)</option>
     <option value="Scholarship">Scholarship</option>
     </select>
-    
-    <h6>Mode of Claiming: <span style="color:red">*</h6></span>
-    <select name="modeofclaiming" class="custom-select" required autocomplete=off>
-    <option value="">Select mode of claiming:</option>
-    <option value="Personal Pick-up">Personal Pick-up</option>
-    <option value="Through Representative"> Through Representative</option>
-    <option value="Through Courier">Through Courier</option>
-    </select>
-    <div class="form-group">
-      <h6>Address <span style="color:blue">(if through courier please add address):</h6></span>
-      <input type="text" class="form-control"  placeholder="Enter Address" name="address"  autocomplete=off>
-    </div>
     <div class="form-group">
       <h6>Course Completed:</h6>
       <input type="text" class="form-control"  placeholder="Enter Course Completed" name="coursecompleted"  autocomplete=off>
@@ -138,21 +102,8 @@ if (isset($_SESSION['alert_msg'])){
       <h6>Undergraduate(COURSE, SEMESTER AND LAST ACADEMIC YEAR ATTENDED AT ST. PAUL UNIVERSITY PHILIPPINES):</h6>
       <input type="text" class="form-control"  placeholder="Enter COURSE, SEMESTER AND LAST ACADEMIC YEAR ATTENDED AT ST. PAUL UNIVERSITY PHILIPPINES" name="undergraduate"  autocomplete=off>
     </div>
-    <div class="form-group">
-      <h6>Email: <span style="color:red">*</h6></span>
-      <input type="email" class="form-control"  placeholder="Enter Email Address" name="email" required autocomplete=off>
-    </div>
-    <div class="form-group">
-      <h6>Mobile Number: <span style="color:red">*</h6></span>
-      <input type="number" class="form-control"  placeholder="Enter Mobile number" name="mobilenum" required autocomplete=off maxlength="11">
-    </div>
     <br>
-    <!-- <h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6> </i>    -->
-    <input type="checkbox" id="agree_again" name="agree" value="ON">
-    <label><h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6></i></label> 
-    
-
-    <p id="text" ><button type="submit" class="btn btn-primary custombutton">Submit</button></p>
+    <button type="submit" class="btn btn-primary custombutton">Next</button>
   </form>
 </div>
 </div>
@@ -160,19 +111,6 @@ if (isset($_SESSION['alert_msg'])){
 </div>
 </div>
 </div>
-<script>
-function checkStatus() {
-        console.log('reached');
-        if ($('#agree_again').is(":checked")) {
-            $(".custombutton").attr('disabled', false);
-        } else {
-            $(".custombutton").attr('disabled', true);
-        }
-    }
-    $("#agree_again").change(function () {
-        checkStatus();
-    })
-</script>
 </body>
 </html>
 <?php include "footer.php" ?>
