@@ -14,7 +14,7 @@
 </head>  
 <body>
 <?php   
-           
+        $today = date("Ymd");
         $table_name="forms";
         $column="refno";
         $search=$_POST['search'];
@@ -25,6 +25,7 @@
               $id = $row['id'];
               $refno=$row['refno'];
               $status=$row['status'];
+              $date=$row['date'];
         
         if ($status == "0" && $refno == $search){
             echo "<br>
@@ -39,16 +40,28 @@
                     <div class='card-body pt-5' style='background-color:#F0F0F0;'>
             <table class='table' width='100%' cellspacing='0'>
         <tr>
-          <th>Registrar's Office</th>
-          <th>School Dean</th>
-          <th>Business Affair Office</th>
-          <th>Ready to Claim</th>
+          <th>Office</th>
+          <th>Status</th>
+          <th>Comments/Remarks</th>
+          <th>Date of Approval/Disapproval</th>
         </tr>
         <tr>
-          <td>Under Review</td>
-          <td>Pending</td>
-          <td>Pending</td>
-          <td>Pending</td>
+          <td>Registrar's Office</td>
+          <td>add sa db formStatus</td>
+          <td>add sa db formRemarks</td>
+          <td>add sa db formApproveDecline</td>
+        </tr>
+        <tr>
+          <td>School Dean</td>
+          <td>add sa db formStatus</td>
+          <td>add sa db formRemarks</td>
+          <td>add sa db formApproveDecline</td>
+        </tr>
+        <tr>
+          <td>Business Affairs Office</td>
+          <td>add sa db formStatus</td>
+          <td>add sa db formRemarks</td>
+          <td>add sa db formApproveDecline</td>
         </tr>
         </table>
         </div>
@@ -69,17 +82,29 @@
                   <div class='card-body pt-5' style='background-color:#F0F0F0;'>
           <table class='table' width='100%' cellspacing='0'>
             <tr>
-                <th>Registrar's Office</th>
-                <th>School Dean</th>
-                <th>Business Affair Office</th>
-                <th>Ready to Claim</th>
-            </tr>
-            <tr>
-                <td>Approved requested form</td>
-                <td>Under Review</td>
-                <td>Pending</td>
-                <td>Pending</td>
-            </tr>
+            <th>Office</th>
+            <th>Status</th>
+            <th>Comments/Remarks</th>
+            <th>Date of Approval/Disapproval</th>
+          </tr>
+          <tr>
+            <td>Registrar's Office</td>
+            <td>add sa db formStatus</td>
+            <td>add sa db formRemarks</td>
+            <td>add sa db formApproveDecline</td>
+          </tr>
+          <tr>
+            <td>School Dean</td>
+            <td>add sa db formStatus</td>
+            <td>add sa db formRemarks</td>
+            <td>add sa db formApproveDecline</td>
+          </tr>
+          <tr>
+            <td>Business Affairs Office</td>
+            <td>add sa db formStatus</td>
+            <td>add sa db formRemarks</td>
+            <td>add sa db formApproveDecline</td>
+          </tr>
         </table>
         </div>
         </div>
@@ -99,17 +124,29 @@
                   <div class='card-body pt-5' style='background-color:#F0F0F0;'>
             <table class='table' width='100%' cellspacing='0'>
               <tr>
-                  <th>Registrar's Office</th>
-                  <th>School Dean</th>
-                  <th>Business Affair Office</th>
-                  <th>Ready to Claim</th>
-              </tr>
-              <tr>
-                  <td>Approved requested form</td>
-                  <td>Approved requested form</td>
-                  <td>Under Review</td>
-                  <td>Pending</td>
-              </tr>
+              <th>Office</th>
+              <th>Status</th>
+              <th>Comments/Remarks</th>
+              <th>Date of Approval/Disapproval</th>
+            </tr>
+            <tr>
+              <td>Registrar's Office</td>
+              <td>add sa db formStatus</td>
+              <td>add sa db formRemarks</td>
+              <td>add sa db formApproveDecline</td>
+            </tr>
+            <tr>
+              <td>School Dean</td>
+              <td>add sa db formStatus</td>
+              <td>add sa db formRemarks</td>
+              <td>add sa db formApproveDecline</td>
+            </tr>
+            <tr>
+              <td>Business Affairs Office</td>
+              <td>add sa db formStatus</td>
+              <td>add sa db formRemarks</td>
+              <td>add sa db formApproveDecline</td>
+            </tr>
           </table>
           </div>
           </div>
@@ -130,17 +167,29 @@
                   <div class='card-body pt-5' style='background-color:#F0F0F0;'>
             <table class='table' width='100%' cellspacing='0'>
               <tr>
-                  <th>Registrar's Office</th>
-                  <th>School Dean</th>
-                  <th>Business Affair Office</th>
-                  <th>Ready to Claim</th>
-              </tr>
-              <tr>
-                  <td>Approved requested form</td>
-                  <td>Approved requested form</td>
-                  <td>Approved requested form</td>
-                  <td>Ready when paid</td>
-              </tr>
+              <th>Office</th>
+              <th>Status</th>
+              <th>Comments/Remarks</th>
+              <th>Date of Approval/Disapproval</th>
+            </tr>
+            <tr>
+              <td>Registrar's Office</td>
+              <td>add sa db formStatus</td>
+              <td>add sa db formRemarks</td>
+              <td>add sa db formApproveDecline</td>
+            </tr>
+            <tr>
+              <td>School Dean</td>
+              <td>add sa db formStatus</td>
+              <td>add sa db formRemarks</td>
+              <td>add sa db formApproveDecline</td>
+            </tr>
+            <tr>
+              <td>Business Affairs Office</td>
+              <td>add sa db formStatus</td>
+              <td>add sa db formRemarks</td>
+              <td>add sa db formApproveDecline</td>
+            </tr>
           </table>
           </div>
           </div>
@@ -188,18 +237,30 @@
                     </div>
                     <div class='card-body pt-5' style='background-color:#F0F0F0;'>
             <table class='table' width='100%' cellspacing='0'>
-          <tr>
-              <th>Registrar's Office</th>
-              <th>School Dean</th>
-              <th>Business Affair Office</th>
-              <th>Ready to Claim</th>
-          </tr>
-          <tr>
-              <td>Approved requested form</td>
-              <td>Approved requested form</td>
-              <td>Approved requested form</td>
-              <td>Claimed</td>
-          </tr>
+              <tr>
+              <th>Office</th>
+              <th>Status</th>
+              <th>Comments/Remarks</th>
+              <th>Date of Approval/Disapproval</th>
+            </tr>
+            <tr>
+              <td>Registrar's Office</td>
+              <td>add sa db formStatus</td>
+              <td>add sa db formRemarks</td>
+              <td>add sa db formApproveDecline</td>
+            </tr>
+            <tr>
+              <td>School Dean</td>
+              <td>add sa db formStatus</td>
+              <td>add sa db formRemarks</td>
+              <td>add sa db formApproveDecline</td>
+            </tr>
+            <tr>
+              <td>Business Affairs Office</td>
+              <td>add sa db formStatus</td>
+              <td>add sa db formRemarks</td>
+              <td>add sa db formApproveDecline</td>
+            </tr>
           </table>
           </div>
           </div>
