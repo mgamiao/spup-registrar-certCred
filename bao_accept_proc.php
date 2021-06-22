@@ -26,7 +26,18 @@
 	$user_editedvalues = array (
 		//columname from table => value from post
 			"status" => 3,
-			"fees" => $fees
+			"fees" => $fees,
+			"transcriptfee" => $transfee,
+			"diplomafee" => $dipfee,
+			"formfee" => $formfee,
+			"certfee" => $certfee,
+			"authfee" => $authfee,
+			"servicefee" => $servfee,
+			"docstamp" => $docstamp	,
+			"mailingfee" => $mailfee,
+			"letterenvelope" => $letterfee,
+			"torenvelope" => $torenvfee,
+			"stickerfee" => $stickerfee
 
 	);
 	
