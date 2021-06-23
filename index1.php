@@ -18,10 +18,10 @@
     <img src="img/mirp.jpg" class="darkbg">
     <div class="centered">OFFICE OF THE REGISTRAR</div>
   </div>
-<div class="hether3">
+<div class="userhether3">
   <div class="futer2">
   </div>
-  <div class="hether1 mb-5">
+  <div class="userhether1 mb-5">
   </div>
 </div>
 

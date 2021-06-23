@@ -70,7 +70,7 @@
 
 
 
-.hether1 {
+.userhether1 {
   padding: 2px;
   background: #ffcc04;
 
@@ -83,7 +83,7 @@
   color: white;
 }
 
-.hether3 {
+.userhether3 {
   margin-top: -49px;
 }
 
@@ -99,6 +99,34 @@
   color: white;
   font-size: 15px;
 }
+
+
+.adminhether1 {
+  padding: 1px;
+  background: #ffcc04;
+
+}
+
+.adminhether2 {
+  padding: 20px;
+  text-align: center;
+  background: #044a33;
+  color: white;
+  font-size: 20px;
+
+}
+.adminhether4 {
+  padding: 1px;
+  background: #ffcc04;
+
+}
+.adminhether3 {
+  padding: 10x;
+  background: #044a33;
+  color: white;
+  text-align: center;
+}
+
 
 
 .header {
