@@ -698,27 +698,27 @@
 
 <!-- idle timeout -->
 <script>
-  function idleLogout() {
-      var t;
-      window.onload = resetTimer;
-      window.onmousemove = resetTimer;
-      window.onmousedown = resetTimer;  // catches touchscreen presses as well      
-      window.ontouchstart = resetTimer; // catches touchscreen swipes as well 
-      window.onclick = resetTimer;      // catches touchpad clicks as well
-      window.onkeydown = resetTimer;   
-      window.addEventListener('scroll', resetTimer, true); 
+//   function idleLogout() {
+//       var t;
+//       window.onload = resetTimer;
+//       window.onmousemove = resetTimer;
+//       window.onmousedown = resetTimer;  // catches touchscreen presses as well      
+//       window.ontouchstart = resetTimer; // catches touchscreen swipes as well 
+//       window.onclick = resetTimer;      // catches touchpad clicks as well
+//       window.onkeydown = resetTimer;   
+//       window.addEventListener('scroll', resetTimer, true); 
 
-      function yourFunction() {
-        window.alert('You were inactive for 5 minutes. Please log in again')
-        window.location.href = 'logout.php';
-      }
+//       function yourFunction() {
+//         window.alert('You were inactive for 5 minutes. Please log in again')
+//         window.location.href = 'logout.php';
+//       }
 
-      function resetTimer() {
-          clearTimeout(t);
-          t = setTimeout(yourFunction, 30000);  // time is in milliseconds
-      }
-  }
-  idleLogout();
+//       function resetTimer() {
+//           clearTimeout(t);
+//           t = setTimeout(yourFunction, 30000);  // time is in milliseconds
+//       }
+//   }
+//   idleLogout();
 
 
 

@@ -58,17 +58,18 @@ $compnotif = count_archived_forms();
 
   <!-- Custom styles for this template-->
   <link href="template/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/collapsible.css" rel="stylesheet" type="text/css">
 
 
 </head>
 
-<div class="hether2">
+<div class="adminhether2">
   <p>St.Paul University Philippines</p>
 </div>
-<div class="hether1">
+<div class="adminhether1">
 </div>
-<div class="hether3">
-<div class="hether4">
+<div class="adminhether3">
+<div class="adminhether4">
 </div>
 
 <!-- Sidebar -->
