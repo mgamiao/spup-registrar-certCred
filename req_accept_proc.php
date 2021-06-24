@@ -8,11 +8,14 @@
 	//get user ID from URL
 	$id = $_GET['id'];
     $status = $_GET['status'];
+	$dateReceived = $_GET['dateReceived'];
+	date_default_timezone_set('Asia/Singapore'); 
+	$dateNow = date("Ymd");
 
 	$user_editedvalues = array (
 		//columname from table => value from post
-			"status" => 4
-			
+			"status" => 4,
+			"dateReceived" => $dateNow,
 	);
 	
 	update($user_editedvalues, $id, $table_name);

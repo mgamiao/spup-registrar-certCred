@@ -1,71 +1,5 @@
 <?php 
-
     include "header.php";
-
-    $yearNow = date("Y");
-
-    $sasteForms = count_school_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', $yearNow);
-    $sastePendingForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '0', $yearNow);
-    $sasteInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '1', $yearNow);
-    $sasteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '2', $yearNow);
-
-    $snahsForms = count_school_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', $yearNow);
-    $snahsPendingForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '0', $yearNow);
-    $snahsInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '1', $yearNow);
-    $snahsArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '2', $yearNow);
-
-    $siteForms = count_school_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', $yearNow);
-    $sitePendingForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '0', $yearNow);
-    $siteInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '1', $yearNow);
-    $siteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '2', $yearNow);
-
-    $sbahmForms = count_school_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '$yearNow', $yearNow);
-    $sbahmPendingForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '0', $yearNow);
-    $sbahmInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1', $yearNow);
-    $sbahmArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '2', $yearNow);
-
-    $somForms = count_school_forms('forms', 'SCHOOL OF MEDICINE', $yearNow);
-    $somPendingForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '0', $yearNow);
-    $somInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '1', $yearNow);
-    $somArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '2', $yearNow);
-
-    $beuForms = count_school_forms('forms', 'BASIC EDUCATION UNIT', $yearNow);
-    $beuPendingForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '0', $yearNow);
-    $beuInProcessForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '1', $yearNow);
-    $beuArchivedForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '2', $yearNow);
-
-    $gradSchoolForms = count_school_forms('forms', 'GRADUATE SCHOOL', $yearNow);
-    $gradSchoolPendingForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '0', $yearNow);
-    $gradSchoolInProcessForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '1', $yearNow);
-    $gradSchoolArchivedForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '2', $yearNow);
-
-    $totalForms = count_total_forms($yearNow);
-    $pendingForms = count_pending_forms($yearNow);
-    $inProcessForms = count_inProcess_forms($yearNow);
-    $archivedForms = count_archived_forms($yearNow);
-    
-
-    //data for forms rquested per month
-    $jan = count_forms_month($yearNow, 1);
-    $feb = count_forms_month($yearNow, 2);
-    $mar = count_forms_month($yearNow, 3);
-    $apr = count_forms_month($yearNow, 4);
-    $may = count_forms_month($yearNow, 5);
-    $jun = count_forms_month($yearNow, 6);
-    $jul = count_forms_month($yearNow, 7);
-    $aug = count_forms_month($yearNow, 8);
-    $sep = count_forms_month($yearNow, 9); 
-    $oct = count_forms_month($yearNow, 10);
-    $nov = count_forms_month($yearNow, 11);
-    $dec = count_forms_month($yearNow, 12);
-
-
-
-    //reference number generator
-    $today = date("Ymd");
-    $rand = strtoupper(substr(uniqid(sha1(time())),0,10));
-    $unique = $today. "-" . $rand;
-
 ?>
 
 
@@ -73,15 +7,123 @@
 
   <!-- Page Heading -->
   <div class="py-3 bordercolor mb-5" style="border:none;">
-    <h1 class="m-0 headerblacked">HOMEPAGE</h1>
+    <h1 class="m-0 headerblacked">STATISTICS</h1>
   </div>
 
+
+    
+    <h5 style="position:relative;">
+        Showing you a month statistics of <b><?php
+        $enterYear = $_POST['enterYear']; 
+        $enterMonth = $_POST['enterMonth']; 
+        echo "Year: " . $enterYear . " " . "Month: " . $enterMonth;
+        ?></b>
+        <a href="statistics.php" class="userbtn" style="float:right;">Go Back</a>
+    </h5>
+    <?php
+
+        $sasteForms = count_school_forms_month('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', $enterYear, $enterMonth);
+        $sastePendingForms = count_school_specific_forms_month('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '0', $enterYear, $enterMonth);
+        $sasteInProcessForms = count_school_specific_forms_month('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '1', $enterYear, $enterMonth);
+        $sasteArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '2', $enterYear, $enterMonth);
+
+        $snahsForms = count_school_forms_month('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', $enterYear, $enterMonth);
+        $snahsPendingForms = count_school_specific_forms_month('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '0', $enterYear, $enterMonth);
+        $snahsInProcessForms = count_school_specific_forms_month('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '1', $enterYear, $enterMonth);
+        $snahsArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '2', $enterYear, $enterMonth);
+
+        $siteForms = count_school_forms_month('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', $enterYear, $enterMonth);
+        $sitePendingForms = count_school_specific_forms_month('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '0', $enterYear, $enterMonth);
+        $siteInProcessForms = count_school_specific_forms_month('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '1', $enterYear, $enterMonth);
+        $siteArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '2', $enterYear, $enterMonth);
+
+        $sbahmForms = count_school_forms_month('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', $enterYear, $enterMonth);
+        $sbahmPendingForms = count_school_specific_forms_month('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '0', $enterYear, $enterMonth);
+        $sbahmInProcessForms = count_school_specific_forms_month('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1', $enterYear, $enterMonth);
+        $sbahmArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '2', $enterYear, $enterMonth);
+
+        $somForms = count_school_forms_month('forms', 'SCHOOL OF MEDICINE', $enterYear, $enterMonth);
+        $somPendingForms = count_school_specific_forms_month('forms', 'SCHOOL OF MEDICINE', '0', $enterYear, $enterMonth);
+        $somInProcessForms = count_school_specific_forms_month('forms', 'SCHOOL OF MEDICINE', '1', $enterYear, $enterMonth);
+        $somArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF MEDICINE', '2', $enterYear, $enterMonth);
+
+        $beuForms = count_school_forms_month('forms', 'BASIC EDUCATION UNIT', $enterYear, $enterMonth);
+        $beuPendingForms = count_school_specific_forms_month('forms', 'BASIC EDUCATION UNIT', '0', $enterYear, $enterMonth);
+        $beuInProcessForms = count_school_specific_forms_month('forms', 'BASIC EDUCATION UNIT', '1', $enterYear, $enterMonth);
+        $beuArchivedForms = count_school_specific_forms_month('forms', 'BASIC EDUCATION UNIT', '2', $enterYear, $enterMonth);
+
+        $gradSchoolForms = count_school_forms_month('forms', 'GRADUATE SCHOOL', $enterYear, $enterMonth);
+        $gradSchoolPendingForms = count_school_specific_forms_month('forms', 'GRADUATE SCHOOL', '0', $enterYear, $enterMonth);
+        $gradSchoolInProcessForms = count_school_specific_forms_month('forms', 'GRADUATE SCHOOL', '1', $enterYear, $enterMonth);
+        $gradSchoolArchivedForms = count_school_specific_forms_month('forms', 'GRADUATE SCHOOL', '2', $enterYear, $enterMonth);
+
+        $totalForms = count_total_forms_month($enterYear, $enterMonth);
+        $pendingForms = count_pending_forms_month($enterYear, $enterMonth);
+        $inProcessForms = count_inProcess_forms_month($enterYear, $enterMonth);
+        $archivedForms = count_archived_forms_month($enterYear, $enterMonth);
+
+        $table_name = "forms";
+        $col1 = "formYear";
+        $value1 = $enterYear;
+        $col2 = "formMonth";
+        $value2 = $enterMonth;
+        $week1 = 0;
+        $week2 = 0;
+        $week3 = 0;
+        $week4 = 0;
+        $get_userData = get_where_double($table_name, $col1, $value1, $col2, $value2);
+        foreach ($get_userData as $key => $row) {
+            $formDay = $row['formDay'];
+            
+            if ($formDay >= 1 && $formDay <= 7) {
+
+                $week1 ++;
+                
+            }
+            if ($formDay >= 8 and $formDay <= 14 ) {
+          
+                $week2 ++;
+                
+            }
+            if ($formDay >= 15 and $formDay <= 21) {
+              
+                $week3 ++;
+                
+            }
+            if ($formDay >= 22 AND $formDay <= 31) {
+                $week4 ++;
+                
+            }
+            
+            
+        }
+
+        // if formDay => 1 AND $formDay =< 7 == week1
+        // if $formday >= 8 AND $formDay <= 14 == week2
+        // if $formday >= 15 AND $formDay <= 21 == week3
+        // if $formday >= 22 AND $formDay <= 31 == week4
+
+        
+
+        //reference number generator
+        $today = date("Ymd");
+        $rand = strtoupper(substr(uniqid(sha1(time())),0,10));
+        $unique = $today. "-" . $rand;
+
+?>
+
+    
     <!-- start Area Chart -->
-    <div class="row mb-3">
-        <div class="col-12" >
-            <div class="card shadow mb-2">
+    <div class="row mb-3 mt-5">
+        <div class="col-12">
+            <div class="card shadow m`b-2">
                 <div class="card-header py-6 col-12" >
-                    <h6 class="col-6 m-0 font-weight-bold text-dark">Forms Requested per Month</h6>
+                    <h6 class="col-6 m-0 font-weight-bold text-dark">Forms Requested per Week</h6>
+                    <!-- <h6 class="col-12 text-right" style="margin-top:-20px;">Year: <?php // if(isset($_POST['submit'])){ 
+                            // echo $_POST['enterYear'];
+                        // }   
+                        ?></h6> -->
+                    </h6>
                 </div>
                 <div class="card-body">
                     <div class="chart-area">
@@ -569,7 +611,7 @@
     var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        labels: ["Week 1 (Days 1-7)", "Week 2 (Days 8-14)", "Week 3 (Days 15-21)", "Week 4 (Days 22-31)"],
         datasets: [{
         label: "Requests",
         lineTension: 0.3,
@@ -583,8 +625,7 @@
         pointHoverBorderColor: "rgba(78, 115, 223, 1)",
         pointHitRadius: 10,
         pointBorderWidth: 2,
-        data: [<?php echo $jan ?>, <?php echo $feb ?>, <?php echo $mar ?>, <?php echo $apr ?>, <?php echo $may ?>, <?php echo $jun ?>, 
-        <?php echo $jul ?>, <?php echo $aug ?>, <?php echo $sep ?>, <?php echo $oct ?>, <?php echo $nov ?>, <?php echo $dec ?>],
+        data: [<?php echo $week1 ?>, <?php echo $week2 ?>, <?php echo $week3 ?>, <?php echo $week4 ?>],
         }],
     },
     options: {
@@ -607,14 +648,13 @@
             drawBorder: false
             },
             ticks: {
-            maxTicksLimit: 12
+            maxTicksLimit: 4
             }
         }],
         yAxes: [{
             ticks: {
-            maxTicksLimit: 6,
+            maxTicksLimit: 4,
             padding: 10,
-            // Include a dollar sign in the ticks
             callback: function(value, index, values) {
                 return number_format(value);
             }

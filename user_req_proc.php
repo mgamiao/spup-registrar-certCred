@@ -23,12 +23,14 @@
     $mobileNum=$_SESSION['mobilenum'];
     $date=$_SESSION['date'];
     $representname = $_POST['representname'];
-    $representid = basename($_FILES["representid"]["name"]);
     $regStatus = "Pending";
     $deanStatus = "Pending";
     $baoStatus = "Pending";
     //reference number generator
     $today = date("Ymd");
+    $formYear = date("Y");
+    $formMonth = date("m");
+    $formDay = date("d");
     $rand = strtoupper(substr(uniqid(sha1(time())),0,10));
     echo $unique = $today. "-" . $rand;
 
@@ -98,8 +100,10 @@
         "email" => $email,
         "mobilenum" => $mobileNum,
         "date" => $date,
+        "formYear" => $formYear,
+        "formMonth" => $formMonth,
+        "formDay" => $formDay,
         "representname" => $representname,
-        "representid" => $representid,
 
     );
 

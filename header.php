@@ -6,7 +6,7 @@
 ?>
 <?php 
 include "perfect_function.php";
-$pendnotif = count_pending_forms();
+$pendnotif = count_pending_forms1();
 $table_name="forms";
 $status=1;
 $school = "SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING";
@@ -36,7 +36,7 @@ $status=1;
 $school = "GRADUATE SCHOOL";
 $gradreqnotif = count_deaninProcess_forms($table_name, $school, $status);
 $reqnotif1 = count_inProcess_forms1();
-$compnotif = count_archived_forms();
+$compnotif = count_archived_forms1();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -299,6 +299,10 @@ $compnotif = count_archived_forms();
   </a>
 
 </li>
+<li> 
+  <a style="text-decoration:none" href="statistics.php">
+    <span>STATISTICS</span></a>
+</li>
   <li>
   <a style="text-decoration:none" href="logs.php"  aria-expanded="true" aria-controls="collapseUtilities">
     
@@ -311,6 +315,13 @@ $compnotif = count_archived_forms();
   <li> 
   <a style="text-decoration:none" href="account_manage.php">
     <span>ACCOUNT MANAGER</span></a>
+</li>
+
+
+
+<li> 
+  <a style="text-decoration:none" href="reports.php">
+    <span>REPORTS</span></a>
 </li>
 <?php } ?>
 
@@ -434,20 +445,45 @@ $compnotif = count_archived_forms();
 
 
 <script src='http://code.jquery.com/jquery.js'></script>
-        <script>
-         $(document).ready(function(){
-             setInterval(_initTimer, 1000);
-         });
-         function _initTimer(){
-             $.ajax({
-                 url: 'timer.php',
-                 success: function(data) {
-                    // console.log(data);
-                     data = data.split(':');
-                     $('#hrs').html(data[0]);
-                     $('#mins').html(data[1]);
-                     $('#secs').html(data[2]);
-                 }
-             });
-         }
-        </script>
+<script>
+  $(document).ready(function(){
+      setInterval(_initTimer, 1000);
+  });
+  function _initTimer(){
+      $.ajax({
+          url: 'timer.php',
+          success: function(data) {
+            // console.log(data);
+              data = data.split(':');
+              $('#hrs').html(data[0]);
+              $('#mins').html(data[1]);
+              $('#secs').html(data[2]);
+          }
+      });
+  }
+
+  
+  function idleLogout() {
+      var t;
+      window.onload = resetTimer;
+      window.onmousemove = resetTimer;
+      window.onmousedown = resetTimer;  // catches touchscreen presses as well      
+      window.ontouchstart = resetTimer; // catches touchscreen swipes as well 
+      window.onclick = resetTimer;      // catches touchpad clicks as well
+      window.onkeydown = resetTimer;   
+      window.addEventListener('scroll', resetTimer, true); 
+
+      function yourFunction() {
+        alert('You were inactive for 10 minutes. Please log in again')
+        window.location.href = 'logout.php';
+      }
+
+      function resetTimer() {
+          clearTimeout(t);
+          t = setTimeout(yourFunction, 600000);  // time is in milliseconds
+      }
+  }
+  idleLogout();
+
+  
+</script>

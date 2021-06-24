@@ -159,7 +159,7 @@ function base_url()
 	return "http://" . $_SERVER['SERVER_NAME'].'/'.$project_name.'/'; 
 }
 
-function get_where_double($col1, $value1, $col2, $value2)
+function get_where_double($table_name, $col1, $value1, $col2, $value2)
 {
 	$conn = getConnection();
 	$sql = "SELECT * FROM $table_name where $col1=$value1 and $col2=$value2";
@@ -221,14 +221,24 @@ function count_rows($table_name)
 	return $rowcount;
 }
 
-function count_school_forms($table_name, $school)
+function count_school_forms($table_name, $school, $year)
 {
 	$conn = getConnection();
-	$sql = "SELECT * FROM $table_name WHERE `school` = '$school'";
+	$sql = "SELECT * FROM $table_name WHERE `school` = '$school' AND `formYear` = '$year'";
 	$result = $conn->query($sql);
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
+
+function count_school_forms_month($table_name, $school, $year, $month)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name WHERE `school` = '$school' AND `formYear` = '$year' AND `formMonth` = '$month'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
 function count_refno($table_name, $search)
 {
 	$conn = getConnection();
@@ -238,25 +248,62 @@ function count_refno($table_name, $search)
 	return $rowcount;
 }
 
-function count_school_specific_forms($table_name, $school, $status)
+function count_school_specific_forms($table_name, $school, $status, $year)
 {
 	$conn = getConnection();
-	$sql = "SELECT * FROM $table_name WHERE `school` = '$school' AND `status` = '$status'";
+	$sql = "SELECT * FROM $table_name WHERE `school` = '$school' AND `status` = '$status' AND `formYear` = '$year'";
 	$result = $conn->query($sql);
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
 
-function count_total_forms()
+function count_school_specific_forms_month($table_name, $school, $status, $year, $month)
 {
 	$conn = getConnection();
-	$sql = "SELECT * FROM `forms`";
+	$sql = "SELECT * FROM $table_name WHERE `school` = '$school' AND `status` = '$status' AND `formYear` = '$year' AND `formMonth` = '$month'";
 	$result = $conn->query($sql);
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
 
-function count_pending_forms()
+
+function count_total_forms($year)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `formYear` = '$year'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_total_forms_month($year, $month)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `formYear` = '$year' AND `formMonth` = '$month'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_pending_forms($year)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '0' AND `formYear` = '$year'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_pending_forms_month($year, $month)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '0' AND `formYear` = '$year' AND `formMonth` = '$month'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_pending_forms1()
 {
 	$conn = getConnection();
 	$sql = "SELECT * FROM `forms` WHERE `status` = '0'";
@@ -273,14 +320,25 @@ function count_deaninProcess_forms($table_name, $school, $status)
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
-function count_inProcess_forms()
+
+function count_inProcess_forms($year)
 {
 	$conn = getConnection();
-	$sql = "SELECT * FROM `forms` WHERE `status` = '1'";
+	$sql = "SELECT * FROM `forms` WHERE `status` = '1' AND `formYear` = '$year'";
 	$result = $conn->query($sql);
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
+
+function count_inProcess_forms_month($year, $month)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '1' AND `formYear` = '$year' AND `formMonth` = '$month'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
 function count_inProcess_forms1()
 {
 	$conn = getConnection();
@@ -289,7 +347,26 @@ function count_inProcess_forms1()
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
-function count_archived_forms()
+
+function count_archived_forms($year)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '3' AND `formYear` = '$year'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_archived_forms_month($year, $month)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '3' AND `formYear` = '$year' AND `formMonth` = '$month'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_archived_forms1()
 {
 	$conn = getConnection();
 	$sql = "SELECT * FROM `forms` WHERE `status` = '3'";
@@ -297,6 +374,16 @@ function count_archived_forms()
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
+
+function count_forms_month($year, $month)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `formYear` = $year AND `formMonth` = $month";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
 function search_form($table_name, $search)
 {
 	$conn = getConnection();

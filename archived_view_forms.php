@@ -124,12 +124,18 @@ include "header.php";
             $torenvfee = $row['torenvelope'];
             $stickerfee = $row['stickerfee'];
             $status = $row['status'];
+            $dateReceived = $row['dateReceived'];
+            $dateRequested = $row['date'];
            
         ?>   
 <body>
 <div class="container" >
 
   <form>
+  <div class="form-group">
+      <h6 style="color:black;">Date Requested:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $dateRequested?>" readonly>
+    </div>
     <div class="form-group">
       <h6 style="color:black;">Student Number:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $studnum?>" readonly>
@@ -193,6 +199,10 @@ include "header.php";
     <div class="form-group">
       <h6 style="color:black;">Email:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $email?>" readonly>
+    </div>
+    <div class="form-group">
+      <h6 style="color:black;">Date Received:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $dateReceived?>" readonly>
     </div>
     <div class="form-group">
       <h6 style="color:black;">Total Fee:</h6>
@@ -266,7 +276,6 @@ include "header.php";
 	</tr>   
 	</table>
   </div>
-            
 <div align="center" class="mb-5">
         <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
         <a href="archived_forms.php" class="btn btn-danger btn-icon-split btn-md">
