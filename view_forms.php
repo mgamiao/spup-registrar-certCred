@@ -122,7 +122,7 @@ include "header.php";
   <form>
     <div class="form-group">
       <h6 style="color:black;">Student Number:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $studnum?>" readonly>
+      <input type="number" class="form-control"  style="color:black; font-weight:bold;" value="<?= $studnum?>" readonly>
     </div>
     <div class="form-group">
       <h6 style="color:black;">Last Name:</h6>

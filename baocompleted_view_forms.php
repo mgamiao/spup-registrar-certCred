@@ -194,69 +194,57 @@ include "header.php";
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $fees?>" readonly>
     </div>
   </form>
-</div>
+
 <br>
-<div align="center">
+
 <h3>Breakdown of Fees:</h3>
-	<table>
+	<table class="table table-bordered">
 	<tr>
     <td>Transcript Fee</td>
-	  <td> : </td>
     <td><?= $transfee ?></td>
   	</tr>
   	<tr>
     <td>Diploma Fee</td>
-	<td> : </td>
     <td> <?=$dipfee?> </td>
   	</tr>
   	<tr>
     <td>Form 137A/138B</td>
-	<td> : </td>
     <td> <?=$formfee?> </td>
   	</tr>
   	<tr>
     <td>Certification Fee</td>
-	<td> : </td>
     <td> <?=$certfee?> </td>
   	</tr>
   	<tr>
     <td>Authentication Fee</td>
-	<td> : </td>
     <td> <?=$authfee?> </td>
   	</tr>
 	<tr>
 	<td>Service Fee(Online)</td>
-	<td> : </td>
 	<td> <?=$servfee?> </td>
 	</tr>
 	<tr>
 	<td>Documentary Stamp</td>
-	<td> : </td>
 	<td> <?=$docstamp?> </td>
 	</tr>
 	<tr>
     <td>Mailing Fee</td>
-	<td> : </td>
     <td> <?=$mailfee?> </td>
   	</tr>
 	<tr>
     <td>Letter Envelope</td>
-	<td> : </td>
     <td> <?=$letterfee?> </td>
   	</tr>
 	<tr>
     <td>SPUP TOR Envelope</td>
-	<td> : </td>
     <td> <?=$torenvfee?> </td>
   	</tr>
 	<tr>
     <td>SPUP Sticker</td>
-	<td> : </td>
     <td> <?=$stickerfee?> </td>
   	</tr>
 	<tr>
 	<td>Total Fee</td>
-	<td> : </td>
 	<td>  <?=$fees?> </td>
 	</tr>   
 	</table>

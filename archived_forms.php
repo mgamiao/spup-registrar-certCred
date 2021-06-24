@@ -88,6 +88,7 @@ include "header.php";
         <thead class="tableblacked">
         <tr>
             <td>Date Applied</td>
+            <td>Student Number</td>
             <td>Full Name</td>
             <td>Type of Form</td>
             <td>Fee</td>
@@ -100,6 +101,7 @@ include "header.php";
         <tfoot class="tableblacked">
         <tr>
             <td>Date Applied</td>
+            <td>Student Number</td>
             <td>Full Name</td>
             <td>Type of Form</td>
             <td>Fee</td>
@@ -137,6 +139,7 @@ include "header.php";
 <?php if($status=="4"){ ?>
     <tr>
         <td><?= $dateApplied ?></td>
+        <td><?= $studnum ?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName ?></td>
         <td><?= $formType ?></td>
         <td><?= $fee ?></td>

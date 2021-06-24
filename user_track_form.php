@@ -31,16 +31,17 @@ include "user_header.php";
 <br>
 <div align="center">
 <form method="post" action="user_form_search.php">
-                    <h5> Start tracking your request by entering your reference number in the box below.</h5>
-                    <br>
-                    <div class="input-group mb-3 w-25">
-                        <input type="text" class="form-control" placeholder="Enter Reference Number" name="search" autocomplete="off" required>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary text-dark" type="submit" id="button-addon2">Track</button>
-                        </div>
-                        </div>
-                        <p></p>
-                </form>
+<img src="img/archive.png" style= "width: 10%; align-items: center; margin-bottom: 10px;">
+<h4> Start tracking your request by entering your reference number in the box below.</h4>
+<br>
+<div class="input-group mb-3 w-25">
+    <input type="text" class="form-control" placeholder="Enter Reference Number" name="search" autocomplete="off" required>
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary text-dark" type="submit" id="button-addon2">Track</button>
+    </div>
+    </div>
+    <p></p>
+</form>
 </div>
 </div>
 

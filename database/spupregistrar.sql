@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2021 at 07:15 AM
+-- Generation Time: Jun 24, 2021 at 07:29 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -95,7 +95,10 @@ CREATE TABLE `forms` (
   `torenvelope` text NOT NULL,
   `stickerfee` text NOT NULL,
   `paymentphoto` varchar(65) NOT NULL,
-  `date` text NOT NULL,
+  `date` date NOT NULL,
+  `formYear` int(11) NOT NULL,
+  `formMonth` int(11) NOT NULL,
+  `formDay` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `regStatus` text NOT NULL,
   `regRemarks` text NOT NULL,
@@ -105,23 +108,26 @@ CREATE TABLE `forms` (
   `deanDateApprove` text NOT NULL,
   `baoStatus` text NOT NULL,
   `baoRemarks` text NOT NULL,
-  `baoDateApprove` text NOT NULL
+  `baoDateApprove` text NOT NULL,
+  `dateReceived` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forms`
 --
 
-INSERT INTO `forms` (`id`, `refno`, `studentnumber`, `lastname`, `firstname`, `middlename`, `school`, `form_type`, `numofcopies`, `numofrequest`, `reason`, `modeofclaiming`, `representname`, `address`, `coursecompleted`, `dategraduated`, `undergraduate`, `mobilenum`, `email`, `fees`, `transcriptfee`, `diplomafee`, `formfee`, `certfee`, `authfee`, `servicefee`, `docstamp`, `mailingfee`, `letterenvelope`, `torenvelope`, `stickerfee`, `paymentphoto`, `date`, `status`, `regStatus`, `regRemarks`, `regDateApprove`, `deanStatus`, `deanRemarks`, `deanDateApprove`, `baoStatus`, `baoRemarks`, `baoDateApprove`) VALUES
-(104, '20210523-BD74F4EE67', '', 'Sibal', 'Jhen', 'Maramag', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', 'Form137A', 2, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '123123123', 'captainsteven01@gmail.com', 3, '', '', '', '', '', '', '', '', '', '', '', 'a.jpg', '2021-05-23', 1, '', '', '', '', '', '', '', '', ''),
-(106, '20210524-CABA9D08B2', '', 'Gamiao', 'Miguel', '', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', 'Form137A', 2, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', 'BSBA 2nd Semester A.Y. 2020-2021', '0978456321', 'awdawda@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', 'download.jpg', '2021-05-24', 4, '', '', '', 'Disapproved', 'sbahm decline form test 1\r\n', '2021-06-22', '', '', ''),
-(107, '20210524-C858B1D2CC', '', 'Balabis', 'Gerald', '', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', 'Certificate of Enrolment', 1, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', 'BSN 2nd Semester A.Y. 2020-2021', '09785643432', 'gbalabis@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', 'WjGTnKGQ_400x400.png', '2021-05-24', 3, '', '', '', '', '', '', '', '', ''),
-(108, '20210524-17E55620D5', '', 'Cortes', 'Armand Paul', '', 'BASIC EDUCATION UNIT', 'Diploma', 3, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '09786543123', 'acortes@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-05-24', 3, '', '', '', '', '', '', '', '', ''),
-(109, '20210524-67F97A1EBB', '', 'Dela Cruz', 'Juan', '', 'SCHOOL OF MEDICINE', 'Diploma', 0, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '09567894456', 'gbalabis@gmail.com', 0, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '2021-05-24', 4, 'Approved', '', '2021-06-22', 'Disapproved', 'som test 1', '2021-06-22', 'Disapproved', 'You have an existing balance. Please contact the business affairs office.', '2021-06-22'),
-(110, '20210524-F01171630B', '', 'Batumbakal', 'Maria', '', 'GRADUATE SCHOOL', 'Certificate of Graduation', 2, 1, 'Board Examination', 'Personal Pick-up', '', '', '', '', '', '09786543678', 'gbalabis@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-05-24', 0, '', '', '', '', '', '', '', '', ''),
-(129, '20210529-DD56EE5E2A', '', 'Lara', 'Jerick', 'Josue', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Form137A', 1, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '09569939621', 'captainsteven01@gmail.com', 15, '', '', '', '', '', '', '', '', '', '', '', '', '2021-05-29', 3, '', '', '', '', '', '', '', '', ''),
-(171, '20210620-EAD6FE9C4C', '', 'asdasd', 'sdfsd', '', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', 'Transcript of records', 2, 0, 'Scholarship', 'Through Representative', 'fg', '', '', '', '', '123', 'captainsteven01@gmail.com', 120, '100', '0', '0', '0', '0', '20', '0', '0', '0', '0', '0', '', '2021-06-21', 1, '', '', '', '', '', '', '', '', ''),
-(173, '20210622-8582AFA072', '2012-0123', 'chaeyoung', 'park', '', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Diploma', 1, 1, 'transfer to another school', 'Through Representative', 'awdad', '', '', '', '', '123', 'migeaw2@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-22', 0, 'Pending', '', '', 'Pending', '', '', 'Pending', '', '');
+INSERT INTO `forms` (`id`, `refno`, `studentnumber`, `lastname`, `firstname`, `middlename`, `school`, `form_type`, `numofcopies`, `numofrequest`, `reason`, `modeofclaiming`, `representname`, `address`, `coursecompleted`, `dategraduated`, `undergraduate`, `mobilenum`, `email`, `fees`, `transcriptfee`, `diplomafee`, `formfee`, `certfee`, `authfee`, `servicefee`, `docstamp`, `mailingfee`, `letterenvelope`, `torenvelope`, `stickerfee`, `paymentphoto`, `date`, `formYear`, `formMonth`, `formDay`, `status`, `regStatus`, `regRemarks`, `regDateApprove`, `deanStatus`, `deanRemarks`, `deanDateApprove`, `baoStatus`, `baoRemarks`, `baoDateApprove`, `dateReceived`) VALUES
+(104, '20210523-BD74F4EE67', '', 'Sibal', 'Jhen', 'Maramag', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', 'Form137A', 2, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '123123123', 'captainsteven01@gmail.com', 3, '', '', '', '', '', '', '', '', '', '', '', 'a.jpg', '2021-05-01', 2021, 5, 1, 3, '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(106, '20210524-CABA9D08B2', '', 'Gamiao', 'Miguel', '', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', 'Form137A', 2, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', 'BSBA 2nd Semester A.Y. 2020-2021', '0978456321', 'awdawda@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', 'download.jpg', '2021-05-03', 2021, 5, 3, 3, '', '', '', 'Disapproved', 'sbahm decline form test 1\r\n', '2021-06-22', '', '', '', '0000-00-00'),
+(107, '20210524-C858B1D2CC', '', 'Balabis', 'Gerald', '', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', 'Certificate of Enrolment', 1, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', 'BSN 2nd Semester A.Y. 2020-2021', '09785643432', 'gbalabis@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', 'WjGTnKGQ_400x400.png', '2021-05-25', 2021, 5, 25, 4, '', '', '', '', '', '', '', '', '', '2021-06-24'),
+(108, '20210524-17E55620D5', '', 'Cortes', 'Armand Paul', '', 'BASIC EDUCATION UNIT', 'Diploma', 3, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '09786543123', 'acortes@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-05-13', 2021, 5, 13, 4, '', '', '', '', '', '', '', '', '', '2021-06-24'),
+(109, '20210524-67F97A1EBB', '', 'Dela Cruz', 'Juan', '', 'SCHOOL OF MEDICINE', 'Diploma', 0, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '09567894456', 'gbalabis@gmail.com', 0, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '2021-05-05', 2021, 5, 5, 1, 'Approved', '', '2021-06-22', 'Disapproved', 'som test 1', '2021-06-22', 'Disapproved', 'You have an existing balance. Please contact the business affairs office.', '2021-06-22', '0000-00-00'),
+(110, '20210524-F01171630B', '', 'Batumbakal', 'Maria', '', 'GRADUATE SCHOOL', 'Certificate of Graduation', 2, 1, 'Board Examination', 'Personal Pick-up', '', '', '', '', '', '09786543678', 'gbalabis@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-05-26', 2021, 5, 26, 0, '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(129, '20210529-DD56EE5E2A', '', 'Lara', 'Jerick', 'Josue', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Form137A', 1, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '09569939621', 'captainsteven01@gmail.com', 15, '', '', '', '', '', '', '', '', '', '', '', '', '2021-05-29', 2021, 5, 29, 4, '', '', '', '', '', '', '', '', '', '2021-06-24'),
+(171, '20210620-EAD6FE9C4C', '', 'asdasd', 'sdfsd', '', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', 'Transcript of records', 2, 0, 'Scholarship', 'Through Representative', 'fg', '', '', '', '', '123', 'captainsteven01@gmail.com', 120, '100', '0', '0', '0', '0', '20', '0', '0', '0', '0', '0', '', '2021-06-07', 2021, 6, 7, 2, '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(173, '20210622-8582AFA072', '2012-0123', 'chaeyoung', 'park', '', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Diploma', 1, 1, 'transfer to another school', 'Through Representative', 'awdad', '', '', '', '', '123', 'migeaw2@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-01', 2021, 6, 1, 0, 'Pending', '', '', 'Pending', '', '', 'Pending', '', '', '0000-00-00'),
+(174, '20210623-8E00278C60', '', 'manoban', 'lalisa', '', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Diploma', 1, 0, 'transfer to another school', 'Personal Pick-up', '', '', '', '', '', '1', 'lmanoban@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-23', 2021, 6, 23, 4, '', '', '', '', '', '', '', '', '', '2021-06-24'),
+(175, '20210623-09519D79C1', '', 'kim', 'yuna', '', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Form137A', 1, 0, 'transfer to another school', 'Personal Pick-up', '', '', '', '', '', '1', 'ykim@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-22', 2021, 6, 22, 0, '', '', '', '', '', '', '', '', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -232,7 +238,14 @@ INSERT INTO `logs` (`log_id`, `username`, `firstname`, `lastname`, `acct_type`, 
 (229, 'sbahmdean', 'Sbahm Dean', '', '4', '2021-06-22', '09:58:23pm', 'Declined pending form(106)'),
 (230, 'sitedean', 'Site Dean', '', '3', '2021-06-22', '10:02:37pm', 'Declined pending form(109)'),
 (231, 'snahsdean', 'Snahs Dean', '', '5', '2021-06-22', '10:25:36pm', 'Declined pending form(109)'),
-(232, 'somdean', 'SoM Dean', '', '8', '2021-06-22', '10:30:05pm', 'Declined pending form(109)');
+(232, 'somdean', 'SoM Dean', '', '8', '2021-06-22', '10:30:05pm', 'Declined pending form(109)'),
+(233, 'admin', 'Admin', '', '1', '2021-06-24', '01:06:24am', 'Finalized requested form(108)'),
+(234, 'admin', 'Admin', '', '1', '2021-06-24', '01:11:09am', 'Finalized requested form(107)'),
+(235, 'admin', 'Admin', '', '1', '2021-06-24', '01:12:16am', 'Finalized requested form(129)'),
+(236, 'admin', 'Admin', '', '1', '2021-06-24', '01:21:44am', 'Finalized requested form(108)'),
+(237, 'admin', 'Admin', '', '1', '2021-06-24', '01:22:01am', 'Finalized requested form(107)'),
+(238, 'admin', 'Admin', '', '1', '2021-06-24', '01:22:13am', 'Finalized requested form(129)'),
+(239, 'admin', 'Admin', '', '1', '2021-06-24', '01:23:18am', 'Finalized requested form(174)');
 
 --
 -- Indexes for dumped tables
@@ -270,13 +283,13 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT for table `forms`
 --
 ALTER TABLE `forms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
 
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

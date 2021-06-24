@@ -1,4 +1,7 @@
-<?php include "user_header.php"; ?>
+<?php include "user_header.php"; 
+ if ($_SESSION['captchaResult']=="") {
+  header("Location: user_terms.php");
+}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,23 +90,23 @@ if (isset($_SESSION['alert_msg'])){
     </div> -->
 
 	</div>
-    </div>
+
     <div class="form-group">
       <h6>Address <span style="color:blue">(if through courier please add address):</h6></span>
       <input type="text" class="form-control"  placeholder="Enter Address" name="address"  autocomplete=off>
     </div>
     <br>
     <h6 style="color:red; "><i> Note: Please make sure that all information given are correct before clicking submit.<br>
-     Don't forget to present your valid ID when claiming.</h6></i>
+     Don't forget to present your valid ID upon claiming.</h6></i>
     <input type="checkbox" id="agree_again" name="agree" value="ON">
     <label><h6 style="color:gray;">Understood</h6></label>
-    <!-- <h6 style="color:red; "><i> Note: Please make sure that all information above are correct before clicking submit </h6> </i>    -->
-    <input type="checkbox" id="agree_again" name="agree" value="ON">
-    <label><h6 style="color:red; "><i> Note: Please make sure that all information given are correct before clicking submit </h6></i></label> 
+
+
     
 
     <p id="text" ><button type="submit" class="btn btn-primary custombutton">Submit</button></p>
   </form>
+</div>
 </div>
 </div>
 </div>
