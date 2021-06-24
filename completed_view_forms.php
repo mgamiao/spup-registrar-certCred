@@ -184,6 +184,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
        //fetch result and pass it  to an array
        foreach ($get_userData as $key => $row) {
             $id = $row['id'];
+            $studnum = $row['studentnumber'];
             $lastName = $row['lastname'] ;
             $firstName = $row['firstname'] ;
             $middleName = $row['middlename'] ;
@@ -220,6 +221,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <div class="container" >
 
   <form>
+    <div class="form-group">
+      <h6 style="color:black;">Student Number:</h6>
+      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $studnum?>" readonly>
+    </div>
     <div class="form-group">
       <h6 style="color:black;">Last Name:</h6>
       <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $lastName?>" readonly>

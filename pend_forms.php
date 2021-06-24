@@ -87,6 +87,7 @@ include "header.php";
         
         <thead class="tableblacked">
         <tr>
+            <td>Student Number</td>
             <td>Full Name</td>
             <td>School</td>
             <td>Type of Form</td>
@@ -99,6 +100,7 @@ include "header.php";
 
         <tfoot class="tableblacked">
         <tr>
+            <td>Student Number</td>
             <td>Full Name</td>
             <td>School</td>
             <td>Type of Form</td>
@@ -121,6 +123,7 @@ include "header.php";
         foreach ($get_userData as $key => $row) {
             
             $id = $row['id'];
+            $studnum = $row['studentnumber'];
             $lastName = $row['lastname'] ;
             $firstName = $row['firstname'] ;
             $middleName = $row['middlename'] ;
@@ -129,7 +132,7 @@ include "header.php";
             $reason = $row['reason'];
             $email = $row['email'];
             $status = $row['status'];
-             $date = $row['date'];
+            $date = $row['date'];
             
 
     ?>
@@ -137,11 +140,12 @@ include "header.php";
     
 
     <tr>
+        <td><?= $studnum?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
         <td><?= $formType?></td>
         <td><?= $reason?></td>
-         <td><?= $date ?></td> 
+        <td><?= $date ?></td> 
         
         
 

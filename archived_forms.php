@@ -121,6 +121,7 @@ include "header.php";
         foreach ($get_userData as $key => $row) {
             
             $id = $row['id'];
+            $studnum = $row['studentnumber'];
             $lastName = $row['lastname'] ;
             $firstName = $row['firstname'] ;
             $middleName = $row['middlename'] ;
