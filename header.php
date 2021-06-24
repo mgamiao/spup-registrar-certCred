@@ -317,12 +317,6 @@ $compnotif = count_archived_forms1();
     <span>ACCOUNT MANAGER</span></a>
 </li>
 
-
-
-<li> 
-  <a style="text-decoration:none" href="reports.php">
-    <span>REPORTS</span></a>
-</li>
 <?php } ?>
 
 </ul>

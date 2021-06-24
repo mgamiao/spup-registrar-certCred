@@ -13,6 +13,20 @@
 </head>
 
 <body>
+<?php
+if (isset($_SESSION['alert_msg'])){
+    if ($_SESSION['alert_msg']==1){
+        echo "
+            <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card-body'>
+                REQUESTED FORM SUCCESSFULLY SUBMITTED
+                </div>
+            </div>";
+            unset($_SESSION['alert_msg']);
+    }
+  }
+    ?>
+
 <div class="divbg">
   <div class="piccontainer mb-5">
     <img src="img/mirp.jpg" class="darkbg">
