@@ -87,6 +87,7 @@ include "header.php";
         
         <thead class="tableblacked">
         <tr>
+            <td>Student Number</td>
             <td>Full Name</td>
             <td>School</td>
             <td>Type of Form</td>
@@ -100,6 +101,7 @@ include "header.php";
 
         <tfoot class="tableblacked">
         <tr>
+            <td>Student Number</td>
             <td>Full Name</td>
             <td>School</td>
             <td>Type of Form</td>
@@ -126,6 +128,7 @@ include "header.php";
         foreach ($get_userData as $key => $row) {
             
             $id = $row['id'];
+            $studnum = $row['studentnumber'];
             $lastName = $row['lastname'] ;
             $firstName = $row['firstname'] ;
             $middleName = $row['middlename'] ;
@@ -141,6 +144,7 @@ include "header.php";
     
 <?php if($status=="1" && $school=="SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES"){ ?>
     <tr>
+        <td><?= $studnum?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
         <td><?= $formType?></td>
