@@ -126,147 +126,207 @@ include "header.php";
             $status = $row['status'];
             $dateReceived = $row['dateReceived'];
             $dateRequested = $row['date'];
+            $paymentphoto = $row['paymentphoto'];
+            $photo_url = base_url().'user_payment/'.$paymentphoto;
+            $representname = $row['representname'];
            
         ?>   
 <body>
-<div class="container" >
+<div class="container card shadow pb-8 mb-5">
 
-  <form>
+<form class="bodyblacked2 card-body"><br>
+<h2>Personal Information</h2><br>
+<div class="form-row">
+    <div class="form-group col-md-2">
+    <label for="studentNumber">Student Number</label>
+      <input type="text" class="form-control" id="studentNumber" value="<?= $studnum?>" readonly>
+    </div>
+    <div class="form-group col-md-6">
+    </div>
+    <div class="form-group col-md-4">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">First Name</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $firstName?>" readonly>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Middle Name</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $middleName?>" readonly>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Last Name</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $lastName?>" readonly>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Mobile Number </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $mobileNum?>" readonly>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Email </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $email?>" readonly>
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-12">
+      <label for="inputEmail4">School</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $school?>" readonly>
+    </div>
+       </div>
+<br>
+<h2>Academic Information</h2>
+<br>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Type of Form</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $formType?>" readonly>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Reason</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $reason?>" readonly>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Number of Copies</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $numofCopies?>" readonly>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Number of Requests</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $numofRequest?>" readonly>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Course Completed</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $courseCompleted?>" readonly>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Date Graduated </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $dateGrad?>" readonly>
+    </div>
+</div>
+
+
   <div class="form-group">
-      <h6 style="color:black;">Date Requested:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $dateRequested?>" readonly>
+    <label for="inputAddress">Undergraduate</label>
+    <input type="text" class="form-control" id="inputAddress" value="<?= $underGrad ?>" readonly>
+  </div>
+
+  <br>
+
+  <h2>Claiming Information</h2>
+      <br>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Mode of Claiming</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $modeofClaim?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Student Number:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $studnum?>" readonly>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Representative Name </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $representname?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Last Name:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $lastName?>" readonly>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputEmail4">Mailing Address</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $address?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">First Name:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $firstName?>" readonly>
+       </div>
+
+<br>
+    <h2>Breakdown of Fees</h2>
+      <br>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Transcript Fee</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $transfee?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Middle Name:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $middleName?>" readonly>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Diploma Fee </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $dipfee?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">School:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $school?>" readonly>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Form 137A/138B</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $formfee?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Type of Form:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $formType?>" readonly>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Certification Fee</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $certfee?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Number of Copies:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $numofCopies?>" readonly>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Authentication Fee</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $authfee?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Number of Request:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $numofRequest?>" readonly>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Service Fee(Online)</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $servfee?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Reason/Purpose:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $reason?>" readonly>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Documentary Stamp</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $docstamp?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Mode of Claiming:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $modeofClaim?>" readonly>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Mailing Fee</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $mailfee?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Address:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $address?>" readonly>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Letter Envelope</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $letterfee?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Course Completed:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $courseCompleted?>" readonly>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">SPUP TOR Envelope</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $torenvfee?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Date Graduated:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $dateGrad?>" readonly>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">SPUP Sticker</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $stickerfee?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Undergraduate:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $underGrad?>" readonly>
+       </div>
+       <div class="form-row">
+    <div class="form-group col-md-12 mt-4">
+      <label for="inputEmail4"><h4>Total Fee</h4></label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $fees?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Mobile Number:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $mobileNum?>" readonly>
-    </div>
-    <div class="form-group">
-      <h6 style="color:black;">Email:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $email?>" readonly>
-    </div>
-    <div class="form-group">
-      <h6 style="color:black;">Date Received:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $dateReceived?>" readonly>
-    </div>
-    <div class="form-group">
-      <h6 style="color:black;">Total Fee:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $fees?>" readonly>
+    <div class="form-row">
+    <div class="form-group col-md-12 mt-4">
+      <label for="inputEmail4">Proof of Payment</label>
+      <?php
+							if ($paymentphoto == "") {
+							echo "<i>No photo available.</i>";
+							}
+							else {
+							?>
+							<img id="myImg" src="<?= $photo_url ?>" style="width: 100%;" class="img-responsive">
+							<?php
+							}
+						?>
     </div>
   </form>
-<br>
-<h3>Breakdown of Fees:</h3>
-	<table class="table table-bordered">
-	<tr>
-    <td>Transcript Fee</td>
-    <td><?= $transfee ?></td>
-  	</tr>
-  	<tr>
-    <td>Diploma Fee</td>
-    <td> <?=$dipfee?> </td>
-  	</tr>
-  	<tr>
-    <td>Form 137A/138B</td>
-    <td> <?=$formfee?> </td>
-  	</tr>
-  	<tr>
-    <td>Certification Fee</td>
-    <td> <?=$certfee?> </td>
-  	</tr>
-  	<tr>
-    <td>Authentication Fee</td>
-    <td> <?=$authfee?> </td>
-  	</tr>
-	<tr>
-	<td>Service Fee(Online)</td>
-	<td> <?=$servfee?> </td>
-	</tr>
-	<tr>
-	<td>Documentary Stamp</td>
-	<td> <?=$docstamp?> </td>
-	</tr>
-	<tr>
-    <td>Mailing Fee</td>
-    <td> <?=$mailfee?> </td>
-  	</tr>
-	<tr>
-    <td>Letter Envelope</td>
-    <td> <?=$letterfee?> </td>
-  	</tr>
-	<tr>
-    <td>SPUP TOR Envelope</td>
-    <td> <?=$torenvfee?> </td>
-  	</tr>
-	<tr>
-    <td>SPUP Sticker</td>
-    <td> <?=$stickerfee?> </td>
-  	</tr>
-	<tr>
-	<td>Total Fee</td>
-	<td>  <?=$fees?> </td>
-	</tr>   
-	</table>
+</div>
   </div>
 <div align="center" class="mb-5">
         <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
         <a href="archived_forms.php" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
-        <i class="far fa-trash-alt"></i>
+        <i class="fas fa-arrow-left"></i>
         </span>
         <span class="text">
             Back
@@ -283,4 +343,4 @@ include "header.php";
 </html>
 </div>
 </div>
-<?php include "footer.php" ?>
+<?php include "footeradmin.php" ?>

@@ -24,7 +24,7 @@
     <div class="">
       <div class="card-body">
       <img src="img/spup.png" style= "width: 65%; align-items: center;">
-        <p class="card-text mt-5">© 2020 St. Paul University Philippines | All Rights Reserved</p>
+        <p class="card-text mt-5 text-light">© 2020 St. Paul University Philippines | All Rights Reserved</p>
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@
     <div class="">
       <div class="card-body text-center">
         <h5 class="card-title mt-3">ABOUT OFFICE OF THE REGISTRAR</h5>
-        <p class="card-text mb-5">The Office of the Registrar is custodian of the academic records of students, It is responsible for monitoring the integrity of the records under its care, make them available upon request, subject to existing rules and regulations.
+        <p class="card-text mb-5 text-light">The Office of the Registrar is custodian of the academic records of students, It is responsible for monitoring the integrity of the records under its care, make them available upon request, subject to existing rules and regulations.
 
 </p>
         

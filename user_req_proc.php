@@ -108,7 +108,7 @@
     );
 
     echo insert($user_data, $table_name);
-    header("Location: index1.php");
+    header("Location: index.php");
     $_SESSION['alert_msg']=1; 
     
 
@@ -154,7 +154,7 @@ $mail->Body = "<h1>Hello " . $lastname .  "</h1><br>$xdate . $xtime <h3>Your req
 $mail->addAddress($email);
 
 if ($mail->Send() ) {
-     header("Location: index1.php");
+     header("Location: index.php");
 }else{
     echo "Error";
 }

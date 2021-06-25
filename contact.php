@@ -1,6 +1,6 @@
 <?php include "user_header.php"; ?>
 <div class="col-10" style="margin-left:15%;">
-        <div class="col-10 ">
+        <div class="col-10  mb-5 mt-5">
             <div class="card shadow pb-8">
                 <div class="card-header " style="background-color:#044a33;">
                     <h5 class="m-0 font-weight-bold" style="color:white;">Contact Information</h5>

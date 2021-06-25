@@ -1,38 +1,56 @@
 <?php
 include "header.php";
 ?>
+
 <div align=center>
-<div class="card-header bordercolor ">
-    <h1 class="headerblacked">ADD NEW USER</h1>
+<div class="card-header bordercolor">
+    <h1 class="headerblacked">ADD NEW ACCOUNT</h1>
 </div>
-<div class="card mb-4 w-100 bodyblacked" style="border:none;">
+<div class="card mb-4 w-100 bodyblacked mt-5">
 
+<div class="container card shadow pb-8 mb-5">
 
-<form method="post" action="account_add_proc.php">
+<form class="bodyblacked2 card-body" method="post" action="account_add_proc.php">
 
-  <div class="" style="margin-left:10%;">
+  <div class="form-row mt-5">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Username</label>
+      <input type="text" class="form-control" id="inputEmail4" required autocomplete=off>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password </label>
+      <input type="text" class="form-control" id="inputPassword4" required autocomplete=off>
+    </div>
+</div>
 
-    <input type="text" name="username" class="form-control form-control-user" autocomplete=off placeholder="Username" style="width:40%; margin-left:3%; margin-top:5%; float:left;">
-    <input type="password" name="password" class="form-control form-control-user" autocomplete=off placeholder="Password" style="width:40%; margin-left:3%; margin-top:5%; float:left;">
-    
-
+  <div class="form-row mt-5">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">First Name</label>
+      <input type="text" class="form-control" id="inputEmail4"  required autocomplete=off>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Middle Name</label>
+      <input type="text" class="form-control" id="inputPassword4" required autocomplete=off >
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Last Name</label>
+      <input type="text" class="form-control" id="inputPassword4"  required autocomplete=off>
+    </div>
   </div>
 
-  <div class="input-group" style="width:75%; margin-left:13%; margin-top: 9%;">
-      <input type="text" name="firstname" class="form-control form-control-user" autocomplete=off placeholder="First Name" class="form-control">
-      <input type="text" name="middlename" class="form-control form-control-user" autocomplete=off placeholder="Middle Name" class="form-control">
-      <input type="text" name="lastname" class="form-control form-control-user" autocomplete=off placeholder="Last Name" class="form-control">
-  </div>
-  <br>
- 
-  <div class="" style="margin-left:9%;">
-
-  <input type="email" name="email" class="form-control form-control-user" autocomplete=off placeholder="Email Address" style="width:25%; margin-left:5%; margin-top:2%; float:left;">
-
-  <input type="number" name="contact" class="form-control form-control-user" placeholder="Contact" autocomplete=off required style="width:25%; margin-left:2%; margin-top:2%; float:left;">
-
-  <select type="text" name="user_type" class="form-control form-control-user" autocomplete=off required style="width:25%; margin-left:2%; margin-top:2%; float:left;">
-        <option value="">Type:</option>
+  <div class="form-row mt-5">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Email</label>
+      <input type="text" class="form-control" id="inputEmail4"  required autocomplete=off>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Contact</label>
+      <input type="text" class="form-control" id="inputPassword4"  required autocomplete=off>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Account Type</label>
+      <select type="text" name="user_type" class="form-control form-control-user"  required autocomplete=off>
+      <option value="">Type:</option>
         <option value="1">ADMIN</option>
         <option value="2">EMPLOYEE</option>
         <option value="3">SITE DEAN</option>
@@ -44,8 +62,10 @@ include "header.php";
         <option value="9">GRADSCHOOL DEAN</option>
         <option value="10">BAO DEAN</option>
       </select>
-
+    </div>
   </div>
+
+
   
     <br>
     <br><br>
@@ -73,5 +93,5 @@ include "header.php";
 </div>
 </div>
 </div>
-<?php include "footer.php" ?>
+<?php include "footeradmin.php" ?>
 </div>

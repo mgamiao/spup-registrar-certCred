@@ -31,15 +31,15 @@
           date_default_timezone_set('Asia/Singapore'); 
           $xdate=date('Y-m-d');
           $xtime=date('h:i:sa'); 
-          echo "<h6 class='m-0 font-weight-bold text-dark'>Date: $xdate   &nbsp </h6>  "; 
-          echo "<h6 class='m-0 font-weight-bold text-dark'>Time:  $xtime</h6>";
+          // echo "<h6 class='m-0 font-weight-bold text-dark'>Date: $xdate   &nbsp </h6>  "; 
+          // echo "<h6 class='m-0 font-weight-bold text-dark'>Time:  $xtime</h6>";
           ?>
 
 <div class="header">
-<a href="#default" class="headerpic"><img src="img/spup.png"></a>
+<a href="index.php"><img src="img/spup.png" class="headerpic"></a>
   <div class="hdrbtn">
-    <a class="header-right ui-btn-right" href="index1.php">Home</a>
-    <a class="header-right ui-btn-right" href="#about">About</a>
+    <a class="header-right ui-btn-right" href="index.php">Home</a>
+    <a class="header-right ui-btn-right" href="about.php">About</a>
     <a class="header-right ui-btn-right" href="contact.php">Contact</a>
   </div>
   

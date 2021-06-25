@@ -27,6 +27,20 @@ include "user_header.php";
 			unset($_SESSION['pic_errormsg']);
 			?>
 
+      <?php
+    if (isset($_SESSION['alert_msg'])){
+        if ($_SESSION['alert_msg']==1){
+            echo "
+                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
+                    <div class='card-body'>
+                    YOUR FILE WAS SUCCESSFULLY SUBMITTED.
+                    </div>
+                </div>";
+                unset($_SESSION['alert_msg']);
+        }
+    }
+    ?>
+
 <br>
 <br>
 <div align="center">

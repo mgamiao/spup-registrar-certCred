@@ -166,5 +166,5 @@ include "header.php";
 </div>
 </div>
 </div>
-<?php include "footer.php" ?>
+<?php include "footeradmin.php" ?>
 </div>

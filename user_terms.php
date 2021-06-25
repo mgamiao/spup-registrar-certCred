@@ -13,7 +13,7 @@ session_destroy();
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 </head>
 <body onload="checkStatus()">
-<div class="col-10" style="margin-left:15%;">
+<div class="col-10 mt-5" style="margin-left:15%;">
         <div class="col-10 ">
             <div class="card shadow pb-10">
                 <div class="card-header " style="background-color:#044a33;">

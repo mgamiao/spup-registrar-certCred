@@ -12,230 +12,91 @@
 
 </head>
 
-
 <body>
-
-<div class="col-10" style="margin-left:16%;">
-        <div class="col-10 ">
-            <div class="card shadow pb-8">
-                <div class="card-header " style="background-color:#044a33;">
-                    <h5 class="m-0 font-weight-bold" style="color:white;">TYPE OF FORMS (CERTIFICATE/CREDENTIALS)</h5>
+<?php
+if (isset($_SESSION['alert_msg'])){
+    if ($_SESSION['alert_msg']==1){
+        echo "
+            <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
+                <div class='card-body'>
+                REQUESTED FORM SUCCESSFULLY SUBMITTED
                 </div>
-                <div class="card-body pt-5" style="background-color:#F0F0F0;">
+            </div>";
+            unset($_SESSION['alert_msg']);
+    }
+  }
+    ?>
 
-<div class="container">          
-  <table class="table table-striped">
-    <tbody>
-      <tr>
-        <td align="center">Diploma</a></td>
-      </tr>
-      <tr>
-        <td align="center">Form 137</a></td>
-      </tr>
-      <tr>
-        <td align="center">Transcript of Records</a></td>
-      </tr>
-      <tr>
-        <td align="center">Certificate of Enrollment</a></td>
-      </tr>
-      <tr>
-        <td align="center">Certificate of Grades</a></td>
-      </tr>
-      <tr>
-        <td align="center">Certificate of General Weighted Average</a></td>
-      </tr>
-      <tr>
-        <td align="center">Certificate of English as Medium of Instruction</a></td>
-      </tr>
-      <tr>
-        <td align="center">Certificate of Units Earned</a></td>
-      </tr>
-      <tr>
-        <td align="center">Certified True Copy of Documents (TOR/Diploma)</a></td>
-      </tr>
-      <tr>
-        <td align="center">Course Description</a></td>
-      </tr>
-      <tr>
-        <td align="center">Certificate of Grades</a></td>
-      </tr>
-      <tr>
-        <td align="center">Certification, Authentication and Verification (Red Ribbon)</a></td>
-      </tr>
-      <tr>
-        <td align="center">Transfer Credentials</a></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
-</div>
-</div>
-</div>
-<br>
-<br>
-<div class="col-10" style="margin-left:16%;">
-        <div class="col-10 ">
-            <div class="card shadow pb-8">
-                <div class="card-header " style="background-color:#044a33;">
-                    <h5 class="m-0 font-weight-bold" style="color:white;">PROCEDURES</h5>
-                </div>
-                <div class="card-body pt-5" style="background-color:#F0F0F0;">
-
-<div class="container">          
-  <table class="table table-striped">
-    <thead>
-
-    </thead>
-    <tbody>
-      <tr>
-        <td align="center">The applicant fill-up the request form</td>
-      </tr>
-      <tr>
-        <td align="center">The applicant will be informed about the status of the requested form through  an e-mail notification.</td>
-      </tr>
-      <tr> 
-        <td align="center">The applicant must pay the corresponding fee before claiming the requested form.</td>
-      </tr>
-      <tr> 
-        <td align="center">The applicant must send the photo of proof of payment to registrar@spup.edu.ph  or attach it to "Track Requested Form Page" before claiming the requested form.</td>
-      </tr>
-
-    </tbody>
-  </table>
-</div>
-</div>
-</div>
-</div>
+<div class="divbg">
+  <div class="piccontainer mb-5">
+    <img src="img/flc.png" class="darkbg">
+    <div class="centered"><b>OFFICE OF THE REGISTRAR</b></div>
+  </div>
+<div class="userhether3">
+  <div class="futer2">
+  </div>
+  <div class="userhether1 mb-5">
+  </div>
 </div>
 
-<br>
-<br>
-
-<div class="col-10" style="margin-left:16%;">
-        <div class="col-10 ">
-            <div class="card shadow pb-8">
-                <div class="card-header " style="background-color:#044a33;">
-                    <h5 class="m-0 font-weight-bold" style="color:white;">MODE OF CLAIMING THE REQUESTED CREDENTIALS</h5>
-                </div>
-                <div class="card-body pt-5" style="background-color:#F0F0F0;">
-<div class="container">
-            
-  <table class="table table-striped">
-    <thead>
-
-    </thead>
-    <tbody>
-      <tr>
-        <td align="center">Personal pick-up.</td>
-      </tr>
-      <tr>
-        <td align="center">Through a Representative.</td>
-      </tr>
-      <tr>
-      <td align="center"> Through Courier.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
-</div>
-</div>
+<div class="row mb-4" style="width: 80%; margin: auto;">
+  <div class="col-sm-12 text-center">
+    <div class="card">
+      <div class="card-body colorcb">
+        <h2 class="card-title mt-3">VISION</h2>
+        <p class="card-text mb-5" style="justify-content: left;">St. Paul University Philippines is an internationally recognized institution dedicated to the <BR>
+        formation of competent leaders and responsible citizens of their communities, country, and <br>the world.</p>
+        <h2 class="card-title mt-3">MISSION</h2>
+        <p class="card-text mb-5">Animated by the Gospel and guided by the teachings of the Church, it helps to uplift the 
+        <br>quality of life and to effect social transformation through:<br>
+                <br>1. Quality, Catholic, Paulinian formation, academic excellence, research, and community services;
+                <br>2. Optimum access to Paulinian education and service in an atmosphere of compassionate caring;    and,
+                <br>3. Responsive and innovative management processes</p>
+      </div>
+    </div>
+  </div>
 </div>
 
-<br>
-<br>
-
-<div class="col-10" style="margin-left:16%;">
-        <div class="col-10 ">
-            <div class="card shadow pb-8">
-                <div class="card-header " style="background-color:#044a33;">
-                    <h5 class="m-0 font-weight-bold" style="color:white;">DETAILS FOR ONLINE PAYMENT</h5>
-                </div>
-                <div class="card-body pt-5" style="background-color:#F0F0F0;">
-<div class="container">           
-  <table class="table table-striped">
-    <thead>
-
-    </thead>
-    <tbody>
-    <tr>
-    <td align="center">Bank</td>
-	<td align="center"> : </td>
-    <td align="center">Bank of the Philippine Islands</td>
-  	</tr>
-  	<tr>
-    <td align="center">Branch</td>
-	<td align="center"> : </td>
-    <td align="center">Tuguegarao City Branch</td>
-  	</tr>
-  	<tr>
-    <td align="center">Account Name</td>
-	<td align="center"> : </td>
-    <td align="center">ST. PAUL UNIVERSITY PHILIPPINES</td>
-  	</tr>
-  	<tr>
-    <td align="center">Account Type</td>
-	<td align="center"> : </td>
-    <td align="center">Saving Account</td>
-  	</tr>
-  	<tr>
-    <td align="center">Account Number</td>
-	<td align="center"> : </td>
-    <td align="center">8693 – 0892 – 13</td>
-  	</tr>
-    </tbody>
-  </table>
+<div class="row mt-5" style="width: 80%; margin: 0 auto;">
+  <div class="col-sm-4 text-center">
+    <div class="card">
+      <div class="card-body colorcb">
+        <img src="img/form.png" style= "width: 20%; align-items: center; ">
+        <h5 class="card-title mt-3">REQUEST A FORM</h5>
+        <p class="card-text mb-5">Online application of student records</p>
+        <a href="user_terms.php" class="userbtn">Request Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 text-center">
+    <div class="card">
+      <div class="card-body colorcb">
+        <img src="img/archive.png" style= "width: 20%; align-items: center;">
+        <h5 class="card-title mt-3">TRACK REQUESTED FORM</h5>
+        <p class="card-text mb-5">Check status of online application of student records</p>
+        <a href="user_track_form.php" class="userbtn">Track Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 text-center">
+    <div class="card">
+      <div class="card-body colorcb">
+        <img src="img/faq.png" style= "width: 20%; align-items: center;">
+        <h5 class="card-title mt-3">FREQUENTLY ASKED QUESTIONS</h5>
+        <p class="card-text mb-5">Frequently asked questions to the Office of the Registrar.</p>
+        <a href="faq.php" class="userbtn ">Read Now</a>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-
-<br>
-<br>
-
-<div class="col-10" style="margin-left:16%;">
-        <div class="col-10 ">
-            <div class="card shadow pb-8">
-                <div class="card-header " style="background-color:#044a33;">
-                    <h5 class="m-0 font-weight-bold" style="color:white;">FRIENDLY REMINDERS:</h5>
-                </div>
-                <div class="card-body pt-5" style="background-color:#F0F0F0;">
-
-<div class="container">
-  <table class="table table-striped">
-    <thead>
-
-    </thead>
-    <tbody>
-      <tr>
-        <td align="center">A.) Official documents will be processed/released to the student only upon settlement of all financial, academic, and documentary liabilities with the school and upon full payment of documents requested.</td>
-      </tr>
-      <tr>
-        <td align="center">B.)Documents applied not claimed after three (3) months from the date of release will be automatically shredded..</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<br>
-
-<a href="user_terms.php" class="btn btn-primary btn-icon-split btn-md" style="margin-left:46.5%;">
-        <span class="text">
-            Request a Form
-        </span>
-            </a>
-            </a>
-<br>
 </body>
 
 </html>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<br>
-<br>
 <?php include "footer.php" ?>
