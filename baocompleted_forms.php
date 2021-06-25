@@ -27,68 +27,15 @@ include "header.php";
 </head>
 <div align=center>
 
-    <?php
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==1){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY APPROVED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-    
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==2){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY EDITED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==3){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY DELETED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==5){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    STUDENT SUCCESSFULLY DEACTIVATED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-    ?>
-
 <div class="card w-100 " style="border:none;">
-                <div class=" py-3 bordercolor " style="border:none;">
+                <div class="py-3 bordercolor " style="border:none;">
                 <h1 class="m-0 headerblacked">Completed Forms</h1>
                 </div>
-                <div class="card-body">
-
-               
-
+                <div class="card-body bodyblacked">
                 <div class="table-responsive" >
-                    <table class="table" id="dataTable" width="100%" cellspacing="0" >
+                    <table class="table table-striped" id="dataTable" width="100%" cellspacing="0" >
         
-        <thead class="bg-secondary" style="text-align: center; color: black;">
+        <thead class="tableblacked">
         <tr>
             <td>Full Name</td>
             <td>School</td>
@@ -101,7 +48,7 @@ include "header.php";
         </tr>
         </thead>
 
-        <tfoot class="bg-secondary" style="text-align: center; color: black;">
+        <tfoot class="tableblacked">
         <tr>
             <td>Full Name</td>
             <td>School</td>
@@ -114,7 +61,7 @@ include "header.php";
         </tr>
         </tfoot>
 
-        <tbody style="text-align: center; color: black;">
+        <tbody class="bodyblacked">
 
     <?php
         $table_name = "forms";
@@ -196,7 +143,7 @@ include "header.php";
 </div>
 </div>
 </div>
-<?php include "footer.php" ?>
+<?php include "footeradmin.php" ?>
 </div>
 
 

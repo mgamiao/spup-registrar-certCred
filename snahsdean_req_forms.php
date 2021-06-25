@@ -31,7 +31,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==1){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY APPROVED
                     </div>
@@ -43,7 +43,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==2){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY EDITED
                     </div>
@@ -55,7 +55,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==3){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY DELETED
                     </div>
@@ -64,17 +64,6 @@ include "header.php";
         }
     }
 
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==5){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    STUDENT SUCCESSFULLY DEACTIVATED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
     ?>
 
 <div class="card w-100 " style="border:none;">
@@ -156,9 +145,9 @@ include "header.php";
             
         <td>
         &nbsp;&nbsp;
-            <a href="snahsdean_req_view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="snahsdean_req_view_forms.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
+            <i class="fas fa-eye"></i>
             </span>
             <span class="text">
                     View
@@ -195,4 +184,5 @@ include "header.php";
 </div>
 </div>
 
+<?php include "footeradmin.php" ?>
 

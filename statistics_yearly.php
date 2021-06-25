@@ -535,7 +535,7 @@
 
   </div>
   
-  <?php include "footer.php" ?>
+  <?php include "footeradmin.php" ?>
 </div>
 <!-- end per department stats -->
 
@@ -704,6 +704,7 @@
     });
     }
 // END PIE CHART DATA
+
 
 </script>
 

@@ -287,14 +287,6 @@
         }
        
     ?>
-      <a href="user_track_form.php" class="btn btn-warning btn-icon-split btn-md" style="margin-left:45%; margin-top:15px;">
-        <span class="icon text-red-50">
-        <i class="far fa-edit"></i>
-        </span>
-        <span class="text">
-            Back
-        </span>
-    </a>
     </div>
     </div>
     </div>

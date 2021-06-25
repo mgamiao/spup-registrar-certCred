@@ -25,9 +25,10 @@ session_start();
 </head>
 
 <body style="height: auto;
-  background-image: url('img/spuptry.jpg'); 
+  background-image: url('img/flc.png'); 
   background-repeat: no-repeat; 
   background-size: 100%; ">
+  
 <br>
 <br>
 <br>
@@ -41,8 +42,8 @@ session_start();
 
       <div class="col-xl-10 col-lg-12 col-md-9 ">
 
-        <div class="card o-hidden border-0 shadow-lg my-5 bg-gradient-dark">
-          <div class="card-body p-0 " >
+        <div class="card o-hidden border-0 shadow-lg my-5 bg-gradient-dark ">
+          <div class="card-body p-0 shadow " >
             <!-- Nested Row within Card Body -->
             <div class="row" style="background-image: url('img/color1.png');">
               <div class="col-lg-6 d-none d-lg-block text-light" style="margin: auto;" > 

@@ -155,7 +155,7 @@ include "header.php";
         &nbsp;&nbsp;
             <a href="view_forms.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
+            <i class="fas fa-eye"></i>
             </span>
             <span class="text">
                     View
@@ -209,6 +209,6 @@ include "header.php";
     <!-- Page level custom scripts -->
     <script src="template/js/demo/datatables-demo.js"></script>
 
-    <?php include "footer.php" ?>
+    <?php include "footeradmin.php" ?>
     
 

@@ -1,15 +1,6 @@
 <?php session_start(); 
 include "perfect_function.php"
 ?>
-
-<h1 class="page-header">Upload Success</h1>
-
-<div class="row-fluid sortable">
-    <div class="box span12">
-        <div class="box-header" data-original-title>
-            <h2><i class="halflings-icon white edit"></i><span class="break"></span>Upload Success</h2>
-        </div>
-        <div class="box-content">
         
         <?php
         $target_dir = "user_payment/";
@@ -69,23 +60,14 @@ include "perfect_function.php"
                 echo $id;
                 echo $paymentphoto;
                 update($user_editedvalues, $id, $table_name);
+                header("Location: user_track_form.php");
+                $_SESSION['alert_msg']=1;
                 ?>
-                Your file <?= basename( $_FILES["fileToUpload"]["name"]) ?> was successfully uploaded!
             </div>
-            <p>
-                <a href="user_track_form.php">
-                    <button type="button" class="btn btn-primary">
-                    Return </button>
-                </a>
-            </p>
             <?php
             } else {
                 $_SESSION['pic_errormsg'] = "Sorry, there was an error uploading your file.";
-                header("Location: user_form_search.php");
+                header("Location: user_track_form.php");
             }
         }
         ?>
-        </div>
-    </div><!--/span-->
-</div><!--/row-->
-

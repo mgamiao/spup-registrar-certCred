@@ -25,39 +25,55 @@ foreach ($get_userData as $key => $row) {
 <div class="card-header bordercolor">
     <h1 class="headerblacked">EDIT ACCOUNT</h1>
 </div>
-<div class="card mb-4 w-100 bodyblacked">
+<div class="card mb-4 w-100 bodyblacked mt-5">
 
-<form method="post" action="<?=$form_location;?>">
+<div class="container card shadow pb-8 mb-5">
 
-  <div class="" style="margin-left:10%;">
-
-    <input type="text" name="username" class="form-control form-control-user" autocomplete=off value="<?= $username;?>" style="width:40%; margin-left:25%; margin-top:5%; float:left;" readonly>
-
+<form class="bodyblacked2 card-body" method="post" action="<?=$form_location;?>"><br>
+<div class="form-row">
+    <div class="form-group col-md-4">
+    </div>
+    <div class="form-group col-md-4">
+    <label for="studentNumber">Username</label>
+      <input type="text" class="form-control" id="studentNumber" value="<?= $username?>" readonly>
+    </div>
+    <div class="form-group col-md-4">
+    </div>
   </div>
-<br>
-  <div class="input-group" style="width:75%; margin-left:13%; margin-top: 9%;">
 
-      <input type="text" name="firstname" class="form-control form-control-user" autocomplete=off value="<?= $firstname;?>" class="form-control">
-      <input type="text" name="middlename" class="form-control form-control-user" autocomplete=off value="<?= $middlename;?>" class="form-control">
-      <input type="text" name="lastname" class="form-control form-control-user" autocomplete=off value="<?= $lastname;?>" class="form-control">
+  <div class="form-row mt-5">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">First Name</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $firstname?>">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Middle Name</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $middlename?>">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Last Name</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $lastname?>">
+    </div>
   </div>
-  <br>
 
-  <div class="" style="margin-left:9%;">
-
-  <input type="number" name="contact" class="form-control form-control-user" value="<?= $contact;?>" autocomplete=off required style="width:25%; margin-left:5%; margin-top:2%; float:left;">
-  
-      <input type="email" name="email" class="form-control form-control-user" autocomplete=off value="<?= $email;?>" style="width:25%; margin-left:2%; margin-top:2%; float:left;">
-
-
-    <select type="text" name="user_type" class="form-control form-control-user" value="<?= $user_type;?>" required autocomplete=off style="width:25%; margin-left:2%; margin-top:2%; float:left;">
+  <div class="form-row mt-5">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Number</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $contact?>">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Email</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $email?>">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Account Type</label>
+      <select type="text" name="user_type" class="form-control form-control-user" value="<?= $user_type;?>" required autocomplete=off>
         <option value="">Type:</option>
         <option value="1">ADMIN</option>
         <option value="2">EMPLOYEE</option>
       </select>
-
+    </div>
   </div>
-    <br>
     <br>
 <br>
 
@@ -85,3 +101,5 @@ foreach ($get_userData as $key => $row) {
 </div>
 </div>
 </div>
+
+<?php include "footeradmin.php" ?>

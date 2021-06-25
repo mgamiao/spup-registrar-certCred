@@ -64,7 +64,7 @@ $compnotif = count_archived_forms1();
 </head>
 
 <div class="adminhether2">
-  <p>St.Paul University Philippines</p>
+ 
 </div>
 <div class="adminhether1">
 </div>
@@ -438,7 +438,7 @@ $compnotif = count_archived_forms1();
   <script src="template/js/demo/chart-pie-demo.js"></script>
 
 
-<script src='http://code.jquery.com/jquery.js'></script>
+<!-- <script src='http://code.jquery.com/jquery.js'></script> -->
 <script>
   $(document).ready(function(){
       setInterval(_initTimer, 1000);

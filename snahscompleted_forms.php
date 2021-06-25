@@ -163,9 +163,9 @@ include "header.php";
                 </span>
         </a> -->
         &nbsp;&nbsp;
-            <a href="snahscompleted_view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="snahscompleted_view_forms.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
+            <i class="fas fa-eye"></i>
             </span>
             <span class="text">
                     View
@@ -203,4 +203,4 @@ include "header.php";
 </div>
 </div>
 
-
+<?php include "footeradmin.php" ?>

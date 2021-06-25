@@ -113,92 +113,133 @@ include "header.php";
             $mobileNum = $row['mobilenum'];
             $email = $row['email'];
             $status = $row['status'];
+            $representname = $row['representname'];
            
         ?>   
 <body>
-<div class="container" >
+<div class="container card shadow pb-8 mb-5">
 
-  <form>
-    <div class="form-group">
-      <h6 style="color:black;">Student Number:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $studnum?>" readonly>
+<form class="bodyblacked2 card-body"><br>
+<h2>Personal Information</h2><br>
+<div class="form-row">
+    <div class="form-group col-md-2">
+    <label for="studentNumber">Student Number</label>
+      <input type="text" class="form-control" id="studentNumber" value="<?= $studnum?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Last Name:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $lastName?>" readonly>
+    <div class="form-group col-md-6">
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">First Name:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $firstName?>" readonly>
+    <div class="form-group col-md-4">
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Middle Name:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $middleName?>" readonly>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">First Name</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $firstName?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">School:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $school?>" readonly>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Middle Name</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $middleName?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Type of Form:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $formType?>" readonly>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Last Name</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $lastName?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Number of Copies:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $numofCopies?>" readonly>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Mobile Number </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $mobileNum?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Number of Request:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $numofRequest?>" readonly>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Email </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $email?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Reason/Purpose:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $reason?>" readonly>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-12">
+      <label for="inputEmail4">School</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $school?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Mode of Claiming:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $modeofClaim?>" readonly>
+       </div>
+<br>
+<h2>Academic Information</h2>
+<br>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Type of Form</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $formType?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Address:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $address?>" readonly>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Reason</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $reason?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Course Completed:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $courseCompleted?>" readonly>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Number of Copies</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $numofCopies?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Date Graduated:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $dateGrad?>" readonly>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Number of Requests</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $numofRequest?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Undergraduate:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $underGrad?>" readonly>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Course Completed</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $courseCompleted?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Mobile Number:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $mobileNum?>" readonly>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Date Graduated </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $dateGrad?>" readonly>
     </div>
-    <div class="form-group">
-      <h6 style="color:black;">Email:</h6>
-      <input type="text" class="form-control"  style="color:black; font-weight:bold;" value="<?= $email?>" readonly>
+</div>
+
+
+  <div class="form-group">
+    <label for="inputAddress">Undergraduate</label>
+    <input type="text" class="form-control" id="inputAddress" value="<?= $underGrad ?>" readonly>
+  </div>
+
+  <br>
+
+  <h2>Claiming Information</h2>
+      <br>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Mode of Claiming</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $modeofClaim?>" readonly>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Representative Name </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $representname?>" readonly>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputEmail4">Mailing Address</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $address?>" readonly>
     </div>
   </form>
 </div>
 <br>
 <div align="center">
-            <a href="somdean_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
+            <a href="somdean_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md mb-5">
             <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
+            <i class="fas fa-check"></i>
             </span>
             <span class="text">
                     Approve
                 </span>
             </a>
 
-            <a href="somdean_form_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+            <a href="somdean_form_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md mb-5">
             <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
+            <i class="fas fa-times"></i>
             </span>
             <span class="text">
                    Decline
@@ -207,9 +248,9 @@ include "header.php";
 
 
 
-        <a href="somdean_req_forms.php" class="btn btn-warning btn-icon-split btn-md">
+        <a href="somdean_req_forms.php" class="btn btn-warning btn-icon-split btn-md mb-5">
         <span class="icon text-red-50">
-        <i class="far fa-trash-alt"></i>
+        <i class="fas fa-arrow-left"></i>
         </span>
         <span class="text">
             Back
@@ -226,5 +267,7 @@ include "header.php";
         
 </body>
 </html>
-
-
+</div>
+</div>
+</div>
+<?php include "footeradmin.php" ?>
