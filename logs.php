@@ -13,11 +13,9 @@ include "header.php";
         
         <thead class="tableblacked">
         <tr>
-            <td>Log Id </td>
-            <td>Action </td>
             <td>Date</td>
             <td>Time</td>
-            <td>In-charge(username)</td>
+            <td>Action </td>
             <td>In-charge(fullname)</td>
             <td>Account Type</td>
             
@@ -26,11 +24,9 @@ include "header.php";
 
         <tfoot class="tableblacked">
         <tr>
-            <td>Log Id</td>
-            <td>Action </td>
             <td>Date</td>
             <td>Time</td>
-            <td>In-charge(username)</td>
+            <td>Action </td>
             <td>In-charge(fullname)</td>
             <td>Account Type</td>
         </tr>
@@ -53,11 +49,9 @@ include "header.php";
 
     ?>
     <tr>
-        <td><?= $log_id?></td>
-        <td><?= $action?></td>
         <td><?= $xdate?></td>
         <td><?= $xtime?></td>
-        <td><?= $username?></td>
+        <td><?= $action?></td>
         <td><?= $firstname . " " . $lastname?></td>
         <?php
         if($acct_type == "1"){

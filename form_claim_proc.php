@@ -8,23 +8,25 @@
 	//get user ID from URL
 	$id = $_GET['id'];
     $status = $_GET['status'];
-	$deanStatus = $_GET['deanStatus'];
+	$regStatus = $_GET['regStatus'];
 	date_default_timezone_set('Asia/Singapore'); 
     $xdate=date('Y-m-d');
+	$claimant = $_POST['claimant'];
+	
 
 	$user_editedvalues = array (
 		//columname from table => value from post
-		"status" => 2,
-		"deanStatus" => "Approved",
-		"deanRemarks" => "",
-		"deanDateApprove" => $xdate,
-			
+			"status" => 5,
+			"claimant" => $claimant,
+			"regStatus" => "Finalized",
+			"regRemarks" => "",
+			"regDateApprove" => $xdate,
+
 	);
 	
 	update($user_editedvalues, $id, $table_name);
     $_SESSION['alert_msg']=1;
 
-    
     $id = $_GET['id'];
 	$table_name = "forms";
 	$get_userData = get_where($table_name, $id);
@@ -33,12 +35,14 @@
 		 $id = $row['id'];
 		 $email = $row['email'];
 		 $lastname = $row['lastname'];
-         $unique = $row['refno'];
+		 $claimant = $row['claimant'];
+		 $unique = $row['refno'];
 		
 	}
 	date_default_timezone_set('Asia/Singapore');
 	$xdate=date('Y-m-l');
 	$xtime=date('h:i:sa');
+	$claimant = $_POST['claimant'];
 
     require 'phpmailer/includes/PHPMailer.php';
 	require 'phpmailer/includes/SMTP.php';
@@ -60,11 +64,12 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname .  "</h1><br>$xdate . $xtime <h3>Your form was approved by your school dean and now under review by Business Affair Office</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
+	$mail->Body = "<h1>Hello " . $lastname . "</h1><br>$xdate . $xtime <h3>Your requested form was sucessfully claimed by $claimant. Thank you. </h3><br>
+	<br><br>Your reference number is: <b>". $unique."</b><br>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
-		header("Location: snahsdean_req_forms.php");
+		header("Location: form_claim_pending.php");
 	}else{
 		echo "Error";
 	}
@@ -80,7 +85,7 @@
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
-    $action="Approved requested form(".$id.")";
+    $action="Approved pending form(".$id.")";
     
     $user_data=array(
         "username" => $username ,
@@ -95,5 +100,5 @@
 
     echo insert($user_data, $table_name);
 
-	header("Location: snahsdean_req_forms.php");
+	header("Location: form_claim_pending.php");
 ?>

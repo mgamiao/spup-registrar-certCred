@@ -79,7 +79,7 @@ include "header.php";
 <br>
     <?php
        $id = $_GET['id'];
-       $form_location = "bao_accept_proc.php?id=".$id;
+       $form_location = "form_claim_proc.php?id=".$id;
    
        $table_name = "forms";
        $get_userData = get_where($table_name, $id);
@@ -217,64 +217,15 @@ include "header.php";
        </div>
 
 <br>
-    <h2>Breakdown of Fees</h2>
+    <h2>Recipient's Information</h2>
       <br>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Transcript Fee</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="transfee">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Diploma Fee </label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="dipfee">
+      <label for="inputEmail4">Recipient's Full Name:</label>
+      <input type="text" class="form-control" id="inputEmail4" placeholder="Enter Recipient's Full Name" name="claimant" required autocomplete="off">
     </div>
 </div>
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Form 137A/138B</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="formfee">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Certification Fee</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="certfee">
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Authentication Fee</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="authfee">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Service Fee(Online)</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="servfee">
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Documentary Stamp</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="docstamp">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Mailing Fee</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="mailfee">
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Letter Envelope</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="letterfee">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">SPUP TOR Envelope</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="torenvfee">
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">SPUP Sticker</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="stickerfee">
-    </div>
-       </div>
+
         <!-- <div class="form-row">
     <div class="form-group col-md-12 mt-4">
       <label for="inputEmail4"><h4>Total Fee</h4></label> 
@@ -289,7 +240,7 @@ include "header.php";
           <i class="fas fa-check"></i>
             </span>
             <span class="text">
-              Continue
+              Finalize
             </span>
           </button>
 
@@ -303,7 +254,7 @@ include "header.php";
                 </span>
             </a> -->
 
-            <a href="bao_form_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+            <a href="form_claim_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="fas fa-times"></i>
             </span>
@@ -313,7 +264,7 @@ include "header.php";
             </a>
 
 
-        <a href="bao_req_forms.php" class="btn btn-warning btn-icon-split btn-md">
+        <a href="form_claim_pending.php" class="btn btn-warning btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="fas fa-arrow-left"></i>
         </span>

@@ -104,6 +104,9 @@
         "formMonth" => $formMonth,
         "formDay" => $formDay,
         "representname" => $representname,
+        "regStatus" => "Pending",
+        "deanStatus" => "Pending",
+        "baoStatus" => "Pending",
 
     );
 
@@ -127,7 +130,7 @@ foreach ($get_userData as $key => $row) {
     
 }
 date_default_timezone_set('Asia/Singapore');
-$xdate=date('Y-m-d');
+$xdate=date('Y-m-l');
 $xtime=date('h:i:sa');
 
 require 'phpmailer/includes/PHPMailer.php';

@@ -129,6 +129,7 @@ include "header.php";
             $paymentphoto = $row['paymentphoto'];
             $photo_url = base_url().'user_payment/'.$paymentphoto;
             $representname = $row['representname'];
+            $claimant = $row['claimant'];
            
         ?>   
 <body>
@@ -301,9 +302,10 @@ include "header.php";
     </div>
        </div>
        <div class="form-row">
-    <div class="form-group col-md-12 mt-4">
+    <div class="form-group col-md-4 mt-4">
       <label for="inputEmail4"><h4>Total Fee</h4></label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $fees?>" readonly>
+    </div>
     </div>
     <div class="form-row">
     <div class="form-group col-md-12 mt-4">
@@ -319,9 +321,21 @@ include "header.php";
 							}
 						?>
     </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6 mt-4">
+      <label for="inputEmail4"><h4>Claimed by:</h4></label>
+        <input type="text" class="form-control" id="inputEmail4" value="<?= $claimant?>" readonly>
+      </div>
+
+      <div class="form-group col-md-6 mt-4">
+      <label for="inputEmail4"><h4>Date Received:</h4></label>
+        <input type="text" class="form-control" id="inputEmail4" value="<?= $dateReceived?>" readonly>
+      </div>
+    </div>
   </form>
 </div>
-  </div>
+
 <div align="center" class="mb-5">
         <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
         <a href="archived_forms.php" class="btn btn-danger btn-icon-split btn-md">

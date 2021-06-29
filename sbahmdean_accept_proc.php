@@ -37,7 +37,7 @@
 		
 	}
 	date_default_timezone_set('Asia/Singapore');
-	$xdate=date('Y-m-d');
+	$xdate=date('Y-m-l');
 	$xtime=date('h:i:sa');
 
     require 'phpmailer/includes/PHPMailer.php';
