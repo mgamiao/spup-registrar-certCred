@@ -104,6 +104,9 @@
         "formMonth" => $formMonth,
         "formDay" => $formDay,
         "representname" => $representname,
+        "regStatus" => "Pending",
+        "deanStatus" => "Pending",
+        "baoStatus" => "Pending",
 
     );
 

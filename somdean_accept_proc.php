@@ -76,17 +76,17 @@
 
     $table_name="logs";
     $username= $_SESSION['username'];
-    $firstname=$_SESSION['firstname'];
-    $lastname=$_SESSION['lastname'];
+    $adminfirstname=$_SESSION['firstname'];
+    $adminlastname=$_SESSION['lastname'];
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
-    $action="Approved requested form(".$id.")";
+    $action="Approved requested form(".$firstname." ".$lastname.")";
     
     $user_data=array(
         "username" => $username ,
-        "firstname" => $firstname ,
-        "lastname" => $lastname ,
+        "firstname" => $adminfirstname ,
+        "lastname" => $adminlastname ,
         "acct_type" => $acct_type ,
         "xdate" => $xdate ,
         "xtime" => $xtime ,

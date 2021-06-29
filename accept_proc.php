@@ -32,6 +32,8 @@
 		 $id = $row['id'];
 		 $email = $row['email'];
 		 $lastname = $row['lastname'];
+		 $firstname = $row['firstname'];
+		 $middlename = $row['middlename'];
 		 $unique = $row['refno'];
 		
 	}
@@ -59,7 +61,7 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname . "</h1><br> $xdate . $xtime <h3> Your form was approved by the registrar office and now under review by your designated dean</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
+	$mail->Body = "<h1>Hello " . $firstname . " " . $lastname . "</h1><br> $xdate . $xtime <h3> Your form was approved by the registrar office and now under review by your designated dean</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
@@ -75,17 +77,17 @@
 
     $table_name="logs";
     $username= $_SESSION['username'];
-    $firstname=$_SESSION['firstname'];
-    $lastname=$_SESSION['lastname'];
+    $adminfirstname=$_SESSION['firstname'];
+    $adminlastname=$_SESSION['lastname'];
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
-    $action="Approved pending form(".$id.")";
+    $action="Approved pending form(".$firstname." ".$lastname.")";
     
     $user_data=array(
         "username" => $username ,
-        "firstname" => $firstname ,
-        "lastname" => $lastname ,
+        "firstname" => $adminfirstname ,
+        "lastname" => $adminlastname ,
         "acct_type" => $acct_type ,
         "xdate" => $xdate ,
         "xtime" => $xtime ,
