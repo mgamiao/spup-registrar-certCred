@@ -33,7 +33,7 @@
 		
 	}
 	date_default_timezone_set('Asia/Singapore');
-	$xdate=date('Y-m-d');
+	$xdate=date('Y-m-l');
 	$xtime=date('h:i:sa');
 
     require 'phpmailer/includes/PHPMailer.php';
@@ -56,7 +56,7 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname .  "</h1><br> $xdate . $xtime <h3>Your form was finalized. Ready to claim.</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
+	$mail->Body = "<h1>Hello " . $lastname .  "</h1><br> $xdate . $xtime <h3>Your form was approved and is ready to claim.</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {

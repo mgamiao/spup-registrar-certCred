@@ -57,7 +57,7 @@ include "header.php";
 
 <div class="card w-100 " style="border:none;">
                 <div class="py-3 bordercolor " style="border:none;">
-                <h1 class="m-0 headerblacked">Requested Forms</h1>
+                <h1 class="m-0 headerblacked">Declined Forms</h1>
                 </div>
                 <div class="card-body bodyblacked">
                 <div class="table-responsive" >
@@ -71,6 +71,7 @@ include "header.php";
             <td>Type of Form</td>
             <td>Reason/Purpose</td>
             <td>Date Requested</td>
+            <td>Reason of Declining</td>
             <td>Option</td>
             
             
@@ -85,6 +86,7 @@ include "header.php";
             <td>Type of Form</td>
             <td>Reason/Purpose</td>
             <td>Date Requested</td>
+            <td>Reason of Declining</td>
             <td>Option</td>
             
 
@@ -96,7 +98,7 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 2;
+        $condition = 6;
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -112,11 +114,14 @@ include "header.php";
             $email = $row['email'];
             $date = $row['date'];
             $status = $row['status'];
+            $regRemarks = $row['regRemarks'];
+            $deanRemarks = $row['deanRemarks'];
+            $baoRemarks = $row['baoRemarks'];
             
 
     ?>
     
-<?php if($status=="2"){ ?>
+<?php if($status=="6"){ ?>
     <tr>
         <td><?= $studnum?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
@@ -124,6 +129,7 @@ include "header.php";
         <td><?= $formType?></td>
         <td><?= $reason?></td>
         <td><?= $date?></td>
+        <td><?= $regRemarks . "" . $deanRemarks . "" . $baoRemarks?></td>
         
 
         
@@ -138,7 +144,7 @@ include "header.php";
                 </span>
         </a> -->
         &nbsp;&nbsp;
-            <a href="bao_req_view_forms.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
+            <a href="declined_view_forms.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="far fa-eye"></i>
             </span>

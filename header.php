@@ -294,8 +294,20 @@ $compnotif = count_archived_forms1();
 
 </li>
 <li>
+  <a style="text-decoration:none" href="form_claim_pending.php"   aria-expanded="true" aria-controls="collapseTwo">
+  FORMS WAITING TO BE CLAIM
+  </a>
+
+</li>
+<li>
   <a style="text-decoration:none" href="archived_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-  ARCHIVED FORMS
+  ARCHIVE FORMS
+  </a>
+
+</li>
+<li>
+  <a style="text-decoration:none" href="declined_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  DECLINED FORMS
   </a>
 
 </li>

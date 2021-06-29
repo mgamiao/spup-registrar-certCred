@@ -26,7 +26,6 @@ include "header.php";
 
 </head>
 
-
     <?php
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==1){
@@ -40,17 +39,7 @@ include "header.php";
         }
     }
     
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==2){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY EDITED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
+
 
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==3){
@@ -64,12 +53,12 @@ include "header.php";
         }
     }
 
-
     ?>
-<div class="card w-100 " style="border:none;">
+
+<div class="card w-100" style="border:none;">
 <div align="center">
                 <div class=" py-3 bordercolor" style="border:none;">
-                <h1 class="m-0 headerblacked">View Form</h1>
+                <h1 class="m-0 headerblacked">VIEW FORM</h1>
                 </div>
                 </div>
 
@@ -79,7 +68,7 @@ include "header.php";
 <br>
     <?php
        $id = $_GET['id'];
-       $form_location = "bao_accept_proc.php?id=".$id;
+      
    
        $table_name = "forms";
        $get_userData = get_where($table_name, $id);
@@ -96,6 +85,7 @@ include "header.php";
             $numofRequest = $row['numofrequest'];
             $reason = $row['reason'];
             $modeofClaim = $row['modeofclaiming'];
+            $representname = $row['representname'];
             $address = $row['address'];
             $courseCompleted = $row['coursecompleted'];
             $dateGrad = $row['dategraduated'];
@@ -103,13 +93,12 @@ include "header.php";
             $mobileNum = $row['mobilenum'];
             $email = $row['email'];
             $status = $row['status'];
-            $representname = $row['representname'];
            
         ?>   
 <body>
 <div class="container card shadow pb-8 mb-5">
 
-<form method="post"  action="<?= $form_location?> "class="bodyblacked2 card-body"><br>
+<form class="bodyblacked2 card-body"><br>
 <h2>Personal Information</h2><br>
 <div class="form-row">
     <div class="form-group col-md-2">
@@ -214,126 +203,31 @@ include "header.php";
       <label for="inputEmail4">Mailing Address</label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $address?>" readonly>
     </div>
-       </div>
+  </form>
+</div>
+<br>
+
 
 <br>
-    <h2>Breakdown of Fees</h2>
-      <br>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Transcript Fee</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="transfee">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Diploma Fee </label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="dipfee">
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Form 137A/138B</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="formfee">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Certification Fee</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="certfee">
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Authentication Fee</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="authfee">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Service Fee(Online)</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="servfee">
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Documentary Stamp</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="docstamp">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Mailing Fee</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="mailfee">
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Letter Envelope</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="letterfee">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">SPUP TOR Envelope</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="torenvfee">
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">SPUP Sticker</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="stickerfee">
-    </div>
-       </div>
-        <!-- <div class="form-row">
-    <div class="form-group col-md-12 mt-4">
-      <label for="inputEmail4"><h4>Total Fee</h4></label> 
-       <input type="number" class="form-control" id="inputEmail4" value="0" name="fees">
-    </div>  -->
-   
-  </div>
-    
-    <div align="center" class="mb-5 mt-5">
-            <button type="submit" class="btn btn-success btn-icon-split btn-md" style="width:120px;" >
-          <span class="icon text-black-50">
-          <i class="fas fa-check"></i>
-            </span>
-            <span class="text">
-              Continue
-            </span>
-          </button>
-
-          </form>
-            <!-- <a href="bao_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
+<div align="center" class="mb-5">
+        <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
+            <a href="declined_forms.php" class="btn btn-danger btn-icon-split btn-md">
             <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
+            <i class="fas fa-arrow-left"></i>
             </span>
             <span class="text">
-                    Approve
+                   Back
                 </span>
-            </a> -->
-
-            <a href="bao_form_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
-            <span class="icon text-red-50">
-            <i class="fas fa-times"></i>
-            </span>
-            <span class="text">
-                   Decline
-                </span>
-            </a>
-
-
-        <a href="bao_req_forms.php" class="btn btn-warning btn-icon-split btn-md">
-        <span class="icon text-red-50">
-        <i class="fas fa-arrow-left"></i>
-        </span>
-        <span class="text">
-            Back
-        </span>
-            </a>
             </a>
         
 
         <?php } ?>
+    <?php } ?>
+    </div>
 
-</div>   
-   </div>
-
-        
+   
 </body>
-</html>
+</html>   
+</div>
 
-
-<?php
-include "footeradmin.php";
-?>
+<?php include "footeradmin.php" ?>

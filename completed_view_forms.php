@@ -418,19 +418,19 @@ body {font-family: Arial, Helvetica, sans-serif;}
             <i class="fas fa-check"></i>
             </span>
             <span class="text">
-                    Finalize Request
+                   Approve
                 </span>
             </a>
-            <a href="print.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="comp_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
             <span class="icon text-red-50">
-            <i class="fas fa-print"></i>
+            <i class="fas fa-times"></i>
             </span>
             <span class="text">
-                    Print
+                    Decline
                 </span>
             </a>
         &nbsp;&nbsp;
-        <a href="completed_forms.php" class="btn btn-danger btn-icon-split btn-md">
+        <a href="completed_forms.php" class="btn btn-warning btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="fas fa-arrow-left"></i>
         </span>

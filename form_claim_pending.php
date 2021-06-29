@@ -31,7 +31,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==1){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY APPROVED
                     </div>
@@ -40,22 +40,11 @@ include "header.php";
         }
     }
     
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==2){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY EDITED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
 
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==3){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY DELETED
                     </div>
@@ -64,22 +53,11 @@ include "header.php";
         }
     }
 
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==5){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    STUDENT SUCCESSFULLY DEACTIVATED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
     ?>
 
     <div class="card w-100" style="border:none;">
                 <div class="py-3 bordercolor" style="border:none;">
-                <h1 class="m-0 headerblacked">ARCHIVED FORMS</h1>
+                <h1 class="m-0 headerblacked">FORMS WAITING TO BE CLAIM</h1>
                 </div>
                 <div class="card-body bodyblacked">
                 <div class="table-responsive" >
@@ -88,10 +66,10 @@ include "header.php";
         <thead class="tableblacked">
         <tr>
             <td>Date Applied</td>
+            <td>Student Number</td>
             <td>Full Name</td>
             <td>Type of Form</td>
             <td>Fee</td>
-            <td>Date Received</td>
             <td>Option</td>
             
         </tr>
@@ -100,10 +78,10 @@ include "header.php";
         <tfoot class="tableblacked">
         <tr>
             <td>Date Applied</td>
+            <td>Student Number</td>
             <td>Full Name</td>
             <td>Type of Form</td>
             <td>Fee</td>
-            <td>Date Received</td>
             <td>Option</td>
             
 
@@ -121,6 +99,7 @@ include "header.php";
         foreach ($get_userData as $key => $row) {
             
             $id = $row['id'];
+            $studnum = $row['studentnumber'];
             $lastName = $row['lastname'] ;
             $firstName = $row['firstname'] ;
             $middleName = $row['middlename'] ;
@@ -136,10 +115,10 @@ include "header.php";
 <?php if($status=="4"){ ?>
     <tr>
         <td><?= $dateApplied ?></td>
+        <td><?= $studnum ?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName ?></td>
         <td><?= $formType ?></td>
         <td><?= $fee ?></td>
-        <td><?= $dateReceived ?></td>
         
 
         
@@ -154,16 +133,16 @@ include "header.php";
                 </span>
         </a> -->
         &nbsp;&nbsp;
-            <a href="archived_view_forms.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
+            <a href="form_claim_pend_view.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
+            <i class="fas fa-eye"></i>
             </span>
             <span class="text">
                     View
                 </span>
             </a>
         &nbsp;&nbsp;&nbsp;
-        <a href="req_form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+        <!-- <a href="req_form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>
@@ -171,7 +150,7 @@ include "header.php";
             Delete
         </span>
             </a>
-            </a>
+            </a> -->
         </td>
 
         <?php } ?>
@@ -202,7 +181,7 @@ include "header.php";
 </div>
 </div>
 </div>
-<?php include "footer.php" ?>
+<?php include "footeradmin.php" ?>
 </div>
 
 

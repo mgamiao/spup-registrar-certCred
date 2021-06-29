@@ -93,6 +93,7 @@ include "header.php";
             <td>Type of Form</td>
             <td>Fee</td>
             <td>Date Received</td>
+            <td>Claimed by:</td>
             <td>Option</td>
             
         </tr>
@@ -106,6 +107,7 @@ include "header.php";
             <td>Type of Form</td>
             <td>Fee</td>
             <td>Date Received</td>
+            <td>Claimed by:</td>
             <td>Option</td>
             
 
@@ -117,7 +119,7 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 4;
+        $condition = 5;
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -132,11 +134,12 @@ include "header.php";
             $fee = $row['fees'];
             $dateReceived = $row['dateReceived'];
             $status = $row['status'];
+            $claimant = $row['claimant'];
             
 
     ?>
     
-<?php if($status=="4"){ ?>
+<?php if($status=="5"){ ?>
     <tr>
         <td><?= $dateApplied ?></td>
         <td><?= $studnum ?></td>
@@ -144,6 +147,7 @@ include "header.php";
         <td><?= $formType ?></td>
         <td><?= $fee ?></td>
         <td><?= $dateReceived ?></td>
+        <td><?= $claimant ?></td>
         
 
         
