@@ -537,3 +537,11 @@ p {
   width: 100%;
   object-fit: cover
 }
+
+.statisticsYear {
+  width: 80px;
+}
+
+.statisticsDay {
+  width: 80px;
+}

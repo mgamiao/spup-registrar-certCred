@@ -167,6 +167,14 @@ function get_where_double($table_name, $col1, $value1, $col2, $value2)
 	return $result;
 }
 
+function get_where_triple($table_name, $col1, $value1, $col2, $value2, $col3, $value3, $col4)
+{
+	$conn = getConnection();
+	$sql = "SELECT DISTINCT $col4 FROM $table_name where $col1=$value1 and $col2=$value2 and $col3=$value3";
+	$result = $conn->query($sql);
+	return $result;
+}
+
 function _hash_string($str)
 {
 	$hashed_string = sha1($str);//password_hash($str, PASSWORD_BCRYPT, array('cost'=>11));
@@ -239,6 +247,15 @@ function count_school_forms_month($table_name, $school, $year, $month)
 	return $rowcount;
 }
 
+function count_school_forms_day($table_name, $school, $year, $month, $day)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name WHERE `school` = '$school' AND `formYear` = '$year' AND `formMonth` = '$month' AND `formDay` = '$day'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
 function count_refno($table_name, $search)
 {
 	$conn = getConnection();
@@ -266,6 +283,24 @@ function count_school_specific_forms_month($table_name, $school, $status, $year,
 	return $rowcount;
 }
 
+function count_school_specific_forms_day($table_name, $school, $status, $year, $month, $day)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name WHERE `school` = '$school' AND `status` = '$status' AND `formYear` = '$year' AND `formMonth` = '$month' AND `formDay` = '$day'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_forms_day($table_name, $year, $month, $day)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name WHERE `formYear` = '$year' AND `formMonth` = '$month' AND `formDay` = '$day'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
 
 function count_total_forms($year)
 {
@@ -280,6 +315,15 @@ function count_total_forms_month($year, $month)
 {
 	$conn = getConnection();
 	$sql = "SELECT * FROM `forms` WHERE `formYear` = '$year' AND `formMonth` = '$month'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_total_forms_day($year, $month, $day)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `formYear` = '$year' AND `formMonth` = '$month' AND `formDay` = '$day'";
 	$result = $conn->query($sql);
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
@@ -302,6 +346,16 @@ function count_pending_forms_month($year, $month)
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
+
+function count_pending_forms_day($year, $month, $day)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '0' AND `formYear` = '$year' AND `formMonth` = '$month' AND `formDay` = '$day'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
 
 function count_pending_forms1()
 {
@@ -339,6 +393,15 @@ function count_inProcess_forms_month($year, $month)
 	return $rowcount;
 }
 
+function count_inProcess_forms_day($year, $month, $day)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '1' AND `formYear` = '$year' AND `formMonth` = '$month' AND `formDay` = '$day'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
 function count_inProcess_forms1()
 {
 	$conn = getConnection();
@@ -361,6 +424,15 @@ function count_archived_forms_month($year, $month)
 {
 	$conn = getConnection();
 	$sql = "SELECT * FROM `forms` WHERE `status` = '3' AND `formYear` = '$year' AND `formMonth` = '$month'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function count_archived_forms_day($year, $month, $day)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `status` = '3' AND `formYear` = '$year' AND `formMonth` = '$month' AND `formDay` = '$day'";
 	$result = $conn->query($sql);
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
