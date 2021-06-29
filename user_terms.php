@@ -51,7 +51,7 @@ session_destroy();
 
                       <div class="center">
 
-                      <span class="text-dark"> Please solve this problem to prove that you are not a bot <br> </span>
+                      <span style="color:red; "><b> Please solve this problem to prove that you are not a bot <br> </b></span>
 
                         <?php
                           echo "<span class='text-dark'>" . $random_number1 . " " . $random_symbol . " " . $random_number2 . ' = ' . "</span>";
@@ -96,7 +96,7 @@ session_destroy();
                     }
                     ?>
                     <input type="checkbox" id="agree_again" name="agree" value="ON">
-                    <label><h6 style="color:red; "><i> Please tick the checkbox to proceed.</h6></i></label> 
+                   <span style="color:red; "><b> I have read and agree to the terms and conditions.</span></b>
                       <p id="text" ><button type="submit" class="btn btn-primary custombutton">Submit</button></p>
                   </form>
                 </div>

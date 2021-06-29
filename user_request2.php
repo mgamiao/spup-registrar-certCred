@@ -75,8 +75,8 @@ if (isset($_SESSION['alert_msg'])){
       <h6>Number of Copies<span style="color:blue">(maximum of 3): </span><span style="color:red">*</h6></span>
       <input type="number" class="form-control"  placeholder="Enter Number of Copies" name="numofcopies" required autocomplete=off min=1 max=3>
     </div>
-    <h6>Number of Request:</h6>
-    <select name="numofrequest" class="custom-select"  autocomplete=off>
+    <h6>Number of Request:<span style="color:red">*</span></h6>
+    <select name="numofrequest" class="custom-select"  required autocomplete=off>
     <option value="">Select number of request:</option>
     <option value="1">First Request</option>
     <option value="2">Second Request</option>
@@ -103,7 +103,7 @@ if (isset($_SESSION['alert_msg'])){
       <input type="text" class="form-control"  placeholder="Enter COURSE, SEMESTER AND LAST ACADEMIC YEAR ATTENDED AT ST. PAUL UNIVERSITY PHILIPPINES" name="undergraduate"  autocomplete=off>
     </div>
     <br>
-    <button type="submit" class="btn btn-primary custombutton">Next</button>
+    <button type="submit" class="btn btn-primary custombutton">Proceed</button>
   </form>
 </div>
 </div>

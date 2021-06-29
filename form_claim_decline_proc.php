@@ -6,16 +6,16 @@
     $id = $_GET['id'];
 	$table_name = "forms";
 	$status = $_GET['status'];
-	$deanStatus = $_GET['deanStatus'];
+	$regStatus = $_GET['regStatus'];
 	date_default_timezone_set('Asia/Singapore'); 
 	$xdate=date('Y-m-d');
 
 	$user_editedvalues = array (
     	//columname from table => value from post
 		"status" => 6,
-        "deanStatus" => "Disapproved",
-		"deanRemarks" => $reason,
-        "deanDateApprove" => $xdate,
+        "regStatus" => "Disapproved",
+		"regRemarks" => $reason,
+        "regDateApprove" => $xdate,
 	);
 
 update($user_editedvalues, $id, $table_name);
@@ -53,7 +53,7 @@ update($user_editedvalues, $id, $table_name);
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
-		header("Location: sitedean_req_forms.php");
+		header("Location: form_claim_pending.php");
 	}else{
 		echo "Error";
 	}
@@ -71,17 +71,17 @@ date_default_timezone_set('Asia/Singapore');
 
     $table_name="logs";
     $username= $_SESSION['username'];
-    $adminfirstname=$_SESSION['firstname'];
-    $adminlastname=$_SESSION['lastname'];
+    $firstname=$_SESSION['firstname'];
+    $lastname=$_SESSION['lastname'];
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
-    $action="Declined pending form(".$firstname." ".$lastname.")";
+    $action="Declined pending form(".$id.")";
     
     $user_data=array(
         "username" => $username ,
-        "firstname" => $adminfirstname ,
-        "lastname" => $adminlastname ,
+        "firstname" => $firstname ,
+        "lastname" => $lastname ,
         "acct_type" => $acct_type ,
         "xdate" => $xdate ,
         "xtime" => $xtime ,
@@ -90,6 +90,6 @@ date_default_timezone_set('Asia/Singapore');
     );
 
     echo insert($user_data, $table_name);
-header("Location: sitedean_req_forms.php");
+header("Location: form_claim_pending.php");
 
 ?>

@@ -1,34 +1,49 @@
 <?php
     session_start();
-    include "perfect_function.php";
+	include "perfect_function.php";
+    
 
-	$reason = $_POST['reason'];
-    $id = $_GET['id'];
-	$table_name = "forms";
-	$status = $_GET['status'];
-	$deanStatus = $_GET['deanStatus'];
+	$table_name ='forms';
+
+	//get user ID from URL
+	$id = $_GET['id'];
+    $status = $_GET['status'];
+	$regStatus = $_GET['regStatus'];
 	date_default_timezone_set('Asia/Singapore'); 
-	$xdate=date('Y-m-d');
+    $xdate=date('Y-m-d');
+	$claimant = $_POST['claimant'];
+	
 
 	$user_editedvalues = array (
-    	//columname from table => value from post
-		"status" => 6,
-        "deanStatus" => "Disapproved",
-		"deanRemarks" => $reason,
-        "deanDateApprove" => $xdate,
+		//columname from table => value from post
+			"status" => 5,
+			"claimant" => $claimant,
+			"regStatus" => "Finalized",
+			"regRemarks" => "",
+			"regDateApprove" => $xdate,
+
 	);
+	
+	update($user_editedvalues, $id, $table_name);
+    $_SESSION['alert_msg']=1;
 
-update($user_editedvalues, $id, $table_name);
-
-
+    $id = $_GET['id'];
+	$table_name = "forms";
 	$get_userData = get_where($table_name, $id);
 	//fetch result and pass it  to an array
 	foreach ($get_userData as $key => $row) {
 		 $id = $row['id'];
 		 $email = $row['email'];
 		 $lastname = $row['lastname'];
+		 $claimant = $row['claimant'];
+		 $unique = $row['refno'];
 		
 	}
+	date_default_timezone_set('Asia/Singapore');
+	$xdate=date('Y-m-l');
+	$xtime=date('h:i:sa');
+	$claimant = $_POST['claimant'];
+
     require 'phpmailer/includes/PHPMailer.php';
 	require 'phpmailer/includes/SMTP.php';
 	require 'phpmailer/includes/Exception.php';
@@ -46,42 +61,36 @@ update($user_editedvalues, $id, $table_name);
 	$mail->Port = "587";
 	$mail->Username = "larajerick169@gmail.com";
 	$mail->Password = "jericklara18";
-	$mail->Subject = "Registrar's Office - Form Request";
+	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname . "</h1><br><h3>Your requested form was declined for the reason  " . " <b><u>$reason</b></u>. Please request again";
+	$mail->Body = "<h1>Hello " . $lastname . "</h1><br>$xdate . $xtime <h3>Your requested form was sucessfully claimed by $claimant. Thank you. </h3><br>
+	<br><br>Your reference number is: <b>". $unique."</b><br>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
-		header("Location: sitedean_req_forms.php");
+		header("Location: form_claim_pending.php");
 	}else{
 		echo "Error";
 	}
 
 	$mail->smtpClose();
 
-
-$table_name = "forms";
-
-//get user ID from URL
-$id = $_GET['id'];
-$_SESSION['alert_msg']=5; 
-
-date_default_timezone_set('Asia/Singapore');
+	date_default_timezone_set('Asia/Singapore');
 
     $table_name="logs";
     $username= $_SESSION['username'];
-    $adminfirstname=$_SESSION['firstname'];
-    $adminlastname=$_SESSION['lastname'];
+    $firstname=$_SESSION['firstname'];
+    $lastname=$_SESSION['lastname'];
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
-    $action="Declined pending form(".$firstname." ".$lastname.")";
+    $action="Approved pending form(".$id.")";
     
     $user_data=array(
         "username" => $username ,
-        "firstname" => $adminfirstname ,
-        "lastname" => $adminlastname ,
+        "firstname" => $firstname ,
+        "lastname" => $lastname ,
         "acct_type" => $acct_type ,
         "xdate" => $xdate ,
         "xtime" => $xtime ,
@@ -90,6 +99,6 @@ date_default_timezone_set('Asia/Singapore');
     );
 
     echo insert($user_data, $table_name);
-header("Location: sitedean_req_forms.php");
 
+	header("Location: form_claim_pending.php");
 ?>
