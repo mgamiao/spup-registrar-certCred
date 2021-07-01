@@ -76,7 +76,7 @@ date_default_timezone_set('Asia/Singapore');
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
-    $action="Declined pending form(".$firstname." ".$lastname.")";
+    $action="Declined form(".$firstname." ".$lastname.")";
     
     $user_data=array(
         "username" => $username ,

@@ -141,7 +141,7 @@ include "header.php";
 
     ?>
     
-<?php if($status=="2" || $status=="3" || $status=="4" && $school == "BASIC EDUCATION UNIT"){ ?>
+<?php if($status=="2" || $status=="3" || $status=="4" || $status=="5" && $school == "BASIC EDUCATION UNIT"){ ?>
     <tr>
         <td><?= $studnum?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>

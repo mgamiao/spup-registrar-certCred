@@ -40,41 +40,6 @@ include "header.php";
         }
     }
     
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==2){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY EDITED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==3){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY DELETED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==5){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    STUDENT SUCCESSFULLY DEACTIVATED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
     ?>
 
 
@@ -305,9 +270,9 @@ include "header.php";
 </div>
             
 <div align="center" class="mb-5">
-        <a href="baocompleted_forms.php" class="btn btn-danger btn-icon-split btn-md">
+        <a href="baocompleted_forms.php" class="btn btn-warning btn-icon-split btn-md">
         <span class="icon text-red-50">
-        <i class="far fa-trash-alt"></i>
+        <i class="fas fa-arrow-left"></i>
         </span>
         <span class="text">
             Back
