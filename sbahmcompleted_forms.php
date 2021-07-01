@@ -31,7 +31,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==1){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY APPROVED
                     </div>
@@ -39,42 +39,7 @@ include "header.php";
                 unset($_SESSION['alert_msg']);
         }
     }
-    
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==2){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY EDITED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
 
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==3){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY DELETED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==5){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    STUDENT SUCCESSFULLY DEACTIVATED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
     ?>
 
 <div class="card w-100 " style="border:none;">
@@ -141,7 +106,7 @@ include "header.php";
 
     ?>
     
-<?php if($status=="2" || $status=="3" || $status=="4" && $school == "SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT"){ ?>
+<?php if($status=="2" || $status=="3" || $status=="4" || $status=="5" && $school == "SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT"){ ?>
     <tr>
         <td><?= $studnum?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>

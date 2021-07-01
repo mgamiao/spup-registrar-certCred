@@ -84,7 +84,7 @@ include "header.php";
 
     ?>
     
-<?php if($status=="3" || $status=="4" ){ ?>
+<?php if($status=="3" || $status=="4" || $status=="5" ){ ?> <!--sakto ba na ilagay ko rin yung pag yung form is nasa archived na? -->
     <tr>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
@@ -105,9 +105,9 @@ include "header.php";
                 </span>
         </a> -->
         &nbsp;&nbsp;
-            <a href="baocompleted_view_forms.php?id=<?= $id?>" class="btn btn-warning btn-icon-split btn-md">
+            <a href="baocompleted_view_forms.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
+            <i class="fas fa-eye"></i>
             </span>
             <span class="text">
                     View
