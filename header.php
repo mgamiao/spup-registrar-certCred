@@ -79,7 +79,7 @@ $compnotif = count_archived_forms1();
 <!-- Nav Item - Dashboard -->  
 <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
 <li>
-  <a style="text-decoration:none" href="home.php">
+  <a style="text-decoration:none;" href="home.php">
     
     <span>HOME</span></a>
 </li>
@@ -295,7 +295,7 @@ $compnotif = count_archived_forms1();
 </li>
 <li>
   <a style="text-decoration:none" href="form_claim_pending.php"   aria-expanded="true" aria-controls="collapseTwo">
-  FORMS WAITING TO BE CLAIM
+  FORMS WAITING TO BE CLAIMED
   </a>
 
 </li>

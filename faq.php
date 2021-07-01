@@ -14,7 +14,11 @@
 
 
 <body>
-<h3 class="mt-3">FAQ Frequently asked questions to the Office of the Registrar. </h3>
+<div class="col-10  mb-5 mt-5" style="margin:auto;">
+<div class="card shadow pb-8">
+                <div class="card-header " style="background-color:#044a33;">
+                    <h5 class="m-0 font-weight-bold" style="color:white;">Frequently Asked Questions to the Office of the Registrar. </h5>
+                </div>
 <div class="col-10 mt-5" style="margin-left:16%;">
         <div class="col-10">
             <div class="card shadow pb-8">
@@ -187,7 +191,7 @@
 <br>
 
 <div class="col-10" style="margin-left:16%;">
-<div class="col-10">
+<div class="col-10 mb-5">
             <div class="card shadow">
                     <button onclick="myFunction5()"class="fullStats2">FRIENDLY REMINDERS:</button>
                 <div class="card-body pt-5" style="background-color:#F0F0F0; display:none" id="myDIV5">
@@ -211,7 +215,8 @@
 </div>
 </div>
 </div>
-
+</div>
+</div>
 <br>
 <br>
 </body>

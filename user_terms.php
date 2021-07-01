@@ -21,14 +21,11 @@ session_destroy();
                 </div>
                 <div class="card-body pt-5" style="background-color:#F0F0F0;">
                    <h5 style="margin-top:-25px; color:black; font-weight:bold; font-family:times new roman;"> IMPORTANT - PLEASE READ CAREFULLY: </h5>
-                   <P>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                   when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                    typesetting, remaining essentially unchanged. It was popularised in the 1960s 
-                   with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
-                   It is a long established fact that a reader 
-                   will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, 
-                   as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default 
-                   model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                   <P>
+These terms and conditions outline the rules and regulations for the use of Web Applicaiton for School Credentilas and Certifications's Website.<br><br>
+By accessing this website we assume you accept these terms and conditions. Do not continue to use SPUP - Registrar if you do not agree to take all of the terms and conditions stated on this page.
+<br><br> The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice in compliance to
+  the School's terms and conditions.
                     </p>
                    <hr>
                    <form class="user" method="post" action="user_terms_proc.php">
