@@ -36,6 +36,8 @@
     color: white;
 
   }
+
+
   
   .headerpic {
     height: 50px;
@@ -60,7 +62,7 @@
   
   .headerblacked {
     color: #5a5c69;
-    font-family: 'Bebas';
+    font-family: 'Arial';
     font-weight: bold;
     font-size: 60px;
     text-align: center;

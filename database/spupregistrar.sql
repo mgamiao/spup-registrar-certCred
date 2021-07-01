@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2021 at 07:29 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.9
+-- Generation Time: Jul 01, 2021 at 04:50 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -95,6 +95,7 @@ CREATE TABLE `forms` (
   `torenvelope` text NOT NULL,
   `stickerfee` text NOT NULL,
   `paymentphoto` varchar(65) NOT NULL,
+  `claimant` text NOT NULL,
   `date` date NOT NULL,
   `formYear` int(11) NOT NULL,
   `formMonth` int(11) NOT NULL,
@@ -109,25 +110,26 @@ CREATE TABLE `forms` (
   `baoStatus` text NOT NULL,
   `baoRemarks` text NOT NULL,
   `baoDateApprove` text NOT NULL,
-  `dateReceived` date NOT NULL
+  `dateReceived` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forms`
 --
 
-INSERT INTO `forms` (`id`, `refno`, `studentnumber`, `lastname`, `firstname`, `middlename`, `school`, `form_type`, `numofcopies`, `numofrequest`, `reason`, `modeofclaiming`, `representname`, `address`, `coursecompleted`, `dategraduated`, `undergraduate`, `mobilenum`, `email`, `fees`, `transcriptfee`, `diplomafee`, `formfee`, `certfee`, `authfee`, `servicefee`, `docstamp`, `mailingfee`, `letterenvelope`, `torenvelope`, `stickerfee`, `paymentphoto`, `date`, `formYear`, `formMonth`, `formDay`, `status`, `regStatus`, `regRemarks`, `regDateApprove`, `deanStatus`, `deanRemarks`, `deanDateApprove`, `baoStatus`, `baoRemarks`, `baoDateApprove`, `dateReceived`) VALUES
-(104, '20210523-BD74F4EE67', '', 'Sibal', 'Jhen', 'Maramag', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', 'Form137A', 2, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '123123123', 'captainsteven01@gmail.com', 3, '', '', '', '', '', '', '', '', '', '', '', 'a.jpg', '2021-05-01', 2021, 5, 1, 3, '', '', '', '', '', '', '', '', '', '0000-00-00'),
-(106, '20210524-CABA9D08B2', '', 'Gamiao', 'Miguel', '', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', 'Form137A', 2, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', 'BSBA 2nd Semester A.Y. 2020-2021', '0978456321', 'awdawda@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', 'download.jpg', '2021-05-03', 2021, 5, 3, 3, '', '', '', 'Disapproved', 'sbahm decline form test 1\r\n', '2021-06-22', '', '', '', '0000-00-00'),
-(107, '20210524-C858B1D2CC', '', 'Balabis', 'Gerald', '', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', 'Certificate of Enrolment', 1, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', 'BSN 2nd Semester A.Y. 2020-2021', '09785643432', 'gbalabis@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', 'WjGTnKGQ_400x400.png', '2021-05-25', 2021, 5, 25, 4, '', '', '', '', '', '', '', '', '', '2021-06-24'),
-(108, '20210524-17E55620D5', '', 'Cortes', 'Armand Paul', '', 'BASIC EDUCATION UNIT', 'Diploma', 3, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '09786543123', 'acortes@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-05-13', 2021, 5, 13, 4, '', '', '', '', '', '', '', '', '', '2021-06-24'),
-(109, '20210524-67F97A1EBB', '', 'Dela Cruz', 'Juan', '', 'SCHOOL OF MEDICINE', 'Diploma', 0, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '09567894456', 'gbalabis@gmail.com', 0, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '2021-05-05', 2021, 5, 5, 1, 'Approved', '', '2021-06-22', 'Disapproved', 'som test 1', '2021-06-22', 'Disapproved', 'You have an existing balance. Please contact the business affairs office.', '2021-06-22', '0000-00-00'),
-(110, '20210524-F01171630B', '', 'Batumbakal', 'Maria', '', 'GRADUATE SCHOOL', 'Certificate of Graduation', 2, 1, 'Board Examination', 'Personal Pick-up', '', '', '', '', '', '09786543678', 'gbalabis@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-05-26', 2021, 5, 26, 0, '', '', '', '', '', '', '', '', '', '0000-00-00'),
-(129, '20210529-DD56EE5E2A', '', 'Lara', 'Jerick', 'Josue', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Form137A', 1, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '09569939621', 'captainsteven01@gmail.com', 15, '', '', '', '', '', '', '', '', '', '', '', '', '2021-05-29', 2021, 5, 29, 4, '', '', '', '', '', '', '', '', '', '2021-06-24'),
-(171, '20210620-EAD6FE9C4C', '', 'asdasd', 'sdfsd', '', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', 'Transcript of records', 2, 0, 'Scholarship', 'Through Representative', 'fg', '', '', '', '', '123', 'captainsteven01@gmail.com', 120, '100', '0', '0', '0', '0', '20', '0', '0', '0', '0', '0', '', '2021-06-07', 2021, 6, 7, 2, '', '', '', '', '', '', '', '', '', '0000-00-00'),
-(173, '20210622-8582AFA072', '2012-0123', 'chaeyoung', 'park', '', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Diploma', 1, 1, 'transfer to another school', 'Through Representative', 'awdad', '', '', '', '', '123', 'migeaw2@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-01', 2021, 6, 1, 0, 'Pending', '', '', 'Pending', '', '', 'Pending', '', '', '0000-00-00'),
-(174, '20210623-8E00278C60', '', 'manoban', 'lalisa', '', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Diploma', 1, 0, 'transfer to another school', 'Personal Pick-up', '', '', '', '', '', '1', 'lmanoban@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-23', 2021, 6, 23, 4, '', '', '', '', '', '', '', '', '', '2021-06-24'),
-(175, '20210623-09519D79C1', '', 'kim', 'yuna', '', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Form137A', 1, 0, 'transfer to another school', 'Personal Pick-up', '', '', '', '', '', '1', 'ykim@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-22', 2021, 6, 22, 0, '', '', '', '', '', '', '', '', '', '0000-00-00');
+INSERT INTO `forms` (`id`, `refno`, `studentnumber`, `lastname`, `firstname`, `middlename`, `school`, `form_type`, `numofcopies`, `numofrequest`, `reason`, `modeofclaiming`, `representname`, `address`, `coursecompleted`, `dategraduated`, `undergraduate`, `mobilenum`, `email`, `fees`, `transcriptfee`, `diplomafee`, `formfee`, `certfee`, `authfee`, `servicefee`, `docstamp`, `mailingfee`, `letterenvelope`, `torenvelope`, `stickerfee`, `paymentphoto`, `claimant`, `date`, `formYear`, `formMonth`, `formDay`, `status`, `regStatus`, `regRemarks`, `regDateApprove`, `deanStatus`, `deanRemarks`, `deanDateApprove`, `baoStatus`, `baoRemarks`, `baoDateApprove`, `dateReceived`) VALUES
+(1, '20210628-DDC2EECB22', '2018011040', 'Lara', 'Jerick Steven', 'Josue', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Certificate of Grades', 1, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '09569939621', 'captainsteven01@gmail.com', 100, '0', '0', '0', '100', '0', '0', '0', '0', '0', '0', '0', 'd79d742fab5f887770333e681cfe8fad.jpg', 'Jerick Lara', '2021-06-28', 2021, 6, 28, 5, 'Finalized', '', '2021-06-29', 'Approved', '', '2021-06-29', 'Approved', '', '2021-06-29', '2021-06-29'),
+(2, '20210628-524DDCF88D', '201901041', 'Lara1', 'Jerick', 'Josue1', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Diploma', 1, 1, 'Board Examination', 'Personal Pick-up', '', '', '', '', '', '12313123123', 'captainsteven01@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-28', 2021, 6, 28, 2, '', '', '', '', '', '', '', '', '', NULL),
+(3, '20210628-63F91E922C', '2020101041', 'sbahm', 'sbahm', 'sbahm', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', 'Certificate of Grades', 1, 1, 'transfer to another school', 'Personal Pick-up', '', '', '', '', '', '0956993621', 'captainsteven@gmail.com', 150, '0', '0', '0', '150', '0', '0', '0', '0', '0', '0', '0', 'School-Fee-Receipt-Sample.jpg', 'Sbahm', '2021-06-28', 2021, 6, 28, 5, 'Finalized', '', '2021-06-30', 'Approved', '', '2021-06-30', 'Approved', '', '2021-06-30', '2021-06-30'),
+(4, '20210629-3B87BE9DE6', '2019101030', 'Balabis', 'Gerald', 'Villar', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', 'Diploma', 2, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '0956993961', 'captainsteven01@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-29', 2021, 6, 29, 0, '', '', '', '', '', '', '', '', '', NULL),
+(5, '20210629-A0A18C39DE', '2020181040', 'Gamiao', 'Miguel', '', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', 'Transcript of records', 2, 1, 'transfer to another school', 'Through Representative', 'Miguel', '', '', '', '', '12312312312', 'captainsteven01@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-29', 2021, 6, 29, 0, '', '', '', '', '', '', '', '', '', NULL),
+(6, '20210629-EA5EF262D0', '12312312', 'Pugeda', 'Rucelj', '', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', 'Diploma', 2, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '1231231', 'captainsteven01@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-29', 2021, 6, 29, 0, '', '', '', '', '', '', '', '', '', NULL),
+(7, '20210629-82F560C734', '123123123', 'Babaran', 'Carlos', '', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', 'Diploma', 2, 1, 'Scholarship', 'Personal Pick-up', '', '', '', '', '', '12312321', 'captainsteven01@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-29', 2021, 6, 29, 0, '', '', '', '', '', '', '', '', '', NULL),
+(8, '20210629-59125FAFA1', '', 'Gumabay', 'VC', '', 'BASIC EDUCATION UNIT', 'Certificate of Grades', 2, 1, 'Board Examination', 'Personal Pick-up', '', '', '', '', '', '12312321', 'captainsteven01@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-29', 2021, 6, 29, 1, 'Approved', '', '2021-06-29', '', '', '', '', '', '', NULL),
+(9, '20210629-D19B7A8B2D', '23123123213', 'Kummer', 'Marifel', '', 'SCHOOL OF MEDICINE', 'Form137A', 2, 1, 'transfer to another school', 'Personal Pick-up', '', '', '', '', '', '123123', 'captainsteven01@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-29', 2021, 6, 29, 0, '', '', '', '', '', '', '', '', '', NULL),
+(10, '20210629-8EF42F7C5F', '123123131', 'Gumarang', 'Sheena', '', 'GRADUATE SCHOOL', 'Diploma', 2, 2, 'transfer to another school', 'Personal Pick-up', '', '', '', '', '', '12312312313', 'captainsteven01@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-29', 2021, 6, 29, 0, '', '', '', '', '', '', '', '', '', NULL),
+(11, '20210629-BB6F037E58', '123131231', 'asdasdasd', 'xcvxcvxcv', '', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', 'Diploma', 2, 1, 'transfer to another school', 'Personal Pick-up', '', '', '', '', '', '234234', 'captainsteven01@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2021-06-29', 2021, 6, 29, 0, 'Pending', '', '', 'Pending', '', '', 'Pending', '', '', NULL),
+(12, '20210701-DDA1599FBB', '', 'asdasdad', 'asdasd', '', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', 'Diploma', 2, 1, 'Board Examination', 'Personal Pick-up', '', '', '', '', '', '123123', 'captainsteven01@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2021-07-01', 2021, 7, 1, 0, 'Pending', '', '', 'Pending', '', '', 'Pending', '', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -151,101 +153,17 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`log_id`, `username`, `firstname`, `lastname`, `acct_type`, `xdate`, `xtime`, `action`) VALUES
-(145, 'admin', 'Admin', '', '1', '2021-05-24', '10:23:45pm', 'Approved pending form(105)'),
-(146, 'admin', 'Admin', '', '1', '2021-05-24', '10:24:17pm', 'Approved pending form(106)'),
-(147, 'admin', 'Admin', '', '1', '2021-05-24', '10:24:24pm', 'Approved pending form(108)'),
-(148, 'admin', 'Admin', '', '1', '2021-05-24', '10:24:31pm', 'Approved pending form(107)'),
-(149, 'admin', 'Admin', '', '1', '2021-05-24', '10:24:36pm', 'Approved pending form(104)'),
-(150, 'admin', 'Admin', '', '1', '2021-05-24', '10:24:42pm', 'Approved pending form(109)'),
-(151, 'admin', 'Admin', '', '1', '2021-05-24', '10:24:48pm', 'Approved pending form(110)'),
-(152, 'sitedean', 'Site Dean', '', '3', '2021-05-24', '10:25:55pm', 'Approved requested form(105)'),
-(153, 'sitedean', 'Site Dean', '', '3', '2021-05-24', '10:27:13pm', 'Approved requested form(105)'),
-(154, 'sbahmdean', 'Sbahm Dean', '', '4', '2021-05-24', '10:28:27pm', 'Approved requested form(106)'),
-(155, 'snahsdean', 'Snahs Dean', '', '5', '2021-05-24', '10:28:47pm', 'Approved requested form(107)'),
-(156, 'sastedean', 'Saste Dean', '', '6', '2021-05-24', '10:30:02pm', 'Approved requested form(104)'),
-(157, 'beudean', 'Beu Dean', '', '7', '2021-05-24', '10:30:21pm', 'Approved requested form(108)'),
-(158, 'somdean', 'SoM Dean', '', '8', '2021-05-24', '10:31:05pm', 'Approved requested form(109)'),
-(159, 'graddean', 'Graduate Dean', '', '9', '2021-05-24', '10:31:24pm', 'Approved requested form(110)'),
-(160, 'bao', 'Bao', 'Office', '10', '2021-05-24', '10:32:40pm', 'Approved pending form(105)'),
-(161, 'admin', 'Admin', '', '1', '2021-05-24', '10:33:55pm', 'Finalized requested form(105)'),
-(162, 'admin', 'Admin', '', '1', '2021-05-24', '10:35:35pm', 'Finalized requested form(105)'),
-(163, 'sastedean', 'Saste Dean', '', '6', '2021-05-25', '03:09:46am', 'Approved requested form(104)'),
-(164, 'bao', 'Bao', 'Office', '10', '2021-05-25', '03:10:58am', 'Approved pending form(104)'),
-(165, 'bao', 'Bao', 'Office', '10', '2021-05-25', '03:12:21am', 'Approved pending form(104)'),
-(166, 'bao', 'Bao', 'Office', '10', '2021-05-25', '03:14:18am', 'Approved pending form(104)'),
-(167, 'admin', 'Admin', '', '1', '2021-05-27', '11:06:40pm', 'Approved pending form(108)'),
-(168, 'admin', 'Admin', '', '1', '2021-05-27', '11:30:05pm', 'Approved pending form(105)'),
-(169, 'sitedean', 'Site Dean', '', '3', '2021-05-27', '11:31:37pm', 'Approved requested form(105)'),
-(170, 'bao', 'Bao', 'Office', '10', '2021-05-27', '11:33:24pm', 'Approved pending form(105)'),
-(171, 'admin', 'Admin', '', '1', '2021-05-27', '11:37:18pm', 'Finalized requested form(105)'),
-(172, 'sastedean', 'Saste Dean', '', '6', '2021-05-31', '12:09:46am', 'Approved requested form(104)'),
-(173, 'sastedean', 'Saste Dean', '', '6', '2021-05-31', '12:16:13am', 'Approved requested form(104)'),
-(174, 'bao', 'Bao', 'Office', '10', '2021-06-18', '08:22:14pm', 'Approved pending form(104)'),
-(175, 'bao', 'Bao', 'Office', '10', '2021-06-18', '08:27:09pm', 'Approved pending form(104)'),
-(176, 'bao', 'Bao', 'Office', '10', '2021-06-18', '08:45:14pm', 'Approved pending form(104)'),
-(177, 'bao', 'Bao', 'Office', '10', '2021-06-18', '08:49:31pm', 'Approved pending form(104)'),
-(178, 'bao', 'Bao', 'Office', '10', '2021-06-18', '08:52:49pm', 'Approved pending form(104)'),
-(179, 'bao', 'Bao', 'Office', '10', '2021-06-18', '08:56:08pm', 'Approved pending form(104)'),
-(180, 'bao', 'Bao', 'Office', '10', '2021-06-18', '08:57:28pm', 'Approved pending form(104)'),
-(181, 'bao', 'Bao', 'Office', '10', '2021-06-18', '09:01:37pm', 'Approved pending form(104)'),
-(182, 'bao', 'Bao', 'Office', '10', '2021-06-18', '10:10:58pm', 'Approved pending form(104)'),
-(183, 'bao', 'Bao', 'Office', '10', '2021-06-18', '10:12:30pm', 'Approved pending form(129)'),
-(184, 'bao', 'Bao', 'Office', '10', '2021-06-18', '10:14:10pm', 'Approved pending form(129)'),
-(185, 'bao', 'Bao', 'Office', '10', '2021-06-18', '10:15:33pm', 'Approved pending form(104)'),
-(186, 'bao', 'Bao', 'Office', '10', '2021-06-18', '10:16:47pm', 'Approved pending form(104)'),
-(187, 'admin', 'Admin', '', '1', '2021-06-20', '08:09:12pm', 'Declined pending form(142)'),
-(188, 'bao', 'Bao', 'Office', '10', '2021-06-20', '08:15:17pm', 'Approved pending form(104)'),
-(189, 'bao', 'Bao', 'Office', '10', '2021-06-20', '08:20:20pm', 'Approved pending form(104)'),
-(190, 'bao', 'Bao', 'Office', '10', '2021-06-20', '08:30:21pm', 'Approved pending form(140)'),
-(191, 'admin', 'Admin', '', '1', '2021-06-21', '11:22:24pm', 'Approved pending form(171)'),
-(192, 'snahsdean', 'Snahs Dean', '', '5', '2021-06-21', '11:23:01pm', 'Approved requested form(171)'),
-(193, 'bao', 'Bao', 'Office', '10', '2021-06-21', '11:23:35pm', 'Approved pending form(171)'),
-(194, 'admin', 'Admin', '', '1', '2021-06-21', '11:32:01pm', 'Finalized requested form(171)'),
-(195, 'admin', 'Admin', '', '1', '2021-06-22', '06:51:26pm', 'Approved pending form(172)'),
-(196, 'admin', 'Admin', '', '1', '2021-06-22', '06:54:29pm', 'Approved pending form(172)'),
-(197, 'admin', 'Admin', '', '1', '2021-06-22', '07:10:34pm', 'Approved pending form(172)'),
-(198, 'admin', 'Admin', '', '1', '2021-06-22', '07:17:57pm', 'Declined pending form(172)'),
-(199, 'admin', 'Admin', '', '1', '2021-06-22', '07:19:00pm', 'Declined pending form(109)'),
-(200, 'admin', 'Admin', '', '1', '2021-06-22', '07:22:56pm', 'Declined pending form(109)'),
-(201, 'admin', 'Admin', '', '1', '2021-06-22', '07:24:29pm', 'Declined pending form(109)'),
-(202, 'admin', 'Admin', '', '1', '2021-06-22', '07:26:09pm', 'Declined pending form(109)'),
-(203, 'admin', 'Admin', '', '1', '2021-06-22', '07:27:40pm', 'Declined pending form(109)'),
-(204, 'admin', 'Admin', '', '1', '2021-06-22', '07:28:26pm', 'Declined pending form(109)'),
-(205, 'admin', 'Admin', '', '1', '2021-06-22', '07:29:37pm', 'Declined pending form(109)'),
-(206, 'admin', 'Admin', '', '1', '2021-06-22', '07:31:54pm', 'Approved pending form(109)'),
-(207, 'admin', 'Admin', '', '1', '2021-06-22', '07:33:15pm', 'Approved pending form(109)'),
-(208, 'bao', 'Bao', 'Office', '10', '2021-06-22', '08:11:26pm', 'Approved pending form(109)'),
-(209, 'bao', 'Bao', 'Office', '10', '2021-06-22', '08:12:25pm', 'Approved pending form(109)'),
-(210, 'bao', 'Bao', 'Office', '10', '2021-06-22', '08:13:17pm', 'Approved pending form(109)'),
-(211, 'beudean', 'Beu Dean', '', '7', '2021-06-22', '08:21:34pm', 'Approved requested form(109)'),
-(212, 'beudean', 'Beu Dean', '', '7', '2021-06-22', '08:22:26pm', 'Approved requested form(109)'),
-(213, 'beudean', 'Beu Dean', '', '7', '2021-06-22', '08:23:53pm', 'Approved requested form(109)'),
-(214, 'beudean', 'Beu Dean', '', '7', '2021-06-22', '08:24:03pm', 'Approved requested form(109)'),
-(215, 'beudean', 'Beu Dean', '', '7', '2021-06-22', '08:24:22pm', 'Approved requested form(109)'),
-(216, 'beudean', 'Beu Dean', '', '7', '2021-06-22', '08:24:55pm', 'Approved requested form(109)'),
-(217, 'admin', 'Admin', '', '1', '2021-06-22', '08:34:20pm', 'Declined pending form(109)'),
-(218, 'admin', 'Admin', '', '1', '2021-06-22', '08:35:23pm', 'Approved pending form(109)'),
-(219, 'beudean', 'Beu Dean', '', '7', '2021-06-22', '08:42:08pm', 'Declined pending form(109)'),
-(220, 'beudean', 'Beu Dean', '', '7', '2021-06-22', '08:46:58pm', 'Declined pending form(109)'),
-(221, 'beudean', 'Beu Dean', '', '7', '2021-06-22', '08:48:37pm', 'Declined pending form(109)'),
-(222, 'beudean', 'Beu Dean', '', '7', '2021-06-22', '08:50:59pm', 'Approved requested form(109)'),
-(223, 'beudean', 'Beu Dean', '', '7', '2021-06-22', '09:00:45pm', 'Declined pending form(109)'),
-(224, 'bao', 'Bao', 'Office', '10', '2021-06-22', '09:03:48pm', 'Declined pending form(109)'),
-(225, 'bao', 'Bao', 'Office', '10', '2021-06-22', '09:04:14pm', 'Approved pending form(109)'),
-(226, 'bao', 'Bao', 'Office', '10', '2021-06-22', '09:05:52pm', 'Declined pending form(109)'),
-(227, 'graddean', 'Graduate Dean', '', '9', '2021-06-22', '09:30:15pm', 'Declined pending form(109)'),
-(228, 'sastedean', 'Saste Dean', '', '6', '2021-06-22', '09:48:16pm', 'Declined pending form(109)'),
-(229, 'sbahmdean', 'Sbahm Dean', '', '4', '2021-06-22', '09:58:23pm', 'Declined pending form(106)'),
-(230, 'sitedean', 'Site Dean', '', '3', '2021-06-22', '10:02:37pm', 'Declined pending form(109)'),
-(231, 'snahsdean', 'Snahs Dean', '', '5', '2021-06-22', '10:25:36pm', 'Declined pending form(109)'),
-(232, 'somdean', 'SoM Dean', '', '8', '2021-06-22', '10:30:05pm', 'Declined pending form(109)'),
-(233, 'admin', 'Admin', '', '1', '2021-06-24', '01:06:24am', 'Finalized requested form(108)'),
-(234, 'admin', 'Admin', '', '1', '2021-06-24', '01:11:09am', 'Finalized requested form(107)'),
-(235, 'admin', 'Admin', '', '1', '2021-06-24', '01:12:16am', 'Finalized requested form(129)'),
-(236, 'admin', 'Admin', '', '1', '2021-06-24', '01:21:44am', 'Finalized requested form(108)'),
-(237, 'admin', 'Admin', '', '1', '2021-06-24', '01:22:01am', 'Finalized requested form(107)'),
-(238, 'admin', 'Admin', '', '1', '2021-06-24', '01:22:13am', 'Finalized requested form(129)'),
-(239, 'admin', 'Admin', '', '1', '2021-06-24', '01:23:18am', 'Finalized requested form(174)');
+(1, 'admin', 'Admin', '', '1', '2021-06-29', '09:10:47pm', 'Approved pending form(1)'),
+(2, 'sitedean', 'Site Dean', '', '3', '2021-06-29', '09:18:40pm', 'Approved requested form(1)'),
+(3, 'bao', 'Bao', 'Office', '10', '2021-06-29', '09:23:21pm', 'Approved pending form(1)'),
+(4, 'admin', 'Admin', '', '1', '2021-06-29', '09:28:40pm', 'Finalized requested form(1)'),
+(5, 'admin', 'Admin', '', '1', '2021-06-29', '09:31:48pm', 'Approved pending form(1)'),
+(6, 'admin', 'Admin', '', '1', '2021-06-29', '11:18:41pm', 'Approved pending form(VC Gumabay)'),
+(7, 'admin', 'Admin', '', '1', '2021-06-30', '02:13:42pm', 'Approved pending form(sbahm sbahm)'),
+(8, 'sbahmdean', 'Sbahm Dean', '', '4', '2021-06-30', '02:15:07pm', 'Approved requested form( sbahm)'),
+(9, 'bao', 'Bao', 'Office', '10', '2021-06-30', '02:17:00pm', 'Approved pending form( sbahm)'),
+(10, 'admin', 'Admin', '', '1', '2021-06-30', '02:20:01pm', 'Approved requested form( sbahm)'),
+(11, 'admin', 'Admin', '', '1', '2021-06-30', '02:20:51pm', 'Approved pending form(3)');
 
 --
 -- Indexes for dumped tables
@@ -283,13 +201,13 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT for table `forms`
 --
 ALTER TABLE `forms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
