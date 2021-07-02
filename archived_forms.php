@@ -170,7 +170,7 @@ include "header.php";
                     View
                 </span>
             </a>
-        &nbsp;&nbsp;&nbsp;
+        <!-- &nbsp;&nbsp;&nbsp;
         <a href="req_form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
@@ -179,7 +179,7 @@ include "header.php";
             Delete
         </span>
             </a>
-            </a>
+            </a> -->
         </td>
 
         <?php } ?>

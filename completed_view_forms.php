@@ -429,7 +429,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     Decline
                 </span>
             </a>
-        &nbsp;&nbsp;
+       
         <a href="completed_forms.php" class="btn btn-warning btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="fas fa-arrow-left"></i>

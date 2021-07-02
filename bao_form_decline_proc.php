@@ -27,8 +27,13 @@ update($user_editedvalues, $id, $table_name);
 		 $id = $row['id'];
 		 $email = $row['email'];
 		 $lastname = $row['lastname'];
+		 $firstname = $row['firstname'];
 		
 	}
+	date_default_timezone_set('Asia/Singapore');
+	$xdate=date('M-d-Y');
+	$xtime=date('h:i:sa');
+
     require 'phpmailer/includes/PHPMailer.php';
 	require 'phpmailer/includes/SMTP.php';
 	require 'phpmailer/includes/Exception.php';
@@ -49,7 +54,7 @@ update($user_editedvalues, $id, $table_name);
 	$mail->Subject = "Registrar's Office - Form Request";
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname . "</h1><br><h3>Your requested form was declined for the reason  " . " <b><u>$reason</b></u>. Please request again";
+	$mail->Body = "<h1>Hello " . $lastname . "</h1><br>$xdate . $xtime<h3>Your requested form was declined for the reason  " . " <b><u>$reason</b></u>. Please request again";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
