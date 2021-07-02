@@ -57,13 +57,14 @@
 	foreach ($get_userData as $key => $row) {
 		 $id = $row['id'];
 		 $email = $row['email'];
+		 $firstname = $row['firstname'];
 		 $lastname = $row['lastname'];
 		 $fees = $row['fees'];
 		 $unique = $row['refno'];
 		
 	}
 	date_default_timezone_set('Asia/Singapore');
-	$xdate=date('Y-m-l');
+	$xdate=date('M-d-Y');
 	$xtime=date('h:i:sa');
 	$transfee = $_POST['transfee'];
 	$dipfee = $_POST['dipfee'];
@@ -97,7 +98,7 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname . "</h1><br>$xdate . $xtime <h3>Your form was approved by the Business Affair Office.Please attach your proof of payment in 'Track requested forms' page. </h3><br>
+	$mail->Body = "<h1>Hello " . $lastname . "</h1><br>$xdate . $xtime <h3>Your form was approved by the Business Affair Office.Please attach your proof of payment in 'Track requested forms' page using your reference number. </h3><br>
 	<h3>Your total fee is: P$fees.00. Please present the receipt of your payment before claiming your requested form. Thank you </h3><br><br><br>Your reference number is: <b>". $unique."</b><br>
 	<h3><b>Breakdown of Fees:<b></h3>
 	<table>

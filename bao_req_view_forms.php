@@ -285,7 +285,7 @@ include "header.php";
     
     <div align="center" class="mb-5 mt-5">
             <button type="submit" class="btn btn-success btn-icon-split btn-md" style="width:120px;" >
-          <span class="icon text-black-50">
+          <span class="icon text-red-50">
           <i class="fas fa-check"></i>
             </span>
             <span class="text">

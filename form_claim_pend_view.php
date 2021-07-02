@@ -217,12 +217,12 @@ include "header.php";
        </div>
 
 <br>
-    <h2>Recipient's Information</h2>
+    <h2>Receiver's Information</h2>
       <br>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Recipient's Full Name:</label>
-      <input type="text" class="form-control" id="inputEmail4" placeholder="Enter Recipient's Full Name" name="claimant" required autocomplete="off">
+      <label for="inputEmail4">Received by:</label>
+      <input type="text" class="form-control" id="inputEmail4" placeholder="Enter Full Name" name="claimant" required autocomplete="off">
     </div>
 </div>
 
@@ -236,7 +236,7 @@ include "header.php";
     
     <div align="center" class="mb-5 mt-5">
             <button type="submit" class="btn btn-success btn-icon-split btn-md" style="width:120px;" >
-          <span class="icon text-black-50">
+          <span class="icon text-red-50">
           <i class="fas fa-check"></i>
             </span>
             <span class="text">

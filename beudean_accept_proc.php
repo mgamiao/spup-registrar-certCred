@@ -32,12 +32,13 @@
 	foreach ($get_userData as $key => $row) {
 		 $id = $row['id'];
 		 $email = $row['email'];
+		 $firstname = $row['firstname'];
 		 $lastname = $row['lastname'];
          $unique = $row['refno'];
 		
 	}
 	date_default_timezone_set('Asia/Singapore');
-	$xdate=date('Y-m-l');
+	$xdate=date('M-d-Y');
 	$xtime=date('h:i:sa');
 
     require 'phpmailer/includes/PHPMailer.php';
@@ -60,7 +61,7 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname .  "</h1><br>$xdate . $xtime <h3>Your form was approved by your school dean and now under review by Business Affair Office</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
+	$mail->Body = "<h1>Hello " . $lastname .  "</h1><br>$xdate . $xtime <h3>Your form was approved by your school dean and now under review by Business Affair's Office</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {

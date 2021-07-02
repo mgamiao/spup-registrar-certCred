@@ -130,7 +130,7 @@ foreach ($get_userData as $key => $row) {
     
 }
 date_default_timezone_set('Asia/Singapore');
-$xdate=date('Y-m-l');
+$xdate=date('M-d-Y');
 $xtime=date('h:i:sa');
 
 require 'phpmailer/includes/PHPMailer.php';
