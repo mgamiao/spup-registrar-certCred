@@ -70,7 +70,7 @@ $table_name = "forms";
 
 //get user ID from URL
 $id = $_GET['id'];
-$_SESSION['alert_msg']=5; 
+
 
 date_default_timezone_set('Asia/Singapore');
 

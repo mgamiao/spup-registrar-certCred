@@ -61,7 +61,7 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $firstname . " " . $lastname . "</h1><br> $xdate . $xtime <h3> Your form was approved by the registrar office and now under review by your school dean</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
+	$mail->Body = "<h1>Hello " . $lastname . "</h1><br> $xdate . $xtime <h3> Your form was approved by the registrar office and now under review by your school dean</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {

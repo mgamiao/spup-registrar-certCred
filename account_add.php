@@ -15,37 +15,37 @@ include "header.php";
   <div class="form-row mt-5">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Username</label>
-      <input type="text" class="form-control" id="inputEmail4" required autocomplete=off>
+      <input type="text" name="username" class="form-control" id="inputEmail4" required autocomplete=off>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password </label>
-      <input type="text" class="form-control" id="inputPassword4" required autocomplete=off>
+      <input type="text" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control" id="inputPassword4" required autocomplete=off>
     </div>
 </div>
 
   <div class="form-row mt-5">
     <div class="form-group col-md-4">
       <label for="inputEmail4">First Name</label>
-      <input type="text" class="form-control" id="inputEmail4"  required autocomplete=off>
+      <input type="text" name="firstname" class="form-control" id="inputEmail4"  required autocomplete=off>
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Middle Name</label>
-      <input type="text" class="form-control" id="inputPassword4" required autocomplete=off >
+      <input type="text" name="middlename" class="form-control" id="inputPassword4" required autocomplete=off >
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Last Name</label>
-      <input type="text" class="form-control" id="inputPassword4"  required autocomplete=off>
+      <input type="text" name="lastname" class="form-control" id="inputPassword4"  required autocomplete=off>
     </div>
   </div>
 
   <div class="form-row mt-5">
     <div class="form-group col-md-4">
       <label for="inputEmail4">Email</label>
-      <input type="text" class="form-control" id="inputEmail4"  required autocomplete=off>
+      <input type="text" name="email" class="form-control" id="inputEmail4"  required autocomplete=off>
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Contact</label>
-      <input type="text" class="form-control" id="inputPassword4"  required autocomplete=off>
+      <input type="text" name="contact" class="form-control" id="inputPassword4"  required autocomplete=off>
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Account Type</label>
@@ -60,7 +60,7 @@ include "header.php";
         <option value="7">BEU DEAN</option>
         <option value="8">SoM DEAN</option>
         <option value="9">GRADSCHOOL DEAN</option>
-        <option value="10">BAO DEAN</option>
+        <option value="10">BAO</option>
       </select>
     </div>
   </div>

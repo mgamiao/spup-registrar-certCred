@@ -140,7 +140,7 @@ include "header.php";
                 </span>
             </a>
         &nbsp;&nbsp;
-        <a href="form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+        <!-- <a href="form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>
@@ -148,7 +148,7 @@ include "header.php";
             Delete
         </span>
             </a>
-            </a>
+            </a> -->
         </td>
 
         <?php } ?>

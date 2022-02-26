@@ -128,42 +128,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 unset($_SESSION['alert_msg']);
         }
     }
-    
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==2){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY EDITED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
 
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==3){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY DELETED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==5){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    STUDENT SUCCESSFULLY DEACTIVATED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
     ?>
 
 

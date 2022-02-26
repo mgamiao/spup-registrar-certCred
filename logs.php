@@ -27,56 +27,7 @@ include "header.php";
 </head>
 <div align=center>
 
-    <?php
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==1){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY ADDED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-    
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==2){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY EDITED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
 
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==3){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-danger bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY DELETED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==5){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-danger bg-gradient-dark text-light'>
-                    <div class='card-body'>
-                    RECORD DECLINED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-    ?>
-        
     <div class="card w-100 " style="border:none;">
                 <div class="py-3 bordercolor" style="border:none;">
                 <h1 class="m-0 headerblacked">LOGS</h1>
