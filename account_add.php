@@ -19,7 +19,7 @@ include "header.php";
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password </label>
-      <input type="text" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control" id="inputPassword4" required autocomplete=off>
+      <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control" id="inputPassword4" required autocomplete=off>
     </div>
 </div>
 

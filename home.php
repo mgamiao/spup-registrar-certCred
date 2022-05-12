@@ -75,6 +75,9 @@
   <div class="py-3 bordercolor mb-5" style="border:none;">
     <h1 class="m-0 headerblacked">HOMEPAGE</h1>
   </div>
+    <div class="row" style="margin-top: -40px; margin-bottom: 10px; margin-left: 3px;">
+        <a href="print.php" class="userbtn">Generate Report</a>
+    </div>
 
     <!-- start Area Chart -->
     <div class="row mb-3">

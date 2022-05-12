@@ -17,43 +17,38 @@ include "perfect_function.php";
         <thead style="text-align:center;">
         <tr>
             <td>Full Name</td>
-            <td>Department</td>
+            <td>School</td>
             <td>Type of Form</td>
+            <td>Date Requested</td>
             
 
         </tr>
         </thead>
 
-        <tfoot style="text-align:center;">
-        <tr>
-            <td>Full Name</td>
-            <td>Department</td>
-            <td>Type of Form</td>
-           
-
-        </tr>
-        </tfoot>
+        
 
         <tbody style="text-align:center;">
 
         <?php
         $table_name="forms";
-        $id = $_GET['id'];
-        $userData=get_where($table_name, $id);
+        $userData=get($table_name);
 
         foreach ($userData as $key => $row) {
             $id=$row['id'];
-            $fullname=$row['fullname'];
-            $dept=$row['dept'];
+            $lastname=$row['lastname'];
+            $firstname=$row['firstname'];
+            $dept=$row['school'];
             $formType=$row['form_type'];
+            $dateReq=$row['date']
 
     ?>
     
 
     <tr>
-        <td><?= $fullname ?></td>
+        <td><?= $firstname ." ". $lastname  ?></td>
          <td><?= $dept ?></td> 
         <td><?= $formType ?></td>
+        <td><?= $dateReq ?></td>
         
         
     </tr>
@@ -66,114 +61,26 @@ include "perfect_function.php";
 </div>
 </div>
 </div>
-<!-- ____________________________________________________________________________________________________________________ -->
-<?php
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==1){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY ADDED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-    
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==2){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY EDITED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
 
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==3){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY DELETED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==4){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success'>
-                    <div class='card-body'>
-                    VIOLATION SUCCESSFULLY COMPLIED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-
-    // ECHO $_SESSION['committer_id'];
-    ?>
-<!-- ____________________________________________________________________________________________________________________ -->
 
 
 </table>
+<script src="template/vendor/jquery/jquery.min.js"></script> 
+    <!-- <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>   pag meron to ayaw gumana ng logout--> 
 
-</div>
-</div>
-</div>
+    <!-- Core plugin JavaScript-->
+    <script src="template/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- <div class="" style="margin-top: 23px;">
+    <!-- Custom scripts for all pages-->
+    <script src="template/js/sb-admin-2.min.js"></script>
 
-<a href="violation_add.php?id=<?= $id?>" class="btn btn-danger btn-icon-split">
-        <span class="icon text-white-50">
-            <i class="fas fa-plus"></i>
-        </span>
-        <span class="text">
-            Add Violation
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span>
-        </a>
+    <!-- Page level plugins -->
+    <script src="template/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-<a href="violation_view.php?id=<?= $id?>" class="btn btn-success btn-icon-split" style="margin-top: 10px;">
-        <span class="icon text-white-50">
-            <i class="fas fa-print"></i>
-        </span>
-        <span class="text">
-            Print violation
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span>
-        </a>
+    <!-- Page level custom scripts -->
+    <script src="template/js/demo/datatables-demo.js"></script>
 
-<a href="violation_view.php?id=<?= $id?>" class="btn btn-dark btn-icon-split" style="margin-top: 10px;">
-        <span class="icon text-white-50">
-            <i class="fas fa-print"></i>
-        </span>
-        <span class="text">
-            View violation and attendance
-        </span>
-        </a>
-
-<a href="violation_active_manage.php" class="btn btn-secondary btn-icon-split" style="margin-top: 10px;">
-        <span class="icon text-dark-50">
-            <i class="fas fa-user-times"></i>
-        </span>
-        <span class="text">
-            Return to student list
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span>
-        </a>
-</div> -->
-</div>
 
 
 
