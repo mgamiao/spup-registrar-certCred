@@ -6,38 +6,38 @@
 
     $sasteForms = count_school_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', $yearNow);
     $sastePendingForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '0', $yearNow);
-    $sasteInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '1', $yearNow);
-    $sasteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '2', $yearNow);
+    $sasteInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '1', '2', $yearNow);
+    $sasteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '5', $yearNow);
 
     $snahsForms = count_school_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', $yearNow);
     $snahsPendingForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '0', $yearNow);
-    $snahsInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '1', $yearNow);
-    $snahsArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '2', $yearNow);
+    $snahsInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '1', '2', $yearNow);
+    $snahsArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '5', $yearNow);
 
     $siteForms = count_school_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', $yearNow);
     $sitePendingForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '0', $yearNow);
-    $siteInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '1', $yearNow);
-    $siteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '2', $yearNow);
+    $siteInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '1', '2', $yearNow);
+    $siteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '5', $yearNow);
 
     $sbahmForms = count_school_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', $yearNow);
     $sbahmPendingForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '0', $yearNow);
-    $sbahmInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1', $yearNow);
-    $sbahmArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '2', $yearNow);
+    $sbahmInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1', '2', $yearNow);
+    $sbahmArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '5', $yearNow);
 
     $somForms = count_school_forms('forms', 'SCHOOL OF MEDICINE', $yearNow);
     $somPendingForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '0', $yearNow);
-    $somInProcessForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '1', $yearNow);
-    $somArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '2', $yearNow);
+    $somInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF MEDICINE', '1', '2', $yearNow);
+    $somArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '5', $yearNow);
 
     $beuForms = count_school_forms('forms', 'BASIC EDUCATION UNIT', $yearNow);
     $beuPendingForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '0', $yearNow);
-    $beuInProcessForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '1', $yearNow);
-    $beuArchivedForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '2', $yearNow);
+    $beuInProcessForms = count_school_specific_inprocess('forms', 'BASIC EDUCATION UNIT', '1', '2', $yearNow);
+    $beuArchivedForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '5', $yearNow);
 
     $gradSchoolForms = count_school_forms('forms', 'GRADUATE SCHOOL', $yearNow);
     $gradSchoolPendingForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '0', $yearNow);
-    $gradSchoolInProcessForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '1', $yearNow);
-    $gradSchoolArchivedForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '2', $yearNow);
+    $gradSchoolInProcessForms = count_school_specific_inprocess('forms', 'GRADUATE SCHOOL', '1', '2', $yearNow);
+    $gradSchoolArchivedForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '5', $yearNow);
 
     $totalForms = count_total_forms($yearNow);
     $pendingForms = count_pending_forms($yearNow);
@@ -75,9 +75,9 @@
   <div class="py-3 bordercolor mb-5" style="border:none;">
     <h1 class="m-0 headerblacked">HOMEPAGE</h1>
   </div>
-    <div class="row" style="margin-top: -40px; margin-bottom: 10px; margin-left: 3px;">
+    <!-- <div class="row" style="margin-top: -40px; margin-bottom: 10px; margin-left: 3px;">
         <a href="print.php" class="userbtn">Generate Report</a>
-    </div>
+    </div> -->
 
     <!-- start Area Chart -->
     <div class="row mb-3">
@@ -203,7 +203,7 @@
     <div class="col-3 mt-3">
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$sasteArchivedForms."</h4>" ?>
@@ -254,7 +254,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$snahsArchivedForms."</h4>" ?>
@@ -305,7 +305,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$siteArchivedForms."</h4>" ?>
@@ -356,7 +356,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$sbahmArchivedForms."</h4>" ?>
@@ -407,7 +407,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$somArchivedForms."</h4>" ?>
@@ -458,7 +458,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$beuArchivedForms."</h4>" ?>
@@ -509,7 +509,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$gradSchoolArchivedForms."</h4>" ?>

@@ -67,10 +67,9 @@ include "header.php";
             <td>Student Number</td>
             <td>Full Name</td>
             <td>School</td>
-            <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>Fee</td>
             <td>Date Requested</td>
+            <td>Date Uploaded</td>
             <td>Option</td>
             
             
@@ -82,10 +81,9 @@ include "header.php";
             <td>Student Number</td>
             <td> Full Name</td>
             <td>School</td>
-            <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>Fee</td>
             <td>Date Requested</td>
+            <td>Date Uploaded</td>
             <td>Option</td>
             
 
@@ -108,11 +106,10 @@ include "header.php";
             $firstName = $row['firstname'] ;
             $middleName = $row['middlename'] ;
             $school = $row['school'];
-            $formType = $row['form_type'];
             $reason = $row['reason'];
-            $email = $row['email'];
-            $fees = $row['fees'];
+            $email = $row['email'];           
             $date = $row['date'];
+            $date_uploaded = $row['date_uploaded'];
             $status = $row['status'];
             
 
@@ -123,10 +120,9 @@ include "header.php";
         <td><?= $studnum?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
-        <td><?= $formType?></td>
         <td><?= $reason?></td>
-        <td><?= $fees?></td>
-        <td><?= $date?></td>
+        <td><?=$date ?></td>
+        <td><?= $date_uploaded?></td>
         
 
         

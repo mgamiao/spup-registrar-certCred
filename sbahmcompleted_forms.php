@@ -44,7 +44,7 @@ include "header.php";
 
 <div class="card w-100 " style="border:none;">
                 <div class="card-headerbordercolor" style="border:none;">
-                <h1 class="m-0 headerblacked">Completed Forms</h1>
+                <h1 class="m-0 headerblacked">COMPLETED FORMS</h1>
                 </div>
                 <div class="card-body bodyblacked">
                 <div class="table-responsive" >

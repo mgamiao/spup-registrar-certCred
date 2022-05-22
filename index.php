@@ -17,11 +17,14 @@
 if (isset($_SESSION['alert_msg'])){
     if ($_SESSION['alert_msg']==1){
         echo "
+            <div align=center>
             <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                 <div class='card-body'>
                 REQUESTED FORM SUCCESSFULLY SUBMITTED
                 </div>
-            </div>";
+            </div>
+            </div>
+            ";
             unset($_SESSION['alert_msg']);
     }
   }

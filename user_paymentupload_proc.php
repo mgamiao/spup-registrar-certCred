@@ -3,6 +3,8 @@ include "perfect_function.php"
 ?>
         
         <?php
+        date_default_timezone_set('Asia/Singapore'); 
+        $xdate=date('Y-m-d');
         $target_dir = "user_payment/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
@@ -55,6 +57,7 @@ include "perfect_function.php"
                 $user_editedvalues = array (
                     //columname from table => value from post
                         "paymentphoto" => $paymentphoto,
+                        "date_uploaded" => $xdate
                         
                 );
                 echo $id;

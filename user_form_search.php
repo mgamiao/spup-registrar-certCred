@@ -367,7 +367,8 @@
     }
   }
         }else{
-          echo "<br><h4> Invalid Reference Number.Please try valid reference number</h4> ";
+          $_SESSION['alert_msg']=2;
+          header("Location: user_track_form.php");
         }
        
     ?>

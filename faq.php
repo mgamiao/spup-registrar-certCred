@@ -98,7 +98,7 @@
         <td align="center">The applicant must pay the corresponding fee before claiming the requested form.</td>
       </tr>
       <tr> 
-        <td align="center">The applicant must send the photo of proof of payment to registrar@spup.edu.ph  or attach it to "Track Requested Form Page" before claiming the requested form.</td>
+        <td align="center">The applicant must attach the photo of proof of payment to the <a href="user_track_form.php" style="text-decoration:none;">Track Requested Form Page</a> before claiming the requested form.</td>
       </tr>
 
     </tbody>

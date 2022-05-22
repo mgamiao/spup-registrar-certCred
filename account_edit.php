@@ -3,6 +3,7 @@ include "header.php";
 //get s ID from URL
 $id = $_GET['id'];
 $form_location = "account_edit_proc.php?id=".$id;
+$form_location2 = "change_pw.php?id=".$id;
 
 $table_name = "accounts";
 $column = "acc_id";
@@ -35,7 +36,7 @@ foreach ($get_userData as $key => $row) {
     </div>
     <div class="form-group col-md-4">
     <label for="studentNumber">Username</label>
-      <input type="text" class="form-control" id="studentNumber" value="<?= $username?>" readonly>
+      <input type="text" class="form-control" id="studentNumber" name="username" value="<?= $username?>" readonly>
     </div>
     <div class="form-group col-md-4">
     </div>
@@ -44,35 +45,28 @@ foreach ($get_userData as $key => $row) {
   <div class="form-row mt-5">
     <div class="form-group col-md-4">
       <label for="inputEmail4">First Name</label>
-      <input type="text" class="form-control" id="inputEmail4" value="<?= $firstname?>">
+      <input type="text" class="form-control" id="inputEmail4" name="firstname" value="<?= $firstname?>">
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Middle Name</label>
-      <input type="text" class="form-control" id="inputPassword4" value="<?= $middlename?>">
+      <input type="text" class="form-control" id="inputPassword4" name="middletname" value="<?= $middlename?>">
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Last Name</label>
-      <input type="text" class="form-control" id="inputPassword4" value="<?= $lastname?>">
+      <input type="text" class="form-control" id="inputPassword4" name="lastname" value="<?= $lastname?>">
     </div>
   </div>
 
   <div class="form-row mt-5">
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6">
       <label for="inputEmail4">Number</label>
-      <input type="text" class="form-control" id="inputEmail4" value="<?= $contact?>">
+      <input type="text" class="form-control" id="inputEmail4" name="contact" value="<?= $contact?>">
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6">
       <label for="inputPassword4">Email</label>
-      <input type="text" class="form-control" id="inputPassword4" value="<?= $email?>">
+      <input type="text" class="form-control" id="inputPassword4" name="email" value="<?= $email?>">
     </div>
-    <div class="form-group col-md-4">
-      <label for="inputPassword4">Account Type</label>
-      <select type="text" name="user_type" class="form-control form-control-user" value="<?= $user_type;?>" required autocomplete=off>
-        <option value="">Type:</option>
-        <option value="1">ADMIN</option>
-        <option value="2">EMPLOYEE</option>
-      </select>
-    </div>
+    
   </div>
     <br>
 <br>
@@ -85,6 +79,15 @@ foreach ($get_userData as $key => $row) {
 			Continue
 		</span>
 	</button>
+&nbsp;&nbsp;
+<a href="<?=$form_location2;?>" class="btn btn-warning btn-icon-split" style=" margin-top:5%">
+    <span class="icon text-white-50">
+    <i class="fas fa-regular fa-key"></i>
+</span>
+<span class="text">
+    Change Password
+</span>
+</a>
 &nbsp;&nbsp;
 	<a href="account_manage.php" class="btn btn-danger btn-icon-split" style=" margin-top:5%">
     <span class="icon text-white-50">

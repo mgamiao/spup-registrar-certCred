@@ -36,7 +36,7 @@ $status=1;
 $school = "GRADUATE SCHOOL";
 $gradreqnotif = count_deaninProcess_forms($table_name, $school, $status);
 $reqnotif1 = count_inProcess_forms1();
-$compnotif = count_archived_forms1();
+$compnotif = count_completed_forms1();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -137,9 +137,9 @@ $compnotif = count_archived_forms1();
   <a style="text-decoration:none" href="bao_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
   <?php 
     if ($reqnotif1 == "0"){
-      echo "<span> REQUESTED FORM</span>";
+      echo "<span>BAO REQUESTED FORMS</span>";
     }else{
-     echo "<span>REQUESTED FORM</span>";
+     echo "<span>BAO REQUESTED FORMS</span>";
     echo  "<span class='badge badge-danger badge-counter'> $reqnotif1";
     }
   ?>
@@ -148,7 +148,7 @@ $compnotif = count_archived_forms1();
 
   <li>
   <a style="text-decoration:none" href="baocompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-  <span>BAO Completed Forms</span>
+  <span>BAO COMPLETED FORMS</span>
   </a>
 
 </li>
@@ -262,9 +262,9 @@ $compnotif = count_archived_forms1();
   <a style="text-decoration:none" href="graddean_req_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
   <?php 
     if ($gradreqnotif == "0"){
-      echo "<span>GRAD SCHOOL REQUESTED FORMS</span>";
+      echo "<span>GRADUATE SCHOOL REQUESTED FORMS</span>";
     }else{
-     echo "<span>GRAD SCHOOL REQUESTED FORMS</span>";
+     echo "<span>GRADUATE SCHOOL REQUESTED FORMS</span>";
     echo  "<span class='badge badge-danger badge-counter'> $gradreqnotif";
     }
   ?>

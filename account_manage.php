@@ -7,7 +7,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==1){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-success bg-gradient-light text-dark'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY ADDED
                     </div>
@@ -19,7 +19,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==2){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-success bg-gradient-light text-dark'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY EDITED
                     </div>
@@ -31,9 +31,20 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==3){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
+                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY DELETED
+                    </div>
+                </div>";
+                unset($_SESSION['alert_msg']);
+        }
+    }
+    if (isset($_SESSION['alert_msg'])){
+        if ($_SESSION['alert_msg']==4){
+            echo "
+                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
+                    <div class='card-body'>
+                    CHANGE PASSWORD SUCCESSFULLY
                     </div>
                 </div>";
                 unset($_SESSION['alert_msg']);

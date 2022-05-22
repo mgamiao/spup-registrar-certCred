@@ -31,11 +31,28 @@ include "user_header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==1){
             echo "
+                <div align=center>
                 <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                     <div class='card-body'>
                     YOUR FILE WAS SUCCESSFULLY SUBMITTED.
                     </div>
-                </div>";
+                </div>
+                </div>
+                ";
+                unset($_SESSION['alert_msg']);
+        }
+    }
+    if (isset($_SESSION['alert_msg'])){
+        if ($_SESSION['alert_msg']==2){
+            echo "
+                <div align=center>
+                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
+                    <div class='card-body'>
+                    INVALID REFERENCE NUMBER. PLEASE INPUT A VALID REFERENCE NUMBER.<br>
+                    </div>
+                </div>
+                </div>
+                ";
                 unset($_SESSION['alert_msg']);
         }
     }

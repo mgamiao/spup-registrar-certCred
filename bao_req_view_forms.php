@@ -222,57 +222,57 @@ include "header.php";
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Transcript Fee</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="transfee">
+      <input type="number" class="form-control" id="inputEmail4" value="0" name="transfee" required>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Diploma Fee </label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="dipfee">
+      <input type="number" class="form-control" id="inputPassword4" value="0" name="dipfee" required>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Form 137A/138B</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="formfee">
+      <input type="number" class="form-control" id="inputEmail4" value="0" name="formfee" required>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Certification Fee</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="certfee">
+      <input type="number" class="form-control" id="inputPassword4" value="0" name="certfee" required>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Authentication Fee</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="authfee">
+      <input type="number" class="form-control" id="inputEmail4" value="0" name="authfee" required>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Service Fee(Online)</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="servfee">
+      <input type="number" class="form-control" id="inputPassword4" value="0" name="servfee" required>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Documentary Stamp</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="docstamp">
+      <input type="number" class="form-control" id="inputEmail4" value="0" name="docstamp" required>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Mailing Fee</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="mailfee">
+      <input type="number" class="form-control" id="inputPassword4" value="0" name="mailfee" required>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Letter Envelope</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="letterfee">
+      <input type="number" class="form-control" id="inputEmail4" value="0" name="letterfee" required>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">SPUP TOR Envelope</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="torenvfee">
+      <input type="number" class="form-control" id="inputPassword4" value="0" name="torenvfee" required>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">SPUP Sticker</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="stickerfee">
+      <input type="number" class="form-control" id="inputEmail4" value="0" name="stickerfee" required>
     </div>
        </div>
         <!-- <div class="form-row">

@@ -19,44 +19,44 @@
         $enterDay = $_POST['enterDay'];
         echo "Year: " . $enterYear . " " . "Month: " . "0".$enterMonth . " " . "Day: " . $enterDay;
         ?></b>
-        <a href="statistics.php" class="userbtn" style="float:right;">Go Back</a>
+        <a href="statistics.php" class="d-none d-lg-inline-block btn btn-lg btn-warning shadow-sm" style="float:right;">Go Back</a>
     </h5>
     <?php
 
         $sasteForms = count_school_forms_day('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', $enterYear, $enterMonth, $enterDay);
         $sastePendingForms = count_school_specific_forms_day('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '0', $enterYear, $enterMonth, $enterDay);
-        $sasteInProcessForms = count_school_specific_forms_day('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '1', $enterYear, $enterMonth, $enterDay);
-        $sasteArchivedForms = count_school_specific_forms_day('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '2', $enterYear, $enterMonth, $enterDay);
+        $sasteInProcessForms = count_school_inprocess_forms_day('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '1', '2',  $enterYear, $enterMonth, $enterDay);
+        $sasteArchivedForms = count_school_specific_forms_day('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '5', $enterYear, $enterMonth, $enterDay);
 
         $snahsForms = count_school_forms_day('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', $enterYear, $enterMonth, $enterDay);
         $snahsPendingForms = count_school_specific_forms_day('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '0', $enterYear, $enterMonth, $enterDay);
-        $snahsInProcessForms = count_school_specific_forms_day('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '1', $enterYear, $enterMonth, $enterDay);
-        $snahsArchivedForms = count_school_specific_forms_day('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '2', $enterYear, $enterMonth, $enterDay);
+        $snahsInProcessForms = count_school_inprocess_forms_day('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '1', '2', $enterYear, $enterMonth, $enterDay);
+        $snahsArchivedForms = count_school_specific_forms_day('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '5', $enterYear, $enterMonth, $enterDay);
 
         $siteForms = count_school_forms_day('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', $enterYear, $enterMonth, $enterDay);
         $sitePendingForms = count_school_specific_forms_day('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '0', $enterYear, $enterMonth, $enterDay);
-        $siteInProcessForms = count_school_specific_forms_day('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '1', $enterYear, $enterMonth, $enterDay);
-        $siteArchivedForms = count_school_specific_forms_day('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '2', $enterYear, $enterMonth, $enterDay);
+        $siteInProcessForms = count_school_inprocess_forms_day('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '1', '2', $enterYear, $enterMonth, $enterDay);
+        $siteArchivedForms = count_school_specific_forms_day('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '5', $enterYear, $enterMonth, $enterDay);
 
         $sbahmForms = count_school_forms_day('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', $enterYear, $enterMonth, $enterDay);
         $sbahmPendingForms = count_school_specific_forms_day('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '0', $enterYear, $enterMonth, $enterDay);
-        $sbahmInProcessForms = count_school_specific_forms_day('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1', $enterYear, $enterMonth, $enterDay);
-        $sbahmArchivedForms = count_school_specific_forms_day('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '2', $enterYear, $enterMonth, $enterDay);
+        $sbahmInProcessForms = count_school_inprocess_forms_day('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1', '2', $enterYear, $enterMonth, $enterDay);
+        $sbahmArchivedForms = count_school_specific_forms_day('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '5', $enterYear, $enterMonth, $enterDay);
 
         $somForms = count_school_forms_day('forms', 'SCHOOL OF MEDICINE', $enterYear, $enterMonth, $enterDay);
         $somPendingForms = count_school_specific_forms_day('forms', 'SCHOOL OF MEDICINE', '0', $enterYear, $enterMonth, $enterDay);
-        $somInProcessForms = count_school_specific_forms_day('forms', 'SCHOOL OF MEDICINE', '1', $enterYear, $enterMonth, $enterDay);
-        $somArchivedForms = count_school_specific_forms_day('forms', 'SCHOOL OF MEDICINE', '2', $enterYear, $enterMonth, $enterDay);
+        $somInProcessForms = count_school_inprocess_forms_day('forms', 'SCHOOL OF MEDICINE', '1', '2', $enterYear, $enterMonth, $enterDay);
+        $somArchivedForms = count_school_specific_forms_day('forms', 'SCHOOL OF MEDICINE', '5', $enterYear, $enterMonth, $enterDay);
 
         $beuForms = count_school_forms_day('forms', 'BASIC EDUCATION UNIT', $enterYear, $enterMonth, $enterDay);
         $beuPendingForms = count_school_specific_forms_day('forms', 'BASIC EDUCATION UNIT', '0', $enterYear, $enterMonth, $enterDay);
-        $beuInProcessForms = count_school_specific_forms_day('forms', 'BASIC EDUCATION UNIT', '1', $enterYear, $enterMonth, $enterDay);
-        $beuArchivedForms = count_school_specific_forms_day('forms', 'BASIC EDUCATION UNIT', '2', $enterYear, $enterMonth, $enterDay);
+        $beuInProcessForms = count_school_inprocess_forms_day('forms', 'BASIC EDUCATION UNIT', '1', '2', $enterYear, $enterMonth, $enterDay);
+        $beuArchivedForms = count_school_specific_forms_day('forms', 'BASIC EDUCATION UNIT', '5', $enterYear, $enterMonth, $enterDay);
 
         $gradSchoolForms = count_school_forms_day('forms', 'GRADUATE SCHOOL', $enterYear, $enterMonth, $enterDay);
         $gradSchoolPendingForms = count_school_specific_forms_day('forms', 'GRADUATE SCHOOL', '0', $enterYear, $enterMonth, $enterDay);
-        $gradSchoolInProcessForms = count_school_specific_forms_day('forms', 'GRADUATE SCHOOL', '1', $enterYear, $enterMonth, $enterDay);
-        $gradSchoolArchivedForms = count_school_specific_forms_day('forms', 'GRADUATE SCHOOL', '2', $enterYear, $enterMonth, $enterDay);
+        $gradSchoolInProcessForms = count_school_inprocess_forms_day('forms', 'GRADUATE SCHOOL', '1', '2', $enterYear, $enterMonth, $enterDay);
+        $gradSchoolArchivedForms = count_school_specific_forms_day('forms', 'GRADUATE SCHOOL', '5', $enterYear, $enterMonth, $enterDay);
 
         $totalForms = count_total_forms_day($enterYear, $enterMonth, $enterDay);
         $pendingForms = count_pending_forms_day($enterYear, $enterMonth, $enterDay);
@@ -250,7 +250,7 @@
     <div class="col-3 mt-3">
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$sasteArchivedForms."</h4>" ?>
@@ -301,7 +301,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$snahsArchivedForms."</h4>" ?>
@@ -352,7 +352,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$siteArchivedForms."</h4>" ?>
@@ -403,7 +403,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$sbahmArchivedForms."</h4>" ?>
@@ -454,7 +454,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$somArchivedForms."</h4>" ?>
@@ -505,7 +505,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$beuArchivedForms."</h4>" ?>
@@ -556,7 +556,7 @@
     <div class="col-lg-3 mt-3" >
         <div class="card shadow mb-4">
             <div class="card-header py-3" >
-                <h6 class="m-0 font-weight-bold text-dark">Completed Forms</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Archived Forms</h6>
             </div>
             <div class="card-body">
                 <?php echo "<h4 style='text-align:center;'>".$gradSchoolArchivedForms."</h4>" ?>
