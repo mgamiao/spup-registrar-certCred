@@ -115,14 +115,19 @@ include "header.php";
 
     ?>
     
-<?php if($status=="3"){ ?>
+<?php
+    if ($date_uploaded == "0000-00-00"){
+        $date_uploaded = "";
+    }
+    
+    if($status=="3"){ ?>
     <tr>
         <td><?= $studnum?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
         <td><?= $reason?></td>
         <td><?=$date ?></td>
-        <td><?= $date_uploaded?></td>
+        <td><?=$date_uploaded?></td>
         
 
         

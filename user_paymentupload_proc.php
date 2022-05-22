@@ -21,10 +21,10 @@ include "perfect_function.php"
         }
 
         // Check if file already exists
-        if (file_exists($target_file)) {
-            $error_msg1 = "Sorry, file already exists.";
-            $uploadOk = 0;
-        }
+        // if (file_exists($target_file)) {
+        //     $error_msg1 = "Sorry, file already exists.";
+        //     $uploadOk = 0;
+        // }
 
         // Check file size
         if ($_FILES["fileToUpload"]["size"] > 5000000) {

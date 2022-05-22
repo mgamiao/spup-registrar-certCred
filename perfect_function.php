@@ -464,7 +464,7 @@ function count_archived_forms_day($year, $month, $day)
 function count_completed_forms1()
 {
 	$conn = getConnection();
-	$sql = "SELECT * FROM `forms` WHERE `paymentphoto` != '' AND `date_uploaded` != '0000-00-00'";
+	$sql = "SELECT * FROM `forms` WHERE `paymentphoto` != '' AND `date_uploaded` != '0000-00-00' AND `status` = '3'";
 	$result = $conn->query($sql);
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
