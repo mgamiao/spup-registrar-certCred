@@ -32,6 +32,7 @@
             );
             update_from($user_editedValues, $id, $table_name, $column);
             $_SESSION['alert_msg']=4;
+            header("Location: account_manage.php");
         }elseif($password1!=$currentpw){
             $_SESSION['alert_msg']=3;
             header("Location: change_pw.php?id=".$id);
@@ -79,5 +80,5 @@
     
 
 
-	header("Location: account_manage.php");
+	//header("Location: account_manage.php");
 ?>

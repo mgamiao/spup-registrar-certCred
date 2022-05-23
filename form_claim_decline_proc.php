@@ -95,6 +95,7 @@ date_default_timezone_set('Asia/Singapore');
     );
 
     echo insert($user_data, $table_name);
+	$_SESSION['alert_msg']==3;
 header("Location: form_claim_pending.php");
 
 ?>

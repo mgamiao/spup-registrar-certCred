@@ -20,22 +20,28 @@ foreach ($get_userData as $key => $row) {
 if (isset($_SESSION['alert_msg'])){
     if ($_SESSION['alert_msg']==3){
         echo "
+            <div align=center>
             <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                 <div class='card-body'>
                 INCORRECT OLD PASSWORD
                 </div>
-            </div>";            
+            </div>
+            </div>
+            ";            
             
             
     }
   
     if ($_SESSION['alert_msg']==1){
         echo "
+            <div align=center>
             <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                 <div class='card-body'>
                 YOUR NEW PASSWORD & CONFIRMATION PASSWORD DO NOT MATCH
                 </div>
-            </div>";
+            </div>
+            </div>
+            ";
             
     }
     unset($_SESSION['alert_msg']);
@@ -56,15 +62,16 @@ if (isset($_SESSION['alert_msg'])){
   <div class="form-row mt-5">
     <div class="form-group col-md-4">
       <label for="inputEmail4">Old Password</label>
-      <input type="password" class="form-control" id="inputEmail4" name="currentpw">
+      <input type="password" class="form-control" id="Inputoldpw" name="currentpw">
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">New Password</label>
-      <input type="password" class="form-control" id="inputPassword4" name="newpw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required autocomplete=off>
+      <input type="password" class="form-control" id="Inputnewpw" name="newpw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required autocomplete=off>
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Confirm New Password</label>
-      <input type="password" class="form-control" id="inputPassword4" name="confirmpw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required autocomplete=off>
+      <input type="password" class="form-control" id="Inputconfirmpw" name="confirmpw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required autocomplete=off>
+      <input type="checkbox" style="margin-left: 200px; margin-top: 10px;" onclick="myFunction()">Show Password  
     </div>
 </div>
     <br>
@@ -97,3 +104,19 @@ if (isset($_SESSION['alert_msg'])){
 </div>
 
 <?php include "footeradmin.php" ?>
+<script>
+  function myFunction() {
+    var x = document.getElementById("Inputoldpw");
+    var y = document.getElementById("Inputnewpw");
+    var z = document.getElementById("Inputconfirmpw");
+    if (x.type === "password") {
+      x.type = "text";
+      y.type = "text";
+      z.type = "text";
+    } else {
+      x.type = "password";
+      y.type = "password";
+      z.type = "password";
+    }
+  }
+  </script>

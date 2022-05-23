@@ -17,7 +17,8 @@
 
     $table_name="logs";
     $username= $_SESSION['username'];
-    $adminfullname=$_SESSION['firstlast'];
+    $adminfirstname=$_SESSION['firstname'];
+    $adminlastname=$_SESSION['lastname'];
     $user_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
@@ -25,7 +26,8 @@
     
     $user_data=array(
         "username" => $username ,
-        "fullname" => $adminfullname ,
+        "firstname" => $adminfirstname ,
+        "lastname" => $adminlastname ,
         "user_type" => $user_type ,
         "xdate" => $xdate ,
         "xtime" => $xtime ,

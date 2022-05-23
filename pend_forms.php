@@ -46,7 +46,7 @@ include "header.php";
             echo "
                 <div class='card mb-4 py-3 border-bottom-danger bg-light text-dark'>
                     <div class='card-body'>
-                    RECORD SUCCESSFULLY DELETED
+                    RECORD SUCCESSFULLY DECLINED
                     </div>
                 </div>";
                 unset($_SESSION['alert_msg']);

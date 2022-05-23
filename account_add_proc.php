@@ -8,6 +8,7 @@
     // $acc_id=$_POST['acc_id'];
     $username=$_POST['username'];
     $password=_hash_string($_POST['password']);
+    $confirmpw = _hash_string($_POST['confirmpassword']);
     $firstname=$_POST['firstname'];
     $middlename=$_POST['middlename'];
     $lastname=$_POST['lastname'];
@@ -29,8 +30,14 @@
 
     );
 
-    echo insert($user_data, $table_name);
-    $_SESSION['alert_msg']=1;
+    if ($password==$confirmpw){
+        echo insert($user_data, $table_name);
+        $_SESSION['alert_msg']=1;
+    }else{
+        $_SESSION['alert_msg']=5; 
+        header("Location: account_manage.php");
+    }
+
 
         // ______________________________________________________________________________________________________________________
     // GETTING ENTRY ID
@@ -50,7 +57,8 @@
 
     $table_name="logs";
     $username= $_SESSION['username'];
-    $adminfullname=$_SESSION['firstlast'];
+    $adminfirstname=$_SESSION['firstname'];
+    $adminlastname=$_SESSION['lastname'];
     $user_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
@@ -58,7 +66,8 @@
     
     $user_data=array(
         "username" => $username ,
-        "fullname" => $adminfullname ,
+        "firstname" => $adminfirstname ,
+        "lastname" => $adminlastname ,
         "user_type" => $user_type ,
         "xdate" => $xdate ,
         "xtime" => $xtime ,

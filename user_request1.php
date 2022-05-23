@@ -61,7 +61,7 @@ if (isset($_SESSION['alert_msg'])){
     </div>
     <div class="form-group">
       <h6>Student Number:</h6>
-      <input type="number" class="form-control" placeholder="Enter Student Number" name="studnum"  autocomplete=off>
+      <input type="tel" class="form-control" placeholder="Enter Student Number" name="studnum"  autocomplete=off>
     </div>
     <div class="form-group">
       <h6>Last Name: <span style="color:red">*</h6></span>
@@ -94,7 +94,7 @@ if (isset($_SESSION['alert_msg'])){
     </div>
     <div class="form-group">
       <h6>Mobile Number: <span style="color:red">*</h6></span>
-      <input type="number" class="form-control"  placeholder="Enter Mobile number" name="mobilenum" required autocomplete=off maxlength="11">
+      <input type="tel" class="form-control"  placeholder="Enter Mobile number" name="mobilenum" pattern="[0]{1}[9]{1}[0-9]{9}" title="Number must be a valid PH number" required autocomplete=off>
     </div>
     <br>
     <button type="submit" class="btn btn-primary custombutton">Proceed</button>

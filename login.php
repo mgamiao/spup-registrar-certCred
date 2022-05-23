@@ -60,7 +60,8 @@ session_start();
                       <input type="text" name=username class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username" required autocomplete=off>
                     </div>
                     <div class="form-group">
-                      <input type="password" name=password class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" required autocomplete=off>
+                      <input type="password" name=password class="form-control form-control-user" id="myInput" placeholder="Password" required autocomplete=off>
+                      <input type="checkbox" style="margin-left: 200px; margin-top: 10px;" onclick="myFunction()">Show Password
                       <br>
                       <?php
                         $min_number = 1;
@@ -181,6 +182,17 @@ session_start();
 
   <!-- Custom scripts for all pages-->
   <script src="template/js/sb-admin-2.min.js"></script>
+  
+  <script>
+  function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+  </script>
 
 </body>
 

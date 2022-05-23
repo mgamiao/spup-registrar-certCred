@@ -13,13 +13,18 @@ include "header.php";
 <form class="bodyblacked2 card-body" method="post" action="account_add_proc.php">
 
   <div class="form-row mt-5">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="inputEmail4">Username</label>
       <input type="text" name="username" class="form-control" id="inputEmail4" required autocomplete=off>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="inputPassword4">Password </label>
-      <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control" id="inputPassword4" required autocomplete=off>
+      <input type="password" name="password" id="Inputpw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control"  required autocomplete=off>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Confirm Password </label>
+      <input type="password" name="confirmpassword" id="Inputconfirmpw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control"  required autocomplete=off>
+      <input type="checkbox" style="margin-left: 200px; margin-top: 10px;" onclick="myFunction()">Show Password
     </div>
 </div>
 
@@ -30,7 +35,7 @@ include "header.php";
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Middle Name</label>
-      <input type="text" name="middlename" class="form-control" id="inputPassword4" required autocomplete=off >
+      <input type="text" name="middlename" class="form-control" id="inputPassword4"  autocomplete=off >
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Last Name</label>
@@ -45,7 +50,7 @@ include "header.php";
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Contact</label>
-      <input type="text" name="contact" class="form-control" id="inputPassword4"  required autocomplete=off>
+      <input type="tel" name="contact"  pattern="[0]{1}[9]{1}[0-9]{9}" title="Number must be a valid PH number" class="form-control" id="inputPassword4"  required autocomplete=off>
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Account Type</label>
@@ -95,3 +100,17 @@ include "header.php";
 </div>
 <?php include "footeradmin.php" ?>
 </div>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("Inputpw");
+    var y = document.getElementById("Inputconfirmpw");
+    if (x.type === "password") {
+      x.type = "text";
+      y.type = "text";
+    } else {
+      x.type = "password";
+      y.type = "password";
+    }
+  }
+  </script>
