@@ -68,7 +68,7 @@ include "header.php";
             echo "
                 <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                     <div class='card-body'>
-                    CHANGE PASSWORD SUCCESSFULLY
+                    PASSWORD CHANGED SUCCESSFULLY
                     </div>
                 </div>";
                 unset($_SESSION['alert_msg']);
@@ -89,7 +89,7 @@ include "header.php";
 
 <div class="card w-100 " style="border:none;">
             <div class="py-3 bordercolor" style="border:none;">
-              <h1 class="m-0 headerblacked">ACCOUNTS</h1>
+              <h1 class="m-0 headerblacked">ACCOUNT MANAGER</h1>
             </div>
             <div class="card-body bodyblacked">
                 <a href="account_add.php" class="btn btn-success btn-icon-split" style="float:right; margin-bottom: 10px;">

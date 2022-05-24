@@ -65,7 +65,7 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname . "</h1><br>$xdate . $xtime <h3>Your requested form was sucessfully claimed by $claimant. Thank you. </h3><br>
+	$mail->Body = "<h1>Hello " . $firstname . "</h1><br>$xdate . $xtime <h3>Your requested form was sucessfully claimed by $claimant. Thank you. </h3><br>
 	<br><br>Your reference number is: <b>". $unique."</b><br>";
 	$mail->addAddress($email);
 	

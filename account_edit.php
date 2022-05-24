@@ -49,7 +49,7 @@ foreach ($get_userData as $key => $row) {
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Middle Name</label>
-      <input type="text" class="form-control" id="inputPassword4" name="middletname" value="<?= $middlename?>">
+      <input type="text" class="form-control" id="inputPassword4" name="middlename" value="<?= $middlename?>">
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">Last Name</label>

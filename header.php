@@ -301,7 +301,7 @@ $compnotif = count_completed_forms1();
 </li>
 <li>
   <a style="text-decoration:none" href="archived_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-  ARCHIVE FORMS
+  ARCHIVED FORMS
   </a>
 
 </li>

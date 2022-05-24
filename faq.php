@@ -89,7 +89,7 @@
     </thead>
     <tbody>
       <tr>
-        <td align="center">The applicant fill-up the request form</td>
+        <td align="center">The applicant fill-up the <a href="user_terms.php" style="text-decoration:none;">request form</a></td>
       </tr>
       <tr>
         <td align="center">The applicant will be informed about the status of the requested form through  an e-mail notification.</td>

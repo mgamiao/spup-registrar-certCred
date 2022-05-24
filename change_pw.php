@@ -62,7 +62,7 @@ if (isset($_SESSION['alert_msg'])){
   <div class="form-row mt-5">
     <div class="form-group col-md-4">
       <label for="inputEmail4">Old Password</label>
-      <input type="password" class="form-control" id="Inputoldpw" name="currentpw">
+      <input type="password" class="form-control" id="Inputoldpw" name="currentpw" required autocomplete=off>
     </div>
     <div class="form-group col-md-4">
       <label for="inputPassword4">New Password</label>

@@ -28,7 +28,7 @@ include "header.php";
             </span>
             </button>
         &nbsp;&nbsp;&nbsp;
-        <a href="completed_view_forms.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+        <a href="form_claim_pend_view.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-white-50">
                 <i class="fas fa-times"></i>
             </span>

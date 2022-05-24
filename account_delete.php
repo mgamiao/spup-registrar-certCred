@@ -10,11 +10,11 @@ include "header.php";
 
         <div class="card shadow w-50" style="border:none;">
                 <div class="py-3 bordercolor" style="border:none;">
-                  <h1 class="m-0 headerblacked">DELETE FORM</h1>
+                  <h1 class="m-0 headerblacked">DELETE ACCOUNT</h1>
                 </div>
                 
                 <div class="card-body">
-                  <h5 class="text-dark">Are you sure you want to delete this requested form?</h5>
+                  <h5 class="text-dark">Are you sure you want to delete this account?</h5>
            <br>
                 <i><a href="account_delete_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
                 <span class="icon text-white-50">

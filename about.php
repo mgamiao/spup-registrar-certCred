@@ -29,19 +29,4 @@
         <br>
         <?php include "footer.php" ?>
         <div class="row mb-4" style="width: 80%; margin: auto;">
-  <div class="col-sm-12 text-center">
-    <div class="card">
-      <div class="card-body colorcb">
-        <h2 class="card-title mt-3">VISION</h2>
-        <p class="card-text mb-5" style="justify-content: left;">St. Paul University Philippines is an internationally recognized institution dedicated to the <BR>
-        formation of competent leaders and responsible citizens of their communities, country, and <br>the world.</p>
-        <h2 class="card-title mt-3">MISSION</h2>
-        <p class="card-text mb-5">Animated by the Gospel and guided by the teachings of the Church, it helps to uplift the 
-        <br>quality of life and to effect social transformation through:<br>
-                <br>1. Quality, Catholic, Paulinian formation, academic excellence, research, and community services;
-                <br>2. Optimum access to Paulinian education and service in an atmosphere of compassionate caring;    and,
-                <br>3. Responsive and innovative management processes</p>
-      </div>
-    </div>
-  </div>
 </div>

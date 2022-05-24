@@ -57,7 +57,7 @@ include "header.php";
 
     <div class="card w-100" style="border:none;">
                 <div class="py-3 bordercolor" style="border:none;">
-                <h1 class="m-0 headerblacked">FORMS WAITING TO BE CLAIM</h1>
+                <h1 class="m-0 headerblacked">FORMS WAITING TO BE CLAIMED</h1>
                 </div>
                 <div class="card-body bodyblacked">
                 <div class="table-responsive" >

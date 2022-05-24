@@ -83,7 +83,7 @@
             <td>Full Name</td>
             <td>School</td>
             <td>Type of Form</td>
-            <td>Date Received</td>
+            <td>Date Claimed</td>
             
         </tr>
         </thead>
@@ -93,7 +93,7 @@
             <td>Full Name</td>
             <td>School</td>
             <td>Type of Form</td>
-            <td>Date Received</td>
+            <td>Date Claimed</td>
             
 
         </tr>

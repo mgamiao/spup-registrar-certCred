@@ -81,7 +81,7 @@ if (isset($_SESSION['alert_msg'])){
     </select>
     <div id="ifYes" style="display: none;">
     <br>
-    <h6>Representative's Name: <span style="color:red">*</h6></span> <input type="text" class="form-control" name="representname" /><br />
+    <h6>Representative's Name: <span style="color:red">*</h6></span> <input type="text" class="form-control" name="representname" required autocomplete=off/><br />
    
     <!-- <div class='control-group' style='height:100px;'>
     <h6>Attach photo of Valid ID of the Representative: <span style="color:red">*</h6></span> 

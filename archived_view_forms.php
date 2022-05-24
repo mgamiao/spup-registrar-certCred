@@ -329,7 +329,7 @@ include "header.php";
       </div>
 
       <div class="form-group col-md-6 mt-4">
-      <label for="inputEmail4"><h4>Date Received:</h4></label>
+      <label for="inputEmail4"><h4>Date Claimed:</h4></label>
         <input type="text" class="form-control" id="inputEmail4" value="<?= $dateReceived?>" readonly>
       </div>
     </div>
