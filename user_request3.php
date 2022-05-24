@@ -11,16 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-  <script type="text/javascript">
-    function yesnoCheck(that) {
-    if (that.value == "Through Representative") {
-        document.getElementById("ifYes").style.display = "block";
-    } else {
-        document.getElementById("ifYes").style.display = "none";
-    }
-}
-  </script> 
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> --> 
 </head>
 <body onload="checkStatus()">
 <?php
@@ -79,21 +70,13 @@ if (isset($_SESSION['alert_msg'])){
     <option value="Through Representative"> Through Representative</option>
     <option value="Through Courier">Through Courier</option>
     </select>
-    <div id="ifYes" style="display: none;">
     <br>
-    <h6>Representative's Name: <span style="color:red">*</h6></span> <input type="text" class="form-control" name="representname" required autocomplete=off/><br />
-   
-    <!-- <div class='control-group' style='height:100px;'>
-    <h6>Attach photo of Valid ID of the Representative: <span style="color:red">*</h6></span> 
-    <div class='controls'>
-    <input class='input-file uniform_on' id='fileInput' name='representid' type='file' required>
-    </div> -->
-
-	</div>
-
+    <br>
     <div class="form-group">
+      <h6>Representative's Name:<span style="color:blue">(if through representative): </h6>
+      <input type="text" class="form-control" name="representname" autocomplete="off"/><br />
       <h6>Mailing Address <span style="color:blue">(if through courier please add address):</h6></span>
-      <input type="text" class="form-control"  placeholder="Enter Address" name="address"  autocomplete=off>
+      <input type="text" class="form-control"  placeholder="Enter Address" name="address"  autocomplete="off">
     </div>
     <br>
     <h6 style="color:red; "><i> Note: Please make sure that all information given are correct before clicking submit.<br>

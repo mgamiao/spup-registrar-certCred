@@ -92,7 +92,7 @@ include "header.php";
             <td>Full Name</td>
             <td>Type of Form</td>
             <td>Fee</td>
-            <td>Date Received</td>
+            <td>Date Claimed</td>
             <td>Claimed by:</td>
             <td>Option</td>
             
@@ -106,7 +106,7 @@ include "header.php";
             <td>Full Name</td>
             <td>Type of Form</td>
             <td>Fee</td>
-            <td>Date Received</td>
+            <td>Date Claimed</td>
             <td>Claimed by:</td>
             <td>Option</td>
             
