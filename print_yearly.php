@@ -7,19 +7,18 @@ include "perfect_function.php";
 <div align=center>
 
 <div class="card w-100" style="margin-top: 20px; float: left;">
-                <div class="card-header py-3 bg-secondary">
-                <h6 class="m-0 font-weight-bold text-white">FORM INFORMATION</h6>
-                </div>
+                
                 <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" width="100%" cellspacing="0">
         
         <thead style="text-align:center;">
         <tr>
-            <td>Full Name</td>
-            <td>School</td>
-            <td>Type of Form</td>
             <td>Date Requested</td>
+            <td>Full Name</td>
+            <td>Type of Form</td>
+            <td>Fee</td>
+            <td>Date Received</td>
             
 
         </tr>
@@ -41,18 +40,21 @@ include "perfect_function.php";
             $id=$row['id'];
             $lastname=$row['lastname'];
             $firstname=$row['firstname'];
-            $dept=$row['school'];
+            $fees=$row['fees'];
             $formType=$row['form_type'];
-            $dateReq=$row['date']
+            $dateReq=$row['date'];
+            $dateReceived=$row['dateReceived'];
 
     ?>
     
 
     <tr>
-        <td><?= $firstname ." ". $lastname  ?></td>
-         <td><?= $dept ?></td> 
-        <td><?= $formType ?></td>
         <td><?= $dateReq ?></td>
+        <td><?= $firstname ." ". $lastname  ?></td>
+         <td><?= $fees ?></td> 
+        <td><?= $formType ?></td>
+        <td><?= $dateReceived ?></td>
+        
         
         
     </tr>

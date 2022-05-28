@@ -10,12 +10,14 @@
     $status = $_GET['status'];
 	$dateReceived = $_GET['dateReceived'];
 	date_default_timezone_set('Asia/Singapore'); 
-	$dateNow = date("Ymd");
+	$dateNow = date("Y-m-d");
 
 	$user_editedvalues = array (
 		//columname from table => value from post
-			"status" => 4,
-			"dateReceived" => $dateNow,
+			"status" => 5,
+			"regStatus" => "Waiting to be Claimed",
+			"regDateApprove" => $dateNow,
+			"baoStatus" => "Validated the Receipt"
 	);
 	
 	update($user_editedvalues, $id, $table_name);
@@ -57,7 +59,9 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $firstname .  "</h1><br> $xdate . $xtime <h3>Your form is printed and ready to be claimed at the registrar's office.</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
+	$mail->Body = "<h1>Hello Mr./Ms. " . $lastname .  "</h1>
+	<h3>Your form is printed and ready to be claimed at the Registrar's Office.</h3><br><br>
+	 Your reference number is: <b>". $unique."</b>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
@@ -92,7 +96,7 @@
     );
 
     echo insert($user_data, $table_name);
-
+	header("Location: completed_forms.php");
 ?>
 
 

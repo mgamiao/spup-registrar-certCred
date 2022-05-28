@@ -23,95 +23,7 @@ include "header.php";
 
   <!-- Custom styles for this page -->
   <link href="template/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-  <style>
-body {font-family: Arial, Helvetica, sans-serif;}
 
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#myImg:hover {opacity: 0.7;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-/* Caption of Modal Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-</style>
 
 </head>
 
@@ -159,7 +71,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             $numofRequest = $row['numofrequest'];
             $reason = $row['reason'];
             $modeofClaim = $row['modeofclaiming'];
-            $address = $row['address'];
+            $mailingaddress = $row['mailingaddress'];
             $courseCompleted = $row['coursecompleted'];
             $dateGrad = $row['dategraduated'];
             $underGrad = $row['undergraduate'];
@@ -179,8 +91,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
             $stickerfee = $row['stickerfee'];
             $paymentphoto = $row['paymentphoto'];
             $status = $row['status'];
-            $photo_url = base_url().'user_payment/'.$paymentphoto;
+            //$photo_url = base_url().'user_payment/'.$paymentphoto;
             $representname = $row['representname'];
+            $ornumber = $row['ornumber'];
+            $date_approved = $row['date_approved'];
            
         ?>   
 <body>
@@ -289,7 +203,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <div class="form-row">
     <div class="form-group col-md-12">
       <label for="inputEmail4">Mailing Address</label>
-      <input type="text" class="form-control" id="inputEmail4" value="<?= $address?>" readonly>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $mailingaddress?>" readonly>
     </div>
        </div>
 
@@ -352,24 +266,36 @@ body {font-family: Arial, Helvetica, sans-serif;}
       <input type="text" class="form-control" id="inputEmail4" value="<?= $stickerfee?>" readonly>
     </div>
        </div>
-       <div class="form-row">
+    <div class="form-row">
     <div class="form-group col-md-12 mt-4">
       <label for="inputEmail4"><h4>Total Fee</h4></label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $fees?>" readonly>
     </div>
-    <div class="form-row">
-    <div class="form-group col-md-12 mt-4">
+    </div>
+    <!-- <div class="form-row"> -->
+    <!-- <div class="form-group col-md-12 mt-4">
       <label for="inputEmail4">Proof of Payment</label>
       <?php
-							if ($paymentphoto == "") {
-							echo "<i>No photo available.</i>";
-							}
-							else {
-							?>
-							<img id="myImg" src="<?= $photo_url ?>" style="width: 100%;" class="img-responsive">
-							<?php
-							}
+							// if ($paymentphoto == "") {
+							// echo "<i>No photo available.</i>";
+							// }
+							// else {
+							// ?>
+							// <img id="myImg" src="<?= $photo_url ?>" style="width: 100%;" class="img-responsive">
+							// <?php
+							// }
 						?>
+    </div>
+    </div> -->
+    <div class="form-row">
+      <div class="form-group col-md-6 mt-4">
+        <label for="inputEmail4">Official Receipt Number</label>
+        <input type="text" class="form-control" id="inputEmail4" value="<?= $ornumber?>" readonly>
+      </div>
+      <div class="form-group col-md-6 mt-4">
+        <label for="inputEmail4">Date Approved</label>
+        <input type="text" class="form-control" id="inputEmail4" value="<?= $date_approved?>" readonly>
+      </div>
     </div>
   </form>
 </div>
@@ -409,13 +335,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <?php } ?>
    <?php } ?>
 
-<div id="myModal" class="modal">
+<!-- <div id="myModal" class="modal">
 <span class="close">&times;</span>
 <img class="modal-content" id="img01">
 <div id="caption"></div>
-</div>
+</div> -->
 
-<script>
+<!-- <script>
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -436,7 +362,7 @@ var span = document.getElementsByClassName("close")[1];
 span.onclick = function() { 
   modal.style.display = "none";
 }
-</script>
+</script> -->
 
 
 </body>

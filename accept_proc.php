@@ -11,10 +11,16 @@
 	$regStatus = $_GET['regStatus'];
 	date_default_timezone_set('Asia/Singapore'); 
     $xdate=date('Y-m-d');
+	$number_pages = $_POST['number_pages'];
+	$number_sets = $_POST['number_sets'];
+	$number_envelope = $_POST['number_envelope'];
 
 	$user_editedvalues = array (
 		//columname from table => value from post
 			"status" => 1,
+			"number_pages" => $number_pages,
+			"number_sets" => $number_sets,
+			"number_envelope" => $number_envelope,
 			"regStatus" => "Approved",
 			"regRemarks" => "",
 			"regDateApprove" => $xdate,
@@ -61,7 +67,9 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $firstname . "</h1><br> $xdate . $xtime <h3> Your form was approved by the registrar's office and now under review by your school dean.</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
+	$mail->Body = "<h1>Hello Mr./Ms." . $lastname . "</h1>
+	<h3> Your form was approved by the Registrar's Office and now under review by your School Dean.</h3><br><br>
+	Your reference number is: <b>". $unique."</b>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {

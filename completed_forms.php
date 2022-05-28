@@ -56,7 +56,7 @@ include "header.php";
 
 <div class="card w-100" style="border:none;">
                 <div class="py-3 bordercolor" style="border:none;">
-                <h1 class="m-0 headerblacked">COMPLETED FORMS</h1>
+                <h1 class="m-0 headerblacked">APPROVED FORMS</h1>
                 </div>
                 <div class="card-body bodyblacked">
                 <div class="table-responsive" >
@@ -69,7 +69,7 @@ include "header.php";
             <td>School</td>
             <td>Reason/Purpose</td>
             <td>Date Requested</td>
-            <td>Date Uploaded</td>
+            <td>Date Approved</td>
             <td>Option</td>
             
             
@@ -83,7 +83,7 @@ include "header.php";
             <td>School</td>
             <td>Reason/Purpose</td>
             <td>Date Requested</td>
-            <td>Date Uploaded</td>
+            <td>Date Approved</td>
             <td>Option</td>
             
 
@@ -95,7 +95,7 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 3;
+        $condition = 4;
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -107,27 +107,34 @@ include "header.php";
             $middleName = $row['middlename'] ;
             $school = $row['school'];
             $reason = $row['reason'];
+            $others = $row['others'];
             $email = $row['email'];           
             $date = $row['date'];
-            $date_uploaded = $row['date_uploaded'];
+            $date_approved = $row['date_approved'];
             $status = $row['status'];
             
 
     ?>
     
 <?php
-    if ($date_uploaded == "0000-00-00"){
-        $date_uploaded = "";
+    if ($date_approved == "0000-00-00"){
+        $date_approved = "";
     }
     
-    if($status=="3"){ ?>
+    if($status=="4"){ ?>
     <tr>
         <td><?= $studnum?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
-        <td><?= $reason?></td>
+        <td><?php
+        if($reason=="Others"){
+            echo $reason ." - ". $others;
+        }else{
+            echo $reason;
+        }
+        ?></td>
         <td><?=$date ?></td>
-        <td><?=$date_uploaded?></td>
+        <td><?=$date_approved?></td>
         
 
         

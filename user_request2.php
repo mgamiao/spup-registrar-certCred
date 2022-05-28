@@ -34,13 +34,13 @@ if (isset($_SESSION['alert_msg'])){
       ?>
       <?php
       $_SESSION['date'] = $_POST['date'];
-      $_SESSION['studnum'] = $_POST['studnum']; 
       $_SESSION['lastname'] = $_POST['lastname']; 
       $_SESSION['middlename'] = $_POST['middlename'];
-      $_SESSION['firstname'] = $_POST['firstname']; 
-      $_SESSION['school'] = $_POST['school']; 
+      $_SESSION['firstname'] = $_POST['firstname'];  
       $_SESSION['email'] = $_POST['email']; 
-      $_SESSION['mobilenum'] = $_POST['mobilenum']; 
+      $_SESSION['mobilenum'] = $_POST['mobilenum'];
+      $_SESSION['gender'] = $_POST['gender']; 
+      $_SESSION['presentaddress'] = $_POST['presentaddress'] 
         
       ?>
 
@@ -54,42 +54,30 @@ if (isset($_SESSION['alert_msg'])){
 <div class="container" >    
   <h6 style="color:red"> * Required </h6><br>
   <form method ="post" action="user_request3.php">
-    <h6>Type of Form: <span style="color:red">*</h6></span>
-    <select name="form_type" class="custom-select" required autocomplete=off>
-    <option value="">Select type of form:</option>
-    <option value="Diploma">Diploma</option>
-    <option value="Form137A">Form 137A</option>
-    <option value="Transcript of records">Transcript of Records</option>
-    <option value="Certificate of Enrolment">Certificate of Enrollment</option>
-    <option value="Certificate of Grades">Certificate of Grades</option>
-    <option value="Certificate of GWA">Certificate of General Weighted Average</option>
-    <option value="Certificate of Graduation">Certificate of Graduation</option>
-    <option value="Certificate of English as Medium of Instruction">Certificate of English as Medium of Instruction</option>
-    <option value="Certificate of Units Earned">Certificate of Units Earned</option>
-    <option value="Certified True Copy of Documents (TOR/Diploma)">Certified True Copy of Documents (TOR/Diploma)</option>
-    <option value="Course Description">Course Description</option>
-    <option value="Certification, Authentication and Verification">Certification, Authentication and Verification (Red Ribbon)</option>
-    <option value="Transfer credentials">Transfer Credentials</option>
-    </select>
     <div class="form-group">
-      <h6>Number of Copies<span style="color:blue">(maximum of 3): </span><span style="color:red">*</h6></span>
-      <input type="number" class="form-control"  placeholder="Enter Number of Copies" name="numofcopies" required autocomplete=off min=1 max=3>
+      <h6>Student Number:</h6>
+      <input type="tel" class="form-control" placeholder="Enter Student Number" name="studnum"  autocomplete=off>
     </div>
-    <h6>Number of Request:<span style="color:red">*</span></h6>
-    <select name="numofrequest" class="custom-select"  required autocomplete=off>
-    <option value="">Select number of request:</option>
-    <option value="1">First Request</option>
-    <option value="2">Second Request</option>
-    <option value="3">Third Request</option>
+    <h6>School:<span style="color:red">*</h6></span>
+    <select name="school" class="custom-select" required autocomplete=off>
+    <option value=" " selected>Select School:</option>
+    <option value="SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING">SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING</option>
+    <option value="SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT">SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT</option>
+    <option value="SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES">SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES</option>
+    <option value="SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION">SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION</option>
+    <option value="BASIC EDUCATION UNIT">BASIC EDUCATION UNIT</option>
+    <option value="SCHOOL OF MEDICINE">SCHOOL OF MEDICINE</option>
+    <option value="GRADUATE SCHOOL">GRADUATE SCHOOL</option>
     </select>
-    <h6>Reason/Purpose: <span style="color:red">*</h6></span>
-    <select name="reason" class="custom-select" required autocomplete=off>
-    <option value="">Select reason/purpose:</option>
-    <option value="transfer to another school">Transfer to another school</option>
-    <option value="Board Examination">Board Examination</option>
-    <option value="For Reference">For Reference(Employment/Promotion)</option>
-    <option value="Scholarship">Scholarship</option>
-    </select>
+    <br><br>
+    <div class="form-group">
+      <h6>Degree Program in the Institution:<span style="color:red">*</h6></span>
+      <input type="text" class="form-control"  placeholder="Enter Degree Program in the Institution" name="degree" required autocomplete=off>
+    </div>
+    <div class="form-group">
+      <h6>Major/Specialization:</h6>
+      <input type="text" class="form-control"  placeholder="Enter Major/Specialization" name="specialization"  autocomplete=off>
+    </div>
     <div class="form-group">
       <h6>Course Completed:</h6>
       <input type="text" class="form-control"  placeholder="Enter Course Completed" name="coursecompleted"  autocomplete=off>

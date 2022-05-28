@@ -12,7 +12,7 @@
 
 	$user_editedvalues = array (
     	//columname from table => value from post
-		"status" => 6,
+		"status" => 7,
         "baoStatus" => "Disapproved",
 		"baoRemarks" => $reason,
         "baoDateApprove" => $xdate,

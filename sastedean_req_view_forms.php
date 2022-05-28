@@ -104,7 +104,7 @@ include "header.php";
             $numofRequest = $row['numofrequest'];
             $reason = $row['reason'];
             $modeofClaim = $row['modeofclaiming'];
-            $address = $row['address'];
+            $mailingaddress = $row['mailingaddress'];
             $courseCompleted = $row['coursecompleted'];
             $dateGrad = $row['dategraduated'];
             $underGrad = $row['undergraduate'];
@@ -220,7 +220,7 @@ include "header.php";
 <div class="form-row">
     <div class="form-group col-md-12">
       <label for="inputEmail4">Mailing Address</label>
-      <input type="text" class="form-control" id="inputEmail4" value="<?= $address?>" readonly>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $mailingaddress?>" readonly>
     </div>
   </form>
 </div>

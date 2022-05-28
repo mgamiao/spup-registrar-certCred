@@ -6,16 +6,16 @@
     $id = $_GET['id'];
 	$table_name = "forms";
 	$status = $_GET['status'];
-	$deanStatus = $_GET['deanStatus'];
+	$baoStatus = $_GET['baoStatus'];
 	date_default_timezone_set('Asia/Singapore'); 
 	$xdate=date('Y-m-d');
 
 	$user_editedvalues = array (
     	//columname from table => value from post
 		"status" => 7,
-        "deanStatus" => "Disapproved",
-		"deanRemarks" => $reason,
-        "deanDateApprove" => $xdate,
+        "baoStatus" => "Disapproved",
+		"baoRemarks" => $reason,
+        "baoDateApprove" => $xdate,
 	);
 
 update($user_editedvalues, $id, $table_name);
@@ -26,8 +26,8 @@ update($user_editedvalues, $id, $table_name);
 	foreach ($get_userData as $key => $row) {
 		 $id = $row['id'];
 		 $email = $row['email'];
-		 $firstname = $row['firstname'];
 		 $lastname = $row['lastname'];
+		 $firstname = $row['firstname'];
 		
 	}
 	date_default_timezone_set('Asia/Singapore');
@@ -58,7 +58,7 @@ update($user_editedvalues, $id, $table_name);
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
-		header("Location: somdean_req_forms.php");
+		header("Location: bao_pending_forms.php");
 	}else{
 		echo "Error";
 	}
@@ -70,7 +70,7 @@ $table_name = "forms";
 
 //get user ID from URL
 $id = $_GET['id'];
-$_SESSION['alert_msg']=5; 
+$_SESSION['alert_msg']=3; 
 
 date_default_timezone_set('Asia/Singapore');
 
@@ -81,7 +81,7 @@ date_default_timezone_set('Asia/Singapore');
     $acct_type=$_SESSION['access'];
     $xdate=date('Y-m-d');
     $xtime=date('h:i:sa');
-    $action="Declined pending form(".$firstname." ".$lastname.")";
+    $action="Declined form(".$firstname." ".$lastname.")";
     
     $user_data=array(
         "username" => $username ,
@@ -95,6 +95,6 @@ date_default_timezone_set('Asia/Singapore');
     );
 
     echo insert($user_data, $table_name);
-header("Location: somdean_req_forms.php");
+header("Location: bao_pending_forms.php");
 
 ?>

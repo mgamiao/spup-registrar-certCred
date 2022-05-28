@@ -23,6 +23,95 @@ include "header.php";
 
   <!-- Custom styles for this page -->
   <link href="template/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
 
 </head>
 
@@ -31,7 +120,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==1){
             echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
+                <div class='card mb-4 py-3 border-bottom-success bg-gradient-dark text-light'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY ADDED
                     </div>
@@ -39,47 +128,26 @@ include "header.php";
                 unset($_SESSION['alert_msg']);
         }
     }
-    
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==2){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY EDITED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-
-    if (isset($_SESSION['alert_msg'])){
-        if ($_SESSION['alert_msg']==3){
-            echo "
-                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
-                    <div class='card-body'>
-                    RECORD SUCCESSFULLY DELETED
-                    </div>
-                </div>";
-                unset($_SESSION['alert_msg']);
-        }
-    }
-
 
     ?>
+    <?php
+      date_default_timezone_set('Asia/Singapore'); 
+      $xdate=date('Y-m-d');
+    ?>
+
+
+
 <div class="card w-100 " style="border:none;">
 <div align="center">
-                <div class=" py-3 bordercolor" style="border:none;">
+                <div class="py-3 bordercolor" style="border:none;">
                 <h1 class="m-0 headerblacked">View Form</h1>
                 </div>
-                </div>
-
-
-               
-
+</div>
 <br>
     <?php
        $id = $_GET['id'];
-       $form_location = "bao_accept_proc.php?id=".$id;
+       $form_location = "bao_pending_accept_proc.php?id=".$id;
+      
    
        $table_name = "forms";
        $get_userData = get_where($table_name, $id);
@@ -102,19 +170,28 @@ include "header.php";
             $underGrad = $row['undergraduate'];
             $mobileNum = $row['mobilenum'];
             $email = $row['email'];
+            $fees = $row['fees'];
+            $transfee = $row['transcriptfee'];
+            $dipfee = $row['diplomafee'];
+            $formfee = $row['formfee'];
+            $certfee = $row['certfee'];
+            $authfee = $row['authfee'];
+            $servfee = $row['servicefee'];
+            $docstamp = $row['docstamp'];
+            $mailfee = $row['mailingfee'];
+            $letterfee = $row['letterenvelope'];
+            $torenvfee = $row['torenvelope'];
+            $stickerfee = $row['stickerfee'];
+            $paymentphoto = $row['paymentphoto'];
             $status = $row['status'];
+            $photo_url = base_url().'user_payment/'.$paymentphoto;
             $representname = $row['representname'];
-            $number_pages = $row['number_pages'];
-            $number_sets = $row['number_sets'];
-            $number_envelope = $row['number_envelope'];
-            $localAbroad = $row['localAbroad'];
-            $country = $row['country'];
            
         ?>   
 <body>
 <div class="container card shadow pb-8 mb-5">
 
-<form method="post"  action="<?= $form_location?> "class="bodyblacked2 card-body"><br>
+<form method="post" action="<?= $form_location ?>" class="bodyblacked2 card-body"><br>
 <h2>Personal Information</h2><br>
 <div class="form-row">
     <div class="form-group col-md-2">
@@ -161,17 +238,13 @@ include "header.php";
 <h2>Academic Information</h2>
 <br>
 <div class="form-row">
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6">
       <label for="inputEmail4">Type of Form</label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $formType?>" readonly>
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6">
       <label for="inputPassword4">Reason</label>
       <input type="text" class="form-control" id="inputPassword4" value="<?= $reason?>" readonly>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputEmail4">Local/Abroad</label>
-      <input type="text" class="form-control" id="inputEmail4" value="<?= $localAbroad ." - ". $country?>" readonly>
     </div>
 </div>
 
@@ -223,21 +296,7 @@ include "header.php";
       <label for="inputEmail4">Mailing Address</label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $mailingaddress?>" readonly>
     </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="inputEmail4">Number of Pages:</label>
-      <input type="text" class="form-control" id="inputEmail4" value="<?= $number_pages?>" readonly>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputEmail4">Number of Sets for Authentication :</label>
-      <input type="text" class="form-control" id="inputEmail4" value="<?= $number_sets?>" readonly>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputEmail4">Quantity of SPUP Envelope/Sticker:</label>
-      <input type="text" class="form-control" id="inputEmail4" value="<?= $number_envelope?>" readonly>
-    </div>
-</div>
+       </div>
 
 <br>
     <h2>Breakdown of Fees</h2>
@@ -245,102 +304,116 @@ include "header.php";
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Transcript Fee</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="transfee" required>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $transfee?>" readonly>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Diploma Fee </label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="dipfee" required>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $dipfee?>" readonly>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Form 137A/138B</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="formfee" required>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $formfee?>" readonly>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Certification Fee</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="certfee" required>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $certfee?>" readonly>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Authentication Fee</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="authfee" required>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $authfee?>" readonly>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Service Fee(Online)</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="servfee" required>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $servfee?>" readonly>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Documentary Stamp</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="docstamp" required>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $docstamp?>" readonly>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Mailing Fee</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="mailfee" required>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $mailfee?>" readonly>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Letter Envelope</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="letterfee" required>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $letterfee?>" readonly>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">SPUP TOR Envelope</label>
-      <input type="number" class="form-control" id="inputPassword4" value="0" name="torenvfee" required>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $torenvfee?>" readonly>
     </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">SPUP Sticker</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="stickerfee" required>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $stickerfee?>" readonly>
     </div>
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Previous Balance:</label>
-      <input type="number" class="form-control" id="inputEmail4" value="0" name="previousbal" required>
-    </div>
-</div>
-        <!-- <div class="form-row">
+       </div>
+    <div class="form-row">
     <div class="form-group col-md-12 mt-4">
-      <label for="inputEmail4"><h4>Total Fee</h4></label> 
-       <input type="number" class="form-control" id="inputEmail4" value="0" name="fees">
-    </div>  -->
-   
+      <label for="inputEmail4"><h4>Total Fee</h4></label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $fees?>" readonly>
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-6 mt-4">
+      <label for="inputEmail4">Proof of Payment</label>
+      <?php
+							if ($paymentphoto == "") {
+							echo "<i>No photo available.</i>";
+							}
+							else {
+							?>
+							<img id="myImg" src="<?= $photo_url ?>" style="width: 100%;" class="img-responsive">
+							<?php
+							}
+						?>
+    </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Official Receipt Number:</label>
+        <input type="number" class="form-control" id="inputEmail4" name="ornumber"  required autocomplete=off min=0>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Date of Approval:</label>
+        <input type="" class="form-control" placeholder=""  value = <?= $xdate?> name="date_approved" required autocomplete=off readonly>
+      </div>
+    </div>
+  
+</div>
+<br>
   </div>
-    
-    <div align="center" class="mb-5 mt-5">
-            <button type="submit" class="btn btn-success btn-icon-split btn-md" style="width:120px;" >
-          <span class="icon text-red-50">
-          <i class="fas fa-check"></i>
-            </span>
-            <span class="text">
-              Continue
-            </span>
-          </button>
-
-          </form>
-            <!-- <a href="bao_accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
+            
+<div align="center" class="mb-5">
+        
+          <button type="submit" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
-            <i class="far fa-edit"></i>
+            <i class="fas fa-check"></i>
             </span>
             <span class="text">
-                    Approve
+                   Approve
                 </span>
-            </a> -->
-
-            <a href="bao_form_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+            </button>
+            </form>
+            <a href="bao_pending_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="fas fa-times"></i>
             </span>
             <span class="text">
-                   Decline
+                    Decline
                 </span>
             </a>
-
-
-        <a href="bao_req_forms.php" class="btn btn-warning btn-icon-split btn-md">
+       
+        <a href="bao_pending_forms.php" class="btn btn-warning btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="fas fa-arrow-left"></i>
         </span>
@@ -349,18 +422,43 @@ include "header.php";
         </span>
             </a>
             </a>
-        
-
-        <?php } ?>
-
-</div>   
-   </div>
+        </td>
 
         
+   <?php } ?>
+
+<div id="myModal" class="modal">
+<span class="close">&times;</span>
+<img class="modal-content" id="img01">
+<div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[1];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+
+
 </body>
 </html>
-
-
-<?php
-include "footeradmin.php";
-?>
+</div>
+</div>
+<?php include "footeradmin.php" ?>

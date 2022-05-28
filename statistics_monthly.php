@@ -35,38 +35,38 @@
 
         $sasteForms = count_school_forms_month('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', $enterYear, $enterMonth);
         $sastePendingForms = count_school_specific_forms_month('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '0', $enterYear, $enterMonth);
-        $sasteInProcessForms = count_school_inprocess_forms_month('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '1', '2', $enterYear, $enterMonth);
-        $sasteArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '5', $enterYear, $enterMonth);
+        $sasteInProcessForms = count_school_inprocess_forms_month('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '1', '2', '3', $enterYear, $enterMonth);
+        $sasteArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '6', $enterYear, $enterMonth);
 
         $snahsForms = count_school_forms_month('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', $enterYear, $enterMonth);
         $snahsPendingForms = count_school_specific_forms_month('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '0', $enterYear, $enterMonth);
-        $snahsInProcessForms = count_school_inprocess_forms_month('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '1', '2', $enterYear, $enterMonth);
-        $snahsArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '5', $enterYear, $enterMonth);
+        $snahsInProcessForms = count_school_inprocess_forms_month('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '1', '2', '3', $enterYear, $enterMonth);
+        $snahsArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '6', $enterYear, $enterMonth);
 
         $siteForms = count_school_forms_month('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', $enterYear, $enterMonth);
         $sitePendingForms = count_school_specific_forms_month('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '0', $enterYear, $enterMonth);
-        $siteInProcessForms = count_school_inprocess_forms_month('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '1', '2', $enterYear, $enterMonth);
-        $siteArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '5', $enterYear, $enterMonth);
+        $siteInProcessForms = count_school_inprocess_forms_month('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '1', '2', '3', $enterYear, $enterMonth);
+        $siteArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '6', $enterYear, $enterMonth);
 
         $sbahmForms = count_school_forms_month('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', $enterYear, $enterMonth);
         $sbahmPendingForms = count_school_specific_forms_month('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '0', $enterYear, $enterMonth);
-        $sbahmInProcessForms = count_school_inprocess_forms_month('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1', '2', $enterYear, $enterMonth);
-        $sbahmArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '5', $enterYear, $enterMonth);
+        $sbahmInProcessForms = count_school_inprocess_forms_month('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1', '2', '3', $enterYear, $enterMonth);
+        $sbahmArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '6', $enterYear, $enterMonth);
 
         $somForms = count_school_forms_month('forms', 'SCHOOL OF MEDICINE', $enterYear, $enterMonth);
         $somPendingForms = count_school_specific_forms_month('forms', 'SCHOOL OF MEDICINE', '0', $enterYear, $enterMonth);
-        $somInProcessForms = count_school_inprocess_forms_month('forms', 'SCHOOL OF MEDICINE', '1', '2', $enterYear, $enterMonth);
-        $somArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF MEDICINE', '5', $enterYear, $enterMonth);
+        $somInProcessForms = count_school_inprocess_forms_month('forms', 'SCHOOL OF MEDICINE', '1', '2', '3', $enterYear, $enterMonth);
+        $somArchivedForms = count_school_specific_forms_month('forms', 'SCHOOL OF MEDICINE', '6', $enterYear, $enterMonth);
 
         $beuForms = count_school_forms_month('forms', 'BASIC EDUCATION UNIT', $enterYear, $enterMonth);
         $beuPendingForms = count_school_specific_forms_month('forms', 'BASIC EDUCATION UNIT', '0', $enterYear, $enterMonth);
-        $beuInProcessForms = count_school_inprocess_forms_month('forms', 'BASIC EDUCATION UNIT', '1', '2', $enterYear, $enterMonth);
-        $beuArchivedForms = count_school_specific_forms_month('forms', 'BASIC EDUCATION UNIT', '5', $enterYear, $enterMonth);
+        $beuInProcessForms = count_school_inprocess_forms_month('forms', 'BASIC EDUCATION UNIT', '1', '2', '3', $enterYear, $enterMonth);
+        $beuArchivedForms = count_school_specific_forms_month('forms', 'BASIC EDUCATION UNIT', '6', $enterYear, $enterMonth);
 
         $gradSchoolForms = count_school_forms_month('forms', 'GRADUATE SCHOOL', $enterYear, $enterMonth);
         $gradSchoolPendingForms = count_school_specific_forms_month('forms', 'GRADUATE SCHOOL', '0', $enterYear, $enterMonth);
-        $gradSchoolInProcessForms = count_school_inprocess_forms_month('forms', 'GRADUATE SCHOOL', '1', '2', $enterYear, $enterMonth);
-        $gradSchoolArchivedForms = count_school_specific_forms_month('forms', 'GRADUATE SCHOOL', '5', $enterYear, $enterMonth);
+        $gradSchoolInProcessForms = count_school_inprocess_forms_month('forms', 'GRADUATE SCHOOL', '1', '2', '3', $enterYear, $enterMonth);
+        $gradSchoolArchivedForms = count_school_specific_forms_month('forms', 'GRADUATE SCHOOL', '6', $enterYear, $enterMonth);
 
         $totalForms = count_total_forms_month($enterYear, $enterMonth);
         $pendingForms = count_pending_forms_month($enterYear, $enterMonth);

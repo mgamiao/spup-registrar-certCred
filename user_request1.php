@@ -54,14 +54,10 @@ if (isset($_SESSION['alert_msg'])){
 
 <div class="container" >    
   <h6 style="color:red"> * Required </h6><br>
-  <form method ="post" action="user_request2.php">
+  <form method ="post" action="user_request2.php" enctype="multipart/form-data">
     <div class="form-group">
       <h6>Date Today:  </h6>
       <input type="" class="form-control" placeholder=""  value = <?= $xdate?> name="date" required autocomplete=off readonly>
-    </div>
-    <div class="form-group">
-      <h6>Student Number:</h6>
-      <input type="tel" class="form-control" placeholder="Enter Student Number" name="studnum"  autocomplete=off>
     </div>
     <div class="form-group">
       <h6>Last Name: <span style="color:red">*</h6></span>
@@ -75,19 +71,6 @@ if (isset($_SESSION['alert_msg'])){
       <h6>First Name:<span style="color:red">*</h6></span>
       <input type="text" class="form-control"  placeholder="Enter First name while in SPUP" name="firstname" required autocomplete=off>
     </div>
-
-
-    <h6>School: <span style="color:red">*</h6></span>
-    <select name="school" class="custom-select" required autocomplete=off>
-    <option selected>Select school:</option>
-    <option value="SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING">SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING</option>
-    <option value="SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT">SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT</option>
-    <option value="SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES">SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES</option>
-    <option value="SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION">SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION</option>
-    <option value="BASIC EDUCATION UNIT">BASIC EDUCATION UNIT</option>
-    <option value="SCHOOL OF MEDICINE">SCHOOL OF MEDICINE</option>
-    <option value="GRADUATE SCHOOL">GRADUATE SCHOOL</option>
-    </select>  
     <div class="form-group">
       <h6>Email: <span style="color:red">*</h6></span>
       <input type="email" class="form-control"  placeholder="Enter Email Address" name="email" required autocomplete=off>
@@ -95,6 +78,16 @@ if (isset($_SESSION['alert_msg'])){
     <div class="form-group">
       <h6>Mobile Number: <span style="color:red">*</h6></span>
       <input type="tel" class="form-control"  placeholder="Enter Mobile number" name="mobilenum" pattern="[0]{1}[9]{1}[0-9]{9}" title="Number must be a valid PH number" required autocomplete=off>
+    </div>
+    <h6>Gender: <span style="color:red">*</h6></span>
+    <input type="radio" name="gender" value="male">
+    <label>Male</label>
+    <input type="radio" name="gender" value="female">
+    <label>Female</label>
+    <br><br>
+    <div class="form-group">
+      <h6>Present Address: <span style="color:red">*</h6></span>
+      <input type="text" class="form-control"  placeholder="Enter Present Address" name="presentaddress"  required autocomplete=off>
     </div>
     <br>
     <button type="submit" class="btn btn-primary custombutton">Proceed</button>

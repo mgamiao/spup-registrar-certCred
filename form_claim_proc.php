@@ -16,11 +16,13 @@
 
 	$user_editedvalues = array (
 		//columname from table => value from post
-			"status" => 5,
+			"status" => 6,
 			"claimant" => $claimant,
-			"regStatus" => "Finalized",
+			"regStatus" => "Claimed",
+			"baoStatus" => "Validated the Receipt",
 			"regRemarks" => "",
 			"regDateApprove" => $xdate,
+			"dateReceived" => $xdate
 
 	);
 	
@@ -65,7 +67,8 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $firstname . "</h1><br>$xdate . $xtime <h3>Your requested form was sucessfully claimed by $claimant. Thank you. </h3><br>
+	$mail->Body = "<h1>Hello Mr./Ms. " . $lastname . "</h1>
+	<h3>Your requested form was sucessfully claimed by Mr./Ms. $claimant. Thank you. </h3>
 	<br><br>Your reference number is: <b>". $unique."</b><br>";
 	$mail->addAddress($email);
 	

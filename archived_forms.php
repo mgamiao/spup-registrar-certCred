@@ -119,7 +119,7 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 5;
+        $condition = 6;
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -139,7 +139,12 @@ include "header.php";
 
     ?>
     
-<?php if($status=="5"){ ?>
+<?php 
+    if ($dateReceived == "0000-00-00"){
+        $dateReceived = "";
+    }
+
+    if($status=="6"){ ?>
     <tr>
         <td><?= $dateApplied ?></td>
         <td><?= $studnum ?></td>

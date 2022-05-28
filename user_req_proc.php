@@ -15,17 +15,32 @@
     $numofRequest =$_SESSION['numofrequest'];
     $reason =$_SESSION['reason'];
     $modeofclaiming =$_POST['modeofclaiming'];
-    $address =$_POST['address'];
+    $representname =$_POST['representname'];
+    $representrelationship =$_POST['representrelationship'];
+    $representcontact =$_POST['representcontact'];
+    $mailingaddress =$_POST['mailingaddress'];
+    $mailingcontact =$_POST['mailingcontact'];
     $courseCompleted =$_SESSION['coursecompleted'];
     $dategraduated =$_SESSION['dategraduated'];
     $undergraduate =$_SESSION['undergraduate'];
     $email=$_SESSION['email'];
     $mobileNum=$_SESSION['mobilenum'];
     $date=$_SESSION['date'];
-    $representname = $_POST['representname'];
-    $regStatus = "Pending";
-    $deanStatus = "Pending";
-    $baoStatus = "Pending";
+    $gender=$_SESSION['gender'];
+    $presentaddress=$_SESSION['presentaddress'];
+    $degree=$_SESSION['degree'];
+    $specialization=$_SESSION['specialization'];
+    $localAbroad=$_SESSION['localAbroad'];
+    $country=$_SESSION['country'];
+    $section_yrgrad=$_SESSION['section_yrgrad'];
+    $semesterAcad=$_SESSION['semesterAcad'];
+    $boardexamname=$_SESSION['boardexamname'];
+    $scholarshipname=$_SESSION['scholarshipname'];
+    $others=$_SESSION['others'];
+    
+     $regStatus = "Pending";
+     $deanStatus = "Pending";
+     $baoStatus = "Pending";
     //reference number generator
     $today = date("Ymd");
     $formYear = date("Y");
@@ -88,12 +103,27 @@
         "middlename" => $middlename,
         "lastname" => $lastname,
         "school" => $school,
+        "gender" => $gender,
+        "presentaddress" => $presentaddress,
+        "degree" => $degree,
+        "specialization" => $specialization,
         "form_type" => $formType,
+        "localAbroad" => $localAbroad,
+        "country" => $country,
+        "semester_Acad" => $semesterAcad,
+        "section_yrgrad" => $section_yrgrad,
+        "boardexamname" => $boardexamname,
+        "scholarshipname" => $scholarshipname,
+        "others" => $others,
         "numofcopies" => $numofCopies,
         "numofrequest" => $numofRequest,
         "reason" => $reason,
         "modeofclaiming" => $modeofclaiming,
-        "address" => $address,
+        "representname" => $representname,
+        "representrelationship" => $representrelationship,
+        "representcontact" => $representcontact,
+        "mailingaddress" => $mailingaddress,
+        "mailingcontact" => $mailingcontact,
         "coursecompleted" => $courseCompleted,
         "dategraduated" => $dategraduated,
         "undergraduate" => $undergraduate,
@@ -103,7 +133,6 @@
         "formYear" => $formYear,
         "formMonth" => $formMonth,
         "formDay" => $formDay,
-        "representname" => $representname,
         "regStatus" => "Pending",
         "deanStatus" => "Pending",
         "baoStatus" => "Pending",
@@ -153,7 +182,9 @@ $mail->Password = "jericklara18";
 $mail->Subject = "Registrar's Office - Form Request" ;
 $mail->setFrom("larajerick169@gmail.com");
 $mail->isHTML(true);
-$mail->Body = "<h1>Hello " . $lastname .  "</h1><br>$xdate . $xtime <h3>Your requested form is under review of the registrar office</h3><br><br><br>Your reference number is: <b>". $unique."</b>";
+$mail->Body = "<h1>Hello Mr./Ms." . $lastname .  "</h1>
+<h3>Your requested form is under review by the Registrar's Office.</h3><br><br>
+Your reference number is: <b>". $unique."</b>";
 $mail->addAddress($email);
 
 if ($mail->Send() ) {

@@ -22,10 +22,9 @@ session_destroy();
                 <div class="card-body pt-5" style="background-color:#F0F0F0;">
                    <h5 style="margin-top:-25px; color:black; font-weight:bold; font-family:times new roman;"> IMPORTANT - PLEASE READ CAREFULLY: </h5>
                    <P>
-These terms and conditions outline the rules and regulations for the use of Web Applicaiton for School Credentilas and Certifications's Website.<br><br>
-By accessing this website we assume you accept these terms and conditions. Do not continue to use SPUP - Registrar if you do not agree to take all of the terms and conditions stated on this page.
-<br><br> The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice in compliance to
-  the School's terms and conditions.
+                  This Form allows you to request student documents from the Office of the Registrar. <br><br>
+                  Please fill-out the google form completely. Inaccurate and lacking information may result to delay in processing of request. Avoid submitting double entries on the online request form to maintain online page stability. 
+                  <br><br>DATA PRIVACY NOTICE: I hereby authorize SPUP Registrar's Office to collect the data indicated herein. I understand that my personal information is protected by RA 10173, Data Privacy Act of 2012 and that the data collected will not be shared to other entities other than the purposes stated.
                     </p>
                    <hr>
                    <form class="user" method="post" action="user_terms_proc.php">

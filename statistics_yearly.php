@@ -33,38 +33,38 @@
 
         $sasteForms = count_school_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', $enterYear);
         $sastePendingForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '0', $enterYear);
-        $sasteInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '1', '2', $enterYear);
-        $sasteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '5', $enterYear);
+        $sasteInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '1', '2', '3', $enterYear);
+        $sasteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF ARTS, SCIENCES AND TEACHER EDUCATION', '6', $enterYear);
 
         $snahsForms = count_school_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', $enterYear);
         $snahsPendingForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '0', $enterYear);
-        $snahsInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '1', '2', $enterYear);
-        $snahsArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '5', $enterYear);
+        $snahsInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '1', '2', '3', $enterYear);
+        $snahsArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF NURSING AND ALLIED HEALTH SCIENCES', '6', $enterYear);
 
         $siteForms = count_school_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', $enterYear);
         $sitePendingForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '0', $enterYear);
-        $siteInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '1', '2', $enterYear);
-        $siteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '5', $enterYear);
+        $siteInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '1', '2', '3', $enterYear);
+        $siteArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF INFORMATION TECHNOLOGY AND ENGINEERING', '6', $enterYear);
 
         $sbahmForms = count_school_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '$enterYear', $enterYear);
         $sbahmPendingForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '0', $enterYear);
-        $sbahmInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1', '2', $enterYear);
-        $sbahmArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '5', $enterYear);
+        $sbahmInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '1', '2', '3', $enterYear);
+        $sbahmArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF BUSINESS, ACCOUNTANCY AND HOSPITALITY MANAGEMENT', '6', $enterYear);
 
         $somForms = count_school_forms('forms', 'SCHOOL OF MEDICINE', $enterYear);
         $somPendingForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '0', $enterYear);
-        $somInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF MEDICINE', '1', '2', $enterYear);
-        $somArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '5', $enterYear);
+        $somInProcessForms = count_school_specific_inprocess('forms', 'SCHOOL OF MEDICINE', '1', '2', '3', $enterYear);
+        $somArchivedForms = count_school_specific_forms('forms', 'SCHOOL OF MEDICINE', '6', $enterYear);
 
         $beuForms = count_school_forms('forms', 'BASIC EDUCATION UNIT', $enterYear);
         $beuPendingForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '0', $enterYear);
-        $beuInProcessForms = count_school_specific_inprocess('forms', 'BASIC EDUCATION UNIT', '1', '2', $enterYear);
-        $beuArchivedForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '5', $enterYear);
+        $beuInProcessForms = count_school_specific_inprocess('forms', 'BASIC EDUCATION UNIT', '1', '2', '3', $enterYear);
+        $beuArchivedForms = count_school_specific_forms('forms', 'BASIC EDUCATION UNIT', '6', $enterYear);
 
         $gradSchoolForms = count_school_forms('forms', 'GRADUATE SCHOOL', $enterYear);
         $gradSchoolPendingForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '0', $enterYear);
-        $gradSchoolInProcessForms = count_school_specific_inprocess('forms', 'GRADUATE SCHOOL', '1', '2', $enterYear);
-        $gradSchoolArchivedForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '5', $enterYear);
+        $gradSchoolInProcessForms = count_school_specific_inprocess('forms', 'GRADUATE SCHOOL', '1', '2', '3', $enterYear);
+        $gradSchoolArchivedForms = count_school_specific_forms('forms', 'GRADUATE SCHOOL', '6', $enterYear);
 
         $totalForms = count_total_forms($enterYear);
         $pendingForms = count_pending_forms($enterYear);

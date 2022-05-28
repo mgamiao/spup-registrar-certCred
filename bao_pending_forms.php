@@ -44,7 +44,7 @@ include "header.php";
     if (isset($_SESSION['alert_msg'])){
         if ($_SESSION['alert_msg']==3){
             echo "
-                <div class='card mb-4 py-3 border-bottom-danger bg-light text-dark'>
+                <div class='card mb-4 py-3 border-bottom-success bg-light text-dark'>
                     <div class='card-body'>
                     RECORD SUCCESSFULLY DECLINED
                     </div>
@@ -52,12 +52,11 @@ include "header.php";
                 unset($_SESSION['alert_msg']);
         }
     }
-
     ?>
-        
-    <div class="card w-100 " style="border:none;">
+
+<div class="card w-100" style="border:none;">
                 <div class="py-3 bordercolor" style="border:none;">
-                <h1 class="m-0 headerblacked">PENDING FORMS</h1>
+                <h1 class="m-0 headerblacked">FORMS WAITING TO BE PAID</h1>
                 </div>
                 <div class="card-body bodyblacked">
                 <div class="table-responsive" >
@@ -68,10 +67,11 @@ include "header.php";
             <td>Student Number</td>
             <td>Full Name</td>
             <td>School</td>
-            <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>Date Requested</td> 
+            <td>Date Requested</td>
+            <td>Date Uploaded</td>
             <td>Option</td>
+            
             
         </tr>
         </thead>
@@ -79,11 +79,11 @@ include "header.php";
         <tfoot class="tableblacked">
         <tr>
             <td>Student Number</td>
-            <td>Full Name</td>
+            <td> Full Name</td>
             <td>School</td>
-            <td>Type of Form</td>
             <td>Reason/Purpose</td>
-            <td>Date Requested</td> 
+            <td>Date Requested</td>
+            <td>Date Uploaded</td>
             <td>Option</td>
             
 
@@ -95,7 +95,7 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 0;
+        $condition = 3;
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -106,39 +106,43 @@ include "header.php";
             $firstName = $row['firstname'] ;
             $middleName = $row['middlename'] ;
             $school = $row['school'];
-            $formType = $row['form_type'];
             $reason = $row['reason'];
-            $others = $row['others'];
-            $email = $row['email'];
-            $status = $row['status'];
+            $email = $row['email'];           
             $date = $row['date'];
+            $date_uploaded = $row['date_uploaded'];
+            $status = $row['status'];
             
 
     ?>
     
+<?php
+    if ($date_uploaded == "0000-00-00"){
+        $date_uploaded = "";
+    }
     
-
+    if($status=="3"){ ?>
     <tr>
         <td><?= $studnum?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
-        <td><?= $formType?></td>
-        <td><?php
-        if($reason=="Others"){
-            echo $reason ." - ". $others;
-        }else{
-            echo $reason;
-        }
-        ?></td>
-        <td><?= $date ?></td> 
-        
+        <td><?= $reason?></td>
+        <td><?=$date ?></td>
+        <td><?=$date_uploaded?></td>
         
 
-        <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2"){ ?>
+        
             
         <td>
+        <!-- <a href="stud_deact.php?id=<?= $id?>" class="btn btn-secondary btn-icon-split" style="margin-left: 1%;">
+                    <span class="icon text-red-50">
+                    <i class="fas fa-user-slash"></i>
+                </span>
+                <span class="text">
+                    DEACTIVATE
+                </span>
+        </a> -->
         &nbsp;&nbsp;
-            <a href="view_forms.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
+            <a href="bao_pending_view_forms.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="fas fa-eye"></i>
             </span>
@@ -146,8 +150,8 @@ include "header.php";
                     View
                 </span>
             </a>
-        &nbsp;&nbsp;
-        <!-- <a href="form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
+        <!-- &nbsp;&nbsp;&nbsp;
+        <a href="req_form_delete.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
         <span class="icon text-red-50">
         <i class="far fa-trash-alt"></i>
         </span>
@@ -163,23 +167,10 @@ include "header.php";
 
 
         <?php   }   ?>
-
-        
     </tbody>
-    
 </table>
-
-    
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
- <script src="template/vendor/jquery/jquery.min.js"></script> 
-    <!-- <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>   pag meron to ayaw gumana ng logout--> 
+<script src="template/vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>   pag meron to ayaw gumana ng logout-->
 
     <!-- Core plugin JavaScript-->
     <script src="template/vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -194,6 +185,12 @@ include "header.php";
     <!-- Page level custom scripts -->
     <script src="template/js/demo/datatables-demo.js"></script>
 
-    <?php include "footeradmin.php" ?>
-    
+</div>
+</div>
+</div>
+</div>
+</div>
+<?php include "footeradmin.php" ?>
+</div>
+
 

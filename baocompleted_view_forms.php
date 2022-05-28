@@ -69,7 +69,7 @@ include "header.php";
             $numofRequest = $row['numofrequest'];
             $reason = $row['reason'];
             $modeofClaim = $row['modeofclaiming'];
-            $address = $row['address'];
+            $mailingaddress = $row['mailingaddress'];
             $courseCompleted = $row['coursecompleted'];
             $dateGrad = $row['dategraduated'];
             $underGrad = $row['undergraduate'];
@@ -90,6 +90,9 @@ include "header.php";
             $status = $row['status'];
             $representname = $row['representname'];
             $studnum = $row['studentnumber'];
+            $ornumber = $row['ornumber'];
+            $dateApproved = $row['date_approved'];
+            $previousbal = $row['previousbal'];
            
         ?>   
 <body>
@@ -198,7 +201,7 @@ include "header.php";
 <div class="form-row">
     <div class="form-group col-md-12">
       <label for="inputEmail4">Mailing Address</label>
-      <input type="text" class="form-control" id="inputEmail4" value="<?= $address?>" readonly>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $mailingaddress?>" readonly>
     </div>
        </div>
 
@@ -260,11 +263,26 @@ include "header.php";
       <label for="inputEmail4">SPUP Sticker</label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $stickerfee?>" readonly>
     </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Previous Balance</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $previousbal?>" readonly>
+    </div>
        </div>
-       <div class="form-row">
+    <div class="form-row">
     <div class="form-group col-md-12 mt-4">
       <label for="inputEmail4"><h4>Total Fee</h4></label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $fees?>" readonly>
+    </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4"><h4>Official Receipt Number</h4></label>
+        <input type="text" class="form-control" id="inputEmail4" value="<?= $ornumber?>" readonly>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4"><h4>Date Approved</h4></label>
+        <input type="text" class="form-control" id="inputEmail4" value="<?= $dateApproved?>" readonly>
+      </div>
     </div>
   </form>
 </div>

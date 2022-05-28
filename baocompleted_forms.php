@@ -66,7 +66,7 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 3;
+        $condition = 4;
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -84,7 +84,7 @@ include "header.php";
 
     ?>
     
-<?php if($status=="3" || $status=="4" || $status=="5" ){ ?> <!--sakto ba na ilagay ko rin yung pag yung form is nasa archived na? -->
+<?php if($status=="4" || $status=="5" || $status=="6" ){ ?> <!--sakto ba na ilagay ko rin yung pag yung form is nasa archived na? -->
     <tr>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>

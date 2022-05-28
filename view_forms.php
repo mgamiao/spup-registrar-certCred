@@ -68,6 +68,7 @@ include "header.php";
 <br>
     <?php
        $id = $_GET['id'];
+       $form_location = "accept_proc.php?id=".$id;
       
    
        $table_name = "forms";
@@ -86,19 +87,32 @@ include "header.php";
             $reason = $row['reason'];
             $modeofClaim = $row['modeofclaiming'];
             $representname = $row['representname'];
-            $address = $row['address'];
+            $mailingaddress = $row['mailingaddress'];
             $courseCompleted = $row['coursecompleted'];
             $dateGrad = $row['dategraduated'];
             $underGrad = $row['undergraduate'];
             $mobileNum = $row['mobilenum'];
             $email = $row['email'];
             $status = $row['status'];
+            $gender = $row['gender'];
+            $presentaddress = $row['presentaddress'];
+            $abroad = $row['localAbroad'];
+            $country = $row['country'];
+            $degree = $row['degree'];
+            $specialization = $row['specialization'];
+            $semester_Acad = $row['semester_Acad'];
+            $section_yrgrad = $row['section_yrgrad'];
+            $boardexamname = $row['boardexamname'];
+            $scholarshipname = $row['scholarshipname'];
+            $representrel = $row['representrelationship'];
+            $representcontact = $row['representcontact'];
+            $mailingcontact = $row['mailingcontact'];
            
         ?>   
 <body>
 <div class="container card shadow pb-8 mb-5">
 
-<form class="bodyblacked2 card-body"><br>
+<form method="post" action="<?= $form_location?>" class="bodyblacked2 card-body"><br>
 <h2>Personal Information</h2><br>
 <div class="form-row">
     <div class="form-group col-md-2">
@@ -126,13 +140,23 @@ include "header.php";
     </div>
   </div>
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="inputPassword4">Mobile Number </label>
       <input type="text" class="form-control" id="inputPassword4" value="<?= $mobileNum?>" readonly>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="inputPassword4">Email </label>
       <input type="text" class="form-control" id="inputPassword4" value="<?= $email?>" readonly>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Gender </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $gender?>" readonly>
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-12">
+      <label for="inputEmail4">Present Address</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $presentaddress?>" readonly>
     </div>
   </div>
   <div class="form-row">
@@ -145,13 +169,17 @@ include "header.php";
 <h2>Academic Information</h2>
 <br>
 <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="inputEmail4">Type of Form</label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $formType?>" readonly>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="inputPassword4">Reason</label>
       <input type="text" class="form-control" id="inputPassword4" value="<?= $reason?>" readonly>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Local/Abroad</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $abroad ." - ". $country?>" readonly>
     </div>
 </div>
 
@@ -165,7 +193,35 @@ include "header.php";
       <input type="text" class="form-control" id="inputPassword4" value="<?= $numofRequest?>" readonly>
     </div>
 </div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Degree Program in the Institution</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $degree?>" readonly>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Major/Specialization </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $specialization?>" readonly>
+    </div>
 
+</div>
+<div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputPassword4">Semester & Academic Year </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $semester_Acad?>" readonly>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputEmail4">Section & Year Graduated</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $section_yrgrad?>" readonly>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputPassword4">Board Exam Name </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $boardexamname?>" readonly>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputPassword4">Scholarship Name </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $scholarshipname?>" readonly>
+    </div>
+</div>
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Course Completed</label>
@@ -183,27 +239,55 @@ include "header.php";
     <input type="text" class="form-control" id="inputAddress" value="<?= $underGrad ?>" readonly>
   </div>
 
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Number of Pages:</label>
+      <input type="number" class="form-control" id="inputEmail4" placeholder="TOR, Diploma, Form137, & Certifications" name="number_pages" value="0" required autocomplete="off" min=0>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Number of Sets for Authentication :</label>
+      <input type="number" class="form-control" id="inputEmail4" placeholder="TOR, Diploma, & SO/Certifications" name="number_sets" value="0" required autocomplete="off" min=0>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Quantity of SPUP Envelope/Sticker:</label>
+      <input type="number" class="form-control" id="inputEmail4" placeholder="Enter Quantity of SPUP Envelope/Sticker" name="number_envelope" value="0"  required autocomplete="off" min=0>
+    </div>
+</div>
+
   <br>
 
   <h2>Claiming Information</h2>
       <br>
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-12">
       <label for="inputEmail4">Mode of Claiming</label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $modeofClaim?>" readonly>
     </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Representative Name </label>
-      <input type="text" class="form-control" id="inputPassword4" value="<?= $representname?>" readonly>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Representative Name</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $representname?>" readonly>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Representative's Relationship </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $representrel?>" readonly>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Representative's Contact Number </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $representcontact?>" readonly>
     </div>
 </div>
 
 <div class="form-row">
-    <div class="form-group col-md-12">
+    <div class="form-group col-md-6">
       <label for="inputEmail4">Mailing Address</label>
-      <input type="text" class="form-control" id="inputEmail4" value="<?= $address?>" readonly>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $mailingaddress?>" readonly>
     </div>
-  </form>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Mailing Contact Address</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $mailingcontact?>" readonly>
+    </div>
 </div>
 <br>
 
@@ -211,7 +295,7 @@ include "header.php";
 <br>
 <div align="center" class="mb-5">
         <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
-            <a href="accept_proc.php?id=<?= $id?>" class="btn btn-success btn-icon-split btn-md">
+            <button type="submit" class="btn btn-success btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="fas fa-check"></i>
             </span>
@@ -219,7 +303,8 @@ include "header.php";
             <span class="text">
                     Approve
                 </span>
-            </a>
+            </button>
+        </form>
             <a href="form_decline.php?id=<?= $id?>" class="btn btn-danger btn-icon-split btn-md">
             <span class="icon text-red-50">
             <i class="fas fa-times"></i>

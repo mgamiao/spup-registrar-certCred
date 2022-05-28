@@ -93,7 +93,7 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 4;
+        $condition = 5;
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -112,7 +112,7 @@ include "header.php";
 
     ?>
     
-<?php if($status=="4"){ ?>
+<?php if($status=="5"){ ?>
     <tr>
         <td><?= $dateApplied ?></td>
         <td><?= $studnum ?></td>

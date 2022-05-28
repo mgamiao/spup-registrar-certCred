@@ -47,7 +47,7 @@ session_start();
             <!-- Nested Row within Card Body -->
             <div class="row" style="background-image: url('img/color1.png');">
               <div class="col-lg-6 d-none d-lg-block text-light" style="margin: auto;" > 
-              <div style="text-align: center;"><img src="img/spuplogo.png" style="width: 40%; margin-top: -200px"><h1><b>Web Application for<br>School Credentials and<br>Certification</b> </h1></div>
+              <div style="text-align: center;"><img src="img/spuplogo.png" style="width: 40%; margin-top: -200px"><h1><b>SPUP Registrar's Office <br>Online Application for<br>School Credentials</b> </h1></div>
             </div>
               <div class="col-lg-6"style="background-color: #f3f3f3;">
                 <div class="p-5">

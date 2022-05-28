@@ -132,6 +132,7 @@ include "header.php";
             $school = $row['school'];
             $formType = $row['form_type'];
             $reason = $row['reason'];
+            $others = $row['others'];
             $email = $row['email'];
             $date = $row['date'];
             $status = $row['status'];
@@ -139,17 +140,23 @@ include "header.php";
 
     ?>
     
-<?php if($status=="1" || $status=="2"){ ?>
+<?php if($status=="1" || $status=="2" || $status=="3"){ ?>
     <tr>
         <td><?= $studnum?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
         <td><?= $formType?></td>
-        <td><?= $reason?></td>
+        <td><?php
+        if($reason=="Others"){
+            echo $reason ." - ". $others;
+        }else{
+            echo $reason;
+        }
+        ?></td>
         <td><?= $date?></td>
         <td><?php if($status=="1"){
          echo "DEAN";   
-        }elseif($status=="2"){
+        }elseif($status=="2" || $status=="3"){
             echo "BAO";
         }
             ?></td>

@@ -22,14 +22,15 @@
 	$letterfee = $_POST['letterfee'];
 	$torenvfee = $_POST['torenvfee'];
 	$stickerfee = $_POST['stickerfee'];
-	$fees = $transfee + $dipfee + $formfee + $certfee + $authfee + $servfee + $docstamp + $mailfee + $letterfee + $torenvfee + $stickerfee;
+	$previousbal = $_POST['previousbal'];
+	$fees = $transfee + $dipfee + $formfee + $certfee + $authfee + $servfee + $docstamp + $mailfee + $letterfee + $torenvfee + $stickerfee + $previousbal;
 
 	
 
 	$user_editedvalues = array (
 		//columname from table => value from post
 			"status" => 3,
-			"baoStatus" => "Approved",
+			"baoStatus" => "Waiting for Receipt",
 			"baoRemarks" => "",
 			"baoDateApprove" => $xdate,
 			"fees" => $fees,
@@ -43,7 +44,9 @@
 			"mailingfee" => $mailfee,
 			"letterenvelope" => $letterfee,
 			"torenvelope" => $torenvfee,
-			"stickerfee" => $stickerfee
+			"stickerfee" => $stickerfee,
+			"previousbal" => $previousbal
+
 
 	);
 	
@@ -77,6 +80,7 @@
 	$letterfee = $_POST['letterfee'];
 	$torenvfee = $_POST['torenvfee'];
 	$stickerfee = $_POST['stickerfee'];
+	$previousbal = $_POST['previousbal'];
 
     require 'phpmailer/includes/PHPMailer.php';
 	require 'phpmailer/includes/SMTP.php';
@@ -98,8 +102,10 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("larajerick169@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $firstname . "</h1><br>$xdate . $xtime <h3>Your form was approved by the Business Affair's Office.Please attach your proof of payment in 'Track requested forms' page using your reference number. </h3><br>
-	<h3>Your total fee is: P$fees.00. Please present the receipt of your payment before claiming your requested form. Thank you </h3><br><br><br>Your reference number is: <b>". $unique."</b><br>
+	$mail->Body = "<h1>Hello Mr./Ms. " . $lastname . "</h1>
+	<h3>Your form was approved by the Business Affair's Office.Please attach your proof of payment in 'Track requested forms' page using your reference number. </h3><br>
+	<h3>Your total fee is: P$fees.00.Thank you. </h3><br><br>
+	Your reference number is: <b>". $unique."</b><br>
 	<h3><b>Breakdown of Fees:<b></h3>
 	<table>
 	<tr>
@@ -158,11 +164,19 @@
     <td> $stickerfee </td>
   	</tr>
 	<tr>
-	<td>Total Fee</td>
+    <td>OUTSTANDING BALANCE </td>
+	<td> : </td>
+    <td> $previousbal </td>
+  	</tr>
+	<tr>
+	<td>TOTAL FEE</td>
 	<td> : </td>
 	<td>  $fees </td>
 	</tr>   
-	</table>";
+	</table>
+	<br>
+	<img src='https://i.ibb.co/n6m4Z1T/paymentdetails.png'>
+	";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {

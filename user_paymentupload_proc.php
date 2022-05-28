@@ -53,11 +53,15 @@ include "perfect_function.php"
                 $table_name = "forms";
                 $id = $_GET['id'];
                 $paymentphoto = basename($_FILES["fileToUpload"]["name"]);
+                date_default_timezone_set('Asia/Singapore'); 
+	            $dateNow = date("Y-m-d");
 
                 $user_editedvalues = array (
                     //columname from table => value from post
                         "paymentphoto" => $paymentphoto,
-                        "date_uploaded" => $xdate
+                        "date_uploaded" => $xdate,
+                        "baoStatus" => "Validating the Receipt",
+                        "baoDateApprove" => $dateNow
                         
                 );
                 echo $id;

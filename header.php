@@ -147,6 +147,19 @@ $compnotif = count_completed_forms1();
   </li>
 
   <li>
+  <a style="text-decoration:none" href="bao_pending_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
+  <?php 
+    if ($compnotif == "0"){
+      echo "<span>FORMS WAITING TO BE PAID</span>";
+    }else{
+     echo "<span>FORMS WAITING TO BE PAID</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $compnotif";
+    }
+  ?>
+  </a>
+  </li>
+
+  <li>
   <a style="text-decoration:none" href="baocompleted_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
   <span>BAO COMPLETED FORMS</span>
   </a>
@@ -282,14 +295,7 @@ $compnotif = count_completed_forms1();
 <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
 <li>
   <a style="text-decoration:none" href="completed_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-  <?php 
-    if ($compnotif == "0"){
-      echo "<span>COMPLETED FORMS</span>";
-    }else{
-     echo "<span>COMPLETED FORMS</span>";
-    echo  "<span class='badge badge-danger badge-counter'> $compnotif";
-    }
-  ?>
+    APPROVED FORMS
   </a>
 
 </li>
@@ -328,6 +334,11 @@ $compnotif = count_completed_forms1();
   <a style="text-decoration:none" href="account_manage.php">
     <span>ACCOUNT MANAGER</span></a>
 </li>
+
+  <li> 
+    <a style="text-decoration:none" href="">
+      <span>HELP</span></a>
+  </li>
 
 <?php } ?>
 

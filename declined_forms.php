@@ -98,7 +98,7 @@ include "header.php";
     <?php
         $table_name = "forms";
         $column = "status";
-        $condition = 6;
+        $condition = 7;
         $get_userData = get_where_custom($table_name, $column, $condition);
 
         foreach ($get_userData as $key => $row) {
@@ -111,6 +111,7 @@ include "header.php";
             $school = $row['school'];
             $formType = $row['form_type'];
             $reason = $row['reason'];
+            $others = $row['others'];
             $email = $row['email'];
             $date = $row['date'];
             $status = $row['status'];
@@ -121,13 +122,19 @@ include "header.php";
 
     ?>
     
-<?php if($status=="6"){ ?>
+<?php if($status=="7"){ ?>
     <tr>
         <td><?= $studnum?></td>
         <td><?= $firstName . " " . $middleName . " " . $lastName?></td>
         <td><?= $school?></td>
         <td><?= $formType?></td>
-        <td><?= $reason?></td>
+        <td><?php
+        if($reason=="Others"){
+            echo $reason ." - ". $others;
+        }else{
+            echo $reason;
+        }
+        ?></td>
         <td><?= $date?></td>
         <td><?= $regRemarks . "" . $deanRemarks . "" . $baoRemarks?></td>
         
