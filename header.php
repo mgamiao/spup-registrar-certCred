@@ -336,7 +336,7 @@ $compnotif = count_completed_forms1();
 </li>
 
   <li> 
-    <a style="text-decoration:none" href="">
+    <a style="text-decoration:none" href="\spup-registrar-certCred\manual\usermanual.pdf" target="blank">
       <span>HELP</span></a>
   </li>
 
