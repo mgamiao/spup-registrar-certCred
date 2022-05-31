@@ -37,6 +37,7 @@ $school = "GRADUATE SCHOOL";
 $gradreqnotif = count_deaninProcess_forms($table_name, $school, $status);
 $reqnotif1 = count_inProcess_forms1();
 $compnotif = count_completed_forms1();
+$approvednotif = count_approved_forms();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -295,7 +296,14 @@ $compnotif = count_completed_forms1();
 <?php if($_SESSION['access']=="1" || $_SESSION['access']=="2" ){ ?>
 <li>
   <a style="text-decoration:none" href="completed_forms.php"   aria-expanded="true" aria-controls="collapseTwo">
-    APPROVED FORMS
+    <?php 
+    if ($approvednotif   == "0"){
+      echo "<span>APPROVED FORMS</span>";
+    }else{
+     echo "<span>APPROVED FORMS</span>";
+    echo  "<span class='badge badge-danger badge-counter'> $approvednotif";
+    }
+  ?>
   </a>
 
 </li>

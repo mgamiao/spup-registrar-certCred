@@ -97,10 +97,10 @@
 	$mail->SMTPAuth = "true";
 	$mail->SMTPSecure = "tls";
 	$mail->Port = "587";
-	$mail->Username = "larajerick169@gmail.com";
-	$mail->Password = "jericklara18";
+	$mail->Username = "norely.registrarsoffice@gmail.com";
+	$mail->Password = "tazlfbcviyaxfcgs";
 	$mail->Subject = "Registrar's Office - Form Request" ;
-	$mail->setFrom("larajerick169@gmail.com");
+	$mail->setFrom("norely.registrarsoffice@gmail.com");
 	$mail->isHTML(true);
 	$mail->Body = "<h1>Hello Mr./Ms. " . $lastname . "</h1>
 	<h3>Your form was approved by the Business Affair's Office.Please attach your proof of payment in 'Track requested forms' page using your reference number. </h3><br>

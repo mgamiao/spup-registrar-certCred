@@ -237,6 +237,22 @@ function count_school_forms($table_name, $school, $year)
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
 }
+function count_by_forms($form_type, $year)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `form_type` = '$form_type' AND `formYear` = '$year'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+function count_by_forms_monthly($form_type, $year, $month)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `form_type` = '$form_type' AND `formYear` = '$year' AND `formMonth` = '$month'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
 
 function count_school_forms_month($table_name, $school, $year, $month)
 {
@@ -465,6 +481,14 @@ function count_completed_forms1()
 {
 	$conn = getConnection();
 	$sql = "SELECT * FROM `forms` WHERE `paymentphoto` != '' AND `date_uploaded` != '0000-00-00' AND `status` = '3'";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+function count_approved_forms()
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM `forms` WHERE `date_approved` != '0000-00-00' AND `status` = '4'";
 	$result = $conn->query($sql);
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;

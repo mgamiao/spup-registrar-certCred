@@ -104,6 +104,9 @@ include "header.php";
             $email = $row['email'];
             $status = $row['status'];
             $representname = $row['representname'];
+            $representrel = $row['representrelationship'];
+            $representcontact = $row['representcontact'];
+            $mailingcontact = $row['mailingcontact'];
            
         ?>   
 <body>
@@ -199,22 +202,36 @@ include "header.php";
   <h2>Claiming Information</h2>
       <br>
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-12">
       <label for="inputEmail4">Mode of Claiming</label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $modeofClaim?>" readonly>
     </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Representative Name </label>
-      <input type="text" class="form-control" id="inputPassword4" value="<?= $representname?>" readonly>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Representative Name</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $representname?>" readonly>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Representative's Relationship </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $representrel?>" readonly>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Representative's Contact Number </label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?= $representcontact?>" readonly>
     </div>
 </div>
 
 <div class="form-row">
-    <div class="form-group col-md-12">
+    <div class="form-group col-md-6">
       <label for="inputEmail4">Mailing Address</label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $mailingaddress?>" readonly>
     </div>
-       </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Mailing Contact Address</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $mailingcontact?>" readonly>
+    </div>
+</div>
 
 <br>
     <h2>Receiver's Information</h2>

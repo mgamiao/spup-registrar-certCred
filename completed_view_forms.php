@@ -95,6 +95,7 @@ include "header.php";
             $representname = $row['representname'];
             $ornumber = $row['ornumber'];
             $date_approved = $row['date_approved'];
+            $previousbal = $row['previousbal'];
            
         ?>   
 <body>
@@ -264,6 +265,10 @@ include "header.php";
     <div class="form-group col-md-6">
       <label for="inputEmail4">SPUP Sticker</label>
       <input type="text" class="form-control" id="inputEmail4" value="<?= $stickerfee?>" readonly>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Previous Outstanding Balance</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?= $previousbal?>" readonly>
     </div>
        </div>
     <div class="form-row">

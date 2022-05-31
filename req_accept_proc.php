@@ -54,10 +54,10 @@
 	$mail->SMTPAuth = "true";
 	$mail->SMTPSecure = "tls";
 	$mail->Port = "587";
-	$mail->Username = "larajerick169@gmail.com";
-	$mail->Password = "jericklara18";
+	$mail->Username = "norely.registrarsoffice@gmail.com";
+	$mail->Password = "tazlfbcviyaxfcgs";
 	$mail->Subject = "Registrar's Office - Form Request" ;
-	$mail->setFrom("larajerick169@gmail.com");
+	$mail->setFrom("norely.registrarsoffice@gmail.com");
 	$mail->isHTML(true);
 	$mail->Body = "<h1>Hello Mr./Ms. " . $lastname .  "</h1>
 	<h3>Your form is printed and ready to be claimed at the Registrar's Office.</h3><br><br>
