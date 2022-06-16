@@ -62,9 +62,14 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("norely.registrarsoffice@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello Mr./Ms. " . $lastname .  "</h1>
-	<h3>Your form was approved by your School Dean and now under review by Business Affair's Office.</h3><br><br>
-	Your reference number is: <b>". $unique."</b>";
+	$mail->Body = "Dear Mr./Ms." . $firstname  . " " . $lastname ."
+	<br><br>Your request has been approved by your School Dean and is now under review by the Business Affairs Office. 
+	Updates will be sent to your email once your account has been verified by the Account Staff.   
+	<br><br>You may track your request through 'Track requested form' using your reference number:". $unique."
+	<br><br>Thank you and God bless!
+	<br><br>yours truly,
+	<br>SPUP Registrar
+	<br><br>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {

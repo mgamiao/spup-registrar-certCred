@@ -154,6 +154,7 @@ $get_userData = get_where($table_name, $id);
 foreach ($get_userData as $key => $row) {
      $id = $row['id'];
      $email = $row['email'];
+     $firstname = $row['firstname'];
      $lastname = $row['lastname'];
      $unique = $row['refno'];
     
@@ -182,9 +183,16 @@ $mail->Password = "tazlfbcviyaxfcgs";
 $mail->Subject = "Registrar's Office - Form Request" ;
 $mail->setFrom("norely.registrarsoffice@gmail.com");
 $mail->isHTML(true);
-$mail->Body = "<h1>Hello Mr./Ms." . $lastname .  "</h1>
-<h3>Your requested form is under review by the Registrar's Office.</h3><br><br>
-Your reference number is: <b>". $unique."</b>";
+$mail->Body = "Dear Mr./Ms." . $firstname  . " " . $lastname ."
+<br><br>Paulinian Greetings!
+<br><br>This is to confirm that we have received your online request. We advise you to patiently wait for updates regarding your application. 
+We will send you feedback once we are done with the verification process.
+<br><br>You may also track your request through 'Track requested form' using your reference number:". $unique."
+<br><br>For further inquiries: You may contact us at (078) 39617987 loc 511-512 or 09155648291 or you may email us at registrar@spup.edu.ph
+<br><br>Thank you and God bless!
+<br><br>yours truly,
+<br>SPUP Registrar
+<br><br>";
 $mail->addAddress($email);
 
 if ($mail->Send() ) {

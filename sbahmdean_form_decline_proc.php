@@ -54,7 +54,12 @@ update($user_editedvalues, $id, $table_name);
 	$mail->Subject = "Registrar's Office - Form Request";
 	$mail->setFrom("norely.registrarsoffice@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello " . $lastname . "</h1><br> $xdate . $xtime<h3>Your requested form was declined for the reason  " . " <b><u>$reason</b></u>. Please request again";
+	$mail->Body ="Dear Mr./Ms." . $firstname  . " " . $lastname ."
+	<br><br>Your request has been declined for the following reasons: $reason. Please comply with the lacking requirements and you may request again. 
+	<br><br>Thank you and God bless!
+	<br><br>yours truly,
+	<br>SPUP Registrar
+	<br><br>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {

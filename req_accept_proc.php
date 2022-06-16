@@ -59,9 +59,16 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("norely.registrarsoffice@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello Mr./Ms. " . $lastname .  "</h1>
-	<h3>Your form is printed and ready to be claimed at the Registrar's Office.</h3><br><br>
-	 Your reference number is: <b>". $unique."</b>";
+	$mail->Body = "Dear Mr./Ms." . $firstname  . " " . $lastname ."
+	<br><br>Your request is now available for pickup. 
+	<br>Gentle Reminder:
+	<br><br>Records are released from 8:00A.M. to 5:00P.M. from Monday to Friday; on Saturdays from 8:00A.M to 12:00 Noon. The office observed “No Noon Break Policy”. 
+	<br><br>An authorization letter with a photocopy of identification card of the applicant and representative with signature is REQUIRED when CLAIMING the record of another person.   
+	<br><br>We hope to serve you better and faster with this intervention. 
+	<br>God bless!
+	<br><br>yours truly,
+	<br>SPUP Registrar
+	<br><br>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {

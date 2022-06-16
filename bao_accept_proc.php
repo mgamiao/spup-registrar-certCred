@@ -102,10 +102,11 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("norely.registrarsoffice@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello Mr./Ms. " . $lastname . "</h1>
-	<h3>Your form was approved by the Business Affair's Office.Please attach your proof of payment in 'Track requested forms' page using your reference number. </h3><br>
-	<h3>Your total fee is: P$fees.00.Thank you. </h3><br><br>
-	Your reference number is: <b>". $unique."</b><br>
+	$mail->Body = "Dear Mr./Ms." . $firstname  . " " . $lastname ."
+	<br><br>Your request has been processed by the Business Affairs Office. 
+	<br>The breakdown for your request is as follows: 
+	<br><br>Your total fee is: P$fees.00.
+	<br><br>
 	<h3><b>Breakdown of Fees:<b></h3>
 	<table>
 	<tr>
@@ -176,7 +177,10 @@
 	</table>
 	<br>
 	<img src='https://i.ibb.co/n6m4Z1T/paymentdetails.png'>
-	";
+	<br><br>Please attach your bank transaction slip in “Track Requested Form” using your reference number:". $unique." for verification and posting.
+	<br><br>yours truly,
+	<br>SPUP Registrar
+	<br><br>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {

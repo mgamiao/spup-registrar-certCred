@@ -64,9 +64,13 @@
 	$mail->Subject = "Registrar's Office - Form Request" ;
 	$mail->setFrom("norely.registrarsoffice@gmail.com");
 	$mail->isHTML(true);
-	$mail->Body = "<h1>Hello Mr./Ms. " . $lastname .  "</h1> 
-	<h3>Your form is approved by Business Affair's Office. Registrar's Office will be processing your request. Please wait atleast seven(7) working days.</h3><br><br>
-	Your reference number is: <b>". $unique."</b>";
+	$mail->Body = "Dear Mr./Ms." . $firstname  . " " . $lastname ."
+	<br><br>Your payment has been validated and posted by Business Affairs Office. The Registrar's office will now prepare your request. You will be notified once your request is ready for release. 
+	<br><br>You may track your request through 'Track requested form' using your reference number:". $unique."
+	<br><br>Thank you and God bless!
+	<br><br>yours truly,
+	<br>SPUP Registrar
+	<br><br>";
 	$mail->addAddress($email);
 	
 	if ($mail->Send() ) {
