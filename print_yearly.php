@@ -51,8 +51,8 @@ include "perfect_function.php";
     <tr>
         <td><?= $dateReq ?></td>
         <td><?= $firstname ." ". $lastname  ?></td>
-         <td><?= $fees ?></td> 
-        <td><?= $formType ?></td>
+         <td><?= $formType ?></td> 
+        <td><?= $fees ?></td>
         <td><?= $dateReceived ?></td>
         
         
